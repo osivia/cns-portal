@@ -167,7 +167,7 @@
 
 
     <scm>
-        <developerConnection>scm:svn:http://www.osivia.org/repos/osivia-demo/trunk</developerConnection>
+        <developerConnection>scm:svn:http://www.osivia.org/repos/osivia-demo/trunk/osivia-demo-portal</developerConnection>
     </scm>
 
 
@@ -186,8 +186,8 @@
         <profile>
             <id>jenkins</id>
             <properties>
-                <osivia-portal.version>3.1.0-RC8</osivia-portal.version>
-                <toutatice-cms.version>3.1.0-RC8</toutatice-cms.version>
+                <osivia-portal.version>3.1.0-RC9</osivia-portal.version>
+                <toutatice-cms.version>3.1.0-RC9</toutatice-cms.version>
             </properties>
         </profile>
 
