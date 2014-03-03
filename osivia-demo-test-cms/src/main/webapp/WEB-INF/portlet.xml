@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+   version="2.0">
+   	
+	<portlet>
+	
+	   	<description>Portlet CMS Test</description>
+        <portlet-name>osivia-demo-test-cms-portlet</portlet-name>
+        <display-name>Portlet CMS Test</display-name>
+		
+        <portlet-class>org.osivia.portal.demo.testcms.TestCmsPortlet</portlet-class>
+        
+        <expiration-cache>180</expiration-cache>
+   		        
+        <supports>
+			<mime-type>text/html</mime-type>
+          	<portlet-mode>view</portlet-mode>
+			<portlet-mode>admin</portlet-mode>
+ 		</supports>
+
+        <supported-locale>en</supported-locale>
+    	<supported-locale>fr</supported-locale>        
+
+		<portlet-info>
+			<title>Nuxeo Test </title>
+			<short-title>Nuxeo Test Portlet</short-title>
+			<keywords>Portlet,Nuxeo, Test, CMS</keywords>
+        </portlet-info>
+        
+        
+        <supported-public-render-parameter>osivia.cms.path</supported-public-render-parameter>
+		<supported-public-render-parameter>osivia.cms.pageScope</supported-public-render-parameter>        
+        <supported-public-render-parameter>osivia.cms.itemRelPath</supported-public-render-parameter>        
+        <supported-public-render-parameter>osivia.cms.contentPath</supported-public-render-parameter> 
+        
+	</portlet>
+	
+	
+	<public-render-parameter>
+        <identifier>osivia.cms.path</identifier>
+        <name>osivia.cms.path</name>
+	</public-render-parameter>	
+	
+	<public-render-parameter>
+        <identifier>osivia.cms.pageScope</identifier>
+        <name>osivia.cms.pageScope</name>
+	</public-render-parameter>	
+	
+		
+	<public-render-parameter>
+        <identifier>osivia.cms.itemRelPath</identifier>
+        <name>osivia.cms.itemRelPath</name>
+	</public-render-parameter>	
+		
+		<public-render-parameter>
+        <identifier>osivia.cms.contentPath</identifier>
+        <name>osivia.cms.contentPath</name>
+	</public-render-parameter>	
+	
+ </portlet-app>

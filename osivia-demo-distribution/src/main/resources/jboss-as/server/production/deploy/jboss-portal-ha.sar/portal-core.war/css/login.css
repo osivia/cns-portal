@@ -1,0 +1,103 @@
+div.login-container {
+   font-family: 'Open Sans', sans-serif;
+   font-size: 11px;
+   width: 255px;
+   border: 1px solid #5da790;
+   position: relative;
+   margin: 0 auto 0 auto;
+   background-color:white;
+}
+
+input.cancel-button,
+input.login-button {
+   background-color: #90c9cd;
+   border-color: #90c9cd white white #90c9cd;
+   border-style: solid;
+   border-width: 1px;
+   font-size: 10px;
+   font-weight: bold;
+   position: absolute;
+}
+
+input.disabled-button {
+   background-color: #9db3cf;
+   border-color: #bdeaed #8598ab #8598ab #bdeaed;
+   border-style: solid;
+   border-width: 1px;
+   color: #FFFFFF;
+   font-size: 10px;
+   font-weight: bold;
+   position: absolute;
+}
+
+input.login-button {
+   bottom: 25px;
+   right: 90px;
+   width: 75px;
+}
+
+input.cancel-button {
+   bottom: 25px;
+   right: 10px;
+   width: 75px;
+}
+
+div.login-container div.login-header {
+   background-color: #90c9cd;
+   text-align: left;
+}
+
+div.login-container div.login-header img {
+   margin: 5px 5px 5px 5px; 
+}
+
+div.login-container div.login-header h2 {
+   font-weight: bold;
+   padding: 7px 0 0 5px;
+   margin: 0;
+   font-size: 11px;
+   text-align: left;
+}
+
+div.login-header h2 {
+    font-size: 13px;
+    color: black;
+}
+
+.header-title {
+    float: right;
+    padding-right: 55px;
+}
+
+div.login-container div.login-content {
+   background: url(../images/modal/login-content-bg.gif) repeat-x top left;
+   width: 255px;
+   font-weight: bold;
+   text-align: right;
+   padding: 0;
+
+}
+
+div.login-container div.login-content div.form-field {
+   height: 25px;
+   padding: 5px 11px 0 0;
+}
+
+div.error-message {
+   color: red;
+   margin: 0 auto 0 auto;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 11px;
+   padding: 5px;
+   font-weight:normal;
+   text-align:left;
+}
+
+div.button-container{
+   height: 50px;
+   position: relative;
+}
+
+div.form-field .highlight {
+   border: 2px solid #6a9cd4;
+}

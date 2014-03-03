@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.osivia.demo</groupId>
+        <artifactId>osivia-demo-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>osivia-demo-distribution</artifactId>
+    <name>Demonstrateur OSIVIA - Distribution</name>
+
+
+    <properties>
+        <src-env>prod</src-env>
+        <dest-env>prod</dest-env>
+    </properties>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>osivia-demo-attributes-bundles-customizer</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>osivia-demo-charte</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>osivia-demo-charte-sitesweb</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>osivia-demo-regions-customizer</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>osivia-demo-cms-nuxeo-web</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>osivia-demo-test-cms</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.osivia.portal.identity</groupId>
+            <artifactId>osivia-portal-identity-sso-lib</artifactId>
+            <version>3.0.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.osivia.services</groupId>
+            <artifactId>osivia-services-wiki</artifactId>
+            <version>${osivia-services-wiki.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.osivia.services</groupId>
+            <artifactId>osivia-contact-portlet</artifactId>
+            <version>${osivia-services-contact.version}</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>toutatice-services.identite</groupId>
+            <artifactId>toutatice-identite-fichepersonne-portail</artifactId>
+            <version>${fichepersonne.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.osivia.services</groupId>
+            <artifactId>osivia-services-java-melody-integration</artifactId>
+            <version>${osivia-services-java-melody-integration.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+			<groupId>toutatice-services.faq</groupId>
+			<artifactId>toutatice-faq-portail</artifactId>
+            <version>${toutatice-faq.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>toutatice-portail.distribution</groupId>
+            <artifactId>toutatice-portail-distribution</artifactId>
+            <version>${toutatice-cms.version}</version>
+            <type>zip</type>
+        </dependency>
+
+    </dependencies>
+
+
+    <profiles>
+
+        <!-- Environnements alternatifs -->
+        <profile>
+            <activation>
+                <property>
+                    <name>env</name>
+                    <value>dev</value>
+                </property>
+            </activation>
+            <id>dev</id>
+            <properties>
+                <dest-env>dev</dest-env>
+                <src-env>dev</src-env>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>unpack</id>
+            <build>
+                <defaultGoal>package</defaultGoal>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <version>2.4</version>
+                        <executions>
+                            <execution>
+                                <id>unpack</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>toutatice-portail.distribution</groupId>
+                                            <artifactId>toutatice-portail-distribution</artifactId>
+                                            <version>${toutatice.cms.distribution.version}</version>
+                                            <type>zip</type>
+                                            <overWrite>true</overWrite>
+                                            <outputDirectory>${project.build.directory}/toutatice-distribution</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>pack</id>
+            <build>
+                <defaultGoal>package</defaultGoal>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>zip</id>
+                                <phase>process-resources</phase>
+                                <configuration>
+                                    <descriptors>
+                                        <descriptor>src/main/assembly/assembly.xml</descriptor>
+                                    </descriptors>
+                                    <finalName>${project.artifactId}</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <attach>false</attach>
+                                </configuration>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.2</version>
+                        <executions>
+                            <execution>
+                                <id>publish</id>
+                                <phase>package</phase>
+                                <configuration>
+                                    <tasks>
+                                        <copy
+                                            file="${basedir}/target/${project.artifactId}.zip"
+                                            tofile="${portal-pack-dir}/${project.artifactId}-${dest-env}-${project.version}.zip"
+                                            overwrite="true" />
+                                    </tasks>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.2.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>

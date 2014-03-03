@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layouts>
+
+    <layout>
+        <name>osivia-demo-1col</name>
+        <uri>/layouts/layout-1col/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-1col/maximized.jsp</uri>
+        <regions>
+            <region name="col" />
+        </regions>
+    </layout>
+
+    <layout>
+        <name>osivia-demo-2cols</name>
+        <uri>/layouts/layout-2cols/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-2cols/maximized.jsp</uri>
+        <regions>
+            <region name="col1" />
+            <region name="col2" />
+        </regions>
+    </layout>
+    
+    <layout>
+        <name>osivia-demo-3cols</name>
+        <uri>/layouts/layout-3cols/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-3cols/maximized.jsp</uri>
+        <regions>
+            <region name="top" />
+            <region name="col1" />
+            <region name="col2" />
+            <region name="col3" />
+        </regions>
+    </layout>
+    
+    <layout>
+        <name>osivia-demo-home</name>
+        <uri>/layouts/layout-home/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-home/maximized.jsp</uri>
+        <regions>
+            <region name="top" />
+            <region name="left" />
+            <region name="right" />
+            <region name="tools" />
+        </regions>
+    </layout>
+    
+    <layout>
+        <name>osivia-demo-workspace</name>
+        <uri>/layouts/layout-workspace/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-workspace/maximized.jsp</uri>
+        <regions>
+            <region name="menu" />
+            <region name="top" />
+            <region name="center" />
+            <region name="tools" />
+        </regions>
+    </layout>
+    
+    <layout>
+        <name>osivia-demo-blog</name>
+        <uri>/layouts/layout-blog/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-blog/maximized.jsp</uri>
+        <regions>
+            <region name="blog_logo" />
+            <region name="blog_title" />
+            <region name="blog_tools" />
+            <region name="col1" />
+            <region name="col2" />
+        </regions>
+    </layout>
+
+</layouts>

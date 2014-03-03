@@ -1,0 +1,857 @@
+body {
+	background-image: url('images/background.png');
+	background-repeat: no-repeat;
+	background-position: 125px 40px;
+	margin: 0;
+	padding: 0;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 13px;
+	color: #333333;
+}
+
+header, section, footer {
+	margin: 0 40px 20px;
+}
+
+a {
+	color: #333333;
+    text-decoration: none;
+    
+}
+
+a:HOVER {
+	color: #4DA0AB;
+	text-decoration: underline;
+}
+
+a.osivia-link-external {
+    background-image: url("images/lien-externe.png");
+    background-repeat: no-repeat;
+    background-position: right 2px;
+    padding-right: 15px;
+}
+
+p, ul, li {
+	margin: 0;
+    line-height: 150%;
+}
+
+img.icon {
+    vertical-align: top;
+}
+
+
+/* Toolbar */
+
+#toolbar {
+	position: fixed;
+	z-index: 3;
+	width: 100%;
+}
+
+#toolbar .toolbar-content {
+    padding: 0 40px;
+    background-color: #EFF0EB;
+}
+
+#toolbar a, #toolbar p {
+	font-weight: normal;
+}
+
+#toolbar a:HOVER {
+    background-color: #4DA0AB;
+    color: #FFFFFF;
+}
+
+#toolbar .toolbar-menu ul {
+	background-color: #EFF0EB;
+    z-index: 3;
+}
+
+#toolbar hr {
+	background-color: #C5C7C6;
+}
+
+#toolbar a#refresh-page {
+    background-image: url('images/actualiser.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 24px;
+    width: 24px;
+    padding: 0 3px;
+}
+
+#msglogout {
+	
+   	position: absolute;
+    background-color: #EFF0EB;
+   	visibility: visible;
+   	display: none;
+   	top: 10%;
+   	left: 44%;
+   	padding: 1%;
+   	z-index: 201; 
+   	text-align: center; 
+   	color: rgb(47, 68, 86); 
+   	border: 2px solid rgb(47, 68, 86); 
+
+}
+
+/* Header */
+
+header {
+	padding-top: 25px;
+	padding-bottom: 42px;
+}
+
+#banner {
+	position: relative;
+    height: 80px;
+    overflow: hidden;
+    -webkit-transition: 0.2s all;
+    -moz-transition: 0.2s all;
+    -ms-transition: 0.2s all;
+    transition: 0.2s all;
+}
+
+
+#logo .osivia {
+	position: absolute;
+	left: 20px;
+    bottom: 2px;
+    display: block;
+    background-image: url("images/logo.png");
+    height: 70px;
+    width: 254px;
+}
+
+#logo .barre {
+	position: absolute;
+    left: 280px;
+    right: 0;
+    bottom: 8px;
+    display: block;
+	background-image: url("images/barre.png");
+    background-repeat: repeat-x;
+    height: 16px;
+    width: auto;
+}
+
+
+#search {
+	position: absolute;
+    top: 8px;
+    right: 0;
+    text-align: center;
+    z-index: 1;
+}
+
+#search, #search input, #search button {
+    font-size: 11px;
+}
+
+
+nav {
+    position: absolute;    
+    left: 40px;
+    right: 40px;
+    width: auto;
+    z-index: 2;
+}
+
+nav.fixed {
+	position: fixed;
+	top: 25px;
+}
+
+#tabs {
+	position: relative;
+}
+
+#tabs a {
+	line-height: 42px;
+    padding: 0 16px;
+}
+
+#tabs, #tabs a, #tabs ul.sub-menu a {
+	background-color: #EFF0EB;
+    color: #333333;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+#tabs .current a, #tabs a:HOVER, #tabs ul.sub-menu a:HOVER {
+    background-color: #4DA0AB;
+    color: #FFFFFF;
+}
+
+#tabs .dynamic-pages {
+    position: absolute;
+    top: -28px;
+    right: 0;
+    background-color: #FFFFFF;
+}
+
+#tabs .dynamic-page {
+    display: inline-block;
+    background-color: #EFF0EB;
+    border-radius: 12px;
+    margin-left: 5px;
+}
+
+#tabs .dynamic-page.current, #tabs .dynamic-page:HOVER {
+    background-color: #4DA0AB;
+    color: #FFFFFF;
+}
+
+#tabs .dynamic-page a {
+	display: inline-block;
+	background: none;
+	color: inherit;
+	line-height: 24px;
+	padding: 0;
+	margin-left: 12px;
+}
+
+#tabs .dynamic-page a.close {
+    background-image: url("images/croix-noire.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+    padding: 0;
+    margin-left: 8px;
+    margin-right: 12px;
+    height: 10px;
+    width: 10px;
+}
+
+#tabs .dynamic-page.current a.close, #tabs .dynamic-page:HOVER a.close {
+    background-image: url("images/croix-blanche.png");	
+}
+
+
+
+/* Breadcrumb */
+
+#breadcrumb {
+	margin-bottom: 20px;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+
+
+/* Section : menu */
+
+#menu {	
+	position: absolute;
+	border-color: #E5E6DD;
+	border-width: 1px;
+	border-right-style: solid;
+	padding-right: 20px;
+	width: 200px;
+}
+
+#menu .nuxeo-publish-navigation ul {
+	margin: 0 0 0 -10px;
+	padding: 0;
+	list-style: none;
+}
+
+#menu .nuxeo-publish-navigation li {
+    margin: 1px 0;
+}
+
+#menu .nuxeo-publish-navigation ul ul {
+    margin-left: 30px;
+}
+
+#menu .nuxeo-publish-navigation ul a {
+    display: block;
+    font-size: 13px;
+    line-height: 22px;
+    padding: 1px 10px;
+    text-align: left;
+}
+
+#menu .nuxeo-publish-navigation ul a:HOVER {
+    background: #4DA0AB;
+    color: #FFFFFF;
+}
+
+#menu input[type="text"] {
+	max-width: 170px;
+}
+
+#menu #datefrom, #menu #dateto {
+    max-width: 80px;
+}
+
+
+/* Section : search */
+
+#menu.search .search-title {
+	display: block;
+    color: #333333;
+    padding: 0;
+    margin-bottom: 10px;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+#menu.search a.search-title {
+	background-image: url(images/haut.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: 30px;
+    text-decoration: none;
+}
+
+#menu.search .off a.search-title {
+	background-image: url(images/bas.jpg);
+}
+
+#menu.search .off ~ div {
+	display: none;
+}
+
+
+/* Section : content */
+
+section > .content {
+    overflow: hidden;
+	border-color: #E5E6DD;
+    border-width: 1px;
+    border-bottom-style: solid;
+    padding-bottom: 20px;
+}
+
+section > .content.with-menu {
+	margin-left: 240px;
+}
+
+
+#col2 {
+	overflow: hidden;
+}
+
+
+#col3 {
+	float: right;
+	margin-left: 40px;
+	width: 30%;
+}
+
+.home #tools {
+    float: right;
+    margin-left: 40px;
+    width: 300px;
+}
+
+.home #center {
+    overflow: hidden;
+}
+
+.home #left {
+    float: left;
+    margin-right: 40px; 
+    width: 47%;
+}
+
+.home #right {
+    overflow: hidden;
+}
+
+
+.workspace #tools {
+    float: right;
+    margin-left: 40px;
+    width: 300px;
+}
+
+.workspace #center {
+    overflow: hidden;
+}
+
+
+.blog-header {
+    overflow: hidden;
+    background-color: #4DA0AB;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.blog-header #blog_logo {
+    float: left;
+    margin-right: 40px;
+    max-width: 300px;
+}
+
+.blog-header #blog_title {
+    overflow: hidden;
+}
+
+.blog-header #blog_title .blogsite-header-title {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.blog-header #blog_tools {
+    float: right;
+    margin-left: 40px;
+    max-width: 300px;
+    text-align: right;
+}
+
+.blog-header .portlet-container {
+    margin-bottom: 0;
+}
+
+.blog-header #blog_title .portlet-container {
+    margin-bottom: 10px;
+}
+
+.blog-header img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.blog-header #blog_tools img {
+    margin-top: 10px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+section .content .portlet-header {
+    border-color: #4DA0AB;
+    border-width: 2px;
+    border-bottom-style: solid;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+section .content .portlet-titlebar-title {
+    font-size: 24px;
+}
+
+
+/* Portlets */
+
+.portlet-container {
+    margin-bottom: 30px;
+}
+
+#menu .portlet-container {
+    margin-bottom: 10px;
+}
+
+.portlet-header {
+	position: relative;
+}
+
+#menu .portlet-header {
+    margin-bottom: 10px;
+}
+
+.portlet-titlebar-title {
+	display: block;
+	margin-right: 28px;
+}
+
+#menu .portlet-titlebar-title {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #4DA0AB;
+}
+
+.portlet-mode-container {
+   position: absolute;
+   bottom: 10px;
+   right: 0;
+}
+
+#menu .portlet-mode-container {
+    bottom: 1px;
+}
+
+.portlet-mode-container .mode-button {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.portlet-mode-container .mode-button a:HOVER {
+    text-decoration: none;
+}
+
+.portlet-mode-maximized {
+    display: block;
+    background-image: url(images/maximiser.png);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    text-decoration: none;
+}
+
+.portlet-mode-normal {
+    display: block;
+    background-image : url(images/minimiser.png);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    text-decoration: none;
+}
+
+.portlet-close {
+    display: block;
+    background-image : url(images/fermer.png);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    text-decoration: none;
+}
+
+#menu .portlet-mode-maximized, #menu .portlet-mode-normal, #menu .portlet-close {
+    background-size: 16px;
+    width: 16px;
+    height: 16px
+}
+
+
+#services .dyna-window-content {
+    margin: 0;
+}
+
+#services .portlet-content-center {
+    margin-bottom: 20px;
+}
+
+
+.selector-libelle {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 14px;
+    color: #4DA0AB;
+}
+
+
+/* Style de liste minimal */
+
+.nuxeo-list-mini ul {
+    list-style: none;
+}
+
+
+/* Tuiles */
+
+.nuxeo-list-tuile ul, #menu .nuxeo-list-tuile ul {
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+}
+
+.nuxeo-list-tuile li {
+	display: inline-block;
+	overflow: hidden;
+	margin: 0;
+    padding: 0;
+    font-size: 16px;
+    -webkit-transition: 0.1s all;
+    -moz-transition: 0.1s all;
+    -ms-transition: 0.1s all;
+    transition: 0.1s all;
+}
+
+.nuxeo-list-tuile li:HOVER {
+	cursor: pointer;
+    -webkit-transform: scale(0.97) perspective(400px) rotateY(0deg) rotateX(0deg);
+    -moz-transform: scale(0.97) perspective(400px) rotateY(0deg) rotateX(0deg);
+    -ms-transform: scale(0.97) perspective(400px) rotateY(0deg) rotateX(0deg);
+    transform: scale(0.97) perspective(400px) rotateY(0deg) rotateX(0deg);
+}
+
+.nuxeo-list-tuile .tuile {
+	display: table;
+	border-collapse: separate;
+	border-spacing: 5px;
+	margin: 1px;
+	height: 90px;
+	width: 100%;
+	background-color: #4DA0AB;
+	color: #FFFFFF;
+}
+
+.nuxeo-list-tuile .tuile .contenu-tuile {
+    display: table-row;
+}
+
+.nuxeo-list-tuile .tuile .contenu-tuile > div {
+	display: table-cell;
+}
+
+.nuxeo-list-tuile .tuile .contenu-tuile > div > div {
+    max-height: 80px;
+}
+
+.nuxeo-list-tuile .tuile img {
+	max-height: 80px;
+}
+
+.nuxeo-list-tuile .tuile p {
+    padding: 0 5px;
+}
+
+
+.nuxeo-list-tuile .tuile .normal {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.nuxeo-list-tuile .tuile .thumbnail {
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30%;
+}
+
+.nuxeo-list-tuile .tuile .description {
+	width: 100%;
+	vertical-align: middle;
+	padding-left: 10px;
+}
+
+.nuxeo-list-tuile .tuile .background {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.nuxeo-list-tuile .tuile .background p {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nuxeo-list-tuile .tuile .banner {
+	background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.nuxeo-list-tuile .tuile .banner p {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.tuile.gris {
+	background-color: #8F908B;
+}
+
+.tuile.noir {
+    background-color: #333333;
+}
+
+.tuile.vert {
+    background-color: #6EAB53;
+}
+
+.tuile.olive {
+    background-color: #6B7A52;
+}
+
+.tuile.rose {
+    background-color: #EE2365;
+}
+
+
+.tuiles-1 .nuxeo-list-tuile li {    
+    width: 100%;
+    font-size: 14px;
+}
+
+.tuiles-1 .nuxeo-list-tuile .tuile {    
+    height: 50px;
+}
+
+.tuiles-1 .nuxeo-list-tuile .tuile .contenu-tuile > div > div {
+    height: 40px;
+}
+
+
+.tuiles-2 .nuxeo-list-tuile li {	
+	width: 50%;
+}
+
+.tuiles-2 .nuxeo-list-tuile .tuile {    
+    height: 120px;
+}
+
+.tuiles-2 .nuxeo-list-tuile .tuile .contenu-tuile > div > div {
+    max-height: 110px;
+}
+
+
+.tuiles-3 .nuxeo-list-tuile li {
+    width: 33.33%;
+    min-width: 100px;
+}
+
+
+.tuiles-4 .nuxeo-list-tuile li {
+    width: 25%;
+}
+
+
+/* Editorial list */
+
+.nuxeo-list-editorial ul, .nuxeo-list-editorial li {
+    margin: 0;
+    padding: 0;
+}
+
+div.nuxeo-list-editorial ul li {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.nuxeo-list-editorial .description {
+    font-style: italic;
+    font-size: 12px;
+}
+
+.nuxeo-list-editorial .action-link {
+    font-size: 11px;
+}
+
+
+/* Blog */
+
+.blog-post {
+    display: block;
+    margin-bottom: 30px;
+}
+
+.blog-post .blog-post-title {
+    border-color: #4DA0AB;
+    border-width: 2px;
+    border-bottom-style: solid;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;    
+}
+
+.blog-post .blog-post-title a {
+    color: #333333;
+    text-decoration: none;
+}
+
+.blog-post .blog-post-description {
+    font-style: italic;
+}
+
+.blog-post .blog-post-content {
+    margin-top: 10px;
+}
+
+.nuxeo-list-blog ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Workspace list */
+
+.nuxeo-list-workspace ul li {
+	list-style: none;
+}
+
+.nuxeo-list-workspace img {
+	vertical-align: top;
+}
+
+
+/* Slider list */
+
+.nuxeo-list-slider ul li {
+    list-style: none;
+}
+
+
+/* Portlet fichepersonne */
+
+.ligneFichePersonne {
+	height: 3em;
+}
+
+.ligneFichePersonne .nomAttr {
+	font-weight: bold;
+	float:left;
+	width: 15em;
+}
+.ligneFichePersonne .contenu {
+	display: inline-block;
+	padding-left: 1em;
+}
+
+.boutonFichePersonne {
+	display:inline;
+}
+
+
+/* Portlet FAQ */
+
+.nuxeo-faq .nuxeo-docview-note a {
+    text-decoration: underline;
+}
+
+.nuxeo-faq .nuxeo-docview-files a {
+    background-image: url("images/lien-externe.png");
+    background-repeat: no-repeat;
+    background-position: right 2px;
+    padding-right: 15px;
+}
+
+.nuxeo-faq .title {
+    color: #4DA0AB;
+}
+
+.nuxeo-faq .selected {
+    font-weight: bold;
+}
+
+.nuxeo-faq .nuxeo-faq-list {
+    border-style: none;
+    padding: 0;
+}
+
+.nuxeo-faq .nuxeo-faq-list .title {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.nuxeo-faq .nuxeo-faq-list ul {
+    border-left-style: solid;
+    border-width: 1px;
+    border-color: #4DA0AB;    
+    padding: 5px 40px;
+}
+
+.nuxeo-faq .nuxeo-docview-files {
+    border-top-style: solid;
+    border-width: 1px;
+    border-color: #4DA0AB;
+}
+
+.nuxeo-faq .nuxeo-docview-files .title {
+    margin-top: 5px;
+    font-size: 13px;
+}

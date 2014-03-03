@@ -1,0 +1,540 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#body {
+	font: normal small Arial, Helvetica, sans-serif;
+	color: #424242;
+}
+
+form {
+}
+
+fieldset {
+	border: none;
+}
+
+legend {
+	display: none;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	color: #7A7A7A;
+}
+
+h2 {
+	margin-bottom: .5em;
+	font-size: 1.8em;
+}
+
+h3 {
+	margin-bottom: 1em;
+	font-size: 1em;
+}
+
+
+
+
+blockquote, ul, ol {
+	line-height: 1.8em;
+}
+
+p {
+	line-height: 1.2em;
+}
+
+
+
+blockquote {
+}
+
+ul {
+	margin-left: 2em;
+	list-style: square;
+}
+
+ul li {
+}
+
+ol {
+	margin-left: 2em;
+	list-style: lower-roman;
+}
+
+ol li {
+}
+
+hr {
+	visibility: hidden;
+}
+
+
+img {
+	border: none;
+}
+
+#sizer {
+	width: 100%;	
+}
+	
+#expander {
+	position: relative;
+}
+
+#header-container{	
+	width: 100%;
+	height: 155px;
+	background-color:#5c5c5c;
+
+ }
+ 
+ 
+/* Menu */
+
+#header {
+	text-align: center;
+    width: 100%;
+}
+
+.leftTabStep {
+/* 	background-image: url("images/arrow_left.png"); */
+    background-repeat: no-repeat;
+    float: left;
+    height: 25px;
+    margin-right: 5px;
+    margin-top: 8px;
+    width: 25px;
+}
+
+.emptyTabStep {
+	float: left;
+}
+
+.rightTabStep {
+/* 	background-image: url("images/arrow_right.png"); */
+    background-repeat: no-repeat;
+    float: left;
+    height: 25px;
+    margin-left: 5px;
+    margin-top: 8px;
+    width: 25px;
+}
+
+.leftTabStep  a {
+display: block;
+height: 100%;
+width: 100%;	
+}
+
+.rightTabStep   a {
+display: block;
+height: 100%;
+width: 100%;	
+}
+
+/* Fin du sous-menu */
+
+
+#breadcrumb {
+	background-color::#FFFFFF;
+	clear: none;
+}
+
+
+#breadcrumb li {
+	float: left;
+/* 	list-style: url(images/arrow-path.png) circle ; */
+   	margin-left: 0px;
+   	margin-top: 5px;
+   	margin-right: 0px;
+   	padding-right:30px;
+   	position: relative;
+   	top: 0px;
+	white-space: nowrap;
+}
+
+#breadcrumb a {
+	color:#424242;
+	text-decoration: none;
+}
+
+#breadcrumb a:hover {
+	text-decoration: underline;
+	color:#424242;
+}
+
+/* Content */
+
+#content-container {	
+	width: 100%;
+	min-height: 550px;
+	margin-top: 50px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding: 40px 0px 0px 0px;
+}
+
+#error-container {	
+	background:#FFFFFF;
+
+	margin-top: 60px;
+	margin-bottom: 60px;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 20px 20px 20px 20px;
+	text-align: center;
+}
+
+
+/* Footer */
+
+#footer-container {
+	text-align: center;
+	vertical-align: middle;
+	height: 20px;
+	clear: both;
+	width: 100%;
+	margin: 0 auto 2em auto;
+/* 	background: #F7F7F7 url(images/img07-footer.gif) repeat-x; */
+	border: 1px solid #CCCCCC;
+	color: #FFFFFF;
+	
+}
+
+/* Footer > Legal */
+
+#portal-copyright {
+	margin: 0;
+	padding: 8px;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+#portal-copyright a {
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+/* Style pour le portlet */
+
+.marge-left {
+	margin-left: 5.3%;
+}
+
+.marge-right {
+	margin-right: 5.3%;
+}
+
+
+.portlet-content-center {
+	/*padding-top: 10px;
+	padding-bottom: 10px;*/
+}	
+
+.portlet-content-center .ajax-waiting {
+/*     background-image: url("images/waiting24.gif"); */
+    border: 0px;
+    display: block;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -12px;
+    width: 24px;
+    height: 24px;
+}
+
+
+
+
+.portlet-action-link	{
+ 	padding-bottom: 2px;
+    text-align: right;
+}
+
+.portlet-action-link a {
+	margin-left: 10px;
+ 	margin-top: 2px;	
+}
+
+
+.portlet-close a {
+    display: block;
+    height: 100%;
+    width: 100%;	
+}
+
+.portlet-close:hover {
+	text-decoration: none;
+}
+
+
+
+
+/* Style des portlets */
+
+.portlet-container.no-margin-top	{
+	margin-top: 0px;
+}
+	
+.portlet-container.no-margin-bottom	{
+	margin-bottom: 0px;
+}
+
+
+
+.annonce .portlet-titlebar-left {		
+	background-color: #00CCFF;
+	width: 9px;
+   	height: 25px;
+   	min-width: 9px;
+   	background-image: none;
+
+}
+
+ .annonce .portlet-titlebar-center {	
+	height: 25px;
+	font-size: 1em;
+	font-weight: bold;
+	background-color: #00CCFF;
+	background-image: none;
+
+}
+
+.annonce .portlet-titlebar-right {
+	background-color: #00CCFF;
+	width: 9px;
+   	height: 25px;
+   	min-width: 9px;	
+   	background-image: none;
+
+}
+
+/* Annonce Actualité */
+
+.annonce-container {
+	width: 100%;
+	float: left;	
+	margin-left: -33px;
+	height: 136px;
+	overflow-y: hidden;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.image-container {
+	float: left;
+	heigth: 100%;
+	vertical-align: middle;
+	padding-left: 20px;
+    padding-right: 20px;
+	margin-top: 2px;
+}
+
+.actualite-image {
+	height: 80px;
+	width: 80px;
+	border: 3px solid #959595;
+}
+
+.contenu-container {
+	float: left;
+	height: 100%;	
+	max-width: 75%;
+}
+
+.resume-annonce {
+	color: #5f693f;
+	font-weight: 600;
+}
+
+.date-annonce {
+	color: #13525a;	
+}
+
+.lien-annonce {
+	position: relative;
+	bottom: 0px;
+	float: right;
+	top: 95px;
+	color: #13525a;
+	text-decoration: none;
+}
+
+hr.ligne-actualite {
+	width: 100%;
+	height: 2px;
+	backgroud-color: #7d8554;
+	float: left;
+	visibility: visible;
+}
+
+
+/* Fin Annonce Actualité */
+
+/* Encadrés accueil et niveau 1 */
+
+.encadre {
+	width: 50%;
+	float: left; 
+	border: 2px solid #9e9e9e;
+	height: 150px;
+	padding-left: 8px;
+    width: 48%;
+}
+
+.encadre-titre {
+	color: #b4b4b4;
+	text-transform: uppercase;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.encadre-resume {
+	color: #575757;
+	font-size: 24px;
+}
+
+.encadre-note {
+	height: 70%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 95%;
+}
+
+.encadre-lien-container {
+	float: right;
+}
+
+.encadre-lien {
+	text-decoration: none;
+	color: #9fa58c;
+	font-weight: 700;
+}
+
+/* Fin Encadrés accueil et niveau 1 */
+
+#layout-table	{ 
+table-layout:fixed;
+}
+
+#regionCentre div.portlet-container table {
+	background : #FFFFFF ;
+}
+
+#regionCol1 {	
+
+}
+
+#regionCol1 div.portlet-container table {
+	/*background : #CDCDCD ;*/
+}
+
+
+#regionCol2 {	
+
+
+}
+
+#regionCol2 div.portlet-container table {
+	background : #FFFFFF ;
+}
+
+
+#regionCol3 {	
+
+
+}
+
+#regionCol3 div.portlet-container table {
+	background : #FFFFFF ;
+}
+
+
+#regionMaximized div.portlet-container table {
+	background : #FFFFFF ;
+
+
+}
+
+
+
+
+
+div.separateur	{
+clear:both;
+display:block;
+height:0;
+margin-bottom:0;
+margin-left:0;
+margin-right:0;
+margin-top:0;
+padding-bottom:0;
+padding-left:0;
+padding-right:0;
+padding-top:0;
+width:100%;
+}
+
+.portlet-list {
+	margin:0px;
+	padding:0px;
+	list-style-type: none;
+}
+
+.item0 {
+	background-color: #EDEFF4;
+	padding: 2px;
+}
+
+.item1 {
+	/*background-color: #FFFFFF;*/
+	padding: 2px;
+}
+
+
+
+/* Redéfinition de style : FAQ, RSS, CMS */
+
+
+div.nuxeo-faq ul.nuxeo-faq-list li.selected	{
+	background-image: url(images/selected.gif);
+    background-position: 0 6px;
+    background-repeat: no-repeat;
+}
+
+
+.portlet-rss-img {
+	float: left; 
+	width: 90px; 
+	margin-right: 2px; 
+	margin-bottom: 2px;
+}
+
+div.nuxeo-docview-metadata {
+    background-color: #EAEAEA;
+    color: #666666;
+    float: right;
+    margin-left: 8px;
+    padding: 4px;
+    width: 30%;
+}
+
+#msglogout {
+	
+   	position: absolute;
+    background-color: #DCDDDC;
+   	visibility: visible;
+   	display: none;
+   	left: 44%;
+   	top: 10%;
+   	padding: 1%;
+   	z-index: 201; 
+   	text-align: center; 
+   	color: rgb(47, 68, 86); 
+   	border: 2px solid lightgray; 
+
+}

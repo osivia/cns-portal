@@ -1,0 +1,71 @@
+.portlet-container {
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+/* Pas d'espacement pour le fragment du logo */
+.logo {
+	margin-bottom: 0em;
+}
+
+/* Titre niveau 1 */
+div.titrepage div.portlet-content-center {
+/* 	background: url("../images/bg-titre.png") left 12px repeat-x; */
+	margin-top: 10px;
+	width: 100%;
+	padding-bottom: 1em;
+}
+
+div.titrepage div.portlet-content-center div {
+	display: inline;
+}
+
+div.titrepage div.portlet-content-center div.nuxeo-fragment-view {
+	color: #0069AA;
+	padding: 0 2px 1px 35px;
+/* 	background: white url("../images/pictos-fleche-orange2.gif") left bottom */
+/* 		no-repeat; */
+	font-size: 180%;
+	font-weight: bold;
+	font-family: Arial, Verdana, sans-serif;
+}
+
+/* Titre de fragment */
+span.portlet-titlebar-title {
+	width: 100%;
+	color: #353535;
+	font-weight: bold;
+	padding: 0 10px 1px 17px;
+/* 	background: url("../images/pictos-fleche-orange.gif") no-repeat 0 3px; */
+	display: inline;
+	font-size: 140%;
+	border-bottom: 1px dotted #888;
+}
+
+/* visuel sur les puces */
+.nuxeo-fragment-view ul {
+	margin-bottom: 5px;
+	margin-left: 13px;
+	font-size: 100%;
+}
+
+.nuxeo-fragment-view li {
+	display: block;
+	color: #353535;
+/* 	background: url("../images/puce-carregris.gif") left 2px no-repeat; */
+	padding-left: 10px;
+	margin: 5px 15px 0 0;
+}
+
+/* lien */
+.nuxeo-fragment-view a {
+	color: rgb(0, 105, 170);
+}
+
+a.greta-link-external {
+/* 	background: transparent url(../images/lienExterne.gif) center left */
+/* 		no-repeat; */
+	padding-left: 15px;
+	margin-left: 15px;
+}
+

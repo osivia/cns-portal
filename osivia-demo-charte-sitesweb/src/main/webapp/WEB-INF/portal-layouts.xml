@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layouts>
+	
+
+	<layout>
+		<name>sitesweb-layout-2cols</name>
+		<uri>/layouts/sitesweb-layout-2cols/index.jsp</uri>
+		<uri state="maximized">/layouts/sitesweb-layout-2cols/maximized.jsp</uri> 
+		<regions>
+			<region name="headBand"/>
+			<region name="virtual"/>
+			<region name="colNav"/>
+			<region name="blocTitre"/>
+			<region name="colMilieu"/>
+		</regions>
+	</layout>
+	
+	<layout>
+		<name>sitesweb-layout-3cols</name>
+		<uri>/layouts/sitesweb-layout-3cols/index.jsp</uri>
+		<uri state="maximized">/layouts/sitesweb-layout-3cols/maximized.jsp</uri> 
+		<regions>
+			<region name="headBand"/>
+			<region name="virtual"/>
+			<region name="colNav"/>
+			<region name="blocTitre"/>
+			<region name="colGauche"/>
+			<region name="colDroite"/>
+		</regions>
+	</layout>
+
+</layouts>
