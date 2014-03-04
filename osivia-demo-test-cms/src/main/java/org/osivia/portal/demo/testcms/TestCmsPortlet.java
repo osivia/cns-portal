@@ -1,12 +1,16 @@
 package org.osivia.portal.demo.testcms;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletConfig;
 import javax.portlet.PortletException;
 import javax.portlet.PortletMode;
 import javax.portlet.PortletRequestDispatcher;
+import javax.portlet.PortletURL;
 import javax.portlet.RenderMode;
 import javax.portlet.RenderRequest;
 import javax.portlet.RenderResponse;
@@ -15,6 +19,7 @@ import javax.portlet.WindowState;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.nuxeo.ecm.automation.client.model.Document;
+import org.osivia.portal.api.urls.IPortalUrlFactory;
 import org.osivia.portal.api.windows.PortalWindow;
 import org.osivia.portal.api.windows.WindowFactory;
 
@@ -38,6 +43,11 @@ public class TestCmsPortlet extends CMSPortlet {
     private static final String VIEW_JSP = "/WEB-INF/jsp/view.jsp";
     /** Admin JSP path. */
     private static final String ADMIN_JSP = "/WEB-INF/jsp/admin.jsp";
+    
+
+
+    /** URL service     */
+    private IPortalUrlFactory portalUrlFactory;
 
 
     /**
@@ -47,6 +57,17 @@ public class TestCmsPortlet extends CMSPortlet {
         super();
     }
 
+    
+    @Override
+    public void init(PortletConfig config) throws PortletException {
+        super.init(config);
+
+
+        this.portalUrlFactory = (IPortalUrlFactory) this.getPortletContext().getAttribute("UrlService");
+        if (this.portalUrlFactory == null) {
+            throw new PortletException("Cannot start TestPortlet due to service unavailability");
+        }
+    }
 
     /**
      * Admin view display.
@@ -73,6 +94,8 @@ public class TestCmsPortlet extends CMSPortlet {
 
         String displayLiveVersion = window.getProperty("osivia.cms.displayLiveVersion");
         req.setAttribute("displayLiveVersion", displayLiveVersion);
+        
+        
 
         String scope = window.getProperty("osivia.cms.scope");
         req.setAttribute("scope", scope);
@@ -149,15 +172,30 @@ public class TestCmsPortlet extends CMSPortlet {
 
                 if (note != null) {
                     note = nuxeoCtrl.transformHTMLContent(note);
-                }
+                }   else
+                    note = "";
 
                 request.setAttribute("note", note);
 
-                PortletRequestDispatcher dispatcher = this.getPortletContext().getRequestDispatcher(VIEW_JSP);
-                dispatcher.include(request, response);
+                Map<String, String> windowProperties = new HashMap<String, String>();
+               Map<String, String> params = new HashMap<String, String>();
+ 
+               PortletURL openPopupURL = response.createRenderURL();
+
+               String openPopup = this.portalUrlFactory.adaptPortalUrlToPopup(nuxeoCtrl.getPortalCtx(), openPopupURL.toString(), IPortalUrlFactory.POPUP_URL_ADAPTER_OPEN );
+               request.setAttribute("openPopup", openPopup);
+                
+                PortletURL closePopupURL = response.createRenderURL();
+                String closePopup = nuxeoCtrl.getPortalUrlFactory().adaptPortalUrlToPopup(nuxeoCtrl.getPortalCtx(), closePopupURL.toString(), IPortalUrlFactory.POPUP_URL_ADAPTER_CLOSE );
+                request.setAttribute("closePopup", closePopup);
+
 
                 // Standard menu bar items
                 nuxeoCtrl.insertContentMenuBarItems();
+                
+                
+                PortletRequestDispatcher dispatcher = this.getPortletContext().getRequestDispatcher(VIEW_JSP);
+                dispatcher.include(request, response);
 
 
             } else {

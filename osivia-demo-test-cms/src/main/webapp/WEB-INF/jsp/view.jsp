@@ -21,6 +21,8 @@
 
 <%
 String note = (String) renderRequest.getAttribute("note");
+String closePopupURL = (String) renderRequest.getAttribute("closePopup");
+String openPopupURL = (String) renderRequest.getAttribute("openPopup");
 %>
 
 			
@@ -28,6 +30,26 @@ String note = (String) renderRequest.getAttribute("note");
 	<div class="nuxeo-docview-note">			
 		<%= note %>
 	</div>
+	
+	 <div class="nuxeo-docview-close">            
+        <a href="<%= closePopupURL %>">close</a>
+    </div>
+    
+         <div class="nuxeo-docview-open">            
+        <a class="fancyframe_refresh " href="<%= openPopupURL %>">open</a>
+    </div>
+    
+    
+    
+    <form method="post" action="<portlet:actionURL/>">
+        <input type="submit" name="close"  value="close popup"> <br/>
+    </form>
+    
+
+    
+    
+    
+    
 
 </div>
 

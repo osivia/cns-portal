@@ -30,34 +30,10 @@
 			<keywords>Portlet,Nuxeo, Test, CMS</keywords>
         </portlet-info>
         
-        
-        <supported-public-render-parameter>osivia.cms.path</supported-public-render-parameter>
-		<supported-public-render-parameter>osivia.cms.pageScope</supported-public-render-parameter>        
-        <supported-public-render-parameter>osivia.cms.itemRelPath</supported-public-render-parameter>        
-        <supported-public-render-parameter>osivia.cms.contentPath</supported-public-render-parameter> 
+
         
 	</portlet>
 	
-	
-	<public-render-parameter>
-        <identifier>osivia.cms.path</identifier>
-        <name>osivia.cms.path</name>
-	</public-render-parameter>	
-	
-	<public-render-parameter>
-        <identifier>osivia.cms.pageScope</identifier>
-        <name>osivia.cms.pageScope</name>
-	</public-render-parameter>	
-	
-		
-	<public-render-parameter>
-        <identifier>osivia.cms.itemRelPath</identifier>
-        <name>osivia.cms.itemRelPath</name>
-	</public-render-parameter>	
-		
-		<public-render-parameter>
-        <identifier>osivia.cms.contentPath</identifier>
-        <name>osivia.cms.contentPath</name>
-	</public-render-parameter>	
+
 	
  </portlet-app>

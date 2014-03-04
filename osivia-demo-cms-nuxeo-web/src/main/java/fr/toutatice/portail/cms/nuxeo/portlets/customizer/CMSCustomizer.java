@@ -196,10 +196,9 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         Document doc = (Document) ctx.getDoc();
 
         Map<String, String> windowProperties = new HashMap<String, String>();
-        windowProperties.put("osivia.cms.scope", ctx.getScope());
         windowProperties.put("osivia.cms.uri", doc.getPath());
-        windowProperties.put("osivia.hideTitle", "1");
         windowProperties.put("osivia.ajaxLink", "1");
+        windowProperties.put("osivia.hideDecorators", "1");
         windowProperties.put("osivia.cms.displayLiveVersion", ctx.getDisplayLiveVersion());
 
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
