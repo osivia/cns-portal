@@ -28,9 +28,10 @@ public final class Formatter {
      * 
      * @param document Nuxeo document
      * @param locale current locale, may be null
+     * @param time display time indicator
      * @return formatted date
      */
-    public static String formatDate(Document document, Locale locale) {
+    public static String formatDate(Document document, Locale locale, boolean time) {
         if (document == null) {
             return null;
         }
@@ -48,7 +49,12 @@ public final class Formatter {
             return StringUtils.EMPTY;
         }
 
-        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.LONG, checkedLocale);
+        DateFormat dateFormat;
+        if (time) {
+            dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT, checkedLocale);
+        } else {
+            dateFormat = DateFormat.getDateInstance(DateFormat.LONG, checkedLocale);
+        }
         return dateFormat.format(date);
     }
 

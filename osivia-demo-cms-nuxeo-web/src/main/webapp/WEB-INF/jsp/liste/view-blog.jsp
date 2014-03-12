@@ -1,7 +1,6 @@
 <%@ page import="fr.toutatice.portail.cms.nuxeo.api.NuxeoController"%>
 <%@ page import="java.util.Locale"%>
 <%@ page import="org.nuxeo.ecm.automation.client.model.Document"%>
-<%@ page import="org.nuxeo.ecm.automation.client.model.PropertyMap"%>
 <%@ page import="org.osivia.portal.demo.customizer.Formatter"%>
 
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet"%>
@@ -11,24 +10,24 @@
 
 
 <%
+// Nuxeo controller
 NuxeoController nuxeoController = (NuxeoController) request.getAttribute("ctx");
-
+// Current Nuxeo document
 Document document = (Document) request.getAttribute("doc");
-PropertyMap properties = document.getProperties();
 
 // Locale
 Locale locale = request.getLocale();
 
 // Date
-pageContext.setAttribute("date", Formatter.formatDate(document, locale));
+pageContext.setAttribute("date", Formatter.formatDate(document, locale, false));
 // Titre
-pageContext.setAttribute("titre", properties.getString("dc:title"));
+pageContext.setAttribute("titre", document.getTitle());
 // Lien du titre
 pageContext.setAttribute("lien", nuxeoController.getLink(document).getUrl());
 // Description
-pageContext.setAttribute("description", properties.getString("dc:description"));
+pageContext.setAttribute("description", document.getString("dc:description"));
 // Contenu
-pageContext.setAttribute("contenu", properties.getString("webp:content"));
+pageContext.setAttribute("contenu", document.getString("webp:content"));
 
 %>
 

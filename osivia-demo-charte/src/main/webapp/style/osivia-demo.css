@@ -768,6 +768,55 @@ div.nuxeo-list-editorial ul li {
 }
 
 
+/* Forum */
+
+.nuxeo-list-forum ul, .nuxeo-list-forum ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nuxeo-list-forum .thread {
+	position: relative;
+	display: block;
+	overflow: hidden;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #E5E6DD;
+	margin-bottom: 10px;
+}
+
+.nuxeo-list-forum .thread-vignette {
+	float: left;
+	margin-right: 20px;
+}
+
+.nuxeo-list-forum .thread-content {
+	overflow: hidden;
+	margin: 10px 20px;
+}
+
+.nuxeo-list-forum .thread-title {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.nuxeo-list-forum .thread-description {
+	font-style: italic;
+}
+
+.nuxeo-list-forum .thread-date {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    padding-left: 120px;
+    text-align: right;
+}
+
+
+
+
+
 /* Workspace list */
 
 .nuxeo-list-workspace ul li {
@@ -854,4 +903,14 @@ div.nuxeo-list-editorial ul li {
 .nuxeo-faq .nuxeo-docview-files .title {
     margin-top: 5px;
     font-size: 13px;
+}
+
+
+/* Portlet forum */
+
+.forum .attachment a {
+	background-image: url("images/lien-externe.png");
+    background-repeat: no-repeat;
+    background-position: right 2px;
+    padding-right: 15px;
 }

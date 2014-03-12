@@ -13,6 +13,7 @@ import org.nuxeo.ecm.automation.client.model.Documents;
 import org.osivia.portal.core.cms.CMSException;
 import org.osivia.portal.core.cms.CMSHandlerProperties;
 import org.osivia.portal.core.cms.CMSItemType;
+import org.osivia.portal.core.cms.CMSPublicationInfos;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 
 import fr.toutatice.portail.cms.nuxeo.api.NuxeoQueryFilter;
@@ -46,6 +47,10 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     public static final String SCHEMAS_SLIDER = "dublincore, common, toutatice, annonce, note";
     /** "slider" list template. */
     public static final String STYLE_SLIDER = "slider";
+    /** "forum" schemas. */
+    public static final String SCHEMAS_FORUM = "dublincore, common, toutatice";
+    /** "forum" list template. */
+    public static final String STYLE_FORUM = "forum";
 
 
     /**
@@ -78,6 +83,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         templates.add(new ListTemplate(STYLE_TUILE, "Tuile [visuel, description]", SCHEMAS_TUILE));
         templates.add(new ListTemplate(STYLE_PICTUREBOOK, "Livre d'images", SCHEMAS_PICTUREBOOK));
         templates.add(new ListTemplate(STYLE_BLOG, "Blog", SCHEMAS_BLOG));
+        templates.add(new ListTemplate(STYLE_FORUM, "Forum", SCHEMAS_FORUM));
         templates.add(new ListTemplate(STYLE_WORKSPACE, "Workspace", SCHEMAS_WORKSPACE));
         templates.add(new ListTemplate(STYLE_SLIDER, "Carrousel", SCHEMAS_SLIDER));
         return templates;
@@ -153,11 +159,19 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         }
 
         if ("FaqFolder".equals(doc.getType()) || "Question".equals(doc.getType())) {
-            return this.getCMSFaqPlayer(ctx);
+            return this.getFaqPlayer(ctx);
         }
 
         if ("BlogPost".equals(doc.getType())) {
             return this.getCMSMinimalPlayer(ctx);
+        }
+
+        if ("Forum".equals(doc.getType())) {
+            return this.getForumPlayer(ctx);
+        }
+
+        if ("Thread".equals(doc.getType())) {
+            return this.getForumThreadPlayer(ctx);
         }
 
         return super.getCMSPlayer(ctx);
@@ -170,7 +184,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
      * @param ctx CMS service context
      * @return Wiki player
      */
-    public CMSHandlerProperties getWikiPlayer(CMSServiceCtx ctx) {
+    private CMSHandlerProperties getWikiPlayer(CMSServiceCtx ctx) {
         Document doc = (Document) ctx.getDoc();
 
         Map<String, String> windowProperties = new HashMap<String, String>();
@@ -192,7 +206,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
      * @param ctx CMS service context
      * @return FAQ player
      */
-    public CMSHandlerProperties getCMSFaqPlayer(CMSServiceCtx ctx) {
+    private CMSHandlerProperties getFaqPlayer(CMSServiceCtx ctx) {
         Document doc = (Document) ctx.getDoc();
 
         Map<String, String> windowProperties = new HashMap<String, String>();
@@ -210,12 +224,80 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
 
     /**
+     * Get forum player.
+     * 
+     * @param ctx CMS context
+     * @return CMS forum player
+     * @throws CMSException
+     */
+    private CMSHandlerProperties getForumPlayer(CMSServiceCtx ctx) throws CMSException {
+        Map<String, String> windowProperties = new HashMap<String, String>();
+        windowProperties.put("osivia.nuxeoRequest", this.createForumPlayerRequest(ctx));
+        windowProperties.put("osivia.cms.style", CMSCustomizer.STYLE_FORUM);
+        windowProperties.put("osivia.hideDecorators", "1");
+        windowProperties.put("theme.dyna.partial_refresh_enabled", "false");
+        windowProperties.put("osivia.cms.scope", ctx.getScope());
+        windowProperties.put("osivia.hideTitle", "1");
+        windowProperties.put("osivia.ajaxLink", "1");
+        windowProperties.put("osivia.cms.displayLiveVersion", ctx.getDisplayLiveVersion());
+
+        CMSHandlerProperties linkProps = new CMSHandlerProperties();
+        linkProps.setWindowProperties(windowProperties);
+        linkProps.setPortletInstance("toutatice-portail-cms-nuxeo-viewListPortletInstance");
+
+        return linkProps;
+    }
+
+    /**
+     * Utility method used to create forum player request.
+     * 
+     * @param cmsContext CMS context
+     * @return request
+     * @throws CMSException
+     */
+    private String createForumPlayerRequest(CMSServiceCtx cmsContext) throws CMSException {
+        // Document
+        Document document = (Document) cmsContext.getDoc();
+        // Publication infos
+        CMSPublicationInfos pubInfos = this.getCmsService().getPublicationInfos(cmsContext, document.getPath());
+
+        StringBuilder request = new StringBuilder();
+        request.append("ecm:parentId = '").append(pubInfos.getLiveId()).append("' ");
+        request.append("AND ecm:primaryType = 'Thread' ");
+        request.append("ORDER BY dc:modified DESC ");
+        return request.toString();
+    }
+
+
+    /**
+     * Get forum thread player.
+     * 
+     * @param ctx CMS context
+     * @return forum thread player
+     */
+    private CMSHandlerProperties getForumThreadPlayer(CMSServiceCtx cmsContext) {
+        Document document = (Document) cmsContext.getDoc();
+
+        Map<String, String> windowProperties = new HashMap<String, String>();
+        windowProperties.put("osivia.cms.uri", document.getPath());
+        windowProperties.put("osivia.hideDecorators", "1");
+        windowProperties.put("osivia.ajaxLink", "1");
+
+        CMSHandlerProperties linkProps = new CMSHandlerProperties();
+        linkProps.setWindowProperties(windowProperties);
+        linkProps.setPortletInstance("osivia-services-forum-portletInstance");
+
+        return linkProps;
+    }
+
+
+    /**
      * Get minimal player.
      * 
      * @param ctx CMS service context
      * @return minimal player
      */
-    public CMSHandlerProperties getCMSMinimalPlayer(CMSServiceCtx ctx) {
+    private CMSHandlerProperties getCMSMinimalPlayer(CMSServiceCtx ctx) {
         Document doc = (Document) ctx.getDoc();
 
         Map<String, String> windowProperties = new HashMap<String, String>();
@@ -270,6 +352,10 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         customizedTypes.add(new CMSItemType("WikiBook", true, true, true, false, true, Arrays.asList("WikiSection"), null));
         // Blog post
         customizedTypes.add(new CMSItemType("WikiSection", true, true, true, false, true, Arrays.asList("WikiSection"), null));
+        // Forum
+        customizedTypes.add(new CMSItemType("Forum", true, true, false, true, true, Arrays.asList("Thread"), "/default/templates/forum"));
+        // Forum thread
+        customizedTypes.add(new CMSItemType("Thread", false, false, false, true, true, new ArrayList<String>(0), null));
 
         return customizedTypes;
     }

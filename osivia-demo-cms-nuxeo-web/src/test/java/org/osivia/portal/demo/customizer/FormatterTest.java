@@ -56,26 +56,31 @@ public class FormatterTest {
         Calendar calendar = GregorianCalendar.getInstance();
         calendar.set(2014, Calendar.FEBRUARY, 10);
         Date createdDate = calendar.getTime();
-        calendar.set(2014, Calendar.FEBRUARY, 12);
+        calendar.set(2014, Calendar.FEBRUARY, 12, 14, 50);
         Date modifiedDate = calendar.getTime();
 
         // Test 1 : no properties
-        formattedDate = Formatter.formatDate(this.documentMock, Locale.FRANCE);
+        formattedDate = Formatter.formatDate(this.documentMock, Locale.FRANCE, false);
         Assert.assertEquals("", formattedDate);
 
         // Test 2 : no modified Date
         this.properties.set("dc:created", createdDate);
-        formattedDate = Formatter.formatDate(this.documentMock, Locale.FRANCE);
+        formattedDate = Formatter.formatDate(this.documentMock, Locale.FRANCE, false);
         Assert.assertEquals("10 février 2014", formattedDate);
 
         // Test 3 : with modified Date
         this.properties.set("dc:modified", modifiedDate);
-        formattedDate = Formatter.formatDate(this.documentMock, Locale.FRANCE);
+        formattedDate = Formatter.formatDate(this.documentMock, Locale.FRANCE, false);
         Assert.assertEquals("12 février 2014", formattedDate);
 
         // Test 4 : without locale
-        formattedDate = Formatter.formatDate(this.documentMock, null);
+        formattedDate = Formatter.formatDate(this.documentMock, null, false);
         Assert.assertTrue(StringUtils.isNotBlank(formattedDate));
+
+        // Test 5 : with time
+        this.properties.set("dc:modified", modifiedDate);
+        formattedDate = Formatter.formatDate(this.documentMock, Locale.FRANCE, true);
+        Assert.assertEquals("12 février 2014 14:50", formattedDate);
     }
 
 }
