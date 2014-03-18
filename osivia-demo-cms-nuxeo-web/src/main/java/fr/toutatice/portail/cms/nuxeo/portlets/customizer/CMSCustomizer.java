@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2014 OSIVIA (http://www.osivia.com) 
+ * (C) Copyright 2014 OSIVIA (http://www.osivia.com)
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Lesser General Public License
@@ -36,7 +36,7 @@ import fr.toutatice.portail.cms.nuxeo.portlets.list.DocumentQueryCommand;
 
 /**
  * CMS customizer.
- * 
+ *
  * @author Cédric Krommenhoek
  * @see DefaultCMSCustomizer
  */
@@ -70,7 +70,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Constructor.
-     * 
+     *
      * @param ctx portlet context
      */
     public CMSCustomizer(PortletContext ctx) {
@@ -80,7 +80,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get search schema.
-     * 
+     *
      * @return search schema
      */
     public static String getSearchSchema() {
@@ -90,7 +90,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get list of list templates.
-     * 
+     *
      * @return list of list templates
      */
     public static List<ListTemplate> getListTemplates() {
@@ -189,13 +189,15 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
             return this.getForumThreadPlayer(ctx);
         }
 
-        return super.getCMSPlayer(ctx);
+        CMSHandlerProperties player = super.getCMSPlayer(ctx);
+        player.getWindowProperties().put("osivia.cms.hideMetaDatas", "1");
+        return player;
     }
 
 
     /**
      * Get Wiki player.
-     * 
+     *
      * @param ctx CMS service context
      * @return Wiki player
      */
@@ -217,7 +219,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get FAQ player.
-     * 
+     *
      * @param ctx CMS service context
      * @return FAQ player
      */
@@ -240,7 +242,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get forum player.
-     * 
+     *
      * @param ctx CMS context
      * @return CMS forum player
      * @throws CMSException
@@ -264,7 +266,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Utility method used to create forum player request.
-     * 
+     *
      * @param cmsContext CMS context
      * @return request
      * @throws CMSException
@@ -285,7 +287,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get forum thread player.
-     * 
+     *
      * @param ctx CMS context
      * @return forum thread player
      */
@@ -307,7 +309,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get minimal player.
-     * 
+     *
      * @param ctx CMS service context
      * @return minimal player
      */
@@ -348,7 +350,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get customized CMS item types.
-     * 
+     *
      * @return customized CMS item types
      */
     private List<CMSItemType> getCustomizedCMSItemTypes() {
@@ -367,7 +369,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         // Blog post
         customizedTypes.add(new CMSItemType("WikiSection", true, true, true, false, true, Arrays.asList("WikiSection"), null));
         // Forum
-        customizedTypes.add(new CMSItemType("Forum", true, true, false, true, true, Arrays.asList("Thread"), "/default/templates/forum"));
+        customizedTypes.add(new CMSItemType("Forum", true, true, false, true, true, Arrays.asList("Thread"), null));
         // Forum thread
         customizedTypes.add(new CMSItemType("Thread", false, false, false, true, true, new ArrayList<String>(0), null));
 

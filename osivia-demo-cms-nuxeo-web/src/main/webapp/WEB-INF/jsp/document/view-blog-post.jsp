@@ -17,7 +17,7 @@ PropertyMap properties = document.getProperties();
 Locale locale = request.getLocale();
 
 // Date
-pageContext.setAttribute("date", Formatter.formatDate(document, locale));
+pageContext.setAttribute("date", Formatter.formatDate(document, locale, true));
 // Titre
 pageContext.setAttribute("titre", properties.getString("dc:title"));
 // Description
