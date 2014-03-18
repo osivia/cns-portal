@@ -252,7 +252,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         windowProperties.put("osivia.hideDecorators", "1");
         windowProperties.put("theme.dyna.partial_refresh_enabled", "false");
         windowProperties.put(Constants.WINDOW_PROP_SCOPE, ctx.getScope());
-        windowProperties.put("osivia.hideTitle", "1");
         windowProperties.put("osivia.ajaxLink", "1");
         windowProperties.put(Constants.WINDOW_PROP_VERSION, ctx.getDisplayLiveVersion());
 
