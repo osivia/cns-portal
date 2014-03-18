@@ -33,6 +33,7 @@ import javax.portlet.WindowState;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.nuxeo.ecm.automation.client.model.Document;
+import org.osivia.portal.api.Constants;
 import org.osivia.portal.api.urls.IPortalUrlFactory;
 import org.osivia.portal.api.windows.PortalWindow;
 import org.osivia.portal.api.windows.WindowFactory;
@@ -100,7 +101,7 @@ public class TestCmsPortlet extends CMSPortlet {
 
         PortalWindow window = WindowFactory.getWindow(req);
 
-        String nuxeoPath = window.getProperty("osivia.cms.uri");
+        String nuxeoPath = window.getProperty(Constants.WINDOW_PROP_URI);
         if (nuxeoPath == null) {
             nuxeoPath = "";
         }
@@ -131,7 +132,7 @@ public class TestCmsPortlet extends CMSPortlet {
         if ("admin".equals(req.getPortletMode().toString()) && req.getParameter("modifierPrefs") != null) {
             PortalWindow window = WindowFactory.getWindow(req);
 
-            window.setProperty("osivia.cms.uri", req.getParameter("nuxeoPath"));
+            window.setProperty(Constants.WINDOW_PROP_URI, req.getParameter("nuxeoPath"));
 
             if (req.getParameter("scope") != null && req.getParameter("scope").length() > 0) {
                 window.setProperty("osivia.cms.scope", req.getParameter("scope"));
@@ -172,7 +173,7 @@ public class TestCmsPortlet extends CMSPortlet {
             PortalWindow window = WindowFactory.getWindow(request);
 
 
-            String nuxeoPath = window.getProperty("osivia.cms.uri");
+            String nuxeoPath = window.getProperty(Constants.WINDOW_PROP_URI);
 
 
             if (nuxeoPath != null) {
