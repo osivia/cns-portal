@@ -107,12 +107,12 @@ public class TestCmsPortlet extends CMSPortlet {
         }
         req.setAttribute("nuxeoPath", nuxeoPath);
 
-        String displayLiveVersion = window.getProperty("osivia.cms.displayLiveVersion");
+        String displayLiveVersion = window.getProperty(Constants.WINDOW_PROP_VERSION);
         req.setAttribute("displayLiveVersion", displayLiveVersion);
         
         
 
-        String scope = window.getProperty("osivia.cms.scope");
+        String scope = window.getProperty(Constants.WINDOW_PROP_SCOPE);
         req.setAttribute("scope", scope);
 
         req.setAttribute("nuxeoCtrl", nuxeoCtrl);
@@ -135,16 +135,16 @@ public class TestCmsPortlet extends CMSPortlet {
             window.setProperty(Constants.WINDOW_PROP_URI, req.getParameter("nuxeoPath"));
 
             if (req.getParameter("scope") != null && req.getParameter("scope").length() > 0) {
-                window.setProperty("osivia.cms.scope", req.getParameter("scope"));
-            } else if (window.getProperty("osivia.cms.scope") != null) {
-                window.setProperty("osivia.cms.scope", null);
+                window.setProperty(Constants.WINDOW_PROP_SCOPE, req.getParameter("scope"));
+            } else if (window.getProperty(Constants.WINDOW_PROP_SCOPE) != null) {
+                window.setProperty(Constants.WINDOW_PROP_SCOPE, null);
             }
 
 
             if (req.getParameter("displayLiveVersion") != null && req.getParameter("displayLiveVersion").length() > 0) {
-                window.setProperty("osivia.cms.displayLiveVersion", req.getParameter("displayLiveVersion"));
-            } else if (window.getProperty("osivia.cms.displayLiveVersion") != null) {
-                window.setProperty("osivia.cms.displayLiveVersion", null);
+                window.setProperty(Constants.WINDOW_PROP_VERSION, req.getParameter("displayLiveVersion"));
+            } else if (window.getProperty(Constants.WINDOW_PROP_VERSION) != null) {
+                window.setProperty(Constants.WINDOW_PROP_VERSION, null);
             }
 
             res.setPortletMode(PortletMode.VIEW);

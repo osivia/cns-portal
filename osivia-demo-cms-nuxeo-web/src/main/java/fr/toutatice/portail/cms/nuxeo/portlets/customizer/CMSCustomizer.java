@@ -113,7 +113,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         Document doc = (Document) ctx.getDoc();
 
         Map<String, String> windowProperties = new HashMap<String, String>();
-        windowProperties.put("osivia.cms.displayLiveVersion", ctx.getDisplayLiveVersion());
+        windowProperties.put(Constants.WINDOW_PROP_VERSION, ctx.getDisplayLiveVersion());
         windowProperties.put("osivia.cms.hideMetaDatas", "1");
         windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
         windowProperties.put("osivia.cms.publishPathAlreadyConverted", "1");
@@ -228,7 +228,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
         windowProperties.put("osivia.ajaxLink", "1");
         windowProperties.put("osivia.hideDecorators", "1");
-        windowProperties.put("osivia.cms.displayLiveVersion", ctx.getDisplayLiveVersion());
+        windowProperties.put(Constants.WINDOW_PROP_VERSION, ctx.getDisplayLiveVersion());
 
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
@@ -251,10 +251,10 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         windowProperties.put("osivia.cms.style", CMSCustomizer.STYLE_FORUM);
         windowProperties.put("osivia.hideDecorators", "1");
         windowProperties.put("theme.dyna.partial_refresh_enabled", "false");
-        windowProperties.put("osivia.cms.scope", ctx.getScope());
+        windowProperties.put(Constants.WINDOW_PROP_SCOPE, ctx.getScope());
         windowProperties.put("osivia.hideTitle", "1");
         windowProperties.put("osivia.ajaxLink", "1");
-        windowProperties.put("osivia.cms.displayLiveVersion", ctx.getDisplayLiveVersion());
+        windowProperties.put(Constants.WINDOW_PROP_VERSION, ctx.getDisplayLiveVersion());
 
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
@@ -316,12 +316,12 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         Document doc = (Document) ctx.getDoc();
 
         Map<String, String> windowProperties = new HashMap<String, String>();
-        windowProperties.put("osivia.cms.scope", ctx.getScope());
+        windowProperties.put(Constants.WINDOW_PROP_SCOPE, ctx.getScope());
         windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
         windowProperties.put("osivia.hideTitle", "1");
         windowProperties.put("osivia.ajaxLink", "1");
         windowProperties.put("osivia.cms.hideMetaDatas", "1");
-        windowProperties.put("osivia.cms.displayLiveVersion", ctx.getDisplayLiveVersion());
+        windowProperties.put(Constants.WINDOW_PROP_VERSION, ctx.getDisplayLiveVersion());
 
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
