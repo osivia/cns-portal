@@ -933,3 +933,12 @@ div.nuxeo-list-editorial ul li {
 	padding-left: 10px;
     margin-bottom: 5px;
 }
+
+
+/* Document view */
+
+.nuxeo-docview-file .description, .nuxeo-docview-note .description {
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
