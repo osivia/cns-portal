@@ -16,11 +16,10 @@ header, section, footer {
 a {
 	color: #333333;
     text-decoration: none;
-    
 }
 
 a:HOVER {
-	color: #4DA0AB;
+    color: #4DA0AB;
 	text-decoration: underline;
 }
 
@@ -540,6 +539,13 @@ section .content .portlet-titlebar-title {
 }
 
 
+/* View document. */
+
+.nuxeo-docview-main a {
+	color: #4DA0AB;
+}
+
+
 /* Style de liste minimal */
 
 .nuxeo-list-mini ul {
@@ -734,6 +740,15 @@ div.nuxeo-list-editorial ul li {
 
 /* Blog */
 
+.nuxeo-list-blog ul {
+    margin: 0;
+    padding: 0;
+}
+
+.nuxeo-list-blog a {
+    color: #4DA0AB;
+}
+
 .blog-post {
     display: block;
     margin-bottom: 30px;
@@ -760,11 +775,6 @@ div.nuxeo-list-editorial ul li {
 
 .blog-post .blog-post-content {
     margin-top: 10px;
-}
-
-.nuxeo-list-blog ul {
-    margin: 0;
-    padding: 0;
 }
 
 
@@ -856,18 +866,14 @@ div.nuxeo-list-editorial ul li {
 }
 
 
+/* Portlet Wiki */
+
+.portlet-wiki a {
+	color: #4DA0AB;
+}
+
+
 /* Portlet FAQ */
-
-.nuxeo-faq .nuxeo-docview-note a {
-    text-decoration: underline;
-}
-
-.nuxeo-faq .nuxeo-docview-files a {
-    background-image: url("images/lien-externe.png");
-    background-repeat: no-repeat;
-    background-position: right 2px;
-    padding-right: 15px;
-}
 
 .nuxeo-faq .title {
     color: #4DA0AB;
@@ -894,10 +900,21 @@ div.nuxeo-list-editorial ul li {
     padding: 5px 40px;
 }
 
+.nuxeo-faq .nuxeo-docview-note a {
+	color: #4DA0AB;
+}
+
 .nuxeo-faq .nuxeo-docview-files {
     border-top-style: solid;
     border-width: 1px;
     border-color: #4DA0AB;
+}
+
+.nuxeo-faq .nuxeo-docview-files a {
+    background-image: url("images/lien-externe.png");
+    background-repeat: no-repeat;
+    background-position: right 2px;
+    padding-right: 15px;
 }
 
 .nuxeo-faq .nuxeo-docview-files .title {
