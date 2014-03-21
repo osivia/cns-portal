@@ -287,8 +287,8 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get forum thread player.
-     *
-     * @param ctx CMS context
+     * 
+     * @param cmsContext CMS context
      * @return forum thread player
      */
     private CMSHandlerProperties getForumThreadPlayer(CMSServiceCtx cmsContext) {

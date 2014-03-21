@@ -5,7 +5,7 @@
    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee  http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
    version="2.4">
    
-    <display-name>Charte du démonstrateur du site wev OSIVIA</display-name>
+    <display-name>Charte du démonstrateur du site web OSIVIA</display-name>
     
     <jsp-config>
         <taglib>
