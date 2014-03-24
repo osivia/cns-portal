@@ -22,7 +22,7 @@
 					</c:forEach>
 	
 					$('deco').update(delog);
-					//window.setTimeout("portalLogout()",3000)
+					window.setTimeout("portalLogout()",3000)
 
 					}
 				function portalLogout()
