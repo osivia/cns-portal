@@ -139,7 +139,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
             // URL de la forme: /purl/url
             String[] ident = requestPath.split("/");
 
-            String clause = " ecm:primaryType = 'WikiSection' and webc:url = '" + ident[2] + "'";
+            String clause = " (ecm:primaryType = 'WikiBook' or ecm:primaryType = 'WikiSection') and webc:url = '" + ident[2] + "'";
             String filteredClause = NuxeoQueryFilter.addPublicationFilter(clause, false);
 
             String savedScope = cmsCtx.getScope();
@@ -287,7 +287,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get forum thread player.
-     * 
+     *
      * @param cmsContext CMS context
      * @return forum thread player
      */
