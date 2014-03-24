@@ -538,3 +538,12 @@ div.nuxeo-docview-metadata {
    	border: 2px solid lightgray; 
 
 }
+
+#toolbar a#refresh-page {
+    background-image: url('../images/actualiser.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 24px;
+    width: 24px;
+    padding: 0 3px;
+}
