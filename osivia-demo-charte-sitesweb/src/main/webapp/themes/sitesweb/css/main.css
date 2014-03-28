@@ -87,8 +87,13 @@ img {
 	width: 100%;
 	height: 155px;
 	background-color:#5c5c5c;
-
- }
+}
+ 
+#toolbar .toolbar-fixed-content {
+	left: inherit;
+	right: inherit;
+    width: 984px;
+}
  
  
 /* Menu */

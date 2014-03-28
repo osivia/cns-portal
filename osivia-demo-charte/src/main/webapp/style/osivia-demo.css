@@ -42,13 +42,7 @@ img.icon {
 
 /* Toolbar */
 
-#toolbar {
-	position: fixed;
-	z-index: 3;
-	width: 100%;
-}
-
-#toolbar .toolbar-content {
+#toolbar .toolbar-fixed-content {
     padding: 0 40px;
     background-color: #EFF0EB;
 }
@@ -81,7 +75,6 @@ img.icon {
 }
 
 #msglogout {
-	
    	position: absolute;
     background-color: #EFF0EB;
    	visibility: visible;
@@ -93,13 +86,12 @@ img.icon {
    	text-align: center; 
    	color: rgb(47, 68, 86); 
    	border: 2px solid rgb(47, 68, 86); 
-
 }
+
 
 /* Header */
 
 header {
-	padding-top: 25px;
 	padding-bottom: 42px;
 }
 
