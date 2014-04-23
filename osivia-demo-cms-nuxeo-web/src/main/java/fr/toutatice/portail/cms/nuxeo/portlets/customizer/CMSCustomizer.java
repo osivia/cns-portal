@@ -84,7 +84,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
      * @return search schema
      */
     public static String getSearchSchema() {
-        return "dublincore, common, file, uid";
+        return "dublincore, common, file, uid, toutatice";
     }
 
 
