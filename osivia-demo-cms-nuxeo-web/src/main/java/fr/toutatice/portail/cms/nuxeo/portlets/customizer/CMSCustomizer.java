@@ -17,6 +17,7 @@ package fr.toutatice.portail.cms.nuxeo.portlets.customizer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -332,19 +333,26 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     }
 
 
+    private Map<String, CMSItemType> customCMSItemTypes;
+    
     /**
      * {@inheritDoc}
      */
     @Override
     public Map<String, CMSItemType> getCMSItemTypes() {
-        Map<String, CMSItemType> cmsItemTypes = super.getCMSItemTypes();
+        
+        if (this.customCMSItemTypes == null) {
 
-        List<CMSItemType> customizedTypes = this.getCustomizedCMSItemTypes();
-        for (CMSItemType customizedType : customizedTypes) {
-            cmsItemTypes.put(customizedType.getName(), customizedType);
+            customCMSItemTypes = new LinkedHashMap<String, CMSItemType>();
+            customCMSItemTypes.putAll(super.getCMSItemTypes());
+
+            List<CMSItemType> customizedTypes = this.getCustomizedCMSItemTypes();
+            for (CMSItemType customizedType : customizedTypes) {
+                customCMSItemTypes.put(customizedType.getName(), customizedType);
+            }
         }
 
-        return cmsItemTypes;
+        return this.customCMSItemTypes;
     }
 
 
