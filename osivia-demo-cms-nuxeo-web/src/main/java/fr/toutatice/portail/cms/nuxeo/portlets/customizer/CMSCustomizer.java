@@ -33,6 +33,7 @@ import org.osivia.portal.core.cms.CMSPublicationInfos;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 
 import fr.toutatice.portail.cms.nuxeo.api.NuxeoQueryFilter;
+import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
 import fr.toutatice.portail.cms.nuxeo.portlets.list.DocumentQueryCommand;
 
 /**
@@ -69,6 +70,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     public static final String STYLE_FORUM = "forum";
 
 
+    public NavigationItemAdapter navigationItemAdapter;
     /**
      * Constructor.
      *
@@ -89,6 +91,15 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     }
 
 
+    public NavigationItemAdapter getNavigationItemAdapter() {
+        if( navigationItemAdapter == null){
+            navigationItemAdapter = new CustomNavigationItemAdapter(getPortletCtx(), this, getCmsService());
+        }
+        
+        return navigationItemAdapter;
+    }
+
+    
     /**
      * Get list of list templates.
      *

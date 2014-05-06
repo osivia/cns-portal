@@ -14,9 +14,13 @@
  */
 package fr.toutatice.portail.cms.nuxeo.portlets.customizer;
 
+import java.util.Map;
+
 import javax.portlet.PortletContext;
 
+import org.apache.commons.lang.StringUtils;
 import org.nuxeo.ecm.automation.client.model.Document;
+import org.osivia.portal.core.cms.CMSItem;
 
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
 
@@ -41,15 +45,28 @@ public class CustomNavigationItemAdapter extends NavigationItemAdapter {
     }
 
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    protected boolean isNavigable(Document doc) {
-        if ((doc.getType().equals("WikiBook")) || (doc.getType().equals("WikiSection"))) {
-            return true;
-        }
-        return super.isNavigable(doc);
-    }
 
+    public void adaptPublishSpaceNavigationItem(CMSItem publishSpaceNavigationItem, CMSItem publishSpaceItem) {
+        super.adaptPublishSpaceNavigationItem(publishSpaceNavigationItem, publishSpaceItem);
+        Document doc = (Document) publishSpaceNavigationItem.getNativeItem();
+        Map<String, String> properties = publishSpaceNavigationItem.getProperties();
+        
+
+        // juste pour tester les themes
+        // A supprimer quand administrable dans Nuxeo
+        
+        if("Workspace".equals(doc.getType()))   {
+
+            if(StringUtils.endsWith(doc.getPath(), "espace-theme-site-web"))
+                properties.put("theme", "osivia-sitesweb-theme");
+        }
+        
+        if("Folder".equals(doc.getType()))   {
+            if(StringUtils.endsWith(doc.getPath(), "theme-defaut"))
+                properties.put("theme", "osivia-demo-charte");            
+        }
+
+
+    }
+    
 }
