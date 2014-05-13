@@ -139,42 +139,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         return linkProps;
     }
 
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Map<String, String> parseCMSURL(CMSServiceCtx cmsCtx, String requestPath, Map<String, String> requestParameters) throws Exception {
-        Map<String, String> cmsCommandProperties = new HashMap<String, String>();
-
-        if (requestPath.startsWith("/purl/")) {
-            // URL de la forme: /purl/url
-            String[] ident = requestPath.split("/");
-
-            String clause = " (ecm:primaryType = 'WikiBook' or ecm:primaryType = 'WikiSection') and webc:url = '" + ident[2] + "'";
-            String filteredClause = NuxeoQueryFilter.addPublicationFilter(clause, false);
-
-            String savedScope = cmsCtx.getScope();
-            cmsCtx.setScope("superuser_context");
-            try {
-                Documents documents = (Documents) this.getCmsService().executeNuxeoCommand(cmsCtx, new DocumentQueryCommand(filteredClause));
-
-                if (documents.size() != 1) {
-                    throw new CMSException(CMSException.ERROR_NOTFOUND);
-                } else {
-                    cmsCommandProperties.put("cmsPath", documents.get(0).getPath());
-                }
-            } finally {
-                cmsCtx.setScope(savedScope);
-            }
-        } else {
-            cmsCommandProperties = super.parseCMSURL(cmsCtx, requestPath, requestParameters);
-        }
-
-        return cmsCommandProperties;
-    }
-
-
     /**
      * {@inheritDoc}
      */
