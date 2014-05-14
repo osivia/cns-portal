@@ -109,12 +109,12 @@
             <type>war</type>
         </dependency>
 
-        <dependency>
-            <groupId>toutatice-portail.distribution</groupId>
-            <artifactId>toutatice-portail-distribution</artifactId>
-            <version>${toutatice-cms.version}</version>
-            <type>zip</type>
-        </dependency>
+		<dependency>
+				<groupId>toutatice-portail.cms</groupId>
+				<artifactId>toutatice-portail-cms-nuxeo-distribution</artifactId>
+				<version>${toutatice-cms.version}</version>
+				<type>zip</type>
+		</dependency>
 
     </dependencies>
 
@@ -155,9 +155,9 @@
                                 <configuration>
                                     <artifactItems>
                                         <artifactItem>
-                                            <groupId>toutatice-portail.distribution</groupId>
-                                            <artifactId>toutatice-portail-distribution</artifactId>
-                                            <version>${toutatice.cms.distribution.version}</version>
+											<groupId>toutatice-portail.cms</groupId>
+											<artifactId>toutatice-portail-cms-nuxeo-distribution</artifactId>
+											<version>${toutatice-cms.version}</version>
                                             <type>zip</type>
                                             <overWrite>true</overWrite>
                                             <outputDirectory>${project.build.directory}/toutatice-distribution</outputDirectory>
