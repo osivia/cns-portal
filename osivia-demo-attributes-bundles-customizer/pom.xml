@@ -30,14 +30,7 @@
             <version>${jboss.portal.version}</version>
             <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>toutatice-portail.cms</groupId>
-            <artifactId>toutatice-portail-cms-nuxeo-api</artifactId>
-            <version>${osivia-portal.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
+  
 
     </dependencies>
 

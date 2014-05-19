@@ -14,18 +14,5 @@
     <description>Méthodes utilitaires des portlets du démonstrateur du portail OSIVIA</description>
 
 
-    <dependencies>
-
-        <dependency>
-            <groupId>toutatice-portail.cms</groupId>
-            <artifactId>toutatice-portail-cms-nuxeo-api</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.nuxeo.ecm.automation</groupId>
-            <artifactId>nuxeo-automation-client</artifactId>
-        </dependency>
-
-    </dependencies>
 
 </project> 
