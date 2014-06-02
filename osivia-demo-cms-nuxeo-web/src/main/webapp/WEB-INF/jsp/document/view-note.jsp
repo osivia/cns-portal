@@ -10,8 +10,6 @@ Document document = (Document) request.getAttribute("doc");
 
 // Description
 pageContext.setAttribute("description", document.getString("dc:description"));
-// Note content
-pageContext.setAttribute("note", document.getString("note:note"));
 
 %>
 

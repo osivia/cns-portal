@@ -348,9 +348,9 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         // Blog post
         customizedTypes.add(new CMSItemType("BlogPost", false, false, false, true, true, new ArrayList<String>(0), null));
         // Wiki book
-        customizedTypes.add(new CMSItemType("WikiBook", true, true, true, false, true, Arrays.asList("WikiSection"), null));
+        customizedTypes.add(new CMSItemType("WikiBook", true, true, true, true, true, Arrays.asList("WikiSection"), null));
         // Blog post
-        customizedTypes.add(new CMSItemType("WikiSection", true, true, true, false, true, Arrays.asList("WikiSection"), null));
+        customizedTypes.add(new CMSItemType("WikiSection", true, true, true, true, true, Arrays.asList("WikiSection"), null));
         // Forum
         customizedTypes.add(new CMSItemType("Forum", true, true, false, true, true, Arrays.asList("Thread"), null));
         // Forum thread

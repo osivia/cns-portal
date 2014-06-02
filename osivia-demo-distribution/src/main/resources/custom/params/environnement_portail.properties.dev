@@ -9,6 +9,9 @@ nuxeo.navigationSchemas=wcm_navigation
 #affichage des infos de debug dans les portlets
 #nuxeo.debugHtml=1
 
+#Temps de timeout des portlets (10 minutes pour pouvoir débugger)
+portlets.maxExecutionDelay=600
+
 
 #forcer le cache des portlets (UNIQUEMENT EN DEBUG !!!!)
 #portlets.expirationSecs=120
