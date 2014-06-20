@@ -951,3 +951,12 @@ div.nuxeo-list-editorial ul li {
 	margin-bottom: 10px;
 }
 
+/* Avatars */
+
+.avatarIcon {
+	height: 25px;
+}
+
+.avatarTiny {
+	height: 50px;
+}

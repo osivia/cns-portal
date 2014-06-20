@@ -16,17 +16,24 @@
             <unpack>false</unpack>
             <scope>runtime</scope>
             <includes>
+                <!-- demo -->
                 <include>${groupId}:osivia-demo-attributes-bundles-customizer:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-charte:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-charte-sitesweb:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-regions-customizer:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-cms-nuxeo-web:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-test-cms:war:${project.version}</include>
+                <!-- collab tools -->
                 <include>org.osivia.services:osivia-services-wiki:war:${osivia-services-wiki.version}</include>
                 <include>org.osivia.services:osivia-services-forum:war:${osivia-services-forum.version}</include>
                 <include>org.osivia.services:osivia-contact-portlet:war:${osivia-services-contact.version}</include>
-                <include>toutatice-services.identite:toutatice-identite-fichepersonne-portail:war:${fichepersonne.version}</include>
                 <include>toutatice-services.faq:toutatice-faq-portail:war:${toutatice-faq.version}</include>
+                <!-- identity & user mgt tools -->
+                <include>org.osivia.services.directory:osivia-services-directory:war:${osivia-services-directory.version}</include>
+                <include>toutatice-services.identite:toutatice-identite-fichepersonne-portail:war:${fichepersonne.version}</include>
+                <include>toutatice-services.identite:toutatice-identite-gestiongroupes-portail:war:${gestiongroupe.version}</include>
+                <include>toutatice-services.identite:toutatice-identite-ficheprofil-portail:war:${ficheprofil.version}</include>
+                
             </includes>
         </dependencySet>
         
@@ -35,7 +42,8 @@
             <unpack>false</unpack>
             <scope>runtime</scope>
             <includes>
-                <include>org.osivia.portal.identity:osivia-portal-identity-sso-lib:jar:3.0.4</include>
+                <include>org.osivia.portal.identity:osivia-portal-identity-sso-lib:jar:${identity-sso.version}</include>
+                <include>outils.ldap:toutatice-annuaire:jar:${toutatice.annuaire.version}</include>
                 <include>org.osivia.services:osivia-services-java-melody-integration:jar:${osivia-services-java-melody-integration.version}</include>
             </includes>
         </dependencySet>

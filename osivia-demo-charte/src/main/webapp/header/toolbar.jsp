@@ -30,17 +30,18 @@ function portalLogout() {
     <div class="toolbar-fixed-content">
         <c:choose>
             <c:when test="${empty requestScope['osivia.toolbar.principal']}">
-                <!-- Login -->
-                <a href="${requestScope['osivia.toolbar.loginURL']}"><is:getProperty key="LOGIN" /></a>
+                <!-- User bar -->
+                <c:out value="${requestScope['osivia.toolbar.userContent']}" escapeXml="false" />
+                
             </c:when>
     
             <c:otherwise>
                 <!-- Administration -->
                 <c:out value="${requestScope['osivia.toolbar.administrationContent']}" escapeXml="false" />
-    
-                <!-- Logout -->
-                <a href="#" onclick="callLogout();">${requestScope['osivia.toolbar.principal'].name} - <is:getProperty key="LOGOUT" /></a>
-    
+                
+                <!-- User bar -->
+                <c:out value="${requestScope['osivia.toolbar.userContent']}" escapeXml="false" />
+        			
                 <!-- Refresh page -->
                 <a id="refresh-page" href="${requestScope['osivia.toolbar.refreshPageURL']}" title='<is:getProperty key="REFRESH_PAGE" />'>&nbsp;</a>
             </c:otherwise>

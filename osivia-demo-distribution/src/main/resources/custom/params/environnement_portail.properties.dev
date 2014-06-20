@@ -28,7 +28,6 @@ status.active=true
 # Rendu des portlets en "div"
 portlets.rendering=div
 
-
 # LDAP
 # Base DN utilisateurs
 ldap.users.base.dn=ou=users,dc=osivia,dc=org
@@ -43,15 +42,15 @@ ldap.base=dc=osivia,dc=org
 fichePersonne.deleteSurchageWhenUpdatePwd=false
 
 # Roles applicatifs du portlet fichePersonne
-fichePersonne.roleAdministrateur=fichePersonne_ADM
-fichePersonne.roleRazMdp=fichePersonne_RAZMDP
+fichePersonne.roleAdministrateur=userprofile_ADM
+fichePersonne.roleRazMdp=userprofile_ADM
 
 ficheEtablissement.roleAdministrateur=ficheEtablissement_ADM
 
 gestionapplications.roleAdministrateur=gestionAppli_ADM
-gestiongroupes.roleAdministrateur=gestionGroupe_ADM
+gestiongroupes.roleAdministrateur=groups_ADM
 gestionorganisations.roleAdministrateur=gestionOrganisation_ADM
-gestionpersonnes.roleAdministrateur=gestionPersonne_ADM
+gestionpersonnes.roleAdministrateur=userprofile_ADM
 
 #rechercheapplication.roleAdministrateur=rechercheAppli_ADM
 #rechercheprofil.roleAdministrateur=rechercheProfil_ADM
@@ -59,3 +58,4 @@ gestionpersonnes.roleAdministrateur=gestionPersonne_ADM
 activationcompte.job=/home/portal/ldapOmatic/jobs.xml
 actiationcompte.variables=/home/portal/ldapOmatic/variables.xml
 
+ficheProfil.roleAdministrateur=userprofile_ADM

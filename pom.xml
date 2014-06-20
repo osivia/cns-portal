@@ -4,19 +4,32 @@
 
     <groupId>org.osivia.demo</groupId>
     <artifactId>osivia-demo-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Demonstrateur OSIVIA - Parent</name>
 
 
 	<properties>
-		<toutatice.version>3.2.3</toutatice.version>
-		<toutatice-faq.version>3.1</toutatice-faq.version>
-		<osivia-services-wiki.version>1.1-RC11</osivia-services-wiki.version>
-		<osivia-services-forum.version>1.0-RC2</osivia-services-forum.version>
-		<osivia-services-contact.version>1.0-RC4</osivia-services-contact.version>
-		<fichepersonne.version>2.0.2.osivia-RC3</fichepersonne.version>
+        <!-- socle -->
+		<toutatice.version>3.3.0-SNAPSHOT</toutatice.version>
+        
+        <!-- collab tools -->
+        <toutatice-faq.version>3.1</toutatice-faq.version>
+        <osivia-services-wiki.version>1.1-RC11</osivia-services-wiki.version>
+        <osivia-services-forum.version>1.1-SNAPSHOT</osivia-services-forum.version>
+        <osivia-services-contact.version>1.0-RC4</osivia-services-contact.version>        
+
+        <!-- identity & user mgt tools -->
+        <toutatice.annuaire.version>2.2.1-osivia-SNAPSHOT</toutatice.annuaire.version>
+        <osivia-services-directory.version>1.0.0-SNAPSHOT</osivia-services-directory.version>
+		<fichepersonne.version>3.0-osivia-SNAPSHOT</fichepersonne.version>
+        <ficheprofil.version>3.0-osivia-SNAPSHOT</ficheprofil.version>
+        <gestiongroupe.version>3.0-osivia-SNAPSHOT</gestiongroupe.version>
+        <identity-sso.version>3.0.4</identity-sso.version>
+        
+        <!-- admin tools -->
 		<osivia-services-java-melody-integration.version>1.0-RC2</osivia-services-java-melody-integration.version>
+
 	</properties>
 
 
