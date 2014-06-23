@@ -11,7 +11,7 @@
 
 	<properties>
         <!-- socle -->
-		<toutatice.version>3.3.0-beta1</toutatice.version>
+		<toutatice.version>3.3.0-SNAPSHOT</toutatice.version>
         
         <!-- collab tools -->
         <toutatice-faq.version>3.1</toutatice-faq.version>
