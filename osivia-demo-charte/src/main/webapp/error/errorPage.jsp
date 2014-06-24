@@ -36,9 +36,7 @@
 <meta content="text">
 <meta http-equiv="default-style" content="main_css">
 
-<link rel="stylesheet" href="/osivia-portal-custom-web-assets/common-css/common.css" type="text/css">
-<link rel="stylesheet" href="/osivia-portal-custom-web-assets/common-css/toolbar.css" type="text/css">
-<link rel="stylesheet" href="/osivia-portal-custom-web-assets/common-css/tabs.css" type="text/css">
+<link rel="stylesheet" href="/osivia-portal-custom-web-assets/style/common.css" type="text/css">
 <link rel="stylesheet" id="main_css" href="/osivia-demo-charte/style/osivia-demo.css" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="/osivia-demo-charte/style/images/favicon/favicon.ico">
 </head>

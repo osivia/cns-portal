@@ -9,17 +9,17 @@
     <meta charset="UTF-8">
     <meta content="text">
     <meta http-equiv="default-style" content="main_css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     
     <p:headerContent />
     <p:theme themeName="osivia-demo-charte" />
 </head>
 
-<body>
-
+<body class="with-drawer">
     <!-- Barre d'outils -->
     <p:region regionName="toolbar" />
 
-    <header>
+    <header class="container-fluid">
         <!-- Bannière -->
         <div id="banner">
             <!-- Logo -->
@@ -30,38 +30,48 @@
         </div>
 
         <!-- Onglets -->
-        <nav>
-            <p:region regionName="tabs" />
-        </nav>
+        <p:region regionName="tabs" />
     </header>
-    
-    <section>
-        <!-- Notifications -->
-        <p:region regionName="notifications" />
-    
-        <!-- Menu -->
-        <p:region regionName="menu" />
-    
-        <!-- Content -->
-        <div class="content with-menu">
-            <!-- Breadcrumb -->
-            <p:region regionName="breadcrumb" />
+        
+    <div class="wrapper-outer">
+        <div class="wrapper-inner">
+            <section class="container-fluid">
+                <!-- Notifications -->
+                <p:region regionName="notifications" />
             
-            <!-- Top -->
-            <p:region regionName="top" />
+                <div class="row">
+                    <!-- Menu -->
+                    <div id="drawer">
+                        <div class="col-sm-3">
+                            <p:region regionName="menu" />
+                        </div>
+                    </div>
             
-            <div class="workspace">
-                <p:region regionName="tools" />
-                
-                <p:region regionName="center" />
-            </div>
+                    <!-- Content -->
+                    <div class="col-sm-9">
+                        <!-- Breadcrumb -->
+                        <p:region regionName="breadcrumb" />
+                        
+                        <!-- Top -->
+                        <p:region regionName="top" />
+                        
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <p:region regionName="center" />
+                            </div>
+                            
+                            <div class="col-sm-4 hidden-xs">
+                                <p:region regionName="tools" />
+                            </div>                    
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-    
+    </div>
+        
     <!-- Footer -->
-    <footer>
-        <p:region regionName="footer" />
-    </footer>
+    <footer class="container-fluid"></footer>
     
     <!-- AJAX scripts -->
     <p:region regionName="AJAXScripts" />

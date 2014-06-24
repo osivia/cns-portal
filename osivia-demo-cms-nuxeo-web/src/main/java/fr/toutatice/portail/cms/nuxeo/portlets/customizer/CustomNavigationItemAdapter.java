@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2014 OSIVIA (http://www.osivia.com) 
+ * (C) Copyright 2014 OSIVIA (http://www.osivia.com)
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Lesser General Public License
@@ -24,9 +24,10 @@ import org.osivia.portal.core.cms.CMSItem;
 
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
 
+
 /**
  * Custom navigation item adapter.
- * 
+ *
  * @author Cédric Krommenhoek
  * @see NavigationItemAdapter
  */
@@ -34,7 +35,7 @@ public class CustomNavigationItemAdapter extends NavigationItemAdapter {
 
     /**
      * Constructor.
-     * 
+     *
      * @param portletCtx portlet context
      * @param customizer default CMS customizer
      * @param cmsService CMS service

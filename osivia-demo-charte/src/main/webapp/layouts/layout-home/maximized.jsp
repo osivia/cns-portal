@@ -9,17 +9,17 @@
     <meta charset="UTF-8">
     <meta content="text">
     <meta http-equiv="default-style" content="main_css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     
     <p:headerContent />
     <p:theme themeName="osivia-demo-charte" />
 </head>
 
 <body>
-
     <!-- Barre d'outils -->
     <p:region regionName="toolbar" />
 
-    <header>
+    <header class="container-fluid">
         <!-- Bannière -->
         <div id="banner">
             <!-- Logo -->
@@ -30,26 +30,21 @@
         </div>
 
         <!-- Onglets -->
-        <nav>
-            <p:region regionName="tabs" />
-        </nav>
+        <p:region regionName="tabs" />
     </header>
     
-    <section>
+    <section class="container-fluid">
         <!-- Notifications -->
         <p:region regionName="notifications" />
 
-        <!-- Content -->
-        <div class="content">
-            <p:region regionName="tools" />
-            <p:region regionName="maximized" />
-        </div>
+        <!-- Top -->
+        <p:region regionName="top" />
+
+        <p:region regionName="maximized" />
     </section>
     
     <!-- Footer -->
-    <footer>
-        <p:region regionName="footer" />
-    </footer>
+    <footer></footer>
     
     <!-- AJAX scripts -->
     <p:region regionName="AJAXScripts" />

@@ -9,6 +9,20 @@
     <portlet>
         <portlet-name>osivia-demo-regions-customizerPortlet</portlet-name>
         <portlet-class>org.osivia.portal.demo.customizer.RegionsCustomizerPortlet</portlet-class>
+
+        <init-param>
+            <name>customizer.regions.demo.context</name>
+            <value>/osivia-demo-charte</value>
+        </init-param>
+        <init-param>
+            <name>customizer.regions.demo.sitesweb.context</name>
+            <value>/osivia-demo-charte-sitesweb</value>
+        </init-param>
+        <init-param>
+            <name>customizer.regions.demo.bootstrap.context</name>
+            <value>/osivia-demo-charte-bootstrap</value>
+        </init-param>
+
         <expiration-cache>180</expiration-cache>
 
         <supports>
@@ -19,14 +33,7 @@
             <title>Regions customizer</title>
         </portlet-info>
         
-        <init-param>
-            <name>customizer.regions.demo.context</name>
-            <value>/osivia-demo-charte</value>
-        </init-param>
-        <init-param>
-            <name>customizer.regions.demo-sitesweb.context</name>
-            <value>/osivia-demo-charte-sitesweb</value>
-        </init-param> 
+         
     </portlet>
 
 </portlet-app>

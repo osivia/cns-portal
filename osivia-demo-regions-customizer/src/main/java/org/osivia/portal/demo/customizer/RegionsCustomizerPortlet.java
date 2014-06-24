@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2014 OSIVIA (http://www.osivia.com) 
+ * (C) Copyright 2014 OSIVIA (http://www.osivia.com)
  *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Lesser General Public License
@@ -10,7 +10,6 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- *
  */
 package org.osivia.portal.demo.customizer;
 
@@ -36,10 +35,12 @@ import org.osivia.portal.api.theming.IRenderedRegions;
  */
 public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomizationModule {
 
-    /** "osivia-site-charte" context path init parameter name. */
+    /** "osivia-demo-charte" context path init parameter name. */
     private static final String CHARTE_CONTEXT = "customizer.regions.demo.context";
-    /** "osivia-site-charte-community" context path init parameter name. */
-    private static final String CHARTE_SITESWEB_CONTEXT = "customizer.regions.demo-sitesweb.context";
+    /** "osivia-demo-charte-sitesweb" context path init parameter name. */
+    private static final String CHARTE_SITESWEB_CONTEXT = "customizer.regions.demo.sitesweb.context";
+    /** "osivia-demo-charte-bootstrap" context path init parameter name. */
+    private static final String CHARTE_BOOTSTRAP_CONTEXT = "customizer.regions.demo.bootstrap.context";
     /** Customizer name. */
     private static final String CUSTOMIZER_NAME = "osivia.site.customizer.regions.name";
     /** Customization modules repository attribute name. */
@@ -99,20 +100,21 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
      * {@inheritDoc}
      */
     public void customize(String customizationID, CustomizationContext context) {
-        String charteSitesWeb = this.getInitParameter(CHARTE_SITESWEB_CONTEXT);
         String charteEnt = this.getInitParameter(CHARTE_CONTEXT);
+        String charteSitesWeb = this.getInitParameter(CHARTE_SITESWEB_CONTEXT);
+        String charteBootstrap = this.getInitParameter(CHARTE_BOOTSTRAP_CONTEXT);
 
         Map<String, Object> attributes = context.getAttributes();
         String contextPath = (String) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_CONTEXT_PATH);
-        if (StringUtils.equals(contextPath, charteSitesWeb) || StringUtils.equals(contextPath, charteEnt)) {
+        if (StringUtils.equals(contextPath, charteEnt) || StringUtils.equals(contextPath, charteSitesWeb) || StringUtils.equals(contextPath, charteBootstrap)) {
             IRenderedRegions renderedRegion = (IRenderedRegions) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_RENDERED_REGIONS);
 
             if (StringUtils.equals(contextPath, charteEnt)) {
                 // Customize regions
-                renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
+                // renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
                 renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp");
                 renderedRegion.customizeRenderedRegion("search", "/header/search.jsp");
-                renderedRegion.customizeRenderedRegion("tabs", "/header/tabs.jsp");
+                // renderedRegion.customizeRenderedRegion("tabs", "/header/tabs.jsp");
                 renderedRegion.removeRenderedRegion("footer");
             }
 
