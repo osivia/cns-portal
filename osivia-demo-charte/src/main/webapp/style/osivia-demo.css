@@ -74,14 +74,16 @@ a.osivia-link-external {
 }
 
 
-
-/* Tuiles */
-
-.nuxeo-list-tuile {
-    overflow: hidden;
-}
-
-.nuxeo-list-tuile ul {
-    list-style: none;
-    padding-left: 0;
+#msglogout {
+    position: absolute;
+    background-color: #EFF0EB;
+    visibility: visible;
+    display: none;
+    top: 10%;
+    left: 44%;
+    padding: 1%;
+    z-index: 201; 
+    text-align: center; 
+    color: rgb(47, 68, 86); 
+    border: 2px solid rgb(47, 68, 86); 
 }

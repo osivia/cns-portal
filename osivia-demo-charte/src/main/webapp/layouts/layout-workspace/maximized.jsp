@@ -19,7 +19,7 @@
     <!-- Barre d'outils -->
     <p:region regionName="toolbar" />
 
-    <header class="container-fluid">
+    <header class="container">
         <!-- Bannière -->
         <div id="banner">
             <!-- Logo -->
@@ -35,7 +35,7 @@
         
     <div class="wrapper-outer">
         <div class="wrapper-inner">
-            <section class="container-fluid">
+            <section class="container">
                 <!-- Notifications -->
                 <p:region regionName="notifications" />
             
@@ -60,7 +60,7 @@
     </div>
         
     <!-- Footer -->
-    <footer class="container-fluid"></footer>
+    <footer class="container"></footer>
     
     <!-- AJAX scripts -->
     <p:region regionName="AJAXScripts" />
