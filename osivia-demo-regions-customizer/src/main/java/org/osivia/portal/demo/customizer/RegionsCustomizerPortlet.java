@@ -39,8 +39,7 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
     private static final String CHARTE_CONTEXT = "customizer.regions.demo.context";
     /** "osivia-demo-charte-sitesweb" context path init parameter name. */
     private static final String CHARTE_SITESWEB_CONTEXT = "customizer.regions.demo.sitesweb.context";
-    /** "osivia-demo-charte-bootstrap" context path init parameter name. */
-    private static final String CHARTE_BOOTSTRAP_CONTEXT = "customizer.regions.demo.bootstrap.context";
+
     /** Customizer name. */
     private static final String CUSTOMIZER_NAME = "osivia.site.customizer.regions.name";
     /** Customization modules repository attribute name. */
@@ -102,19 +101,17 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
     public void customize(String customizationID, CustomizationContext context) {
         String charteEnt = this.getInitParameter(CHARTE_CONTEXT);
         String charteSitesWeb = this.getInitParameter(CHARTE_SITESWEB_CONTEXT);
-        String charteBootstrap = this.getInitParameter(CHARTE_BOOTSTRAP_CONTEXT);
 
         Map<String, Object> attributes = context.getAttributes();
         String contextPath = (String) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_CONTEXT_PATH);
-        if (StringUtils.equals(contextPath, charteEnt) || StringUtils.equals(contextPath, charteSitesWeb) || StringUtils.equals(contextPath, charteBootstrap)) {
+        if (StringUtils.equals(contextPath, charteEnt) || StringUtils.equals(contextPath, charteSitesWeb)) {
             IRenderedRegions renderedRegion = (IRenderedRegions) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_RENDERED_REGIONS);
 
             if (StringUtils.equals(contextPath, charteEnt)) {
                 // Customize regions
-                // renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
+                renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
                 renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp");
                 renderedRegion.customizeRenderedRegion("search", "/header/search.jsp");
-                // renderedRegion.customizeRenderedRegion("tabs", "/header/tabs.jsp");
                 renderedRegion.removeRenderedRegion("footer");
             }
 
