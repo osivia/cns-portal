@@ -125,8 +125,8 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
 
             if (StringUtils.equals(contextPath, charteMontpellier)) {
                 // Customize regions
-                renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
-                renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp");
+                renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp", contextPath);
+                renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp", contextPath);
                 renderedRegion.customizeRenderedRegion("search", "/header/search.jsp");
                 renderedRegion.removeRenderedRegion("footer");
             }
