@@ -21,11 +21,12 @@
         <toutatice-dashboard.version>3.2-osivia-SNAPSHOT</toutatice-dashboard.version>        
 
         <!-- identity & user mgt tools -->
-        <toutatice.annuaire.version>2.2.1-osivia-SNAPSHOT</toutatice.annuaire.version>
+        <toutatice.annuaire.version>2.3.5-osivia-SNAPSHOT</toutatice.annuaire.version>
         <osivia-services-directory.version>1.0.0-SNAPSHOT</osivia-services-directory.version>
 		<fichepersonne.version>3.0-osivia-SNAPSHOT</fichepersonne.version>
         <ficheprofil.version>3.0-osivia-SNAPSHOT</ficheprofil.version>
         <gestiongroupe.version>3.0-osivia-SNAPSHOT</gestiongroupe.version>
+        <gestionworkspace.version>3.0-osivia-SNAPSHOT</gestionworkspace.version>
         <identity-sso.version>3.0.4</identity-sso.version>
         
         <!-- admin tools -->

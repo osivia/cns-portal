@@ -111,11 +111,11 @@
             </option>
             <option>
                 <name>roleCtxDN</name>
-                <value>ou=groups,dc=osivia,dc=org</value>
+                <value>ou=profiles,ou=groups,dc=osivia,dc=org</value>
             </option>
             <option>
                 <name>membershipAttributeID</name>
-                <value>uniqueMember</value>
+                <value>member</value>
             </option>
         </option-group>
         <option-group>
@@ -123,7 +123,7 @@
             <option>
                 <name>objectClass</name>
                 <value>top</value>
-                <value>groupOfUniqueNames</value>
+                <value>groupOfNames</value>
             </option>
         </option-group>
     </options>

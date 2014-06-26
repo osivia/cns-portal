@@ -59,3 +59,8 @@ activationcompte.job=/home/portal/ldapOmatic/jobs.xml
 actiationcompte.variables=/home/portal/ldapOmatic/variables.xml
 
 ficheProfil.roleAdministrateur=userprofile_ADM
+
+gestionWorkspace.pathOpenWorkspaceDirectory=/default-domain/workspaces/espaces-collaboratifs
+gestionWorkspace.cnRoleCreationOpenWks=groups_ADM
+
+

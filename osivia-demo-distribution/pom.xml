@@ -109,7 +109,14 @@
             <version>${ficheprofil.version}</version>
             <type>war</type>
         </dependency>                
-                
+        <dependency>
+            <groupId>toutatice-services.nuxeo</groupId>
+            <artifactId>toutatice-nuxeo-gestionworkspace-portail</artifactId>
+            <version>${gestionworkspace.version}</version>
+            <type>war</type>
+        </dependency>
+        
+                        
 
         <!-- collab tools -->
         <dependency>

@@ -34,7 +34,7 @@
                 <include>toutatice-services.identite:toutatice-identite-fichepersonne-portail:war:${fichepersonne.version}</include>
                 <include>toutatice-services.identite:toutatice-identite-gestiongroupes-portail:war:${gestiongroupe.version}</include>
                 <include>toutatice-services.identite:toutatice-identite-ficheprofil-portail:war:${ficheprofil.version}</include>
-                
+                <include>toutatice-services.nuxeo:toutatice-nuxeo-gestionworkspace-portail:war:${gestionworkspace.version}</include>
             </includes>
         </dependencySet>
         
