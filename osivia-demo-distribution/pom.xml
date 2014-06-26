@@ -49,6 +49,13 @@
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
+        
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>osivia-demo-charte-montpellier</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
 
         <dependency>
             <groupId>${groupId}</groupId>

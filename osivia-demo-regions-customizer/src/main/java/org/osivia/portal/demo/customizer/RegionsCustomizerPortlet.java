@@ -39,6 +39,8 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
     private static final String CHARTE_CONTEXT = "customizer.regions.demo.context";
     /** "osivia-demo-charte-sitesweb" context path init parameter name. */
     private static final String CHARTE_SITESWEB_CONTEXT = "customizer.regions.demo.sitesweb.context";
+    /** "osivia-demo-charte-montpellier" context path init parameter name. */
+    private static final String CHARTE_MONTPELLIER_CONTEXT = "customizer.regions.demo.montpellier.context";
 
     /** Customizer name. */
     private static final String CUSTOMIZER_NAME = "osivia.site.customizer.regions.name";
@@ -101,10 +103,11 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
     public void customize(String customizationID, CustomizationContext context) {
         String charteEnt = this.getInitParameter(CHARTE_CONTEXT);
         String charteSitesWeb = this.getInitParameter(CHARTE_SITESWEB_CONTEXT);
+        String charteMontpellier = this.getInitParameter(CHARTE_MONTPELLIER_CONTEXT);
 
         Map<String, Object> attributes = context.getAttributes();
         String contextPath = (String) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_CONTEXT_PATH);
-        if (StringUtils.equals(contextPath, charteEnt) || StringUtils.equals(contextPath, charteSitesWeb)) {
+        if (StringUtils.equals(contextPath, charteEnt) || StringUtils.equals(contextPath, charteSitesWeb) || StringUtils.equals(contextPath, charteMontpellier)) {
             IRenderedRegions renderedRegion = (IRenderedRegions) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_RENDERED_REGIONS);
 
             if (StringUtils.equals(contextPath, charteEnt)) {
@@ -118,6 +121,14 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
             if (StringUtils.equals(contextPath, charteSitesWeb)) {
                 // Replace default toolbar
                 renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
+            }
+
+            if (StringUtils.equals(contextPath, charteMontpellier)) {
+                // Customize regions
+                renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
+                renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp");
+                renderedRegion.customizeRenderedRegion("search", "/header/search.jsp");
+                renderedRegion.removeRenderedRegion("footer");
             }
         }
     }

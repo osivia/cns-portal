@@ -19,8 +19,8 @@
             <value>/osivia-demo-charte-sitesweb</value>
         </init-param>
         <init-param>
-            <name>customizer.regions.demo.bootstrap.context</name>
-            <value>/osivia-demo-charte-bootstrap</value>
+            <name>customizer.regions.demo.montpellier.context</name>
+            <value>/osivia-demo-charte-montpellier</value>
         </init-param>
 
         <expiration-cache>180</expiration-cache>
@@ -32,8 +32,6 @@
         <portlet-info>
             <title>Regions customizer</title>
         </portlet-info>
-        
-         
     </portlet>
 
 </portlet-app>

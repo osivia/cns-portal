@@ -20,6 +20,7 @@
                 <include>${groupId}:osivia-demo-attributes-bundles-customizer:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-charte:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-charte-sitesweb:war:${project.version}</include>
+                <include>${groupId}:osivia-demo-charte-montpellier:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-regions-customizer:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-cms-nuxeo-web:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-test-cms:war:${project.version}</include>

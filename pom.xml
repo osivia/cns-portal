@@ -39,6 +39,7 @@
         <module>osivia-demo-attributes-bundles-customizer</module>
         <module>osivia-demo-charte</module>
         <module>osivia-demo-charte-sitesweb</module>
+        <module>osivia-demo-charte-montpellier</module>
         <module>osivia-demo-cms-nuxeo-web</module>
         <module>osivia-demo-portlets-utils</module>
         <module>osivia-demo-regions-customizer</module>
