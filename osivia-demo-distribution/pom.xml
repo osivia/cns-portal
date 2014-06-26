@@ -138,7 +138,14 @@
             <artifactId>toutatice-faq-portail</artifactId>
             <version>${toutatice-faq.version}</version>
             <type>war</type>
-        </dependency>        
+        </dependency>
+        
+       <dependency>
+            <groupId>toutatice-services.dashboard.ecm</groupId>
+            <artifactId>toutatice-dashboard-ecm-portail</artifactId>
+            <version>${toutatice-dashboard.version}</version>
+            <type>war</type>
+        </dependency>  
 
         <!-- monitoring -->
         <dependency>

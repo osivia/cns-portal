@@ -15,9 +15,10 @@
         
         <!-- collab tools -->
         <toutatice-faq.version>3.1</toutatice-faq.version>
-        <osivia-services-wiki.version>1.1-RC11</osivia-services-wiki.version>
+        <osivia-services-wiki.version>1.1-RC12</osivia-services-wiki.version>
         <osivia-services-forum.version>1.1-SNAPSHOT</osivia-services-forum.version>
-        <osivia-services-contact.version>1.0-RC4</osivia-services-contact.version>        
+        <osivia-services-contact.version>1.0-RC4</osivia-services-contact.version>
+        <toutatice-dashboard.version>3.2-osivia-SNAPSHOT</toutatice-dashboard.version>        
 
         <!-- identity & user mgt tools -->
         <toutatice.annuaire.version>2.2.1-osivia-SNAPSHOT</toutatice.annuaire.version>
