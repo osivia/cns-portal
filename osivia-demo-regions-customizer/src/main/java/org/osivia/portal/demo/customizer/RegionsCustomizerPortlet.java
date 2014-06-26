@@ -106,7 +106,7 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
         String charteMontpellier = this.getInitParameter(CHARTE_MONTPELLIER_CONTEXT);
 
         Map<String, Object> attributes = context.getAttributes();
-        String contextPath = (String) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_CONTEXT_PATH);
+        String contextPath = (String) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_THEME_CONTEXT_PATH);
         if (StringUtils.equals(contextPath, charteEnt) || StringUtils.equals(contextPath, charteSitesWeb) || StringUtils.equals(contextPath, charteMontpellier)) {
             IRenderedRegions renderedRegion = (IRenderedRegions) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_RENDERED_REGIONS);
 
