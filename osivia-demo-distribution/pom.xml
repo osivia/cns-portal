@@ -135,8 +135,8 @@
 
         <dependency>
             <groupId>org.osivia.services</groupId>
-            <artifactId>osivia-contact-portlet</artifactId>
-            <version>${osivia-services-contact.version}</version>
+            <artifactId>osivia-services-agenda</artifactId>
+            <version>${osivia-services-agenda.version}</version>
             <type>war</type>
         </dependency>
         

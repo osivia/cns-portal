@@ -26,7 +26,7 @@
                 <!-- collab tools -->
                 <include>org.osivia.services:osivia-services-wiki:war:${osivia-services-wiki.version}</include>
                 <include>org.osivia.services:osivia-services-forum:war:${osivia-services-forum.version}</include>
-                <include>org.osivia.services:osivia-contact-portlet:war:${osivia-services-contact.version}</include>
+                <include>org.osivia.services:osivia-services-agenda:war:${osivia-services-agenda.version}</include>
                 <include>toutatice-services.faq:toutatice-faq-portail:war:${toutatice-faq.version}</include>
                 <include>toutatice-services.dashboard.ecm:toutatice-dashboard-ecm-portail:war:${toutatice-dashboard.version}</include>
                 <!-- identity & user mgt tools -->
