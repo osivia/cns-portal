@@ -5,8 +5,10 @@
 <c:set var="logoAlt"><is:getProperty key="LOGO_ALT" /></c:set>
 
 
-<h1>
-    <a href="${requestScope['osivia.home.url']}">
-        <img src="${pageContext.request.contextPath}/images/logo-ac-montpellier.css" alt="${logoAlt}">
-    </a>
-</h1>
+<div class="pull-left">
+    <h1>
+        <a href="${requestScope['osivia.home.url']}">
+            <img src="${pageContext.request.contextPath}/images/logo-ac-montpellier.png" alt="${logoAlt}">
+        </a>
+    </h1>
+ </div>

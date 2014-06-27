@@ -21,7 +21,7 @@
    
     <header class="container">
         <!-- Bannière -->
-        <div id="banner">
+        <div id="banner" class="clearfix">
             <!-- Logo -->
             <p:region regionName="logo" />
 
