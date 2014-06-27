@@ -27,6 +27,7 @@
         <ficheprofil.version>3.0-osivia-SNAPSHOT</ficheprofil.version>
         <gestiongroupe.version>3.0-osivia-SNAPSHOT</gestiongroupe.version>
         <gestionworkspace.version>3.0-osivia-SNAPSHOT</gestionworkspace.version>
+        <participantswks.version>3.0-osivia-SNAPSHOT</participantswks.version>
         <identity-sso.version>3.0.4</identity-sso.version>
         
         <!-- admin tools -->

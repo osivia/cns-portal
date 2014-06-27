@@ -122,7 +122,12 @@
             <version>${gestionworkspace.version}</version>
             <type>war</type>
         </dependency>
-        
+        <dependency>
+            <groupId>toutatice-services.nuxeo</groupId>
+            <artifactId>toutatice-nuxeo-participantsworkspace-portail</artifactId>
+            <version>${participantswks.version}</version>
+            <type>war</type>
+        </dependency>        
                         
 
         <!-- collab tools -->

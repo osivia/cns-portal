@@ -36,6 +36,7 @@
                 <include>toutatice-services.identite:toutatice-identite-gestiongroupes-portail:war:${gestiongroupe.version}</include>
                 <include>toutatice-services.identite:toutatice-identite-ficheprofil-portail:war:${ficheprofil.version}</include>
                 <include>toutatice-services.nuxeo:toutatice-nuxeo-gestionworkspace-portail:war:${gestionworkspace.version}</include>
+                <include>toutatice-services.nuxeo:toutatice-nuxeo-participantsworkspace-portail:war:${participantswks.version}</include>
             </includes>
         </dependencySet>
         
