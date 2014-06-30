@@ -16,7 +16,7 @@
         <!-- collab tools -->
         <toutatice-faq.version>3.1</toutatice-faq.version>
         <osivia-services-agenda.version>1.0-SNAPSHOT</osivia-services-agenda.version>
-        <osivia-services-wiki.version>1.1-RC12</osivia-services-wiki.version>
+        <osivia-services-wiki.version>1.1-SNAPSHOT</osivia-services-wiki.version>
         <osivia-services-forum.version>1.1-SNAPSHOT</osivia-services-forum.version>
         <toutatice-dashboard.version>3.2-osivia-SNAPSHOT</toutatice-dashboard.version>        
 
