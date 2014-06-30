@@ -85,14 +85,27 @@ function portalLogout() {
                     <!-- User links -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- User bar -->
-                        <c:out value="${requestScope['osivia.toolbar.userContent']}" escapeXml="false" />
-                    
-                        <li>
-                            <a href="${requestScope['osivia.toolbar.refreshPageURL']}" class="navbar-link">
-                                <i class="glyphicons halflings refresh"></i>
-                                <is:getProperty key="REFRESH_PAGE" />
-                            </a>
-                        </li>
+						<li><a class="dropdown-toggle" href="#"
+							data-toggle="dropdown"> <img class="avatar"
+								src="<c:out value="${requestScope['osivia.toolbar.person'].avatar.url}"/>">
+								<span><c:out value="${requestScope['osivia.toolbar.person'].displayName}"/></span> <span class="caret"></span>
+						</a>
+							<ul class="dropdown-menu" role="menu">
+								<li role="presentation"><a role="menuitem"
+									href="<c:out value="${requestScope['osivia.toolbar.myprofile']}"/>">
+										<i class="glyphicons halflings user"></i> <span><is:getProperty key="MY_PROFILE" /></span>
+								</a></li>
+								<li role="presentation"><a role="menuitem"
+									href="#" onclick="callLogout();">
+										<i class="glyphicons halflings log_out"></i> <span><is:getProperty key="LOGOUT" /></span>
+								</a></li>
+							</ul></li>
+
+						<li><a
+							href="${requestScope['osivia.toolbar.refreshPageURL']}"
+							class="navbar-link"> <i class="glyphicons halflings refresh"></i>
+								<is:getProperty key="REFRESH_PAGE" />
+						</a></li>
                     </ul>
                 </c:otherwise>
             </c:choose>
