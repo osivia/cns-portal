@@ -164,6 +164,10 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         if ("Thread".equals(doc.getType())) {
             return this.getForumThreadPlayer(ctx);
         }
+        
+        if("VEVENT".equals(doc.getType())){
+            return this.getEventPlayer(ctx);
+        }
 
         CMSHandlerProperties player = super.getCMSPlayer(ctx);
         player.getWindowProperties().put("osivia.cms.hideMetaDatas", "1");
@@ -281,6 +285,28 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         return linkProps;
     }
+    
+    /**
+     * Get the event player.
+     * 
+     * @param ctx
+     * @return Event player
+     */
+    public CMSHandlerProperties getEventPlayer(CMSServiceCtx ctx) {
+        Document doc = (Document) ctx.getDoc();
+
+        Map<String, String> windowProperties = new HashMap<String, String>();
+        windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
+        windowProperties.put("osivia.hideTitle", "1");
+        windowProperties.put("osivia.ajaxLink", "0");
+        windowProperties.put("osivia.cms.hideMetaDatas", "1");
+
+        CMSHandlerProperties linkProps = new CMSHandlerProperties();
+        linkProps.setWindowProperties(windowProperties);
+        linkProps.setPortletInstance("osivia-services-agenda-event-instance");
+
+        return linkProps;
+    }
 
 
     /**
@@ -355,7 +381,8 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         customizedTypes.add(new CMSItemType("Forum", true, true, false, true, true, Arrays.asList("Thread"), null));
         // Forum thread
         customizedTypes.add(new CMSItemType("Thread", false, false, false, true, true, new ArrayList<String>(0), null));
-
+        // Agenda Events
+        customizedTypes.add(new CMSItemType("VEVENT", false, false, false, true, true, new ArrayList<String>(0), null));
         return customizedTypes;
     }
 
