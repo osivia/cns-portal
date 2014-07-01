@@ -161,6 +161,10 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         if ("Thread".equals(doc.getType())) {
             return this.getForumThreadPlayer(ctx);
         }
+        
+        if ("Agenda".equals(doc.getType())) {
+            return this.getAgendaPlayer(ctx);
+        }
 
         if ("VEVENT".equals(doc.getType())) {
             return this.getEventPlayer(ctx);
@@ -283,6 +287,28 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
         linkProps.setPortletInstance("osivia-services-forum-portletInstance");
+
+        return linkProps;
+    }
+    
+    /**
+     * Get the Agenda player.
+     * 
+     * @param ctx
+     * @return Agenda player
+     */
+    public CMSHandlerProperties getAgendaPlayer(CMSServiceCtx ctx){
+        Document doc = (Document) ctx.getDoc();
+
+        Map<String, String> windowProperties = new HashMap<String, String>();
+        windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
+        windowProperties.put("osivia.hideTitle", "1");
+        windowProperties.put("osivia.ajaxLink", "0");
+        windowProperties.put("osivia.cms.hideMetaDatas", "1");
+
+        CMSHandlerProperties linkProps = new CMSHandlerProperties();
+        linkProps.setWindowProperties(windowProperties);
+        linkProps.setPortletInstance("osivia-services-agenda-instance");
 
         return linkProps;
     }
@@ -413,11 +439,15 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         customizedTypes.add(new CMSItemType("Forum", true, true, false, true, true, Arrays.asList("Thread"), null));
         // Forum thread
         customizedTypes.add(new CMSItemType("Thread", false, false, false, true, true, new ArrayList<String>(0), null));
-        // Agenda Events
+        //Agenda
+        customizedTypes.add(new CMSItemType("Agenda", false, true, false, false, true, new ArrayList<String>(0), null));
+        //Events
         customizedTypes.add(new CMSItemType("VEVENT", false, false, false, true, true, new ArrayList<String>(0), null));
         // Picture book
         customizedTypes.add(new CMSItemType("PictureBook", true, false, true, false, true, Arrays.asList("Picture"), null));
+        //Picture
         customizedTypes.add(new CMSItemType("Picture", false, false, false, false, true, new ArrayList<String>(0), null));
+        
         return customizedTypes;
     }
 
