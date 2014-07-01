@@ -1,16 +1,15 @@
 /*
  * (C) Copyright 2014 OSIVIA (http://www.osivia.com)
- *
+ * 
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Lesser General Public License
  * (LGPL) version 2.1 which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/lgpl-2.1.html
- *
+ * 
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- *
  */
 package fr.toutatice.portail.cms.nuxeo.portlets.customizer;
 
@@ -24,7 +23,6 @@ import java.util.Map;
 import javax.portlet.PortletContext;
 
 import org.nuxeo.ecm.automation.client.model.Document;
-import org.nuxeo.ecm.automation.client.model.Documents;
 import org.osivia.portal.api.Constants;
 import org.osivia.portal.core.cms.CMSException;
 import org.osivia.portal.core.cms.CMSHandlerProperties;
@@ -32,13 +30,11 @@ import org.osivia.portal.core.cms.CMSItemType;
 import org.osivia.portal.core.cms.CMSPublicationInfos;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 
-import fr.toutatice.portail.cms.nuxeo.api.NuxeoQueryFilter;
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
-import fr.toutatice.portail.cms.nuxeo.portlets.list.DocumentQueryCommand;
 
 /**
  * CMS customizer.
- *
+ * 
  * @author Cédric Krommenhoek
  * @see DefaultCMSCustomizer
  */
@@ -71,9 +67,10 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
 
     public NavigationItemAdapter navigationItemAdapter;
+
     /**
      * Constructor.
-     *
+     * 
      * @param ctx portlet context
      */
     public CMSCustomizer(PortletContext ctx) {
@@ -83,7 +80,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get search schema.
-     *
+     * 
      * @return search schema
      */
     public static String getSearchSchema() {
@@ -92,17 +89,17 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
 
     public NavigationItemAdapter getNavigationItemAdapter() {
-        if( navigationItemAdapter == null){
+        if (navigationItemAdapter == null) {
             navigationItemAdapter = new CustomNavigationItemAdapter(getPortletCtx(), this, getCmsService());
         }
-        
+
         return navigationItemAdapter;
     }
 
-    
+
     /**
      * Get list of list templates.
-     *
+     * 
      * @return list of list templates
      */
     public static List<ListTemplate> getListTemplates() {
@@ -164,9 +161,13 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         if ("Thread".equals(doc.getType())) {
             return this.getForumThreadPlayer(ctx);
         }
-        
-        if("VEVENT".equals(doc.getType())){
+
+        if ("VEVENT".equals(doc.getType())) {
             return this.getEventPlayer(ctx);
+        }
+        
+        if ("PictureBook".equals(doc.getType())) {
+            return this.getCMSPictureBookPlayer(ctx);
         }
 
         CMSHandlerProperties player = super.getCMSPlayer(ctx);
@@ -177,7 +178,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get Wiki player.
-     *
+     * 
      * @param ctx CMS service context
      * @return Wiki player
      */
@@ -199,7 +200,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get FAQ player.
-     *
+     * 
      * @param ctx CMS service context
      * @return FAQ player
      */
@@ -222,7 +223,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get forum player.
-     *
+     * 
      * @param ctx CMS context
      * @return CMS forum player
      * @throws CMSException
@@ -246,7 +247,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Utility method used to create forum player request.
-     *
+     * 
      * @param cmsContext CMS context
      * @return request
      * @throws CMSException
@@ -267,7 +268,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get forum thread player.
-     *
+     * 
      * @param cmsContext CMS context
      * @return forum thread player
      */
@@ -285,7 +286,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         return linkProps;
     }
-    
+
     /**
      * Get the event player.
      * 
@@ -307,11 +308,42 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         return linkProps;
     }
+    
+    /**
+     * Get PictureBook player.
+     * 
+     * @param ctx
+     * @return PictureBook player
+     * @throws Exception
+     */
+    public CMSHandlerProperties getCMSPictureBookPlayer(CMSServiceCtx ctx) throws Exception {
+        Document doc = (Document) ctx.getDoc();
+
+        Map<String, String> windowProperties = new HashMap<String, String>();
+
+        windowProperties.put("osivia.title", doc.getTitle());
+        windowProperties.put("osivia.cms.scope", ctx.getScope());
+        windowProperties.put("osivia.cms.uri", doc.getPath());
+        windowProperties.put("osivia.hideDecorators", "1");
+        windowProperties.put("theme.dyna.partial_refresh_enabled", "false");
+        windowProperties.put("osivia.cms.displayLiveVersion", ctx.getDisplayLiveVersion());
+        windowProperties.put("osivia.cms.style", CMSCustomizer.STYLE_PICTUREBOOK);
+        windowProperties.put("osivia.nuxeoRequest", this.createFolderRequest(ctx, false));
+        windowProperties.put("osivia.cms.pageSize", "10");
+        windowProperties.put("osivia.cms.pageSizeMax", "20");
+        windowProperties.put("osivia.cms.maxItems", "100");
+
+        CMSHandlerProperties linkProps = new CMSHandlerProperties();
+        linkProps.setWindowProperties(windowProperties);
+        linkProps.setPortletInstance("toutatice-portail-cms-nuxeo-viewListPortletInstance");
+
+        return linkProps;
+    }
 
 
     /**
      * Get minimal player.
-     *
+     * 
      * @param ctx CMS service context
      * @return minimal player
      */
@@ -335,13 +367,13 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
 
     private Map<String, CMSItemType> customCMSItemTypes;
-    
+
     /**
      * {@inheritDoc}
      */
     @Override
     public Map<String, CMSItemType> getCMSItemTypes() {
-        
+
         if (this.customCMSItemTypes == null) {
 
             customCMSItemTypes = new LinkedHashMap<String, CMSItemType>();
@@ -359,7 +391,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get customized CMS item types.
-     *
+     * 
      * @return customized CMS item types
      */
     private List<CMSItemType> getCustomizedCMSItemTypes() {
@@ -383,6 +415,9 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         customizedTypes.add(new CMSItemType("Thread", false, false, false, true, true, new ArrayList<String>(0), null));
         // Agenda Events
         customizedTypes.add(new CMSItemType("VEVENT", false, false, false, true, true, new ArrayList<String>(0), null));
+        // Picture book
+        customizedTypes.add(new CMSItemType("PictureBook", true, false, true, false, true, Arrays.asList("Picture"), null));
+        customizedTypes.add(new CMSItemType("Picture", false, false, false, false, true, new ArrayList<String>(0), null));
         return customizedTypes;
     }
 

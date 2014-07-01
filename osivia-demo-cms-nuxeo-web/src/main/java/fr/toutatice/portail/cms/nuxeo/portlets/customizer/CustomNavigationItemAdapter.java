@@ -67,7 +67,13 @@ public class CustomNavigationItemAdapter extends NavigationItemAdapter {
                 properties.put("theme", "osivia-demo-charte");            
         }
 
+        if("Workspace".equals(doc.getType()))   {
+            if (doc.getPath().contains("/UserWorkspaces/")) {
+                    properties.put("defaultTemplate", "1");
+                    properties.put("pageTemplate", "/default/templates/userWorkspace");
 
+            }
+        }
     }
     
 }

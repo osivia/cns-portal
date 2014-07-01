@@ -26,6 +26,10 @@
     <c:when test='${"blogpost" == type}'>
         <jsp:include page="view-blog-post.jsp" />
     </c:when>
+    
+     <c:when test='${"picture" == type}'>
+        <jsp:include page="view-picture.jsp" />
+    </c:when>
         
     <c:otherwise>
         <jsp:include page="view-default.jsp" />

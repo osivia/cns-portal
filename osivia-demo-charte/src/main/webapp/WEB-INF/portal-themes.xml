@@ -6,6 +6,8 @@
         
         <!-- CSS -->
         <link rel="stylesheet" id="main_css" href="/style/osivia-demo.css" type="text/css" />
+        <!-- Lists -->
+        <link rel="stylesheet" href="/style/lists.css" type="text/css" />
         
         <!-- Print -->
         <script type="text/javascript" src="/print/print.js"></script>
