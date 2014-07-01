@@ -1,0 +1,19 @@
+/* Picture Book */
+.picture-item {
+    float: left;
+    list-style-type: none;
+    padding: 5px;
+}
+
+/* Editorial */
+div.nuxeo-list-editorial ul li {
+    padding: 0;
+}
+
+.default-editorial {
+    display: inline-block;
+    font-size: 40px;
+    color: #BBBBBB;
+    height: 60px;
+    width: 60px;
+}

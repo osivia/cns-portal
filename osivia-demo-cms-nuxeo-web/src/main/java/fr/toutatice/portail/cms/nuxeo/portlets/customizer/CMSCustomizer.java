@@ -302,6 +302,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         Map<String, String> windowProperties = new HashMap<String, String>();
         windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
+        windowProperties.put("osivia.title", doc.getTitle());
         windowProperties.put("osivia.hideTitle", "1");
         windowProperties.put("osivia.ajaxLink", "0");
         windowProperties.put("osivia.cms.hideMetaDatas", "1");
@@ -324,6 +325,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         Map<String, String> windowProperties = new HashMap<String, String>();
         windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
+        windowProperties.put("osivia.title", doc.getTitle());
         windowProperties.put("osivia.hideTitle", "1");
         windowProperties.put("osivia.ajaxLink", "0");
         windowProperties.put("osivia.cms.hideMetaDatas", "1");
@@ -444,7 +446,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         //Events
         customizedTypes.add(new CMSItemType("VEVENT", false, false, false, true, true, new ArrayList<String>(0), null));
         // Picture book
-        customizedTypes.add(new CMSItemType("PictureBook", true, false, true, false, true, Arrays.asList("Picture"), null));
+        customizedTypes.add(new CMSItemType("PictureBook", true, true, true, false, true, Arrays.asList("Picture"), null));
         //Picture
         customizedTypes.add(new CMSItemType("Picture", false, false, false, false, true, new ArrayList<String>(0), null));
         

@@ -5,6 +5,8 @@
 
         <!-- CSS -->
         <link rel="stylesheet" id="main_css" href="/css/charte-montpellier.css" type="text/css" />
+        <!-- Lists -->
+        <link rel="stylesheet" href="/css/lists.css" type="text/css" />
         
         <!-- Print -->
         <script type="text/javascript" src="/print/print.js"></script>
