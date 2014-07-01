@@ -2,8 +2,7 @@
 <themes>
     <theme>
         <name>osivia-demo-charte-montpellier</name>
-        <link rel="shortcut icon" type="image/x-icon" href="/style/images/favicon/favicon.ico" />
-        
+
         <!-- CSS -->
         <link rel="stylesheet" id="main_css" href="/css/charte-montpellier.css" type="text/css" />
         
@@ -22,8 +21,7 @@
     
     <theme>
         <name>osivia-demo-charte-montpellier-alt1</name>
-        <link rel="shortcut icon" type="image/x-icon" href="/style/images/favicon/favicon.ico" />
-        
+
         <!-- CSS -->
         <link rel="stylesheet" id="main_css" href="/css/charte-montpellier-alt1.css" type="text/css" />
         
