@@ -306,6 +306,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         windowProperties.put("osivia.hideTitle", "1");
         windowProperties.put("osivia.ajaxLink", "0");
         windowProperties.put("osivia.cms.hideMetaDatas", "1");
+        windowProperties.put("osivia.agenda.cmsPath", "${contentPath}");
 
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
