@@ -26,6 +26,20 @@ section {
 
 
 
+/* Thread list */
+
+.thread .vignette {
+    max-height: 150px;
+    max-width: 100px;
+    margin-right: 10px;
+}
+
+.thread > div {
+    overflow: hidden;
+}
+
+
+
 /* Bootstrap customization */
 
 h1, h2, h3, h4, h5, h5 {

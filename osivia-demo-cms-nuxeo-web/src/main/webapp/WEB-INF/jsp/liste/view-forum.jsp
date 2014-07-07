@@ -9,7 +9,7 @@
 
 
 <%
-    // Nuxeo controller
+// Nuxeo controller
 NuxeoController nuxeoController = (NuxeoController) request.getAttribute("ctx");
 // Current Nuxeo document
 Document document = (Document) request.getAttribute("doc");
@@ -28,14 +28,16 @@ pageContext.setAttribute("date", Formatter.formatDate(document, request.getLocal
 %>
 
 
-<li class="thread">
-    <c:if test="${not empty vignette}">
-        <a href="${link.url}"><img class="thread-vignette" src="${vignette}" /></a>
-    </c:if>
-
-    <div class="thread-content">
-        <div class="thread-title"><a href="${link.url}">${title}</a></div>
-        <div class="thread-description">${description}</div>
-        <div class="thread-date">Dernière modification : ${date}</div>
+<li class="list-group-item thread">
+    <div class="clearfix">
+        <c:if test="${not empty vignette}">
+            <img src="${vignette}" class="vignette pull-left" />
+        </c:if>
+        
+        <div>
+            <p class="lead"><a href="${link.url}">${title}</a></p>
+            <p><em>${description}</em></p>
+            <p>Dernière modification : ${date}</p>
+        </div>
     </div>
 </li>
