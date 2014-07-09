@@ -1,52 +1,71 @@
-<%@ page import="org.jboss.portal.server.PortalConstants"%>
-<%@ taglib uri="/WEB-INF/theme/portal-layout.tld" prefix="p"%>
+<%@ taglib prefix="p" uri="portal-layout"%>
+<!DOCTYPE html>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-	<p:region regionName='header-metadata' />
-	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-	<!-- to correct the unsightly Flash of Unstyled Content. -->
-	<script type="text/javascript"></script>
-	<p:headerContent />
-	<p:theme themeName="default" />
+    <p:region regionName='header-metadata' />
+    
+    <p:headerContent />
+    <p:theme themeName="osivia-demo-charte" />
 </head>
 
-<body id="body">
-	<p:region regionName='AJAXScripts'/>
-
-	<div id="userShell">
-		<div id="wrapper">
-			<div id="conteneurToolbar">
-				<p:region regionName='toolbar'/>
-			</div>
-			
-			<div id="entetePage">
-				<p:region regionName="headBand"/>
-				<p:region regionName="pageSettings"/>
-			</div>
-
-			<div id="conteneur">
-				<p:region regionName="colNav"/>
-				<div class="colCentre">
-					<div class="ligne1">
-						<p:region regionName='breadcrumb'/>
-						<p:region regionName='search'/>
-					</div>
-					<p:region regionName="blocTitre"/>
-					<p:region regionName="notifications"/>
-					<p:region regionName="colGauche" cms="true"/>
-					<p:region regionName="colDroite" cms="true"/>
-				</div>
-			</div>
-		</div>
-
-		<div id="piedPage">
-			<p:region regionName='footer'/>
-		</div>
-
-		<p:region regionName='AJAXFooter'/>
-
-	</div>
+<body>
+    <!-- Barre d'outils -->
+    <p:region regionName="toolbar" />
+    
+    <header class="container">
+        <p:region regionName="headBand" />
+    </header>
+    
+    <section class="container">
+        <!-- Notifications -->
+        <p:region regionName="notifications" />
+    
+        <div class="row">
+            <!-- Navigation -->
+            <div class="col-xs-3 col-sm-2">
+                <p:region regionName="colNav" />
+            </div>
+            
+            <div class="col-xs-9 col-sm-10">
+                <div class="row hidden-xs">
+                    <div class="col-sm-8">
+                        <!-- Breadcrumb -->
+                        <p:region regionName="breadcrumb" />
+                    </div>
+                    
+                    <div class="col-sm-4">
+                        <!-- Recherche -->
+                        <p:region regionName="search" />
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8">
+                        <!-- Title -->
+                        <p:region regionName="blocTitre"/>
+                        <!-- Left content -->
+                        <p:region regionName="colGauche" cms="true"/>
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-4">
+                        <!-- Right content -->
+                        <p:region regionName="colDroite" cms="true"/>
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </section>
+    
+    <footer class="container">
+        <p:region regionName="footer" />
+    </footer>
+    
+    <!-- AJAX scripts -->
+    <p:region regionName="AJAXScripts" />
+    <!-- AJAX footer -->
+    <p:region regionName="AJAXFooter" />
+    <!-- Page settings -->
+    <p:region regionName="pageSettings" />
 </body>
 </html>
