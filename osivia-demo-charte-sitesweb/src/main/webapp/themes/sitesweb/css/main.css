@@ -4,8 +4,12 @@
 	border-color: #ddd;
 }
 
+.portlet-container {
+	margin: 0;
+}
 
-.msglogout {
+
+#msglogout {
 	display: none;
 }
 
