@@ -119,8 +119,9 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
             }
 
             if (StringUtils.equals(contextPath, charteSitesWeb)) {
-                // Replace default toolbar
+                // Customize regions
                 renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
+                renderedRegion.customizeRenderedRegion("search", "/header/search.jsp");
             }
 
             if (StringUtils.equals(contextPath, charteMontpellier)) {
