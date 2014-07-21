@@ -53,7 +53,7 @@
     String ecmBaseURL = NuxeoController.getCMSService().getEcmDomain(nuxeoController.getCMSCtx());
     pageContext.setAttribute("ecmBaseURL", ecmBaseURL);
     String nxUrl = NuxeoConnectionProperties.getPublicBaseUri().toString() 
-            + "/nxpath/default@done?docId=" + document.getId();
+            + "/nxpath/default@open_live_edit?docId=" + document.getId();
     String portalUrl = "http://" + request.getServerName() + ":" + request.getServerPort();
     nxUrl += "&fromUrl=" + portalUrl;
     pageContext.setAttribute("nxUrl", nxUrl);
@@ -81,11 +81,11 @@
 						src="${pageContext.request.contextPath}${icon}" alt="${filename}">
 						<span>${filename}</span>
 					</a> 
-					<c:if test="${isNxLiveEditMimeType}">
+					
+					
 						<span>(${fileSize} Ko)</span> <span>&nbsp;&nbsp;&nbsp; 
-						<a href="${nxUrl}" onclick="setCallbackFromEcmParams('_LIVEEDIT_','${ecmBaseURL}');" class="fancyframe_refresh no-ajax-link"> Editer </a>
+						 <a href="${nxUrl}" onclick="setCallbackFromEcmParams('','${ecmBaseURL}');" class="fancyframe_refresh no-ajax-link"> Editer </a>
 						</span>
-					</c:if>
 				</p>
 			</c:if>
 		</p>
