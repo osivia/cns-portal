@@ -445,7 +445,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         //Agenda
         customizedTypes.add(new CMSItemType("Agenda", false, true, false, false, true, new ArrayList<String>(0), null));
         //Events
-        customizedTypes.add(new CMSItemType("VEVENT", false, false, false, true, true, new ArrayList<String>(0), null));
+        customizedTypes.add(new CMSItemType("VEVENT", false, false, false, false, true, new ArrayList<String>(0), null));
         // Picture book
         customizedTypes.add(new CMSItemType("PictureBook", true, true, true, false, true, Arrays.asList("Picture"), null));
         //Picture
