@@ -239,6 +239,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         windowProperties.put(Constants.WINDOW_PROP_SCOPE, ctx.getScope());
         windowProperties.put("osivia.ajaxLink", "1");
         windowProperties.put(Constants.WINDOW_PROP_VERSION, ctx.getDisplayLiveVersion());
+        
 
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
