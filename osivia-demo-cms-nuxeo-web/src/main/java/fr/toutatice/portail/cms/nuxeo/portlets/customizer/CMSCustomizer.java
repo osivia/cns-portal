@@ -215,8 +215,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
         windowProperties.put("osivia.ajaxLink", "1");
         windowProperties.put("osivia.hideDecorators", "1");
-        windowProperties.put(Constants.WINDOW_PROP_VERSION, ctx.getDisplayLiveVersion());
-
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
         linkProps.setPortletInstance("toutatice-faq-portletInstance");
