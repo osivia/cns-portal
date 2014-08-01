@@ -442,7 +442,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         // Forum thread
         customizedTypes.add(new CMSItemType("Thread", false, false, false, true, true, new ArrayList<String>(0), null));
         //Agenda
-        customizedTypes.add(new CMSItemType("Agenda", false, true, false, false, true, new ArrayList<String>(0), null));
+        customizedTypes.add(new CMSItemType("Agenda", false, true, false, false, true,  Arrays.asList("VEVENT"), null));
         //Events
         customizedTypes.add(new CMSItemType("VEVENT", false, false, false, false, true, new ArrayList<String>(0), null));
         // Picture book
