@@ -154,8 +154,8 @@
 
         <dependency>
             <groupId>org.osivia.services</groupId>
-            <artifactId>osivia-services-agenda</artifactId>
-            <version>${osivia-services-agenda.version}</version>
+            <artifactId>osivia-services-calendar</artifactId>
+            <version>${osivia-services-calendar.version}</version>
             <type>war</type>
         </dependency>
         

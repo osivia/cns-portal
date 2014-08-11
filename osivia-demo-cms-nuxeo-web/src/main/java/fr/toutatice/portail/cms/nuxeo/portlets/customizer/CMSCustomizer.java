@@ -1,11 +1,11 @@
 /*
  * (C) Copyright 2014 OSIVIA (http://www.osivia.com)
- * 
+ *
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the GNU Lesser General Public License
  * (LGPL) version 2.1 which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/lgpl-2.1.html
- * 
+ *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
@@ -34,7 +34,7 @@ import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItem
 
 /**
  * CMS customizer.
- * 
+ *
  * @author Cédric Krommenhoek
  * @see DefaultCMSCustomizer
  */
@@ -70,7 +70,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Constructor.
-     * 
+     *
      * @param ctx portlet context
      */
     public CMSCustomizer(PortletContext ctx) {
@@ -80,7 +80,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get search schema.
-     * 
+     *
      * @return search schema
      */
     public static String getSearchSchema() {
@@ -88,18 +88,19 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     }
 
 
+    @Override
     public NavigationItemAdapter getNavigationItemAdapter() {
-        if (navigationItemAdapter == null) {
-            navigationItemAdapter = new CustomNavigationItemAdapter(getPortletCtx(), this, getCmsService());
+        if (this.navigationItemAdapter == null) {
+            this.navigationItemAdapter = new CustomNavigationItemAdapter(this.getPortletCtx(), this, this.getCmsService());
         }
 
-        return navigationItemAdapter;
+        return this.navigationItemAdapter;
     }
 
 
     /**
      * Get list of list templates.
-     * 
+     *
      * @return list of list templates
      */
     public static List<ListTemplate> getListTemplates() {
@@ -161,15 +162,15 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         if ("Thread".equals(doc.getType())) {
             return this.getForumThreadPlayer(ctx);
         }
-        
+
         if ("Agenda".equals(doc.getType())) {
-            return this.getAgendaPlayer(ctx);
+            return this.getCalendarPlayer(ctx);
         }
 
         if ("VEVENT".equals(doc.getType())) {
             return this.getEventPlayer(ctx);
         }
-        
+
         if ("PictureBook".equals(doc.getType())) {
             return this.getCMSPictureBookPlayer(ctx);
         }
@@ -182,7 +183,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get Wiki player.
-     * 
+     *
      * @param ctx CMS service context
      * @return Wiki player
      */
@@ -204,7 +205,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get FAQ player.
-     * 
+     *
      * @param ctx CMS service context
      * @return FAQ player
      */
@@ -225,7 +226,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get forum player.
-     * 
+     *
      * @param ctx CMS context
      * @return CMS forum player
      * @throws CMSException
@@ -239,7 +240,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         windowProperties.put(Constants.WINDOW_PROP_SCOPE, ctx.getScope());
         windowProperties.put("osivia.ajaxLink", "1");
         windowProperties.put(Constants.WINDOW_PROP_VERSION, ctx.getDisplayLiveVersion());
-        
+
 
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
@@ -250,7 +251,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Utility method used to create forum player request.
-     * 
+     *
      * @param cmsContext CMS context
      * @return request
      * @throws CMSException
@@ -271,7 +272,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get forum thread player.
-     * 
+     *
      * @param cmsContext CMS context
      * @return forum thread player
      */
@@ -289,14 +290,15 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         return linkProps;
     }
-    
+
+
     /**
-     * Get the Agenda player.
-     * 
+     * Get calendar player.
+     *
      * @param ctx
-     * @return Agenda player
+     * @return calendar player
      */
-    public CMSHandlerProperties getAgendaPlayer(CMSServiceCtx ctx){
+    private CMSHandlerProperties getCalendarPlayer(CMSServiceCtx ctx) {
         Document doc = (Document) ctx.getDoc();
 
         Map<String, String> windowProperties = new HashMap<String, String>();
@@ -305,22 +307,23 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         windowProperties.put("osivia.hideTitle", "1");
         windowProperties.put("osivia.ajaxLink", "0");
         windowProperties.put("osivia.cms.hideMetaDatas", "1");
-        windowProperties.put("osivia.agenda.cmsPath", "${contentPath}");
+        windowProperties.put("osivia.calendar.cmsPath", "${contentPath}");
 
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
-        linkProps.setPortletInstance("osivia-services-agenda-instance");
+        linkProps.setPortletInstance("osivia-services-calendar-instance");
 
         return linkProps;
     }
+
 
     /**
      * Get the event player.
-     * 
+     *
      * @param ctx
      * @return Event player
      */
-    public CMSHandlerProperties getEventPlayer(CMSServiceCtx ctx) {
+    private CMSHandlerProperties getEventPlayer(CMSServiceCtx ctx) {
         Document doc = (Document) ctx.getDoc();
 
         Map<String, String> windowProperties = new HashMap<String, String>();
@@ -332,19 +335,20 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
-        linkProps.setPortletInstance("osivia-services-agenda-event-instance");
+        linkProps.setPortletInstance("osivia-services-calendar-event-instance");
 
         return linkProps;
     }
-    
+
+
     /**
      * Get PictureBook player.
-     * 
+     *
      * @param ctx
      * @return PictureBook player
      * @throws Exception
      */
-    public CMSHandlerProperties getCMSPictureBookPlayer(CMSServiceCtx ctx) throws Exception {
+    private CMSHandlerProperties getCMSPictureBookPlayer(CMSServiceCtx ctx) throws Exception {
         Document doc = (Document) ctx.getDoc();
 
         Map<String, String> windowProperties = new HashMap<String, String>();
@@ -371,7 +375,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get minimal player.
-     * 
+     *
      * @param ctx CMS service context
      * @return minimal player
      */
@@ -404,12 +408,12 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         if (this.customCMSItemTypes == null) {
 
-            customCMSItemTypes = new LinkedHashMap<String, CMSItemType>();
-            customCMSItemTypes.putAll(super.getCMSItemTypes());
+            this.customCMSItemTypes = new LinkedHashMap<String, CMSItemType>();
+            this.customCMSItemTypes.putAll(super.getCMSItemTypes());
 
             List<CMSItemType> customizedTypes = this.getCustomizedCMSItemTypes();
             for (CMSItemType customizedType : customizedTypes) {
-                customCMSItemTypes.put(customizedType.getName(), customizedType);
+                this.customCMSItemTypes.put(customizedType.getName(), customizedType);
             }
         }
 
@@ -419,7 +423,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /**
      * Get customized CMS item types.
-     * 
+     *
      * @return customized CMS item types
      */
     private List<CMSItemType> getCustomizedCMSItemTypes() {
@@ -441,15 +445,15 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         customizedTypes.add(new CMSItemType("Forum", true, true, false, true, true, Arrays.asList("Thread"), null));
         // Forum thread
         customizedTypes.add(new CMSItemType("Thread", false, false, false, true, true, new ArrayList<String>(0), null));
-        //Agenda
+        // Calendar
         customizedTypes.add(new CMSItemType("Agenda", false, true, false, false, true,  Arrays.asList("VEVENT"), null));
-        //Events
+        // Events
         customizedTypes.add(new CMSItemType("VEVENT", false, false, false, false, true, new ArrayList<String>(0), null));
         // Picture book
         customizedTypes.add(new CMSItemType("PictureBook", true, true, true, false, true, Arrays.asList("Picture"), null));
         //Picture
         customizedTypes.add(new CMSItemType("Picture", false, false, false, false, true, new ArrayList<String>(0), null));
-        
+
         return customizedTypes;
     }
 
