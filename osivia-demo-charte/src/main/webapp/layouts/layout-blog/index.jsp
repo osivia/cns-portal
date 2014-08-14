@@ -33,7 +33,7 @@
         <p:region regionName="tabs" />
     </header>
 
-    <section class="container">
+    <div id="page-content" class="container">
         <!-- Notifications -->
         <p:region regionName="notifications" />
     
@@ -66,7 +66,7 @@
                 <p:region regionName="col1" regionID="menu" />
             </div>
         </div>
-    </section>
+    </div>
     
     <!-- Footer -->
     <footer class="container"></footer>

@@ -35,7 +35,7 @@
     
     <div class="wrapper-outer">
         <div class="wrapper-inner">
-            <section class="container">
+            <div id="page-content" class="container">
                 <!-- Notifications -->
                 <p:region regionName="notifications" />
         
@@ -55,7 +55,7 @@
                         <p:region regionName="maximized" />
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     </div>
         
