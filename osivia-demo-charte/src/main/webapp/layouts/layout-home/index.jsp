@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <%@ taglib prefix="p" uri="portal-layout"%>
 
+
 <html>
 
 <head>
-    <title>OSIVIA Démo</title>
+    <p:region regionName="header-metadata" />
     
     <meta charset="UTF-8">
     <meta content="text">
@@ -14,6 +15,7 @@
     <p:headerContent />
     <p:theme themeName="osivia-demo-charte" />    
 </head>
+
 
 <body>
     <!-- Barre d'outils -->

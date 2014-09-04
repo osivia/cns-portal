@@ -18,17 +18,20 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.portlet.PortletContext;
 
 import org.nuxeo.ecm.automation.client.model.Document;
 import org.osivia.portal.api.Constants;
+import org.osivia.portal.api.internationalization.Bundle;
 import org.osivia.portal.core.cms.CMSException;
 import org.osivia.portal.core.cms.CMSHandlerProperties;
 import org.osivia.portal.core.cms.CMSItemType;
 import org.osivia.portal.core.cms.CMSPublicationInfos;
 import org.osivia.portal.core.cms.CMSServiceCtx;
+import org.osivia.portal.core.cms.ListTemplate;
 
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
 
@@ -40,33 +43,34 @@ import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItem
  */
 public class CMSCustomizer extends DefaultCMSCustomizer {
 
-    /** "tuile" schemas. */
-    public static final String SCHEMAS_TUILE = "dublincore, toutatice, zoom";
-    /** "tuile" list template. */
-    public static final String STYLE_TUILE = "tuile";
-    /** "picturebook" schemas. */
+    /** Search schemas. */
+    public static final String SCHEMAS_SEARCH = "dublincore, common, file, uid, toutatice";
+    /** Zoom schemas. */
+    public static final String SCHEMAS_ZOOM = "dublincore, toutatice, zoom";
+    /** Picturebook schemas. */
     public static final String SCHEMAS_PICTUREBOOK = "dublincore, common, toutatice, note, files, acaren, webcontainer, file, picture";
-    /** "picturebook" list template. */
-    public static final String STYLE_PICTUREBOOK = "picturebook";
-    /** "blog" schemas. */
+    /** Blog schemas. */
     public static final String SCHEMAS_BLOG = "dublincore, common, toutatice, webpage";
-    /** "blog" list template. */
+    /** Annonce schemas. */
+    public static final String SCHEMAS_ANNONCE = "dublincore, common, toutatice, annonce, note";
+
+    /** Tiles list template. */
+    public static final String STYLE_TILE = "tuile";
+    /** Picturebook list template. */
+    public static final String STYLE_PICTUREBOOK = "picturebook";
+    /** Blog list template. */
     public static final String STYLE_BLOG = "blog";
-    /** "workspace" schemas. */
-    public static final String SCHEMAS_WORKSPACE = "dublincore";
-    /** "workspace" list template. */
+    /** Workspace list template. */
     public static final String STYLE_WORKSPACE = "workspace";
-    /** "slider" schemas. */
-    public static final String SCHEMAS_SLIDER = "dublincore, common, toutatice, annonce, note";
-    /** "slider" list template. */
+    /** Slider list template. */
     public static final String STYLE_SLIDER = "slider";
-    /** "forum" schemas. */
-    public static final String SCHEMAS_FORUM = "dublincore, common, toutatice";
-    /** "forum" list template. */
+    /** Forum list template. */
     public static final String STYLE_FORUM = "forum";
 
 
+    /** Navigation item adapter. */
     public NavigationItemAdapter navigationItemAdapter;
+
 
     /**
      * Constructor.
@@ -79,15 +83,8 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
 
     /**
-     * Get search schema.
-     *
-     * @return search schema
+     * {@inheritDoc}
      */
-    public static String getSearchSchema() {
-        return "dublincore, common, file, uid, toutatice";
-    }
-
-
     @Override
     public NavigationItemAdapter getNavigationItemAdapter() {
         if (this.navigationItemAdapter == null) {
@@ -99,18 +96,28 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
 
     /**
-     * Get list of list templates.
-     *
-     * @return list of list templates
+     * {@inheritDoc}
      */
-    public static List<ListTemplate> getListTemplates() {
-        List<ListTemplate> templates = DefaultCMSCustomizer.getListTemplates();
-        templates.add(new ListTemplate(STYLE_TUILE, "Tuile [visuel, description]", SCHEMAS_TUILE));
-        templates.add(new ListTemplate(STYLE_PICTUREBOOK, "Livre d'images", SCHEMAS_PICTUREBOOK));
-        templates.add(new ListTemplate(STYLE_BLOG, "Blog", SCHEMAS_BLOG));
-        templates.add(new ListTemplate(STYLE_FORUM, "Forum", SCHEMAS_FORUM));
-        templates.add(new ListTemplate(STYLE_WORKSPACE, "Workspace", SCHEMAS_WORKSPACE));
-        templates.add(new ListTemplate(STYLE_SLIDER, "Carrousel", SCHEMAS_SLIDER));
+    @Override
+    public List<ListTemplate> getListTemplates(Locale locale) {
+        List<ListTemplate> templates = super.getListTemplates(locale);
+
+        // Bundle
+        Bundle bundle = this.getBundleFactory().getBundle(locale);
+
+        // Tiles
+        templates.add(new ListTemplate(STYLE_TILE, bundle.getString("LIST_TEMPLATE_TILES"), SCHEMAS_ZOOM));
+        // Picturebook
+        templates.add(new ListTemplate(STYLE_PICTUREBOOK, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), SCHEMAS_PICTUREBOOK));
+        // Blog
+        templates.add(new ListTemplate(STYLE_BLOG, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), SCHEMAS_BLOG));
+        // Workspace
+        templates.add(new ListTemplate(STYLE_WORKSPACE, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), DEFAULT_SCHEMAS));
+        // Slider
+        templates.add(new ListTemplate(STYLE_SLIDER, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), SCHEMAS_ANNONCE));
+        // Forum
+        templates.add(new ListTemplate(STYLE_FORUM, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), DEFAULT_SCHEMAS));
+
         return templates;
     }
 
@@ -136,6 +143,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         return linkProps;
     }
+
 
     /**
      * {@inheritDoc}

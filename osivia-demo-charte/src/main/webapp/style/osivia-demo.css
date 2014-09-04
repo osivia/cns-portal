@@ -8,9 +8,6 @@ header, section, footer {
     margin-bottom: 20px;
 }
 
-a {
-    color: #4DA0AB;
-}
 
 a.osivia-link-external {
     background-image: url("images/lien-externe.png");
@@ -71,19 +68,4 @@ a.osivia-link-external {
 
 #search {
     margin-top: 10px;
-}
-
-
-#msglogout {
-    position: absolute;
-    background-color: #F8F8F8;
-    visibility: visible;
-    display: none;
-    top: 10%;
-    left: 44%;
-    padding: 1%;
-    z-index: 201; 
-    text-align: center; 
-    color: rgb(47, 68, 86); 
-    border: 2px solid rgb(47, 68, 86); 
 }
