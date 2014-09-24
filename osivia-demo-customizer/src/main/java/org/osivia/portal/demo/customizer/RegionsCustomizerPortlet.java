@@ -100,6 +100,7 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
     /**
      * {@inheritDoc}
      */
+    @Override
     public void customize(String customizationID, CustomizationContext context) {
         String charteEnt = this.getInitParameter(CHARTE_CONTEXT);
         String charteSitesWeb = this.getInitParameter(CHARTE_SITESWEB_CONTEXT);
@@ -126,9 +127,8 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
 
             if (StringUtils.equals(contextPath, charteMontpellier)) {
                 // Customize regions
-                renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp", contextPath);
+                renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp", charteEnt);
                 renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp", contextPath);
-                renderedRegion.customizeRenderedRegion("search", "/header/search.jsp");
                 renderedRegion.removeRenderedRegion("footer");
             }
         }

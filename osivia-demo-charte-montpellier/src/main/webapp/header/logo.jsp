@@ -8,7 +8,7 @@
 <div class="pull-left">
     <h1>
         <a href="${requestScope['osivia.home.url']}">
-            <img src="${pageContext.request.contextPath}/images/logo-ac-montpellier.png" alt="${logoAlt}">
+            <img src="${pageContext.request.contextPath}/img/logo-ac-montpellier.png" alt="${logoAlt}">
         </a>
     </h1>
  </div>

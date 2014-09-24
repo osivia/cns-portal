@@ -1,0 +1,326 @@
+//
+// OSIVIA Demo - Tiles
+// --------------------------------------------------
+
+
+// Core variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+
+// List style
+.nuxeo-list-tuile {
+    ul {
+        list-style: none;
+        margin: 0; 
+        padding: 0;
+        
+        li > div {
+            padding: 0 2px 2px 0;
+        }
+    }
+    
+    .thumbnail.tile {
+        height: 130px;
+        margin: 0; 
+        color: #fff;
+        background-color: @brand-primary;
+        border-style: none;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        
+        &:HOVER, &:FOCUS {
+            .scale(.95);
+            
+            background-color: lighten(@brand-primary, 10%);
+        }
+        
+        * {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .glyphicons {
+            font-size: 42px;
+            padding-bottom: @padding-base-vertical;
+        }
+    }
+}
+
+
+// Colors
+@black: #000000;
+@white: #ffffff;
+@lime: #a4c400;
+@green: #60a917;
+@emerald: #008a00;
+@blue: #00AFF0;
+@teal: #00aba9;
+@cyan: #1ba1e2;
+@cobalt: #0050ef;
+@indigo: #6a00ff;
+@violet: #aa00ff;
+@pink: #dc4fad;
+@magenta: #d80073;
+@crimson: #a20025;
+@red: #e51400;
+@orange: #fa6800;
+@amber: #f0a30a;
+@yellow: #e3c800;
+@brown: #825a2c;
+@olive: #6d8764;
+@steel: #647687;
+@mauve: #76608a;
+@taupe: #87794e;
+@dark: #1d1d1d;
+@darkBrown: #63362F;
+@darkCrimson: #640024;
+@darkMagenta: #81003C;
+@darkIndigo: #4B0096;
+@darkCyan: #1B6EAE;
+@darkCobalt: #00356A;
+@darkTeal: #004050;
+@darkEmerald: #003e00;
+@darkGreen: #128023;
+@darkOrange: #bf5a15;
+@darkRed: #9a1616;
+@darkPink: #9a165a;
+@darkViolet: #57169a;
+@darkBlue: #16499a;
+@lightBlue: #4390df;
+@lighterBlue: #00CCFF;
+@lightTeal: lighten(@teal, 30%);
+@lightOlive: #78aa1c;
+@lightOrange: #c29008;
+@lightPink: #f472d0;
+@lightRed: lighten(@red, 10%);
+@lightGreen: lighten(@green, 10%);
+@grayed: #585858;
+@grayDarker: #222222;
+@grayDark: #333333;
+@gray: #555555;
+@grayLight: #999999;
+@grayLighter: #eeeeee;
+
+
+.set-color(@color) {
+    background-color: @color;
+    
+    &:HOVER, &:FOCUS {
+        background-color: lighten(@color, 10%);
+    }
+}
+
+
+.thumbnail.tile {
+    &.tile-black {
+        .set-color (@black);
+    }
+
+    &.tile-white {
+        .set-color (@white);
+    }
+
+    &.tile-lime {
+        .set-color (@lime);
+    }
+
+    &.tile-green {
+        .set-color (@green);
+    }
+
+    &.tile-emerald {
+        .set-color (@emerald);
+    }
+
+    &.tile-blue {
+        .set-color (@blue);
+    }
+
+    &.tile-teal {
+        .set-color (@teal);
+    }
+
+    &.tile-cyan {
+        .set-color (@cyan);
+    }
+
+    &.tile-cobalt {
+        .set-color (@cobalt);
+    }
+
+    &.tile-indigo {
+        .set-color (@indigo);
+    }
+
+    &.tile-violet {
+        .set-color (@violet);
+    }
+
+    &.tile-pink {
+        .set-color (@pink);
+    }
+
+    &.tile-magenta {
+        .set-color (@magenta);
+    }
+
+    &.tile-crimson {
+        .set-color (@crimson);
+    }
+
+    &.tile-red {
+        .set-color (@red);
+    }
+
+    &.tile-orange {
+        .set-color (@orange);
+    }
+
+    &.tile-amber {
+        .set-color (@amber);
+    }
+
+    &.tile-yellow {
+        .set-color (@yellow);
+    }
+
+    &.tile-brown {
+        .set-color (@brown);
+    }
+
+    &.tile-olive {
+        .set-color (@olive);
+    }
+
+    &.tile-steel {
+        .set-color (@steel);
+    }
+
+    &.tile-mauve {
+        .set-color (@mauve);
+    }
+
+    &.tile-taupe {
+        .set-color (@taupe);
+    }
+
+    &.tile-dark {
+        .set-color (@dark);
+    }
+
+    &.tile-darkBrown {
+        .set-color (@darkBrown);
+    }
+
+    &.tile-darkCrimson {
+        .set-color (@darkCrimson);
+    }
+
+    &.tile-darkMagenta {
+        .set-color (@darkMagenta);
+    }
+
+    &.tile-darkIndigo {
+        .set-color (@darkIndigo);
+    }
+
+    &.tile-darkCyan {
+        .set-color (@darkCyan);
+    }
+
+    &.tile-darkCobalt {
+        .set-color (@darkCobalt);
+    }
+
+    &.tile-darkTeal {
+        .set-color (@darkTeal);
+    }
+
+    &.tile-darkEmerald {
+        .set-color (@darkEmerald);
+    }
+
+    &.tile-darkGreen {
+        .set-color (@darkGreen);
+    }
+
+    &.tile-darkOrange {
+        .set-color (@darkOrange);
+    }
+
+    &.tile-darkRed {
+        .set-color (@darkRed);
+    }
+
+    &.tile-darkPink {
+        .set-color (@darkPink);
+    }
+
+    &.tile-darkViolet {
+        .set-color (@darkViolet);
+    }
+
+    &.tile-darkBlue {
+        .set-color (@darkBlue);
+    }
+
+    &.tile-lightBlue {
+        .set-color (@lightBlue);
+    }
+
+    &.tile-lighterBlue {
+        .set-color (@lighterBlue);
+    }
+
+    &.tile-lightTeal {
+        .set-color (@lightTeal);
+    }
+
+    &.tile-lightOlive {
+        .set-color (@lightOlive);
+    }
+
+    &.tile-lightOrange {
+        .set-color (@lightOrange);
+    }
+
+    &.tile-lightPink {
+        .set-color (@lightPink);
+    }
+
+    &.tile-lightRed {
+        .set-color (@lightRed);
+    }
+
+    &.tile-lightGreen {
+        .set-color (@lightGreen);
+    }
+
+    &.tile-grayed {
+        .set-color (@grayed);
+    }
+
+    &.tile-grayDarker {
+        .set-color (@grayDarker);
+    }
+
+    &.tile-grayDark {
+        .set-color (@grayDark);
+    }
+
+    &.tile-gray {
+        .set-color (@gray);
+    }
+
+    &.tile-grayLight {
+        .set-color (@grayLight);
+    }
+
+    &.tile-grayLighter {
+        .set-color (@grayLighter);
+    }
+}
+
