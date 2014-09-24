@@ -4,7 +4,7 @@
 <portlet-app>
 
     <portlet>
-        <portlet-name>osivia-demo-attributesBundles-customizerPortlet</portlet-name>
+        <portlet-name>osivia-demo-customizer</portlet-name>
     </portlet>
 
     <service>

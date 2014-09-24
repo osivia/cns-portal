@@ -20,18 +20,21 @@
 
     <dependencies>
 
-        <!-- socle -->
+        <!-- Socle -->
+
         <dependency>
-                <groupId>toutatice-portail.cms</groupId>
-                <artifactId>toutatice-portail-cms-nuxeo-distribution</artifactId>
-                <version>${toutatice.version}</version>
-                <type>zip</type>
+            <groupId>toutatice-portail.cms</groupId>
+            <artifactId>toutatice-portail-cms-nuxeo-distribution</artifactId>
+            <version>${toutatice.version}</version>
+            <type>zip</type>
         </dependency>
 
+
         <!-- Démo -->
+
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>osivia-demo-attributes-bundles-customizer</artifactId>
+            <artifactId>osivia-demo-customizer</artifactId>
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
@@ -49,17 +52,10 @@
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
-        
-        <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>osivia-demo-charte-montpellier</artifactId>
-            <version>${project.version}</version>
-            <type>war</type>
-        </dependency>
 
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>osivia-demo-regions-customizer</artifactId>
+            <artifactId>osivia-demo-charte-montpellier</artifactId>
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
@@ -71,18 +67,13 @@
             <type>war</type>
         </dependency>
 
-        <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>osivia-demo-test-cms</artifactId>
-            <version>${project.version}</version>
-            <type>war</type>
-        </dependency>
 
-        <!-- identity & user management -->
+        <!-- Identity & user management -->
+
         <dependency>
             <groupId>outils.ldap</groupId>
             <artifactId>toutatice-annuaire</artifactId>
-            <version>${toutatice.annuaire.version}</version>        
+            <version>${toutatice.annuaire.version}</version>
         </dependency>
 
         <dependency>
@@ -90,61 +81,66 @@
             <artifactId>osivia-portal-identity-sso-lib</artifactId>
             <version>${identity-sso.version}</version>
         </dependency>
-        
+
         <dependency>
             <groupId>org.osivia.services.directory</groupId>
             <artifactId>osivia-services-directory</artifactId>
             <version>${osivia-services-directory.version}</version>
-            <type>war</type>          
+            <type>war</type>
         </dependency>
-        
+
         <dependency>
             <groupId>org.osivia.services</groupId>
             <artifactId>osivia-services-portal-api-demo</artifactId>
             <version>${osivia-services-portal-api-demo.version}</version>
-            <type>war</type>          
+            <type>war</type>
         </dependency>
-      
+
         <dependency>
             <groupId>toutatice-services.identite</groupId>
             <artifactId>toutatice-identite-fichepersonne-portail</artifactId>
             <version>${fichepersonne.version}</version>
             <type>war</type>
         </dependency>
+
         <dependency>
             <groupId>toutatice-services.identite</groupId>
             <artifactId>toutatice-identite-gestiongroupes-portail</artifactId>
             <version>${gestiongroupe.version}</version>
             <type>war</type>
         </dependency>
+
         <dependency>
             <groupId>toutatice-services.identite</groupId>
             <artifactId>toutatice-identite-ficheprofil-portail</artifactId>
             <version>${ficheprofil.version}</version>
             <type>war</type>
-        </dependency>                
+        </dependency>
+
         <dependency>
             <groupId>toutatice-services.nuxeo</groupId>
             <artifactId>toutatice-nuxeo-gestionworkspace-portail</artifactId>
             <version>${gestionworkspace.version}</version>
             <type>war</type>
         </dependency>
+
         <dependency>
             <groupId>toutatice-services.nuxeo</groupId>
             <artifactId>toutatice-nuxeo-participantsworkspace-portail</artifactId>
             <version>${participantswks.version}</version>
             <type>war</type>
-        </dependency>        
-                        
+        </dependency>
 
-        <!-- collab tools -->
+
+        <!-- Collab tools -->
+
         <dependency>
             <groupId>org.osivia.services</groupId>
             <artifactId>osivia-services-wiki</artifactId>
             <version>${osivia-services-wiki.version}</version>
             <type>war</type>
         </dependency>
-        
+
         <dependency>
             <groupId>org.osivia.services</groupId>
             <artifactId>osivia-services-forum</artifactId>
@@ -158,31 +154,30 @@
             <version>${osivia-services-calendar.version}</version>
             <type>war</type>
         </dependency>
-        
+
         <dependency>
             <groupId>toutatice-services.faq</groupId>
             <artifactId>toutatice-faq-portail</artifactId>
             <version>${toutatice-faq.version}</version>
             <type>war</type>
         </dependency>
-        
-       <dependency>
+
+        <dependency>
             <groupId>toutatice-services.dashboard.ecm</groupId>
             <artifactId>toutatice-dashboard-ecm-portail</artifactId>
             <version>${toutatice-dashboard.version}</version>
             <type>war</type>
-        </dependency>  
+        </dependency>
 
-        <!-- monitoring -->
+
+        <!-- Monitoring -->
+        
         <dependency>
             <groupId>org.osivia.services</groupId>
             <artifactId>osivia-services-java-melody-integration</artifactId>
             <version>${osivia-services-java-melody-integration.version}</version>
             <type>jar</type>
         </dependency>
-
-
-
 
     </dependencies>
 
@@ -223,9 +218,9 @@
                                 <configuration>
                                     <artifactItems>
                                         <artifactItem>
-											<groupId>toutatice-portail.cms</groupId>
-											<artifactId>toutatice-portail-cms-nuxeo-distribution</artifactId>
-											<version>${toutatice.version}</version>
+                                            <groupId>toutatice-portail.cms</groupId>
+                                            <artifactId>toutatice-portail-cms-nuxeo-distribution</artifactId>
+                                            <version>${toutatice.version}</version>
                                             <type>zip</type>
                                             <overWrite>true</overWrite>
                                             <outputDirectory>${project.build.directory}/toutatice-distribution</outputDirectory>
@@ -276,7 +271,8 @@
                                 <phase>package</phase>
                                 <configuration>
                                     <tasks>
-                                        <copy file="${basedir}/target/${project.artifactId}.zip" tofile="${portal-pack-dir}/${project.artifactId}-${dest-env}-${project.version}.zip" overwrite="true" />
+                                        <copy file="${basedir}/target/${project.artifactId}.zip" tofile="${portal-pack-dir}/${project.artifactId}-${dest-env}-${project.version}.zip"
+                                            overwrite="true" />
                                     </tasks>
                                 </configuration>
                                 <goals>

@@ -10,7 +10,7 @@
 
 	<artifactId>osivia-demo-cms-nuxeo-web</artifactId>
 	<packaging>war</packaging>
-	<name>Demonstrateur OSIVIA - CMS</name>
+	<name>Demonstrateur OSIVIA - CMS customizer</name>
 	<description>Intégration CMS du démonstrateur du portail OSIVIA</description>
 
 

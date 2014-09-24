@@ -9,10 +9,10 @@
     </parent>
 
 
-    <artifactId>osivia-demo-attributes-bundles-customizer</artifactId>
+    <artifactId>osivia-demo-customizer</artifactId>
     <packaging>war</packaging>
-    <name>Démonstrateur OSIVIA - Attributes bundles customizer</name>
-    <description>Portlet technique de personnalisation des packs d'attributs</description>
+    <name>Démonstrateur OSIVIA - Customizer</name>
+    <description>Portlet technique de personnalisation</description>
 
 
     <properties>
