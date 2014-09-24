@@ -1,36 +1,26 @@
-<%@ page import="java.util.Locale"%>
-<%@ page import="org.nuxeo.ecm.automation.client.model.Document"%>
-<%@ page import="org.nuxeo.ecm.automation.client.model.PropertyMap"%>
-<%@ page import="org.osivia.portal.demo.customizer.Formatter"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="internationalization" prefix="is" %>
+<%@ taglib uri="toutatice" prefix="ttc" %>
 
-<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<%@ page isELIgnored="false" %>
+<%@ page isELIgnored="false"%>
 
 
-<%
-Document document = (Document) request.getAttribute("doc");
-PropertyMap properties = document.getProperties();
-
-// Locale
-Locale locale = request.getLocale();
-
-// Date
-pageContext.setAttribute("date", Formatter.formatDate(document, locale, true));
-// Titre
-pageContext.setAttribute("titre", properties.getString("dc:title"));
-// Description
-pageContext.setAttribute("description", properties.getString("dc:description"));
-// Contenu
-pageContext.setAttribute("contenu", properties.getString("webp:content"));
-
-%>
+<ttc:setDate var="date" property="dc:created" />
+<c:set var="description" value="${document.properties['dc:description']}" />
+<c:set var="content"><ttc:transform property="webp:content" /></c:set>
 
 
-<div class="blog-post">
-    <div class="blog-post-date">${date}</div>
-    <div class="blog-post-title">${titre}</div>
-    <div class="blog-post-description">${description}</div>
-    <div class="blog-post-content">${contenu}</div>        
-</div>
+<article class="blog-post">
+    <!-- Date -->
+    <p><fmt:formatDate value="${date}" type="date" dateStyle="long" /></p>
+    
+    <!-- Title -->
+    <h3>${document.title}</h3>
+    
+    <!-- Description -->
+    <p class="lead">${description}</p>
+    
+    <!-- Content -->
+    <div>${content}</div>
+</article>

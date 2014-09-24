@@ -1,5 +1,6 @@
 <%@ taglib uri="internationalization" prefix="is" %>
 
+
 <script type="text/javascript">
 
 function onsubmitGlobalSearch(form) {
@@ -12,7 +13,7 @@ function onsubmitGlobalSearch(form) {
 </script>
 
 
-<div class="pull-right hidden-xs">
+<div class="pull-right">
     <form class="form-inline" onsubmit="return onsubmitGlobalSearch(this);" method="post" role="search">
         <div class="form-group">
             <label class="sr-only" for="search-input">Search</label>

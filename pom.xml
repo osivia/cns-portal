@@ -9,43 +9,39 @@
     <name>Demonstrateur OSIVIA - Parent</name>
 
 
-	<properties>
-        <!-- socle -->
-		<toutatice.version>3.3.0-SNAPSHOT</toutatice.version>
-        
-        <!-- collab tools -->
+    <properties>
+        <!-- Socle -->
+        <toutatice.version>3.3.0-SNAPSHOT</toutatice.version>
+
+        <!-- Collab tools -->
         <toutatice-faq.version>3.3-SNAPSHOT</toutatice-faq.version>
         <osivia-services-calendar.version>1.0-SNAPSHOT</osivia-services-calendar.version>
         <osivia-services-wiki.version>1.2-SNAPSHOT</osivia-services-wiki.version>
         <osivia-services-forum.version>1.1-SNAPSHOT</osivia-services-forum.version>
-        <toutatice-dashboard.version>3.2-osivia-SNAPSHOT</toutatice-dashboard.version> 
-        <osivia-services-portal-api-demo.version>3.3-SNAPSHOT</osivia-services-portal-api-demo.version>     
+        <toutatice-dashboard.version>3.2-osivia-SNAPSHOT</toutatice-dashboard.version>
+        <osivia-services-portal-api-demo.version>3.3-SNAPSHOT</osivia-services-portal-api-demo.version>
 
-        <!-- identity & user mgt tools -->
+        <!-- Identity & user mgt tools -->
         <toutatice.annuaire.version>2.3.5-osivia-SNAPSHOT</toutatice.annuaire.version>
         <osivia-services-directory.version>1.0.0-SNAPSHOT</osivia-services-directory.version>
-		<fichepersonne.version>3.0-osivia-SNAPSHOT</fichepersonne.version>
+        <fichepersonne.version>3.0-osivia-SNAPSHOT</fichepersonne.version>
         <ficheprofil.version>3.0-osivia-SNAPSHOT</ficheprofil.version>
         <gestiongroupe.version>3.0-osivia-SNAPSHOT</gestiongroupe.version>
         <gestionworkspace.version>3.0-osivia-SNAPSHOT</gestionworkspace.version>
         <participantswks.version>3.0-osivia-SNAPSHOT</participantswks.version>
         <identity-sso.version>3.0.4</identity-sso.version>
-        
-        <!-- admin tools -->
-		<osivia-services-java-melody-integration.version>1.0-RC2</osivia-services-java-melody-integration.version>
 
-	</properties>
+        <!-- Admin tools -->
+        <osivia-services-java-melody-integration.version>1.0-RC2</osivia-services-java-melody-integration.version>
+    </properties>
 
 
     <modules>
-        <module>osivia-demo-attributes-bundles-customizer</module>
         <module>osivia-demo-charte</module>
         <module>osivia-demo-charte-sitesweb</module>
         <module>osivia-demo-charte-montpellier</module>
         <module>osivia-demo-cms-nuxeo-web</module>
-        <module>osivia-demo-portlets-utils</module>
-        <module>osivia-demo-regions-customizer</module>
-        <module>osivia-demo-test-cms</module>
+        <module>osivia-demo-customizer</module>
         <module>osivia-demo-distribution</module>
     </modules>
 
@@ -57,8 +53,6 @@
 
     <dependencyManagement>
         <dependencies>
-
- 
 
             <!-- Toutatice CMS -->
 
@@ -76,7 +70,6 @@
                 <scope>test</scope>
             </dependency>
 
-
             <dependency>
                 <groupId>toutatice-portail.cms</groupId>
                 <artifactId>toutatice-portail-cms-nuxeo-web</artifactId>
@@ -92,29 +85,28 @@
                 <version>${toutatice.version}</version>
             </dependency>
 
-
         </dependencies>
     </dependencyManagement>
 
 
     <dependencies>
-  
-      <dependency>
-               <groupId>toutatice-portail.cms</groupId>
-               <artifactId>toutatice-portail-cms-nuxeo-dependencies</artifactId>
-       </dependency>
 
-       <dependency>
-           <groupId>toutatice-portail.cms</groupId>
-           <artifactId>toutatice-portail-cms-nuxeo-dependencies-test</artifactId>
-       </dependency>       
+        <dependency>
+            <groupId>toutatice-portail.cms</groupId>
+            <artifactId>toutatice-portail-cms-nuxeo-dependencies</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>toutatice-portail.cms</groupId>
+            <artifactId>toutatice-portail-cms-nuxeo-dependencies-test</artifactId>
+        </dependency>
 
     </dependencies>
 
 
     <build>
         <plugins>
-
+        
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -182,7 +174,7 @@
         <profile>
             <id>portal-snapshots</id>
             <properties>
-            
+
             </properties>
         </profile>
     </profiles>

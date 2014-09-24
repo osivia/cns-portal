@@ -1,0 +1,72 @@
+//
+// OSIVIA Demo - Custom properties
+// --------------------------------------------------
+
+
+// Core variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+
+
+// Body
+
+body {
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;
+    background-position: 125px 60px;
+}
+
+
+
+// Header
+
+header {
+    margin-bottom: @line-height-computed;
+    
+    .banner {
+        position: relative;
+        
+        .header-line {
+            position: absolute;
+            bottom: 16px;
+            left: 260px;
+            right: 0;
+            height: 16px;
+            width: auto;
+            z-index: -1; 
+            
+            background-color: @brand-primary;
+        }
+        
+        #search {
+            margin-top: @line-height-computed;
+        }
+    }
+}
+
+
+
+// Page content
+
+#page-content {
+    margin-bottom: @line-height-computed;
+}
+
+
+
+// Footer
+
+footer {
+    margin-bottom: @line-height-computed;    
+}
+
+
+
+// Picture Book
+
+.picture-item {
+    float: left;
+    list-style-type: none;
+    padding: 5px;
+}

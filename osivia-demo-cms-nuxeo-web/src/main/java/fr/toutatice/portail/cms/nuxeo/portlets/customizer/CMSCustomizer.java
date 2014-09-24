@@ -110,13 +110,13 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         // Picturebook
         templates.add(new ListTemplate(STYLE_PICTUREBOOK, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), SCHEMAS_PICTUREBOOK));
         // Blog
-        templates.add(new ListTemplate(STYLE_BLOG, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), SCHEMAS_BLOG));
+        templates.add(new ListTemplate(STYLE_BLOG, bundle.getString("LIST_TEMPLATE_BLOG"), SCHEMAS_BLOG));
         // Workspace
-        templates.add(new ListTemplate(STYLE_WORKSPACE, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), DEFAULT_SCHEMAS));
+        templates.add(new ListTemplate(STYLE_WORKSPACE, bundle.getString("LIST_TEMPLATE_WORKSPACE"), DEFAULT_SCHEMAS));
         // Slider
-        templates.add(new ListTemplate(STYLE_SLIDER, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), SCHEMAS_ANNONCE));
+        templates.add(new ListTemplate(STYLE_SLIDER, bundle.getString("LIST_TEMPLATE_SLIDER"), SCHEMAS_ANNONCE));
         // Forum
-        templates.add(new ListTemplate(STYLE_FORUM, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), DEFAULT_SCHEMAS));
+        templates.add(new ListTemplate(STYLE_FORUM, bundle.getString("LIST_TEMPLATE_FORUM"), DEFAULT_SCHEMAS));
 
         return templates;
     }
