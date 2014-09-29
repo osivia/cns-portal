@@ -20,18 +20,6 @@
 
     <dependencies>
 
-        <!-- Socle -->
-
-        <dependency>
-            <groupId>toutatice-portail.cms</groupId>
-            <artifactId>toutatice-portail-cms-nuxeo-distribution</artifactId>
-            <version>${toutatice.version}</version>
-            <type>zip</type>
-        </dependency>
-
-
-        <!-- Démo -->
-
         <dependency>
             <groupId>${groupId}</groupId>
             <artifactId>osivia-demo-customizer</artifactId>
@@ -201,6 +189,16 @@
 
         <profile>
             <id>unpack</id>
+            
+            <dependencies>
+                <dependency>
+                    <groupId>toutatice-portail.cms</groupId>
+                    <artifactId>toutatice-portail-cms-nuxeo-distribution</artifactId>
+                    <version>${toutatice.version}</version>
+                    <type>zip</type>
+                </dependency>
+            </dependencies>
+            
             <build>
                 <defaultGoal>package</defaultGoal>
                 <plugins>
@@ -236,6 +234,7 @@
 
         <profile>
             <id>pack</id>
+            
             <build>
                 <defaultGoal>package</defaultGoal>
                 <plugins>
