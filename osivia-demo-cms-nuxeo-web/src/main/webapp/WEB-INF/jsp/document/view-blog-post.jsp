@@ -6,7 +6,7 @@
 <%@ page isELIgnored="false"%>
 
 
-<ttc:setDate var="date" property="dc:created" />
+<c:set var="date" value="${document.properties['dc:created']}" />
 <c:set var="description" value="${document.properties['dc:description']}" />
 <c:set var="content"><ttc:transform property="webp:content" /></c:set>
 
