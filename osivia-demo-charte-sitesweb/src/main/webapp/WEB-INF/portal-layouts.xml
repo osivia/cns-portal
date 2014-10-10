@@ -19,6 +19,7 @@
 		<name>sitesweb-layout-3cols</name>
 		<uri>/layouts/sitesweb-layout-3cols/index.jsp</uri>
 		<uri state="maximized">/layouts/sitesweb-layout-3cols/maximized.jsp</uri> 
+		<uri state="newsletter">/layouts/sitesweb-layout-3cols/newsletter.jsp</uri> 		
 		<regions>
 			<region name="headBand"/>
 			<region name="virtual"/>

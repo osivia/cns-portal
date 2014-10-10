@@ -11,7 +11,7 @@
 
     <properties>
         <!-- Socle -->
-        <toutatice.version>3.3.0-SNAPSHOT</toutatice.version>
+        <toutatice.version>3.4.0-SNAPSHOT</toutatice.version>
 
         <!-- Collab tools -->
         <toutatice-faq.version>3.3-SNAPSHOT</toutatice-faq.version>
