@@ -6,9 +6,11 @@
 <%@ page isELIgnored="false"%>
 
 
-<c:set var="documentURL"><ttc:getDocumentURL /></c:set>
-<c:set var="pictureURL"><ttc:getDocumentURL picture="true" /></c:set>
-<c:set var="mediumPictureURL"><ttc:getDocumentURL picture="true" displayContext="Medium" /></c:set>
+<ttc:documentLink document="${document}" />
+
+<c:set var="documentURL"><ttc:documentLink document="${document}" /></c:set>
+<c:set var="pictureURL"><ttc:documentLink document="${document}" picture="true" /></c:set>
+<c:set var="mediumPictureURL"><ttc:documentLink document="${document}" picture="true" displayContext="Medium" /></c:set>
 <c:set var="description" value="${document.properties['dc:description']}" />
 
 <ttc:addMenubarItem id="DOWNLOAD" labelKey="DOWNLOAD" order="20" url="${pictureURL}" glyphicon="download_alt" />

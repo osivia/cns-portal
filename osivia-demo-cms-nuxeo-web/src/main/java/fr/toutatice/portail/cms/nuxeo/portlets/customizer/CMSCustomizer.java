@@ -31,8 +31,8 @@ import org.osivia.portal.core.cms.CMSHandlerProperties;
 import org.osivia.portal.core.cms.CMSItemType;
 import org.osivia.portal.core.cms.CMSPublicationInfos;
 import org.osivia.portal.core.cms.CMSServiceCtx;
-import org.osivia.portal.core.cms.ListTemplate;
 
+import fr.toutatice.portail.cms.nuxeo.api.domain.ListTemplate;
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
 
 /**
@@ -62,8 +62,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     public static final String STYLE_BLOG = "blog";
     /** Workspace list template. */
     public static final String STYLE_WORKSPACE = "workspace";
-    /** Slider list template. */
-    public static final String STYLE_SLIDER = "slider";
     /** Forum list template. */
     public static final String STYLE_FORUM = "forum";
 
@@ -113,8 +111,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         templates.add(new ListTemplate(STYLE_BLOG, bundle.getString("LIST_TEMPLATE_BLOG"), SCHEMAS_BLOG));
         // Workspace
         templates.add(new ListTemplate(STYLE_WORKSPACE, bundle.getString("LIST_TEMPLATE_WORKSPACE"), DEFAULT_SCHEMAS));
-        // Slider
-        templates.add(new ListTemplate(STYLE_SLIDER, bundle.getString("LIST_TEMPLATE_SLIDER"), SCHEMAS_ANNONCE));
         // Forum
         templates.add(new ListTemplate(STYLE_FORUM, bundle.getString("LIST_TEMPLATE_FORUM"), DEFAULT_SCHEMAS));
 

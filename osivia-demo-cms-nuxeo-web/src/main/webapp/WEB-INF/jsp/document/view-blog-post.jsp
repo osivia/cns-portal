@@ -8,7 +8,7 @@
 
 <c:set var="date" value="${document.properties['dc:created']}" />
 <c:set var="description" value="${document.properties['dc:description']}" />
-<c:set var="content"><ttc:transform property="webp:content" /></c:set>
+<c:set var="content"><ttc:transform document="${document}" property="webp:content" /></c:set>
 
 
 <article class="blog-post">
