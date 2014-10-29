@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <themes>
 	<theme>
-		<name>osivia-demo-charte-web</name>
+		<name>osivia-demo-web</name>
         <link rel="icon" href="/img/osivia.ico" />
         
         <!-- CSS -->

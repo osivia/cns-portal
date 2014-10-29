@@ -19,7 +19,7 @@
                 <!-- demo -->
                 <include>${groupId}:osivia-demo-customizer:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-charte:war:${project.version}</include>
-                <include>${groupId}:osivia-demo-charte-sitesweb:war:${project.version}</include>
+                <include>${groupId}:osivia-demo-charte-web:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-charte-montpellier:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-cms-nuxeo-web:war:${project.version}</include>
                 <include>org.osivia.services:osivia-services-portal-api-demo:war:${osivia-services-portal-api-demo.version}</include>                

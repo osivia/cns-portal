@@ -17,7 +17,7 @@
         </init-param>
         <init-param>
             <name>customizer.regions.demo.sitesweb.context</name>
-            <value>/osivia-demo-charte-sitesweb</value>
+            <value>/osivia-demo-charte-web</value>
         </init-param>
         <init-param>
             <name>customizer.regions.demo.montpellier.context</name>

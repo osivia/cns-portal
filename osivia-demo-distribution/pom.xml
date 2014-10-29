@@ -36,7 +36,7 @@
 
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>osivia-demo-charte-sitesweb</artifactId>
+            <artifactId>osivia-demo-charte-web</artifactId>
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
