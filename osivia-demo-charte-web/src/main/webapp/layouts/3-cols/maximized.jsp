@@ -24,7 +24,9 @@
                 <div class="row">
                     <div id="drawer">
                         <div class="col-sm-4 col-lg-3">
-                            <p:region regionName="col1" />
+                            <p:region regionName="col1-top" cms="true" />
+                            <p:region regionName="menu" />
+                            <p:region regionName="col1-bottom" cms="true" />
                         </div>
                     </div>
                     

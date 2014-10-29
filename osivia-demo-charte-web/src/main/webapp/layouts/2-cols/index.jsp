@@ -15,6 +15,9 @@
     <div id="page-content" class="container">
         <!-- Notifications -->
         <p:region regionName="notifications" />
+        
+        <!-- Breadcrumb -->
+        <p:region regionName="breadcrumb" />
 
         <p:region regionName="top" cms="true" />
 
