@@ -20,25 +20,25 @@
                         <tbody>
                             <tr>
                                 <td colspan="2">
-                                    <p:region regionName="top" cms="true" />
+                                    <p:region regionName="top" />
                                 </td>
                             </tr>
                         
                             <tr>
                                 <td width="50%">
-                                    <p:region regionName="col2-top" cms="true" />
-                                    <p:region regionName="col2-bottom" cms="true" />
+                                    <p:region regionName="col2-top" />
+                                    <p:region regionName="col2-bottom" />
                                 </td>
                                 
                                 <td width="50%">
-                                    <p:region regionName="col3-top" cms="true" />
-                                    <p:region regionName="col3-bottom" cms="true" />
+                                    <p:region regionName="col3-top" />
+                                    <p:region regionName="col3-bottom" />
                                 </td>
                             </tr>
                             
                             <tr>
                                 <td colspan="2">
-                                    <p:region regionName="bottom" cms="true" />
+                                    <p:region regionName="bottom" />
                                 </td>
                             </tr>
                         </tbody>
