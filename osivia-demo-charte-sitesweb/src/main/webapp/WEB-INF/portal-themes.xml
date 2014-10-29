@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <themes>
 	<theme>
-		<name>osivia-sitesweb-theme</name>
-        <link rel="shortcut icon" type="image/x-icon" href="/themes/sitesweb/images/favicon/favicon.ico" />
-
-        <link rel="stylesheet" href="/themes/sitesweb/css/filariane-recherche.css" type="text/css" title="" media="screen"/>
-        <link rel="stylesheet" href="/themes/sitesweb/css/layout.css" type="text/css" title="" media="screen"/>
-        <link rel="stylesheet" href="/themes/sitesweb/css/main.css" type="text/css" title="" media="screen"/>
-        <link rel="stylesheet" href="/themes/sitesweb/css/menu.css" type="text/css" title="" media="screen"/>
-        <link rel="stylesheet" href="/themes/sitesweb/css/portlet-fragment.css" type="text/css" title="" media="screen"/>
+		<name>osivia-demo-charte-web</name>
+        <link rel="icon" href="/img/osivia.ico" />
         
-        
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/osivia-demo.min.css" title="OSIVIA"  />
 	</theme>
 </themes>

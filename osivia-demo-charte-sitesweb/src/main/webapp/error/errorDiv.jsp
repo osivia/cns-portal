@@ -1,2 +1,11 @@
+<%@ taglib uri="internationalization" prefix="is" %>
 
-<div id="error-container">Une erreur est survenue <!-- <%= request.getParameter("err") %> --></div>
+
+<div>
+    <p class="lead text-danger">
+        <i class="glyphicons halflings exclamation-sign"></i>
+        <span><is:getProperty key="ERROR_GENERIC_MESSAGE" /></span>
+    </p>
+    
+    <p>${err}</p>
+</div>

@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layouts>
-	
 
 	<layout>
-		<name>sitesweb-layout-2cols</name>
-		<uri>/layouts/sitesweb-layout-2cols/index.jsp</uri>
-		<uri state="maximized">/layouts/sitesweb-layout-2cols/maximized.jsp</uri> 
-		<regions>
-			<region name="headBand"/>
-			<region name="virtual"/>
-			<region name="colNav"/>
-			<region name="blocTitre"/>
-			<region name="colMilieu"/>
-		</regions>
-	</layout>
-	
-	<layout>
-		<name>sitesweb-layout-3cols</name>
-		<uri>/layouts/sitesweb-layout-3cols/index.jsp</uri>
-		<uri state="maximized">/layouts/sitesweb-layout-3cols/maximized.jsp</uri> 
-		<uri state="newsletter">/layouts/sitesweb-layout-3cols/newsletter.jsp</uri> 		
-		<regions>
-			<region name="headBand"/>
-			<region name="virtual"/>
-			<region name="colNav"/>
-			<region name="blocTitre"/>
-			<region name="colGauche"/>
-			<region name="colDroite"/>
-		</regions>
-	</layout>
+        <name>osivia-demo-web-2-cols</name>
+        <uri>/layouts/2-cols/index.jsp</uri>
+        <uri state="maximized">/layouts/2-cols/maximized.jsp</uri>
+        <regions>
+            <region name="top" />
+            <region name="col1-top" />
+            <region name="col1-bottom" />
+            <region name="col2-top" />
+            <region name="col2-bottom" />
+            <region name="bottom" />
+        </regions>
+    </layout>
+    
+    <layout>
+        <name>osivia-demo-web-3-cols</name>
+        <uri>/layouts/3-cols/index.jsp</uri>
+        <uri state="maximized">/layouts/3-cols/maximized.jsp</uri>
+        <uri state="newsletter">/layouts/3-cols/newsletter.jsp</uri>
+        <regions>
+            <region name="col1" />
+            <region name="top" />
+            <region name="col2-top" />
+            <region name="col2-bottom" />
+            <region name="col3-top" />
+            <region name="col3-bottom" />
+            <region name="bottom" />
+        </regions>
+    </layout>
 
 </layouts>
