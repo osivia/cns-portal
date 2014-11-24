@@ -32,6 +32,8 @@
                 <!-- identity & user mgt tools -->
                 <include>org.osivia.services.directory:osivia-services-directory:war:${osivia-services-directory.version}</include>
                 <include>toutatice-services.identite:toutatice-identite-fichepersonne-portail:war:${fichepersonne.version}</include>
+                <include>toutatice-services.identite:toutatice-identite-creationpersonnes-portail:war:${creationpersonnes.version}</include>
+                <include>toutatice-services.identite:toutatice-identite-gestionpersonnes-portail:war:${gestionpersonnes.version}</include>
                 <include>toutatice-services.identite:toutatice-identite-gestiongroupes-portail:war:${gestiongroupe.version}</include>
                 <include>toutatice-services.identite:toutatice-identite-ficheprofil-portail:war:${ficheprofil.version}</include>
                 <include>toutatice-services.nuxeo:toutatice-nuxeo-gestionworkspace-portail:war:${gestionworkspace.version}</include>
@@ -45,7 +47,7 @@
             <scope>runtime</scope>
             <includes>
                 <include>org.osivia.portal.identity:osivia-portal-identity-sso-lib:jar:${identity-sso.version}</include>
-                <include>outils.ldap:toutatice-annuaire:jar:${toutatice.annuaire.version}</include>
+                <include>outils.ldap:toutatice-annuaire-interfaces:jar:${toutatice.annuaire.version}</include>
                 <include>org.osivia.services:osivia-services-java-melody-integration:jar:${osivia-services-java-melody-integration.version}</include>
             </includes>
         </dependencySet>

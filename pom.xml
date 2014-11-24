@@ -22,15 +22,18 @@
         <osivia-services-portal-api-demo.version>3.3-SNAPSHOT</osivia-services-portal-api-demo.version>
 
         <!-- Identity & user mgt tools -->
-        <toutatice.annuaire.version>2.3.5-osivia-SNAPSHOT</toutatice.annuaire.version>
-        <osivia-services-directory.version>1.0.0-SNAPSHOT</osivia-services-directory.version>
-        <fichepersonne.version>3.0-osivia-SNAPSHOT</fichepersonne.version>
+        <toutatice.annuaire.version>3.1.0-osivia-SNAPSHOT</toutatice.annuaire.version>
+        <osivia-services-directory.version>1.1-SNAPSHOT</osivia-services-directory.version>
+        <fichepersonne.version>3.1-osivia-SNAPSHOT</fichepersonne.version>
         <ficheprofil.version>3.0-osivia-SNAPSHOT</ficheprofil.version>
         <gestiongroupe.version>3.0-osivia-SNAPSHOT</gestiongroupe.version>
         <gestionworkspace.version>3.0-osivia-SNAPSHOT</gestionworkspace.version>
         <participantswks.version>3.0-osivia-SNAPSHOT</participantswks.version>
+        <gestionpersonnes.version>3.1-osivia-SNAPSHOT</gestionpersonnes.version>
+        <creationpersonnes.version>3.1-osivia-SNAPSHOT</creationpersonnes.version>       
         <identity-sso.version>3.0.4</identity-sso.version>
-
+        
+ 
         <!-- Admin tools -->
         <osivia-services-java-melody-integration.version>1.0-RC2</osivia-services-java-melody-integration.version>
     </properties>

@@ -58,10 +58,10 @@
 
         <!-- Identity & user management -->
 
-        <dependency>
+ 		<dependency>
             <groupId>outils.ldap</groupId>
-            <artifactId>toutatice-annuaire</artifactId>
-            <version>${toutatice.annuaire.version}</version>
+            <artifactId>toutatice-annuaire-interfaces</artifactId>
+            <version>${toutatice.annuaire.version}</version>        
         </dependency>
 
         <dependency>
@@ -90,6 +90,21 @@
             <version>${fichepersonne.version}</version>
             <type>war</type>
         </dependency>
+
+		<dependency>
+            <groupId>toutatice-services.identite</groupId>
+            <artifactId>toutatice-identite-creationpersonnes-portail</artifactId>
+            <version>${creationpersonnes.version}</version>
+            <type>war</type>
+        </dependency>      
+
+		<dependency>
+            <groupId>toutatice-services.identite</groupId>
+            <artifactId>toutatice-identite-gestionpersonnes-portail</artifactId>
+            <version>${gestionpersonnes.version}</version>
+            <type>war</type>
+        </dependency>
+
 
         <dependency>
             <groupId>toutatice-services.identite</groupId>
