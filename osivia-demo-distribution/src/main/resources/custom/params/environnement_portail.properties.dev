@@ -28,6 +28,10 @@ status.active=true
 # Rendu des portlets en "div"
 portlets.rendering=div
 
+#generic template
+template.generic.name=/default/templates/publish
+template.generic.region=top
+
 # LDAP
 # Base DN utilisateurs
 ldap.users.base.dn=ou=users,dc=osivia,dc=org
@@ -36,6 +40,9 @@ ldap.groups.base.dn=ou=groups,dc=osivia,dc=org
 
 ldap.timeout=10000
 ldap.base=dc=osivia,dc=org
+
+
+
 ### ===== Porlets de gestion des personnes
 
 #supprime la surcharge lors de la modification du mot de passe

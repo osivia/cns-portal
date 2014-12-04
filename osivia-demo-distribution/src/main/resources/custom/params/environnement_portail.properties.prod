@@ -25,6 +25,10 @@ status.active=true
 # Rendu des portlets en "div"
 portlets.rendering=div
 
+#generic template
+template.generic.name=/default/templates/publish
+template.generic.region=top
+
 # LDAP
 # Base DN utilisateurs
 ldap.users.base.dn=ou=users,dc=osivia,dc=org
