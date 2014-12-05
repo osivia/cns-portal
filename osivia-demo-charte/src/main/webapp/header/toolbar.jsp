@@ -9,8 +9,6 @@
 
 
 <script type="text/javascript">
-var $JQry = jQuery.noConflict();
-
 
 // Popover
 $JQry("#logout-popover").popover({
