@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.osivia.demo</groupId>
         <artifactId>osivia-demo-parent</artifactId>
-        <version>1.1-SNAPSHOT</version>
+        <version>1.1-RC1</version>
     </parent>
 
     <artifactId>osivia-demo-distribution</artifactId>
@@ -285,8 +285,7 @@
                                 <phase>package</phase>
                                 <configuration>
                                     <tasks>
-                                        <copy file="${basedir}/target/${project.artifactId}.zip" tofile="${portal-pack-dir}/${project.artifactId}-${dest-env}-${project.version}.zip"
-                                            overwrite="true" />
+                                        <copy file="${basedir}/target/${project.artifactId}.zip" tofile="${portal-pack-dir}/${project.artifactId}-${dest-env}-${project.version}.zip" overwrite="true" />
                                     </tasks>
                                 </configuration>
                                 <goals>
