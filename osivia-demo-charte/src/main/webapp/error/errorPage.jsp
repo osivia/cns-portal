@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/osivia-portal-custom-web-assets/css/glyphicons.css">
     <link rel="stylesheet" href="/osivia-portal-custom-web-assets/css/noscript.css">
     <link rel="stylesheet" href="/osivia-demo-charte/css/osivia-demo.min.css" title="OSIVIA">
+    <link rel="icon" href="/osivia-demo-charte/img/osivia.ico" />
 </head>
 
 
