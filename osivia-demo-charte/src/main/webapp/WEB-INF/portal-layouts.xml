@@ -52,7 +52,8 @@
             <region name="top" />
             <region name="col1" />
             <region name="col2" />
-            <region name="col3" />
+            <region name="col21" />
+            <region name="col22" />
         </regions>
     </layout>
     

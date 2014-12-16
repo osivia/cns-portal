@@ -31,13 +31,15 @@
                     </div>
                     
                     <div class="col-sm-8 col-lg-9">
+                        <p:region regionName="col2" />
+                    
                         <div class="row">
                             <div class="col-sm-6">
-                                <p:region regionName="col2" />
+                                <p:region regionName="col21" />
                             </div>
                             
                             <div class="col-sm-6">
-                                <p:region regionName="col3" />
+                                <p:region regionName="col22" />
                             </div>
                         </div>
                     </div>
