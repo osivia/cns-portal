@@ -11,7 +11,7 @@
 
     <properties>
         <!-- Socle -->
-        <toutatice.version>3.5.0-RC1</toutatice.version>
+        <toutatice.version>3.5.0-RC2</toutatice.version>
 
         <!-- Services -->
         <osivia-services-calendar.version>1.0-RC1</osivia-services-calendar.version>
