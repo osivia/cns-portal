@@ -17,7 +17,7 @@
         <c:set var="date" value="${document.properties['dc:modified']}" />
     
     
-        <li class="list-group-item list-linked-item">
+        <li class="list-group-item list-group-item-linked">
             <a href="${url}" class="list-group-item">
                 <div class="media">
                     <c:if test="${not empty vignetteURL}">

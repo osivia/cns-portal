@@ -14,6 +14,45 @@
     <description>Charte du démonstrateur du portail OSIVIA</description>
 
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.lesscss</groupId>
+                <artifactId>lesscss-maven-plugin</artifactId>
+                <configuration>
+                    <sourceDirectory>${project.basedir}/src/main/less</sourceDirectory>
+                    <outputDirectory>${project.basedir}/src/main/webapp/css</outputDirectory>
+                    <compress>true</compress>
+                    <includes>
+                        <include>osivia-demo.less</include>
+                        <include>tiles.less</include>
+                    </includes>
+                    <outputFileFormat>{fileName}.min.css</outputFileFormat>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
     <profiles>
         <profile>
             <id>deploy-osivia-modules</id>
