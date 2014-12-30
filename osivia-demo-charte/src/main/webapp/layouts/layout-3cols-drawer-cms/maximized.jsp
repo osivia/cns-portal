@@ -34,6 +34,7 @@
                     <div id="drawer">
                         <div class="col-sm-4 col-lg-3">
                             <p:region regionName="col1" />
+                            <p:region regionName="col1-cms" cms="true" />
                         </div>
                     </div>
                     

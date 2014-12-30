@@ -58,6 +58,24 @@
     </layout>
     
     <layout>
+        <name>osivia-demo-3cols-drawer-cms</name>
+        <uri>/layouts/layout-3cols-drawer-cms/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-3cols-drawer-cms/maximized.jsp</uri>
+        <regions>
+            <region name="top" />
+            <region name="col1" />
+            <region name="col2" />
+            <region name="col21" />
+            <region name="col22" />
+            <region name="top-cms" />
+            <region name="col1-cms" />
+            <region name="col2-cms" />
+            <region name="col21-cms" />
+            <region name="col22-cms" />
+        </regions>
+    </layout>
+    
+    <layout>
         <name>osivia-demo-home</name>
         <uri>/layouts/layout-home/index.jsp</uri>
         <uri state="maximized">/layouts/layout-home/maximized.jsp</uri>
