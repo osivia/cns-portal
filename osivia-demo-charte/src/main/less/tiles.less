@@ -31,10 +31,12 @@
         text-decoration: none;
         font-size: 16px;
         
+        .transition(@transition: all .2s ease-in-out);
+        
         &:HOVER, &:FOCUS {
-            .scale(.95);
+            .scale(@ratio: .95);
             
-            background-color: lighten(@brand-primary, 10%);
+            background-color: darken(@brand-primary, 10%);
         }
         
         * {
@@ -110,218 +112,218 @@
     background-color: @color;
     
     &:HOVER, &:FOCUS {
-        background-color: lighten(@color, 10%);
+        background-color: darken(@color, 10%);
     }
 }
 
 
 .thumbnail.tile {
     &.tile-black {
-        .set-color (@black);
+        .set-color(@color: @black);
     }
 
     &.tile-white {
-        .set-color (@white);
+        .set-color(@color: @white);
     }
 
     &.tile-lime {
-        .set-color (@lime);
+        .set-color(@color: @lime);
     }
 
     &.tile-green {
-        .set-color (@green);
+        .set-color(@color: @green);
     }
 
     &.tile-emerald {
-        .set-color (@emerald);
+        .set-color(@color: @emerald);
     }
 
     &.tile-blue {
-        .set-color (@blue);
+        .set-color(@color: @blue);
     }
 
     &.tile-teal {
-        .set-color (@teal);
+        .set-color(@color: @teal);
     }
 
     &.tile-cyan {
-        .set-color (@cyan);
+        .set-color(@color: @cyan);
     }
 
     &.tile-cobalt {
-        .set-color (@cobalt);
+        .set-color(@color: @cobalt)
     }
 
     &.tile-indigo {
-        .set-color (@indigo);
+        .set-color(@color: @indigo)
     }
 
     &.tile-violet {
-        .set-color (@violet);
+        .set-color(@color: @violet)
     }
 
     &.tile-pink {
-        .set-color (@pink);
+        .set-color(@color: @pink)
     }
 
     &.tile-magenta {
-        .set-color (@magenta);
+        .set-color(@color: @magenta)
     }
 
     &.tile-crimson {
-        .set-color (@crimson);
+        .set-color(@color: @crimson)
     }
 
     &.tile-red {
-        .set-color (@red);
+        .set-color(@color: @red)
     }
 
     &.tile-orange {
-        .set-color (@orange);
+        .set-color(@color: @orange)
     }
 
     &.tile-amber {
-        .set-color (@amber);
+        .set-color(@color: @amber)
     }
 
     &.tile-yellow {
-        .set-color (@yellow);
+        .set-color(@color: @yellow)
     }
 
     &.tile-brown {
-        .set-color (@brown);
+        .set-color(@color: @brown)
     }
 
     &.tile-olive {
-        .set-color (@olive);
+        .set-color(@color: @olive)
     }
 
     &.tile-steel {
-        .set-color (@steel);
+        .set-color(@color: @steel)
     }
 
     &.tile-mauve {
-        .set-color (@mauve);
+        .set-color(@color: @mauve)
     }
 
     &.tile-taupe {
-        .set-color (@taupe);
+        .set-color(@color: @taupe)
     }
 
     &.tile-dark {
-        .set-color (@dark);
+        .set-color(@color: @dark)
     }
 
     &.tile-darkBrown {
-        .set-color (@darkBrown);
+        .set-color(@color: @darkBrown)
     }
 
     &.tile-darkCrimson {
-        .set-color (@darkCrimson);
+        .set-color(@color: @darkCrimson)
     }
 
     &.tile-darkMagenta {
-        .set-color (@darkMagenta);
+        .set-color(@color: @darkMagenta)
     }
 
     &.tile-darkIndigo {
-        .set-color (@darkIndigo);
+        .set-color(@color: @darkIndigo)
     }
 
     &.tile-darkCyan {
-        .set-color (@darkCyan);
+        .set-color(@color: @darkCyan)
     }
 
     &.tile-darkCobalt {
-        .set-color (@darkCobalt);
+        .set-color(@color: @darkCobalt)
     }
 
     &.tile-darkTeal {
-        .set-color (@darkTeal);
+        .set-color(@color: @darkTeal)
     }
 
     &.tile-darkEmerald {
-        .set-color (@darkEmerald);
+        .set-color(@color: @darkEmerald)
     }
 
     &.tile-darkGreen {
-        .set-color (@darkGreen);
+        .set-color(@color: @darkGreen)
     }
 
     &.tile-darkOrange {
-        .set-color (@darkOrange);
+        .set-color(@color: @darkOrange)
     }
 
     &.tile-darkRed {
-        .set-color (@darkRed);
+        .set-color(@color: @darkRed)
     }
 
     &.tile-darkPink {
-        .set-color (@darkPink);
+        .set-color(@color: @darkPink)
     }
 
     &.tile-darkViolet {
-        .set-color (@darkViolet);
+        .set-color(@color: @darkViolet)
     }
 
     &.tile-darkBlue {
-        .set-color (@darkBlue);
+        .set-color(@color: @darkBlue)
     }
 
     &.tile-lightBlue {
-        .set-color (@lightBlue);
+        .set-color(@color: @lightBlue)
     }
 
     &.tile-lighterBlue {
-        .set-color (@lighterBlue);
+        .set-color(@color: @lighterBlue)
     }
 
     &.tile-lightTeal {
-        .set-color (@lightTeal);
+        .set-color(@color: @lightTeal)
     }
 
     &.tile-lightOlive {
-        .set-color (@lightOlive);
+        .set-color(@color: @lightOlive)
     }
 
     &.tile-lightOrange {
-        .set-color (@lightOrange);
+        .set-color(@color: @lightOrange)
     }
 
     &.tile-lightPink {
-        .set-color (@lightPink);
+        .set-color(@color: @lightPink)
     }
 
     &.tile-lightRed {
-        .set-color (@lightRed);
+        .set-color(@color: @lightRed)
     }
 
     &.tile-lightGreen {
-        .set-color (@lightGreen);
+        .set-color(@color: @lightGreen)
     }
 
     &.tile-grayed {
-        .set-color (@grayed);
+        .set-color(@color: @grayed)
     }
 
     &.tile-grayDarker {
-        .set-color (@grayDarker);
+        .set-color(@color: @grayDarker)
     }
 
     &.tile-grayDark {
-        .set-color (@grayDark);
+        .set-color(@color: @grayDark)
     }
 
     &.tile-gray {
-        .set-color (@gray);
+        .set-color(@color: @gray)
     }
 
     &.tile-grayLight {
-        .set-color (@grayLight);
+        .set-color(@color: @grayLight)
     }
 
     &.tile-grayLighter {
-        .set-color (@grayLighter);
+        .set-color(@color: @grayLighter)
     }
 }
 
