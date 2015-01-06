@@ -13,8 +13,7 @@
     <jsp:include page="../includes/header.jsp" />
     
     <div id="page-content" class="container">
-        <!-- Notifications -->
-        <p:region regionName="notifications" />
+        <jsp:include page="../includes/content-top.jsp" />
 
         <p:region regionName="top" />
 

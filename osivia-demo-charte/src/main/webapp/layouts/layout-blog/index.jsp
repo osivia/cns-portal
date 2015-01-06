@@ -13,9 +13,6 @@
     <jsp:include page="../includes/header.jsp" />
     
     <div id="page-content" class="container">
-        <!-- Notifications -->
-        <p:region regionName="notifications" />
-    
         <!-- Blog header -->
         <div class="row blog-header">
             <div class="col-sm-2 hidden-xs">
@@ -30,15 +27,14 @@
                 <p:region regionName="blog_tools" />
             </div>
         </div>
-      
+
         <div class="row">
             <div class="col-sm-4">
                 <p:region regionName="col1" />
             </div>
         
             <div class="col-sm-8">
-                <!-- Breadcrumb -->
-                <p:region regionName="breadcrumb" />   
+                <jsp:include page="../includes/content-top.jsp" />
     
                 <p:region regionName="col2" />
             </div>

@@ -15,20 +15,7 @@
     <div class="wrapper-outer">
         <div class="wrapper-inner">
             <div id="page-content" class="container">
-                <!-- Notifications -->
-                <p:region regionName="notifications" />
-                
-                <div class="media">
-                    <div class="media-body hidden-xs">
-                        <!-- Breadcrumb -->
-                        <p:region regionName="breadcrumb" />
-                    </div>
-                    
-                    <div class="media-right menubar-container">
-                        <!-- Menubar -->
-                        <p:region regionName="menubar" />
-                    </div>
-                </div>
+                <jsp:include page="../includes/content-top.jsp" />
         
                 <div class="row">
                     <div id="drawer">
