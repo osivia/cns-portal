@@ -1,10 +1,10 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<%@ taglib uri="internationalization" prefix="is"%>
-<%@ taglib uri="toutatice" prefix="ttc"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="internationalization" prefix="is" %>
+<%@ taglib uri="toutatice" prefix="ttc" %>
 
-<%@ page isELIgnored="false"%>
+<%@ page isELIgnored="false" %>
 
 
 <ul class="list-group">
@@ -21,7 +21,7 @@
             <a href="${url}" class="list-group-item">
                 <div class="media">
                     <c:if test="${not empty vignetteURL}">
-                        <span class="pull-left">
+                        <span class="media-left">
                             <img src="${vignetteURL}" alt="" class="media-object">
                         </span>
                     </c:if>

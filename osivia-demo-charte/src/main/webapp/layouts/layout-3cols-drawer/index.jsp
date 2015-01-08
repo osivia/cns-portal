@@ -15,7 +15,11 @@
     <div class="wrapper-outer">
         <div class="wrapper-inner">
             <div id="page-content" class="container">
-                <jsp:include page="../includes/content-top.jsp" />
+                <!-- Global navbar -->
+                <jsp:include page="../includes/content-navbar.jsp" />
+                
+                <!-- Notifications -->
+                <p:region regionName="notifications" />
 
                 <p:region regionName="top" />
         
@@ -27,6 +31,10 @@
                     </div>
                     
                     <div class="col-sm-8 col-lg-9">
+                        <div class="content-auxiliary-navbar">
+                            <p:region regionName="back" />
+                        </div>
+                    
                         <p:region regionName="col2" />
                     
                         <div class="row">

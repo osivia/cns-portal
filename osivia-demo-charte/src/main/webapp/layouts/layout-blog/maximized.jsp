@@ -28,13 +28,17 @@
             </div>
         </div>
       
+        <!-- Notifications -->
+        <p:region regionName="notifications" />
+      
         <div class="row">
             <div class="col-sm-4">
                 <p:region regionName="col1" />
             </div>
         
             <div class="col-sm-8">
-                <jsp:include page="../includes/content-top.jsp" />
+                <!-- Breadcrumb -->
+                <p:region regionName="breadcrumb" />
     
                 <p:region regionName="maximized" />
             </div>

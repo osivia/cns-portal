@@ -116,6 +116,7 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
                 renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
                 renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp");
                 renderedRegion.customizeRenderedRegion("search", "/header/search.jsp");
+                renderedRegion.customizeRenderedRegion("back", "/header/back.jsp");
                 renderedRegion.removeRenderedRegion("footer");
             }
 

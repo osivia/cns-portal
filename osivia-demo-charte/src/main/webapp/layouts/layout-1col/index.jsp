@@ -13,7 +13,11 @@
     <jsp:include page="../includes/header.jsp" />
     
     <div id="page-content" class="container">
-        <jsp:include page="../includes/content-top.jsp" />
+        <!-- Global navbar -->
+        <jsp:include page="../includes/content-navbar.jsp" />
+        
+        <!-- Notifications -->
+        <p:region regionName="notifications" />
 
         <p:region regionName="col1" />
     </div>

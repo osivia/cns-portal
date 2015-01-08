@@ -6,8 +6,6 @@
 <%@ page isELIgnored="false"%>
 
 
-<ttc:documentLink document="${document}" />
-
 <c:set var="documentURL"><ttc:documentLink document="${document}" /></c:set>
 <c:set var="pictureURL"><ttc:documentLink document="${document}" picture="true" /></c:set>
 <c:set var="mediumPictureURL"><ttc:documentLink document="${document}" picture="true" displayContext="Medium" /></c:set>

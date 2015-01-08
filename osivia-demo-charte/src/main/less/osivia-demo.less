@@ -8,6 +8,7 @@
 
 
 
+
 // Body
 
 body {
@@ -21,7 +22,7 @@ body {
 // Header
 
 header {
-    margin-bottom: @line-height-computed;
+    margin-bottom: @padding-small-vertical;
     
     .banner {
         position: relative;
@@ -54,6 +55,14 @@ header {
 
 
 
+// Content navbar
+
+.content-navbar {
+    margin-bottom: @padding-small-vertical;
+}
+
+
+
 // Footer
 
 footer {
@@ -64,8 +73,31 @@ footer {
 
 // Picture Book
 
-.picture-item {
-    float: left;
-    list-style-type: none;
-    padding: 5px;
+@picture-height: 100px;
+
+.picture-book {
+    .picture {
+        position: relative;
+        height: @picture-height + 2 * @thumbnail-padding + 2px;
+        
+        .thumbnail {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            
+            margin: 0;
+            
+            img {
+                max-height: @picture-height;
+            }
+        }
+    }
+    
+    p {
+        padding-top: @padding-small-vertical;
+        padding-bottom: @padding-large-vertical;
+        
+        .text-overflow();
+    }
 }

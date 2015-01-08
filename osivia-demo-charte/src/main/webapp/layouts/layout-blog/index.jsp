@@ -27,6 +27,9 @@
                 <p:region regionName="blog_tools" />
             </div>
         </div>
+        
+        <!-- Notifications -->
+        <p:region regionName="notifications" />
 
         <div class="row">
             <div class="col-sm-4">
@@ -34,7 +37,8 @@
             </div>
         
             <div class="col-sm-8">
-                <jsp:include page="../includes/content-top.jsp" />
+                <!-- Breadcrumb -->
+                <p:region regionName="breadcrumb" />
     
                 <p:region regionName="col2" />
             </div>
