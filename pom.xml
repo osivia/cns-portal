@@ -24,14 +24,14 @@
         <toutatice-dashboard.version>3.2-osivia-RC1</toutatice-dashboard.version>
         
         <!-- Identity & user mgt tools -->
-        <toutatice.annuaire.version>3.1-osivia-RC1</toutatice.annuaire.version>
-        <osivia-services-directory.version>1.1-RC1</osivia-services-directory.version>
-        <fichepersonne.version>3.1-osivia-RC1</fichepersonne.version>
-        <ficheprofil.version>3.0-osivia-RC1</ficheprofil.version>
-        <gestiongroupe.version>3.0-osivia-RC1</gestiongroupe.version>
+        <toutatice.annuaire.version>4.0-SNAPSHOT</toutatice.annuaire.version>
+        <osivia-services-directory.version>4.0-SNAPSHOT</osivia-services-directory.version>
+        <fichepersonne.version>4.0-SNAPSHOT</fichepersonne.version>
+        <ficheprofil.version>4.0-SNAPSHOT</ficheprofil.version>
+        <gestiongroupe.version>4.0-SNAPSHOT</gestiongroupe.version>
         <gestionworkspace.version>3.0-osivia-RC1</gestionworkspace.version>
         <participantswks.version>3.0-osivia-RC1</participantswks.version>
-        <gestionpersonnes.version>3.1-osivia-RC1</gestionpersonnes.version>
+        <gestionpersonnes.version>4.0-SNAPSHOT</gestionpersonnes.version>
         <creationpersonnes.version>3.1-osivia-RC1</creationpersonnes.version>
         <identity-sso.version>3.0.4</identity-sso.version>
 

@@ -184,7 +184,7 @@
       <web-resource-collection>
          <web-resource-name>Authenticated</web-resource-name>
          <description></description>
-         <url-pattern>/auth/*</url-pattern>
+         <url-pattern>/auth*</url-pattern>
       </web-resource-collection>
       <auth-constraint>
          <role-name>Authenticated</role-name>
@@ -194,7 +194,7 @@
    <security-constraint>
      <web-resource-collection>
        <web-resource-name>Secure</web-resource-name>
-       <url-pattern>/sec/*</url-pattern>
+       <url-pattern>/sec*</url-pattern>
      </web-resource-collection>
      <user-data-constraint>
        <transport-guarantee>CONFIDENTIAL</transport-guarantee>
@@ -204,7 +204,7 @@
    <security-constraint>
      <web-resource-collection>
        <web-resource-name>Secure+Authenticated</web-resource-name>
-       <url-pattern>/authsec/*</url-pattern>
+       <url-pattern>/authsec*</url-pattern>
      </web-resource-collection>
      <auth-constraint>
        <role-name>Authenticated</role-name>
