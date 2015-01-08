@@ -37,8 +37,11 @@
             </div>
         
             <div class="col-sm-8">
-                <!-- Breadcrumb -->
-                <p:region regionName="breadcrumb" />
+                 <jsp:include page="../includes/content-navbar.jsp" />
+                 
+                <div class="content-auxiliary-navbar">
+                            <p:region regionName="back" />
+                </div>
     
                 <p:region regionName="col2" />
             </div>
