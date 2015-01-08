@@ -11,6 +11,6 @@
     
     <!-- Actions -->
     <div class="content-navbar-actions">
-        <p:region regionName="content-navbar-actions" />
+        <p:region regionName="menubar" />
     </div>
 </div>
