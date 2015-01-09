@@ -37,10 +37,20 @@
             </div>
         
             <div class="col-sm-8">
-                 <jsp:include page="../includes/content-navbar.jsp" />
+                 <div class="media">
+                    <div class="media-body hidden-xs">
+                        <!-- Breadcrumb -->
+                        <p:region regionName="breadcrumb" />
+                    </div>
+
+                    <div class="media-right simple-menubar">
+                        <!-- Menubar -->
+                        <p:region regionName="menubar" />
+                    </div>
+                </div>
                  
                 <div class="content-auxiliary-navbar">
-                            <p:region regionName="back" />
+                    <p:region regionName="back" />
                 </div>
     
                 <p:region regionName="col2" />

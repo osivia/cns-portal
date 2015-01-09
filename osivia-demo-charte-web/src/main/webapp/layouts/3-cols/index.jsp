@@ -15,15 +15,13 @@
 	<div class="wrapper-outer">
 		<div class="wrapper-inner">
 			<div id="page-content" class="container">
-
-
 				<div class="media">
 					<div class="media-body hidden-xs">
 						<!-- Breadcrumb -->
 						<p:region regionName="breadcrumb" />
 					</div>
 
-					<div class="media-right menubar-container">
+					<div class="media-right simple-menubar">
 						<!-- Menubar -->
 						<p:region regionName="menubar" />
 					</div>
