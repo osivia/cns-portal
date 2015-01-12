@@ -49,9 +49,8 @@
                     </div>
                 </div>
                  
-                <div class="content-auxiliary-navbar">
-                    <p:region regionName="back" />
-                </div>
+                <!-- Content auxiliary navbar -->
+                <jsp:include page="../includes/content-auxiliary-navbar.jsp" />
     
                 <p:region regionName="col2" />
             </div>

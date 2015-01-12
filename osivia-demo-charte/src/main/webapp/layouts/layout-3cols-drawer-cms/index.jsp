@@ -15,7 +15,7 @@
     <div class="wrapper-outer">
         <div class="wrapper-inner">
             <div id="page-content" class="container">
-                <!-- Global navbar -->
+                <!-- Content navbar -->
                 <jsp:include page="../includes/content-navbar.jsp" />
                 
                 <!-- Notifications -->
@@ -33,18 +33,23 @@
                     </div>
                     
                     <div class="col-sm-8 col-lg-9">
+                        <!-- Content auxiliary navbar -->
+                        <jsp:include page="../includes/content-auxiliary-navbar.jsp" />
+                    
                         <p:region regionName="col2" />
                         <p:region regionName="col2-cms" cms="true" />
                     
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p:region regionName="col21" />
-                                <p:region regionName="col21-cms" cms="true" />
-                            </div>
-                            
-                            <div class="col-sm-6">
-                                <p:region regionName="col22" />
-                                <p:region regionName="col22-cms" cms="true" />
+                        <div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p:region regionName="col21" />
+                                    <p:region regionName="col21-cms" cms="true" />
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <p:region regionName="col22" />
+                                    <p:region regionName="col22-cms" cms="true" />
+                                </div>
                             </div>
                         </div>
                     </div>

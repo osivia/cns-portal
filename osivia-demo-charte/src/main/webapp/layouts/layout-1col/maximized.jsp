@@ -13,11 +13,14 @@
     <jsp:include page="../includes/header.jsp" />
     
     <div id="page-content" class="container">
-        <!-- Global navbar -->
+        <!-- Content navbar -->
         <jsp:include page="../includes/content-navbar.jsp" />
         
         <!-- Notifications -->
         <p:region regionName="notifications" />
+
+        <!-- Content auxiliary navbar -->
+        <jsp:include page="../includes/content-auxiliary-navbar.jsp" />
 
         <p:region regionName="maximized" />
     </div>

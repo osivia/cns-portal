@@ -1,5 +1,3 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="internationalization" prefix="is" %>
 <%@ taglib uri="portal-layout" prefix="p" %>
 
 
