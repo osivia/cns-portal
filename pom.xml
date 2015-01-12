@@ -4,14 +4,14 @@
 
     <groupId>org.osivia.demo</groupId>
     <artifactId>osivia-demo-parent</artifactId>
-    <version>3.6.0-SNAPSHOT</version>
+    <version>3.5.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Demonstrateur OSIVIA - Parent</name>
 
 
     <properties>
         <!-- Socle -->
-        <toutatice.version>3.6.0-SNAPSHOT</toutatice.version>
+        <toutatice.version>3.5.1-SNAPSHOT</toutatice.version>
 
         <!-- Services -->
         <osivia-services-calendar.version>1.0-RC1</osivia-services-calendar.version>
