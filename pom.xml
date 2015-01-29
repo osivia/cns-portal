@@ -4,7 +4,7 @@
 
     <groupId>org.osivia.demo</groupId>
     <artifactId>osivia-demo-parent</artifactId>
-    <version>3.5.1-SNAPSHOT</version>
+    <version>3.5.1</version>
     <packaging>pom</packaging>
     <name>Demonstrateur OSIVIA - Parent</name>
 
@@ -152,7 +152,7 @@
 
 
     <scm>
-        <developerConnection>scm:svn:http://www.osivia.org/repos/osivia-demo/trunk/osivia-demo-portal</developerConnection>
+        <developerConnection>scm:svn:http://www.osivia.org/repos/osivia-demo/tags/3.5.1</developerConnection>
     </scm>
 
 
