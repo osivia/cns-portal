@@ -73,7 +73,7 @@
         <dependency>
             <groupId>outils.ldap</groupId>
             <artifactId>services-directory</artifactId>
-            <version>${osivia-services-directory.version}</version>
+            <version>${toutatice.annuaire.version}</version>
             <type>war</type>
         </dependency>
 

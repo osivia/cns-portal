@@ -30,7 +30,7 @@
                 <include>toutatice-services.faq:toutatice-faq-portail:war:${toutatice-faq.version}</include>
                 <include>toutatice-services.dashboard.ecm:toutatice-dashboard-ecm-portail:war:${toutatice-dashboard.version}</include>
                 <!-- identity & user mgt tools -->
-                <include>outils.ldap:services-directory:war:${osivia-services-directory.version}</include>
+                <include>outils.ldap:services-directory:war:${toutatice.annuaire.version}</include>
                 <include>toutatice-services.identite:toutatice-identite-fichepersonne-portail:war:${fichepersonne.version}</include>
                 <include>toutatice-services.identite:toutatice-identite-creationpersonnes-portail:war:${creationpersonnes.version}</include>
                 <include>toutatice-services.identite:toutatice-identite-gestionpersonnes-portail:war:${gestionpersonnes.version}</include>
