@@ -1,0 +1,707 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.osivia.demo:osivia-demo-charte:war:4.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-resources-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 123, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 113, column 21
+[WARNING] 'build.plugins.plugin.version' for org.lesscss:lesscss-maven-plugin is missing. @ line 19, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-war-plugin is missing. @ line 41, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.osivia.demo:osivia-demo-charte-web:war:4.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-resources-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 123, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 113, column 21
+[WARNING] 'build.plugins.plugin.version' for org.lesscss:lesscss-maven-plugin is missing. @ line 19, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-war-plugin is missing. @ line 40, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.osivia.demo:osivia-demo-charte-montpellier:war:4.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-resources-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 123, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 113, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.osivia.demo:osivia-demo-customizer:war:4.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-resources-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 123, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 113, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.osivia.demo:osivia-demo-cms-nuxeo-web:war:4.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-resources-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 123, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 113, column 21
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.osivia.demo:osivia-demo-distribution:jar:4.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-resources-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 123, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ org.osivia.demo:osivia-demo-parent:4.0.0-SNAPSHOT, /home/jssteux/workspaces/trunk/osivia-demo/osivia-demo-portal/pom.xml, line 113, column 21
+[WARNING] The expression ${groupId} is deprecated. Please use ${project.groupId} instead.
+[WARNING] The expression ${groupId} is deprecated. Please use ${project.groupId} instead.
+[WARNING] The expression ${groupId} is deprecated. Please use ${project.groupId} instead.
+[WARNING] The expression ${groupId} is deprecated. Please use ${project.groupId} instead.
+[WARNING] The expression ${groupId} is deprecated. Please use ${project.groupId} instead.
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.osivia.demo:osivia-demo-parent:pom:4.0.0-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-resources-plugin is missing. @ line 123, column 21
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 113, column 21
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] Demonstrateur OSIVIA - Parent
+[INFO] Demonstrateur OSIVIA - Charte
+[INFO] Demonstrateur OSIVIA - Charte web
+[INFO] Demonstrateur OSIVIA - Charte pour Montpellier
+[INFO] Démonstrateur OSIVIA - Customizer
+[INFO] Demonstrateur OSIVIA - CMS customizer
+[INFO] Demonstrateur OSIVIA - Distribution
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Demonstrateur OSIVIA - Parent 4.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.1:tree (default-cli) @ osivia-demo-parent ---
+[INFO] org.osivia.demo:osivia-demo-parent:pom:4.0.0-SNAPSHOT
+[INFO] +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- org.osivia.portal:osivia-portal-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal:osivia-portal-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal.core:osivia-portal-custom-lib-utils:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.jboss.portal:portal-theme-lib:jar:2.7.2:provided
+[INFO] |  |  +- org.jboss.portal:portal-api-lib:jar:2.7.2:provided
+[INFO] |  |  +- commons-logging:commons-logging:jar:1.1.1:provided
+[INFO] |  |  +- commons-lang:commons-lang:jar:2.6:provided
+[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.1:provided
+[INFO] |  |  +- commons-beanutils:commons-beanutils:jar:1.8.0:provided
+[INFO] |  |  +- commons-httpclient:commons-httpclient:jar:3.1:provided
+[INFO] |  |  |  \- commons-codec:commons-codec:jar:1.2:provided
+[INFO] |  |  +- commons-io:commons-io:jar:2.2:provided
+[INFO] |  |  +- dom4j:dom4j:jar:1.6.1:provided
+[INFO] |  |  |  \- xml-apis:xml-apis:jar:1.0.b2:provided
+[INFO] |  |  +- log4j:log4j:jar:1.2.14:provided
+[INFO] |  |  +- javax.portlet:portlet-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:jsp-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:servlet-api:jar:2.5:provided
+[INFO] |  |  +- xerces:xercesImpl:jar:2.7.1:provided
+[INFO] |  |  +- displaytag:displaytag:jar:1.2:provided
+[INFO] |  |  |  +- com.lowagie:itext:jar:1.3:provided
+[INFO] |  |  |  +- org.slf4j:jcl104-over-slf4j:jar:1.4.2:provided
+[INFO] |  |  |  \- org.slf4j:slf4j-log4j12:jar:1.4.2:provided
+[INFO] |  |  |     \- org.slf4j:slf4j-api:jar:1.4.2:provided
+[INFO] |  |  \- displaytag:displaytag-portlet:jar:1.2:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-automation-client:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- net.sf.ezmorph:ezmorph:jar:1.0.4:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-core-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpclient:jar:4.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpcore:jar:4.1:provided
+[INFO] |  |  \- javax.mail:mail:jar:1.4:provided
+[INFO] |  |     \- javax.activation:activation:jar:1.1:provided
+[INFO] |  +- net.sf.json-lib:json-lib:jar:2.4:provided
+[INFO] |  +- org.springframework:spring-webmvc-portlet:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-beans:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-context:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  +- org.springframework:spring-aop:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  |  \- aopalliance:aopalliance:jar:1.0:provided
+[INFO] |  |  |  \- org.springframework:spring-expression:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-core:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-web:jar:3.2.13.RELEASE:provided
+[INFO] |  |  \- org.springframework:spring-webmvc:jar:3.2.13.RELEASE:provided
+[INFO] |  \- org.springframework:spring-context-support:jar:3.2.13.RELEASE:provided
+[INFO] \- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]    \- org.osivia.portal:osivia-portal-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]       +- org.jboss.portal:portal-core-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-common-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-server-lib:jar:2.7.2:test
+[INFO]       +- junit:junit:jar:4.11:test
+[INFO]       |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO]       +- org.easymock:easymock:jar:3.1:test
+[INFO]       |  +- cglib:cglib-nodep:jar:2.2.2:test
+[INFO]       |  \- org.objenesis:objenesis:jar:1.2:test
+[INFO]       +- org.powermock:powermock-module-junit4:jar:1.5:test
+[INFO]       |  \- org.powermock:powermock-module-junit4-common:jar:1.5:test
+[INFO]       |     +- org.powermock:powermock-core:jar:1.5:test
+[INFO]       |     |  \- org.javassist:javassist:jar:3.17.1-GA:test
+[INFO]       |     \- org.powermock:powermock-reflect:jar:1.5:test
+[INFO]       \- org.powermock:powermock-api-easymock:jar:1.5:test
+[INFO]          \- org.powermock:powermock-api-support:jar:1.5:test
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Demonstrateur OSIVIA - Charte 4.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.1:tree (default-cli) @ osivia-demo-charte ---
+[INFO] org.osivia.demo:osivia-demo-charte:war:4.0.0-SNAPSHOT
+[INFO] +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- org.osivia.portal:osivia-portal-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal:osivia-portal-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal.core:osivia-portal-custom-lib-utils:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.jboss.portal:portal-theme-lib:jar:2.7.2:provided
+[INFO] |  |  +- org.jboss.portal:portal-api-lib:jar:2.7.2:provided
+[INFO] |  |  +- commons-logging:commons-logging:jar:1.1.1:provided
+[INFO] |  |  +- commons-lang:commons-lang:jar:2.6:provided
+[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.1:provided
+[INFO] |  |  +- commons-beanutils:commons-beanutils:jar:1.8.0:provided
+[INFO] |  |  +- commons-httpclient:commons-httpclient:jar:3.1:provided
+[INFO] |  |  |  \- commons-codec:commons-codec:jar:1.2:provided
+[INFO] |  |  +- commons-io:commons-io:jar:2.2:provided
+[INFO] |  |  +- dom4j:dom4j:jar:1.6.1:provided
+[INFO] |  |  |  \- xml-apis:xml-apis:jar:1.0.b2:provided
+[INFO] |  |  +- log4j:log4j:jar:1.2.14:provided
+[INFO] |  |  +- javax.portlet:portlet-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:jsp-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:servlet-api:jar:2.5:provided
+[INFO] |  |  +- xerces:xercesImpl:jar:2.7.1:provided
+[INFO] |  |  +- displaytag:displaytag:jar:1.2:provided
+[INFO] |  |  |  +- com.lowagie:itext:jar:1.3:provided
+[INFO] |  |  |  +- org.slf4j:jcl104-over-slf4j:jar:1.4.2:provided
+[INFO] |  |  |  \- org.slf4j:slf4j-log4j12:jar:1.4.2:provided
+[INFO] |  |  |     \- org.slf4j:slf4j-api:jar:1.4.2:provided
+[INFO] |  |  \- displaytag:displaytag-portlet:jar:1.2:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-automation-client:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- net.sf.ezmorph:ezmorph:jar:1.0.4:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-core-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpclient:jar:4.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpcore:jar:4.1:provided
+[INFO] |  |  \- javax.mail:mail:jar:1.4:provided
+[INFO] |  |     \- javax.activation:activation:jar:1.1:provided
+[INFO] |  +- net.sf.json-lib:json-lib:jar:2.4:provided
+[INFO] |  +- org.springframework:spring-webmvc-portlet:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-beans:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-context:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  +- org.springframework:spring-aop:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  |  \- aopalliance:aopalliance:jar:1.0:provided
+[INFO] |  |  |  \- org.springframework:spring-expression:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-core:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-web:jar:3.2.13.RELEASE:provided
+[INFO] |  |  \- org.springframework:spring-webmvc:jar:3.2.13.RELEASE:provided
+[INFO] |  \- org.springframework:spring-context-support:jar:3.2.13.RELEASE:provided
+[INFO] \- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]    \- org.osivia.portal:osivia-portal-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]       +- org.jboss.portal:portal-core-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-common-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-server-lib:jar:2.7.2:test
+[INFO]       +- junit:junit:jar:4.11:test
+[INFO]       |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO]       +- org.easymock:easymock:jar:3.1:test
+[INFO]       |  +- cglib:cglib-nodep:jar:2.2.2:test
+[INFO]       |  \- org.objenesis:objenesis:jar:1.2:test
+[INFO]       +- org.powermock:powermock-module-junit4:jar:1.5:test
+[INFO]       |  \- org.powermock:powermock-module-junit4-common:jar:1.5:test
+[INFO]       |     +- org.powermock:powermock-core:jar:1.5:test
+[INFO]       |     |  \- org.javassist:javassist:jar:3.17.1-GA:test
+[INFO]       |     \- org.powermock:powermock-reflect:jar:1.5:test
+[INFO]       \- org.powermock:powermock-api-easymock:jar:1.5:test
+[INFO]          \- org.powermock:powermock-api-support:jar:1.5:test
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Demonstrateur OSIVIA - Charte web 4.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.1:tree (default-cli) @ osivia-demo-charte-web ---
+[INFO] org.osivia.demo:osivia-demo-charte-web:war:4.0.0-SNAPSHOT
+[INFO] +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- org.osivia.portal:osivia-portal-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal:osivia-portal-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal.core:osivia-portal-custom-lib-utils:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.jboss.portal:portal-theme-lib:jar:2.7.2:provided
+[INFO] |  |  +- org.jboss.portal:portal-api-lib:jar:2.7.2:provided
+[INFO] |  |  +- commons-logging:commons-logging:jar:1.1.1:provided
+[INFO] |  |  +- commons-lang:commons-lang:jar:2.6:provided
+[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.1:provided
+[INFO] |  |  +- commons-beanutils:commons-beanutils:jar:1.8.0:provided
+[INFO] |  |  +- commons-httpclient:commons-httpclient:jar:3.1:provided
+[INFO] |  |  |  \- commons-codec:commons-codec:jar:1.2:provided
+[INFO] |  |  +- commons-io:commons-io:jar:2.2:provided
+[INFO] |  |  +- dom4j:dom4j:jar:1.6.1:provided
+[INFO] |  |  |  \- xml-apis:xml-apis:jar:1.0.b2:provided
+[INFO] |  |  +- log4j:log4j:jar:1.2.14:provided
+[INFO] |  |  +- javax.portlet:portlet-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:jsp-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:servlet-api:jar:2.5:provided
+[INFO] |  |  +- xerces:xercesImpl:jar:2.7.1:provided
+[INFO] |  |  +- displaytag:displaytag:jar:1.2:provided
+[INFO] |  |  |  +- com.lowagie:itext:jar:1.3:provided
+[INFO] |  |  |  +- org.slf4j:jcl104-over-slf4j:jar:1.4.2:provided
+[INFO] |  |  |  \- org.slf4j:slf4j-log4j12:jar:1.4.2:provided
+[INFO] |  |  |     \- org.slf4j:slf4j-api:jar:1.4.2:provided
+[INFO] |  |  \- displaytag:displaytag-portlet:jar:1.2:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-automation-client:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- net.sf.ezmorph:ezmorph:jar:1.0.4:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-core-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpclient:jar:4.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpcore:jar:4.1:provided
+[INFO] |  |  \- javax.mail:mail:jar:1.4:provided
+[INFO] |  |     \- javax.activation:activation:jar:1.1:provided
+[INFO] |  +- net.sf.json-lib:json-lib:jar:2.4:provided
+[INFO] |  +- org.springframework:spring-webmvc-portlet:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-beans:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-context:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  +- org.springframework:spring-aop:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  |  \- aopalliance:aopalliance:jar:1.0:provided
+[INFO] |  |  |  \- org.springframework:spring-expression:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-core:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-web:jar:3.2.13.RELEASE:provided
+[INFO] |  |  \- org.springframework:spring-webmvc:jar:3.2.13.RELEASE:provided
+[INFO] |  \- org.springframework:spring-context-support:jar:3.2.13.RELEASE:provided
+[INFO] \- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]    \- org.osivia.portal:osivia-portal-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]       +- org.jboss.portal:portal-core-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-common-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-server-lib:jar:2.7.2:test
+[INFO]       +- junit:junit:jar:4.11:test
+[INFO]       |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO]       +- org.easymock:easymock:jar:3.1:test
+[INFO]       |  +- cglib:cglib-nodep:jar:2.2.2:test
+[INFO]       |  \- org.objenesis:objenesis:jar:1.2:test
+[INFO]       +- org.powermock:powermock-module-junit4:jar:1.5:test
+[INFO]       |  \- org.powermock:powermock-module-junit4-common:jar:1.5:test
+[INFO]       |     +- org.powermock:powermock-core:jar:1.5:test
+[INFO]       |     |  \- org.javassist:javassist:jar:3.17.1-GA:test
+[INFO]       |     \- org.powermock:powermock-reflect:jar:1.5:test
+[INFO]       \- org.powermock:powermock-api-easymock:jar:1.5:test
+[INFO]          \- org.powermock:powermock-api-support:jar:1.5:test
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Demonstrateur OSIVIA - Charte pour Montpellier 4.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.1:tree (default-cli) @ osivia-demo-charte-montpellier ---
+[INFO] org.osivia.demo:osivia-demo-charte-montpellier:war:4.0.0-SNAPSHOT
+[INFO] +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- org.osivia.portal:osivia-portal-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal:osivia-portal-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal.core:osivia-portal-custom-lib-utils:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.jboss.portal:portal-theme-lib:jar:2.7.2:provided
+[INFO] |  |  +- org.jboss.portal:portal-api-lib:jar:2.7.2:provided
+[INFO] |  |  +- commons-logging:commons-logging:jar:1.1.1:provided
+[INFO] |  |  +- commons-lang:commons-lang:jar:2.6:provided
+[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.1:provided
+[INFO] |  |  +- commons-beanutils:commons-beanutils:jar:1.8.0:provided
+[INFO] |  |  +- commons-httpclient:commons-httpclient:jar:3.1:provided
+[INFO] |  |  |  \- commons-codec:commons-codec:jar:1.2:provided
+[INFO] |  |  +- commons-io:commons-io:jar:2.2:provided
+[INFO] |  |  +- dom4j:dom4j:jar:1.6.1:provided
+[INFO] |  |  |  \- xml-apis:xml-apis:jar:1.0.b2:provided
+[INFO] |  |  +- log4j:log4j:jar:1.2.14:provided
+[INFO] |  |  +- javax.portlet:portlet-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:jsp-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:servlet-api:jar:2.5:provided
+[INFO] |  |  +- xerces:xercesImpl:jar:2.7.1:provided
+[INFO] |  |  +- displaytag:displaytag:jar:1.2:provided
+[INFO] |  |  |  +- com.lowagie:itext:jar:1.3:provided
+[INFO] |  |  |  +- org.slf4j:jcl104-over-slf4j:jar:1.4.2:provided
+[INFO] |  |  |  \- org.slf4j:slf4j-log4j12:jar:1.4.2:provided
+[INFO] |  |  |     \- org.slf4j:slf4j-api:jar:1.4.2:provided
+[INFO] |  |  \- displaytag:displaytag-portlet:jar:1.2:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-automation-client:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- net.sf.ezmorph:ezmorph:jar:1.0.4:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-core-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpclient:jar:4.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpcore:jar:4.1:provided
+[INFO] |  |  \- javax.mail:mail:jar:1.4:provided
+[INFO] |  |     \- javax.activation:activation:jar:1.1:provided
+[INFO] |  +- net.sf.json-lib:json-lib:jar:2.4:provided
+[INFO] |  +- org.springframework:spring-webmvc-portlet:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-beans:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-context:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  +- org.springframework:spring-aop:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  |  \- aopalliance:aopalliance:jar:1.0:provided
+[INFO] |  |  |  \- org.springframework:spring-expression:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-core:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-web:jar:3.2.13.RELEASE:provided
+[INFO] |  |  \- org.springframework:spring-webmvc:jar:3.2.13.RELEASE:provided
+[INFO] |  \- org.springframework:spring-context-support:jar:3.2.13.RELEASE:provided
+[INFO] \- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]    \- org.osivia.portal:osivia-portal-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]       +- org.jboss.portal:portal-core-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-common-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-server-lib:jar:2.7.2:test
+[INFO]       +- junit:junit:jar:4.11:test
+[INFO]       |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO]       +- org.easymock:easymock:jar:3.1:test
+[INFO]       |  +- cglib:cglib-nodep:jar:2.2.2:test
+[INFO]       |  \- org.objenesis:objenesis:jar:1.2:test
+[INFO]       +- org.powermock:powermock-module-junit4:jar:1.5:test
+[INFO]       |  \- org.powermock:powermock-module-junit4-common:jar:1.5:test
+[INFO]       |     +- org.powermock:powermock-core:jar:1.5:test
+[INFO]       |     |  \- org.javassist:javassist:jar:3.17.1-GA:test
+[INFO]       |     \- org.powermock:powermock-reflect:jar:1.5:test
+[INFO]       \- org.powermock:powermock-api-easymock:jar:1.5:test
+[INFO]          \- org.powermock:powermock-api-support:jar:1.5:test
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Démonstrateur OSIVIA - Customizer 4.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.1:tree (default-cli) @ osivia-demo-customizer ---
+[INFO] org.osivia.demo:osivia-demo-customizer:war:4.0.0-SNAPSHOT
+[INFO] +- org.jboss.portal:portal-core-lib:jar:2.7.2:provided
+[INFO] +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- org.osivia.portal:osivia-portal-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal:osivia-portal-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal.core:osivia-portal-custom-lib-utils:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.jboss.portal:portal-theme-lib:jar:2.7.2:provided
+[INFO] |  |  +- org.jboss.portal:portal-api-lib:jar:2.7.2:provided
+[INFO] |  |  +- commons-logging:commons-logging:jar:1.1.1:provided
+[INFO] |  |  +- commons-lang:commons-lang:jar:2.6:provided
+[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.1:provided
+[INFO] |  |  +- commons-beanutils:commons-beanutils:jar:1.8.0:provided
+[INFO] |  |  +- commons-httpclient:commons-httpclient:jar:3.1:provided
+[INFO] |  |  |  \- commons-codec:commons-codec:jar:1.2:provided
+[INFO] |  |  +- commons-io:commons-io:jar:2.2:provided
+[INFO] |  |  +- dom4j:dom4j:jar:1.6.1:provided
+[INFO] |  |  |  \- xml-apis:xml-apis:jar:1.0.b2:provided
+[INFO] |  |  +- log4j:log4j:jar:1.2.14:provided
+[INFO] |  |  +- javax.portlet:portlet-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:jsp-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:servlet-api:jar:2.5:provided
+[INFO] |  |  +- xerces:xercesImpl:jar:2.7.1:provided
+[INFO] |  |  +- displaytag:displaytag:jar:1.2:provided
+[INFO] |  |  |  +- com.lowagie:itext:jar:1.3:provided
+[INFO] |  |  |  +- org.slf4j:jcl104-over-slf4j:jar:1.4.2:provided
+[INFO] |  |  |  \- org.slf4j:slf4j-log4j12:jar:1.4.2:provided
+[INFO] |  |  |     \- org.slf4j:slf4j-api:jar:1.4.2:provided
+[INFO] |  |  \- displaytag:displaytag-portlet:jar:1.2:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-automation-client:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- net.sf.ezmorph:ezmorph:jar:1.0.4:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-core-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpclient:jar:4.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpcore:jar:4.1:provided
+[INFO] |  |  \- javax.mail:mail:jar:1.4:provided
+[INFO] |  |     \- javax.activation:activation:jar:1.1:provided
+[INFO] |  +- net.sf.json-lib:json-lib:jar:2.4:provided
+[INFO] |  +- org.springframework:spring-webmvc-portlet:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-beans:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-context:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  +- org.springframework:spring-aop:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  |  \- aopalliance:aopalliance:jar:1.0:provided
+[INFO] |  |  |  \- org.springframework:spring-expression:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-core:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-web:jar:3.2.13.RELEASE:provided
+[INFO] |  |  \- org.springframework:spring-webmvc:jar:3.2.13.RELEASE:provided
+[INFO] |  \- org.springframework:spring-context-support:jar:3.2.13.RELEASE:provided
+[INFO] \- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]    \- org.osivia.portal:osivia-portal-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]       +- org.jboss.portal:portal-common-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-server-lib:jar:2.7.2:test
+[INFO]       +- junit:junit:jar:4.11:test
+[INFO]       |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO]       +- org.easymock:easymock:jar:3.1:test
+[INFO]       |  +- cglib:cglib-nodep:jar:2.2.2:test
+[INFO]       |  \- org.objenesis:objenesis:jar:1.2:test
+[INFO]       +- org.powermock:powermock-module-junit4:jar:1.5:test
+[INFO]       |  \- org.powermock:powermock-module-junit4-common:jar:1.5:test
+[INFO]       |     +- org.powermock:powermock-core:jar:1.5:test
+[INFO]       |     |  \- org.javassist:javassist:jar:3.17.1-GA:test
+[INFO]       |     \- org.powermock:powermock-reflect:jar:1.5:test
+[INFO]       \- org.powermock:powermock-api-easymock:jar:1.5:test
+[INFO]          \- org.powermock:powermock-api-support:jar:1.5:test
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Demonstrateur OSIVIA - CMS customizer 4.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.1:tree (default-cli) @ osivia-demo-cms-nuxeo-web ---
+[INFO] org.osivia.demo:osivia-demo-cms-nuxeo-web:war:4.0.0-SNAPSHOT
+[INFO] +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-web:jar:classes:4.0.0-SNAPSHOT:provided
+[INFO] |  +- org.beanshell:bsh:jar:1.3.0:provided
+[INFO] |  +- nekohtml:nekohtml:jar:0.9.5:provided
+[INFO] |  |  \- xerces:xercesImpl:jar:2.4.0:provided
+[INFO] |  \- commons-fileupload:commons-fileupload:jar:1.3.1:provided
+[INFO] |     \- commons-io:commons-io:jar:2.2:provided
+[INFO] +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-web:war:4.0.0-SNAPSHOT:compile
+[INFO] +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- org.osivia.portal:osivia-portal-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal:osivia-portal-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal.core:osivia-portal-custom-lib-utils:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.jboss.portal:portal-theme-lib:jar:2.7.2:provided
+[INFO] |  |  +- org.jboss.portal:portal-api-lib:jar:2.7.2:provided
+[INFO] |  |  +- commons-logging:commons-logging:jar:1.1.1:provided
+[INFO] |  |  +- commons-lang:commons-lang:jar:2.6:provided
+[INFO] |  |  +- commons-collections:commons-collections:jar:3.2.1:provided
+[INFO] |  |  +- commons-beanutils:commons-beanutils:jar:1.8.0:provided
+[INFO] |  |  +- commons-httpclient:commons-httpclient:jar:3.1:provided
+[INFO] |  |  |  \- commons-codec:commons-codec:jar:1.2:provided
+[INFO] |  |  +- dom4j:dom4j:jar:1.6.1:provided
+[INFO] |  |  |  \- xml-apis:xml-apis:jar:1.0.b2:provided
+[INFO] |  |  +- log4j:log4j:jar:1.2.14:provided
+[INFO] |  |  +- javax.portlet:portlet-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:jsp-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:servlet-api:jar:2.5:provided
+[INFO] |  |  +- displaytag:displaytag:jar:1.2:provided
+[INFO] |  |  |  +- com.lowagie:itext:jar:1.3:provided
+[INFO] |  |  |  +- org.slf4j:jcl104-over-slf4j:jar:1.4.2:provided
+[INFO] |  |  |  \- org.slf4j:slf4j-log4j12:jar:1.4.2:provided
+[INFO] |  |  |     \- org.slf4j:slf4j-api:jar:1.4.2:provided
+[INFO] |  |  \- displaytag:displaytag-portlet:jar:1.2:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-automation-client:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- net.sf.ezmorph:ezmorph:jar:1.0.4:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-core-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpclient:jar:4.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpcore:jar:4.1:provided
+[INFO] |  |  \- javax.mail:mail:jar:1.4:provided
+[INFO] |  |     \- javax.activation:activation:jar:1.1:provided
+[INFO] |  +- net.sf.json-lib:json-lib:jar:2.4:provided
+[INFO] |  +- org.springframework:spring-webmvc-portlet:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-beans:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-context:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  +- org.springframework:spring-aop:jar:3.2.13.RELEASE:provided
+[INFO] |  |  |  |  \- aopalliance:aopalliance:jar:1.0:provided
+[INFO] |  |  |  \- org.springframework:spring-expression:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-core:jar:3.2.13.RELEASE:provided
+[INFO] |  |  +- org.springframework:spring-web:jar:3.2.13.RELEASE:provided
+[INFO] |  |  \- org.springframework:spring-webmvc:jar:3.2.13.RELEASE:provided
+[INFO] |  \- org.springframework:spring-context-support:jar:3.2.13.RELEASE:provided
+[INFO] \- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]    \- org.osivia.portal:osivia-portal-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]       +- org.jboss.portal:portal-core-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-common-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-server-lib:jar:2.7.2:test
+[INFO]       +- junit:junit:jar:4.11:test
+[INFO]       |  \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO]       +- org.easymock:easymock:jar:3.1:test
+[INFO]       |  +- cglib:cglib-nodep:jar:2.2.2:test
+[INFO]       |  \- org.objenesis:objenesis:jar:1.2:test
+[INFO]       +- org.powermock:powermock-module-junit4:jar:1.5:test
+[INFO]       |  \- org.powermock:powermock-module-junit4-common:jar:1.5:test
+[INFO]       |     +- org.powermock:powermock-core:jar:1.5:test
+[INFO]       |     |  \- org.javassist:javassist:jar:3.17.1-GA:test
+[INFO]       |     \- org.powermock:powermock-reflect:jar:1.5:test
+[INFO]       \- org.powermock:powermock-api-easymock:jar:1.5:test
+[INFO]          \- org.powermock:powermock-api-support:jar:1.5:test
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Demonstrateur OSIVIA - Distribution 4.0.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[WARNING] The POM for org.opensaml:opensaml:jar:1.1b is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.1:tree (default-cli) @ osivia-demo-distribution ---
+[WARNING] Missing POM for org.opensaml:opensaml:jar:1.1b
+[INFO] org.osivia.demo:osivia-demo-distribution:jar:4.0.0-SNAPSHOT
+[INFO] +- org.osivia.demo:osivia-demo-customizer:war:4.0.0-SNAPSHOT:compile
+[INFO] +- org.osivia.demo:osivia-demo-charte:war:4.0.0-SNAPSHOT:compile
+[INFO] +- org.osivia.demo:osivia-demo-charte-web:war:4.0.0-SNAPSHOT:compile
+[INFO] +- org.osivia.demo:osivia-demo-charte-montpellier:war:4.0.0-SNAPSHOT:compile
+[INFO] +- org.osivia.demo:osivia-demo-cms-nuxeo-web:war:4.0.0-SNAPSHOT:compile
+[INFO] +- outils.ldap:toutatice-annuaire-interfaces:jar:4.0-SNAPSHOT:compile
+[INFO] +- org.osivia.portal.identity:osivia-portal-identity-sso-lib:jar:3.0.4:compile
+[INFO] |  +- jboss:jboss-jmx:jar:4.2.3.GA:compile
+[INFO] |  +- jboss:jbossweb:jar:4.2.3.GA:compile
+[INFO] |  +- org.jboss.portal.identity:identity-identity:jar:1.1.3:compile
+[INFO] |  +- org.jboss.portal.identity:identity-sso:jar:1.1.3:compile
+[INFO] |  |  +- org.josso:josso-core:jar:1.8.6:compile
+[INFO] |  |  |  \- org.apache.xbean:xbean-spring:jar:3.4.3:compile
+[INFO] |  |  +- org.josso:josso-common:jar:1.8.6:compile
+[INFO] |  |  |  \- commons-modeler:commons-modeler:jar:1.1:compile
+[INFO] |  |  +- org.josso:josso-agent:jar:1.8.6:compile
+[INFO] |  |  +- org.josso:josso-basic-authscheme:jar:1.8.6:compile
+[INFO] |  |  +- org.josso:josso-jboss42-agent:jar:1.8.6:compile
+[INFO] |  |  |  +- org.josso:josso-protocol-client:jar:1.8.6:compile
+[INFO] |  |  |  \- org.josso:josso-ws:jar:1.8.6:compile
+[INFO] |  |  |     +- org.apache.axis:axis:jar:1.4:compile
+[INFO] |  |  |     +- org.apache.axis:axis-ant:jar:1.4:compile
+[INFO] |  |  |     \- axis:axis-wsdl4j:jar:1.5.1:compile
+[INFO] |  |  +- org.josso:josso-tomcat55-agent:jar:1.8.6:compile
+[INFO] |  |  +- ja-sig-cas:cas-server:jar:3.0.7:compile
+[INFO] |  |  +- ja-sig-cas:cas-client:jar:3.0.7:compile
+[INFO] |  |  +- opensso:opensso:jar:20070905-nightly:compile
+[INFO] |  |  +- org.springframework:spring:jar:2.0.6:compile
+[INFO] |  |  +- commons-configuration:commons-configuration:jar:1.2:compile
+[INFO] |  |  |  +- commons-collections:commons-collections:jar:3.2.1:compile
+[INFO] |  |  |  +- commons-lang:commons-lang:jar:2.5:compile
+[INFO] |  |  |  +- dom4j:dom4j:jar:1.6.1:compile
+[INFO] |  |  |  |  +- jaxen:jaxen:jar:1.0-FCS:compile
+[INFO] |  |  |  |  +- saxpath:saxpath:jar:1.0-FCS:compile
+[INFO] |  |  |  |  +- msv:msv:jar:20020414:compile
+[INFO] |  |  |  |  +- relaxngDatatype:relaxngDatatype:jar:20020414:compile
+[INFO] |  |  |  |  \- isorelax:isorelax:jar:20020414:compile
+[INFO] |  |  |  +- commons-logging:commons-logging-api:jar:1.0.4:compile
+[INFO] |  |  |  +- commons-digester:commons-digester:jar:1.6:compile
+[INFO] |  |  |  |  \- commons-beanutils:commons-beanutils:jar:1.8.0:compile
+[INFO] |  |  |  +- commons-beanutils:commons-beanutils-core:jar:1.7.0:compile
+[INFO] |  |  |  +- xerces:xercesImpl:jar:2.7.1:compile
+[INFO] |  |  |  +- xalan:xalan:jar:2.7.0:compile
+[INFO] |  |  |  \- xml-apis:xml-apis:jar:1.0.b2:compile
+[INFO] |  |  +- commons-discovery:commons-discovery:jar:0.4:compile
+[INFO] |  |  +- xmldb:xmldb-common:jar:20021220:compile
+[INFO] |  |  +- axis:axis:jar:1.4:compile
+[INFO] |  |  |  +- org.apache.axis:axis-jaxrpc:jar:1.4:compile
+[INFO] |  |  |  \- org.apache.axis:axis-saaj:jar:1.4:compile
+[INFO] |  |  +- org.jboss.unit:jboss-unit:jar:1.2.3:compile
+[INFO] |  |  |  \- junit:junit:jar:4.11:compile
+[INFO] |  |  +- org.jboss.unit:jboss-unit-mc:jar:1.2.3:compile
+[INFO] |  |  |  \- org.jboss.microcontainer:jboss-kernel:jar:2.0.0.Beta9:compile
+[INFO] |  |  |     +- org.jboss.microcontainer:jboss-container:jar:2.0.0.Beta9:compile
+[INFO] |  |  |     +- org.jboss.microcontainer:jboss-dependency:jar:2.0.0.Beta9:compile
+[INFO] |  |  |     +- org.jboss.microcontainer:jboss-managed:jar:2.0.0.Beta9:compile
+[INFO] |  |  |     |  +- org.jboss.aop:jboss-aop:jar:2.0.0.CR1:compile
+[INFO] |  |  |     |  |  +- qdox:qdox:jar:1.6:compile
+[INFO] |  |  |     |  |  \- trove:trove:jar:2.1.1:compile
+[INFO] |  |  |     |  \- org.jboss.microcontainer:jboss-metatype:jar:2.0.0.Beta9:compile
+[INFO] |  |  |     +- org.jboss:jboss-common-core:jar:2.2.3.GA:compile
+[INFO] |  |  |     +- jboss:jboss-logging-spi:jar:2.0.3.GA:compile
+[INFO] |  |  |     +- org.jboss:jboss-test:jar:1.0.4.GA:compile
+[INFO] |  |  |     |  +- ant:ant:jar:1.6.5:compile
+[INFO] |  |  |     |  +- ant:ant-junit:jar:1.6.5:compile
+[INFO] |  |  |     |  +- jboss:jboss-common-logging-log4j:jar:2.0.4.GA:compile
+[INFO] |  |  |     |  \- jboss.profiler.jvmti:jboss-profiler-jvmti:jar:1.0.0.CR5:compile
+[INFO] |  |  |     +- org.jboss:jbossxb:jar:2.0.0.CR4:compile
+[INFO] |  |  |     |  +- apache-xerces:xercesImpl:jar:2.7.1:compile
+[INFO] |  |  |     |  \- wutka-dtdparser:dtdparser121:jar:1.2.1:compile
+[INFO] |  |  |     +- org.jboss:javassist:jar:3.6.0.GA:compile
+[INFO] |  |  |     \- apache-xerces:xml-apis:jar:2.7.1:compile
+[INFO] |  |  +- org.jboss.unit:portal-test:jar:1.2.3:compile
+[INFO] |  |  |  +- org.codehaus.cargo:cargo-core-uberjar:jar:1.0-alpha-3:compile
+[INFO] |  |  |  +- sun-opends:opends-core:jar:legacy:compile
+[INFO] |  |  |  +- hibernate:hibernate3:jar:3.2.3.GA:compile
+[INFO] |  |  |  +- jboss.jbossas.core-libs:jboss-transaction:jar:4.0.4.GA:compile
+[INFO] |  |  |  +- jboss.jbossas.core-libs:jnpserver:jar:4.0.4.GA:compile
+[INFO] |  |  |  +- jboss.jbossas.core-libs:jboss-jca:jar:4.0.4.GA:compile
+[INFO] |  |  |  +- jboss.jbossas.core-libs:jboss-local-jdbc:jar:4.0.4.GA:compile
+[INFO] |  |  |  +- jboss.jbossas.core-libs:jboss:jar:4.0.4.GA:compile
+[INFO] |  |  |  +- apache-log4j:log4j:jar:1.2.14:compile
+[INFO] |  |  |  +- jboss:jboss-j2ee:jar:4.2.0.GA:compile
+[INFO] |  |  |  +- jboss:jboss-common-core:jar:2.2.0.GA:compile
+[INFO] |  |  |  |  +- apache-httpclient:commons-httpclient:jar:2.0.2:compile
+[INFO] |  |  |  |  +- oswego-concurrent:concurrent:jar:1.3.4:compile
+[INFO] |  |  |  |  +- apache-slide:webdavlib:jar:2.0:compile
+[INFO] |  |  |  |  \- jboss:jboss-common-logging-spi:jar:2.0.4.GA:compile
+[INFO] |  |  |  \- jboss:jboss-system:jar:4.2.0.GA:compile
+[INFO] |  |  \- org.jboss.portal.common:common-common:jar:1.2.5:compile
+[INFO] |  |     +- javax.activation:activation:jar:1.1:compile
+[INFO] |  |     +- org.jboss:jboss-vfs:jar:2.1.0.GA:compile
+[INFO] |  |     |  \- org.jboss.logging:jboss-logging-spi:jar:2.0.5.GA:compile
+[INFO] |  |     +- org.apache.ant:ant:jar:1.7.0:compile
+[INFO] |  |     +- commons-httpclient:commons-httpclient:jar:3.1:compile
+[INFO] |  |     +- org.apache.ant:ant-junit:jar:1.7.0:compile
+[INFO] |  |     +- org.apache.ant:ant-nodeps:jar:1.7.0:compile
+[INFO] |  |     \- org.apache.ant:ant-launcher:jar:1.7.0:compile
+[INFO] |  +- org.jasig.cas:cas-server-core:jar:3.4.6:compile
+[INFO] |  |  +- log4j:log4j:jar:1.2.15:compile
+[INFO] |  |  +- com.github.inspektr:inspektr-audit:jar:1.0.2.GA:compile
+[INFO] |  |  |  \- com.github.inspektr:inspektr-common:jar:1.0.2.GA:compile
+[INFO] |  |  +- org.jasig.service:person-directory-impl:jar:1.5.0-RC6:compile
+[INFO] |  |  |  +- aopalliance:aopalliance:jar:1.0:compile
+[INFO] |  |  |  +- com.sun.xml.bind:jaxb-impl:jar:2.1.12:compile
+[INFO] |  |  |  |  \- javax.xml.bind:jaxb-api:jar:2.1:compile
+[INFO] |  |  |  |     \- javax.xml.stream:stax-api:jar:1.0-2:compile
+[INFO] |  |  |  \- org.jasig.service:person-directory-api:jar:1.5.0-RC6:compile
+[INFO] |  |  +- commons-codec:commons-codec:jar:1.4:compile
+[INFO] |  |  +- jdom:jdom:jar:1.0:compile
+[INFO] |  |  +- org.springframework:spring-orm:jar:3.0.5.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-jdbc:jar:3.0.5.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-core:jar:3.0.5.RELEASE:compile
+[INFO] |  |  |  \- org.springframework:spring-asm:jar:3.0.5.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-beans:jar:3.0.5.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-webmvc:jar:3.0.5.RELEASE:compile
+[INFO] |  |  |  +- org.springframework:spring-expression:jar:3.0.5.RELEASE:compile
+[INFO] |  |  |  \- org.springframework:spring-web:jar:3.2.13.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-context-support:jar:3.2.13.RELEASE:compile
+[INFO] |  |  +- org.springframework:spring-tx:jar:3.0.5.RELEASE:compile
+[INFO] |  |  |  \- org.springframework:spring-aop:jar:2.5.5:compile
+[INFO] |  |  +- org.springframework:spring-context:jar:3.0.5.RELEASE:compile
+[INFO] |  |  +- org.springframework.security:spring-security-core:jar:3.0.5.RELEASE:compile
+[INFO] |  |  +- org.hibernate:hibernate-core:jar:3.6.0.Final:compile
+[INFO] |  |  |  +- antlr:antlr:jar:2.7.6:compile
+[INFO] |  |  |  +- org.hibernate:hibernate-commons-annotations:jar:3.2.0.Final:compile
+[INFO] |  |  |  +- org.hibernate.javax.persistence:hibernate-jpa-2.0-api:jar:1.0.0.Final:compile
+[INFO] |  |  |  \- javax.transaction:jta:jar:1.1:compile
+[INFO] |  |  +- org.apache.santuario:xmlsec:jar:1.4.3:runtime
+[INFO] |  |  +- org.opensaml:opensaml:jar:1.1b:compile
+[INFO] |  |  +- javax.xml:xmldsig:jar:1.0:compile
+[INFO] |  |  +- org.perf4j:perf4j:jar:log4jonly:0.9.14:compile
+[INFO] |  |  +- org.springframework.webflow:spring-webflow:jar:2.2.1.RELEASE:compile
+[INFO] |  |  |  +- org.springframework.webflow:spring-binding:jar:2.2.1.RELEASE:compile
+[INFO] |  |  |  \- org.springframework.webflow:spring-js:jar:2.2.1.RELEASE:compile
+[INFO] |  |  |     \- org.springframework.webflow:spring-js-resources:jar:2.2.1.RELEASE:compile
+[INFO] |  |  +- commons-jexl:commons-jexl:jar:1.1:runtime
+[INFO] |  |  +- commons-io:commons-io:jar:2.0:compile
+[INFO] |  |  +- org.aspectj:aspectjrt:jar:1.6.10:compile
+[INFO] |  |  +- org.aspectj:aspectjweaver:jar:1.6.10:compile
+[INFO] |  |  +- javax.validation:validation-api:jar:1.0.0.GA:compile
+[INFO] |  |  +- org.slf4j:slf4j-api:jar:1.5.8:compile
+[INFO] |  |  +- org.slf4j:slf4j-log4j12:jar:1.5.8:runtime
+[INFO] |  |  \- org.slf4j:jcl-over-slf4j:jar:1.5.8:compile
+[INFO] |  \- cas:casclient:jar:2.2.0-M3:compile
+[INFO] |     +- commons-logging:commons-logging:jar:1.1.1:compile
+[INFO] |     \- javax.servlet:servlet-api:jar:2.3:compile
+[INFO] +- outils.ldap:services-directory:war:4.0-SNAPSHOT:compile
+[INFO] +- org.osivia.services:osivia-services-portal-api-demo:war:1.0-RC1:compile
+[INFO] +- toutatice-services.identite:toutatice-identite-fichepersonne-portail:war:4.0-RC1:compile
+[INFO] +- toutatice-services.identite:toutatice-identite-creationpersonnes-portail:war:3.1-osivia-RC1:compile
+[INFO] +- toutatice-services.identite:toutatice-identite-gestionpersonnes-portail:war:4.0-RC1:compile
+[INFO] +- toutatice-services.identite:toutatice-identite-gestiongroupes-portail:war:4.0-RC1:compile
+[INFO] +- toutatice-services.identite:toutatice-identite-ficheprofil-portail:war:4.0-RC1:compile
+[INFO] +- toutatice-services.nuxeo:toutatice-nuxeo-gestionworkspace-portail:war:3.0-osivia-RC1:compile
+[INFO] +- toutatice-services.nuxeo:toutatice-nuxeo-participantsworkspace-portail:war:3.0-osivia-RC1:compile
+[INFO] +- org.osivia.services:osivia-services-wiki:war:1.3-RC1:compile
+[INFO] +- org.osivia.services:osivia-services-forum:war:1.1:compile
+[INFO] +- org.osivia.services:osivia-services-calendar:war:1.0-SNAPSHOT:compile
+[INFO] +- toutatice-services.faq:toutatice-faq-portail:war:3.3-RC1:compile
+[INFO] +- toutatice-services.dashboard.ecm:toutatice-dashboard-ecm-portail:war:3.2-osivia-RC1:compile
+[INFO] +- org.osivia.services:osivia-services-java-melody-integration:jar:1.1:compile
+[INFO] |  \- net.bull.javamelody:javamelody-core:jar:1.41.0:compile
+[INFO] |     \- org.jrobin:jrobin:jar:1.5.9:compile
+[INFO] +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- org.osivia.portal:osivia-portal-dependencies:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal:osivia-portal-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.osivia.portal.core:osivia-portal-custom-lib-utils:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- org.jboss.portal:portal-theme-lib:jar:2.7.2:provided
+[INFO] |  |  +- org.jboss.portal:portal-api-lib:jar:2.7.2:provided
+[INFO] |  |  +- javax.portlet:portlet-api:jar:2.0:provided
+[INFO] |  |  +- javax.servlet:jsp-api:jar:2.0:provided
+[INFO] |  |  +- displaytag:displaytag:jar:1.2:provided
+[INFO] |  |  |  +- com.lowagie:itext:jar:1.3:provided
+[INFO] |  |  |  \- org.slf4j:jcl104-over-slf4j:jar:1.4.2:provided
+[INFO] |  |  \- displaytag:displaytag-portlet:jar:1.2:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-api:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  +- toutatice-portail.cms:toutatice-portail-cms-nuxeo-automation-client:jar:4.0.0-SNAPSHOT:provided
+[INFO] |  |  +- net.sf.ezmorph:ezmorph:jar:1.0.4:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-core-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.codehaus.jackson:jackson-mapper-asl:jar:1.8.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpclient:jar:4.1:provided
+[INFO] |  |  +- org.apache.httpcomponents:httpcore:jar:4.1:provided
+[INFO] |  |  \- javax.mail:mail:jar:1.4:provided
+[INFO] |  +- net.sf.json-lib:json-lib:jar:2.4:provided
+[INFO] |  \- org.springframework:spring-webmvc-portlet:jar:3.2.13.RELEASE:provided
+[INFO] \- toutatice-portail.cms:toutatice-portail-cms-nuxeo-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]    \- org.osivia.portal:osivia-portal-dependencies-test:jar:4.0.0-SNAPSHOT:test
+[INFO]       +- org.jboss.portal:portal-core-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-common-lib:jar:2.7.2:test
+[INFO]       +- org.jboss.portal:portal-server-lib:jar:2.7.2:test
+[INFO]       +- org.easymock:easymock:jar:3.1:test
+[INFO]       |  +- cglib:cglib-nodep:jar:2.2.2:test
+[INFO]       |  \- org.objenesis:objenesis:jar:1.2:test
+[INFO]       +- org.powermock:powermock-module-junit4:jar:1.5:test
+[INFO]       |  \- org.powermock:powermock-module-junit4-common:jar:1.5:test
+[INFO]       |     +- org.powermock:powermock-core:jar:1.5:test
+[INFO]       |     |  \- org.javassist:javassist:jar:3.17.1-GA:test
+[INFO]       |     \- org.powermock:powermock-reflect:jar:1.5:test
+[INFO]       \- org.powermock:powermock-api-easymock:jar:1.5:test
+[INFO]          \- org.powermock:powermock-api-support:jar:1.5:test
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] Demonstrateur OSIVIA - Parent ..................... SUCCESS [1.053s]
+[INFO] Demonstrateur OSIVIA - Charte ..................... SUCCESS [0.077s]
+[INFO] Demonstrateur OSIVIA - Charte web ................. SUCCESS [0.051s]
+[INFO] Demonstrateur OSIVIA - Charte pour Montpellier .... SUCCESS [0.044s]
+[INFO] Démonstrateur OSIVIA - Customizer ................. SUCCESS [0.042s]
+[INFO] Demonstrateur OSIVIA - CMS customizer ............. SUCCESS [0.092s]
+[INFO] Demonstrateur OSIVIA - Distribution ............... SUCCESS [0.917s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.668s
+[INFO] Finished at: Tue Feb 24 17:20:36 CET 2015
+[INFO] Final Memory: 20M/429M
+[INFO] ------------------------------------------------------------------------
+[WARNING] The requested profile "deploy-toutatice-modules" could not be activated because it does not exist.
+[WARNING] The requested profile "build-acrennes-cms" could not be activated because it does not exist.
