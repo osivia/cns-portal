@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<themes>
+    <theme>
+        <name>osivia-demo-charte-cns</name>
+        <link rel="icon" href="/img/favicon.png" />
+        <!-- CSS -->
+
+        <link rel="stylesheet" href="/css/proto-cns.min.css" title="OSIVIA" />
+        <link rel="stylesheet" href="/css/tiles.min.css" />
+        <link rel="stylesheet" href="/css/menubar.min.css" />    
+    </theme>
+
+</themes>

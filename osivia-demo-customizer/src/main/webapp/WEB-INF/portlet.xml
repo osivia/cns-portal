@@ -23,6 +23,10 @@
             <name>customizer.regions.demo.montpellier.context</name>
             <value>/osivia-demo-charte-montpellier</value>
         </init-param>
+        <init-param>
+            <name>customizer.regions.demo.cns.context</name>
+            <value>/osivia-demo-charte-cns</value>
+        </init-param>        
 
         <expiration-cache>180</expiration-cache>
 

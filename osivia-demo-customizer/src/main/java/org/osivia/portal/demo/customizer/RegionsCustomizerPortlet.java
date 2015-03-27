@@ -41,6 +41,8 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
     private static final String CHARTE_SITESWEB_CONTEXT = "customizer.regions.demo.sitesweb.context";
     /** "osivia-demo-charte-montpellier" context path init parameter name. */
     private static final String CHARTE_MONTPELLIER_CONTEXT = "customizer.regions.demo.montpellier.context";
+    /** "osivia-demo-charte-montpellier" context path init parameter name. */
+    private static final String CHARTE_CNS_CONTEXT = "customizer.regions.demo.cns.context";    
 
     /** Customizer name. */
     private static final String CUSTOMIZER_NAME = "osivia.site.customizer.regions.name";
@@ -105,10 +107,12 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
         String charteEnt = this.getInitParameter(CHARTE_CONTEXT);
         String charteSitesWeb = this.getInitParameter(CHARTE_SITESWEB_CONTEXT);
         String charteMontpellier = this.getInitParameter(CHARTE_MONTPELLIER_CONTEXT);
+        String charteCNS = this.getInitParameter(CHARTE_CNS_CONTEXT);
 
         Map<String, Object> attributes = context.getAttributes();
         String contextPath = (String) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_THEME_CONTEXT_PATH);
-        if (StringUtils.equals(contextPath, charteEnt) || StringUtils.equals(contextPath, charteSitesWeb) || StringUtils.equals(contextPath, charteMontpellier)) {
+        if (StringUtils.equals(contextPath, charteEnt) || StringUtils.equals(contextPath, charteSitesWeb) || StringUtils.equals(contextPath, charteMontpellier)
+        		|| StringUtils.equals(contextPath, charteCNS)) {
             IRenderedRegions renderedRegion = (IRenderedRegions) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_RENDERED_REGIONS);
 
             if (StringUtils.equals(contextPath, charteEnt)) {
@@ -126,7 +130,7 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
                 renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp", charteEnt);
             }
 
-            if (StringUtils.equals(contextPath, charteMontpellier)) {
+            if (StringUtils.equals(contextPath, charteMontpellier) || StringUtils.equals(contextPath, charteCNS)) {
                 // Customize regions
                 renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp", charteEnt);
                 renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp", contextPath);
