@@ -14,25 +14,28 @@
         <toutatice.version>4.0.0-SNAPSHOT</toutatice.version>
 
         <!-- Services -->
-        <osivia-services-calendar.version>1.0-SNAPSHOT</osivia-services-calendar.version>
-        <osivia-services-forum.version>1.1</osivia-services-forum.version>
-        <osivia-services-wiki.version>1.3-SNAPSHOT</osivia-services-wiki.version>
+        <osivia-services-calendar.version>1.0</osivia-services-calendar.version>
+        <osivia-services-forum.version>1.2-RC1</osivia-services-forum.version>
+        <osivia-services-wiki.version>1.3-RC1</osivia-services-wiki.version>
         <osivia-services-portal-api-demo.version>4.0-SNAPSHOT</osivia-services-portal-api-demo.version>
 
         <!-- Collab tools -->
-        <toutatice-faq.version>3.4-SNAPSHOT</toutatice-faq.version>
+        <toutatice-faq.version>3.4-RC1</toutatice-faq.version>
         <toutatice-dashboard.version>3.2-osivia-RC1</toutatice-dashboard.version>
         
         <!-- Identity & user mgt tools -->
-        <toutatice.annuaire.version>4.0-SNAPSHOT</toutatice.annuaire.version>
-        <fichepersonne.version>4.0-RC1</fichepersonne.version>
-        <ficheprofil.version>4.0-RC1</ficheprofil.version>
+        <toutatice.annuaire.version>4.0-RC5</toutatice.annuaire.version>
+        <fichepersonne.version>4.0-RC6</fichepersonne.version>
+        <ficheprofil.version>4.0-RC4</ficheprofil.version>
         <gestiongroupe.version>4.0-RC1</gestiongroupe.version>
-        <gestionworkspace.version>3.0-osivia-RC1</gestionworkspace.version>
-        <participantswks.version>3.0-osivia-RC1</participantswks.version>
-        <gestionpersonnes.version>4.0-RC1</gestionpersonnes.version>
+        <gestionworkspace.version>4.0-RC5</gestionworkspace.version>
+        <participantswks.version>4.0-RC3</participantswks.version>
+        <gestionpersonnes.version>4.0-RC3</gestionpersonnes.version>
         <creationpersonnes.version>3.1-osivia-RC1</creationpersonnes.version>
         <identity-sso.version>3.0.4</identity-sso.version>
+        
+        <myworkspaces.version>4.0-RC2</myworkspaces.version>
+        <mytasks.version>4.0-RC2</mytasks.version>        
 
         <!-- Admin tools -->
         <osivia-services-java-melody-integration.version>1.2</osivia-services-java-melody-integration.version>
