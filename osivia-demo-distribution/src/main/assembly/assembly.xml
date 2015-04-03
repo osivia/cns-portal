@@ -21,6 +21,7 @@
                 <include>${groupId}:osivia-demo-charte:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-charte-web:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-charte-montpellier:war:${project.version}</include>
+                <include>${groupId}:osivia-demo-charte-cns:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-cms-nuxeo-web:war:${project.version}</include>
                 <include>org.osivia.services:osivia-services-portal-api-demo:war:${osivia-services-portal-api-demo.version}</include>                
                 <!-- collab tools -->
@@ -28,7 +29,9 @@
                 <include>org.osivia.services:osivia-services-forum:war:${osivia-services-forum.version}</include>
                 <include>org.osivia.services:osivia-services-calendar:war:${osivia-services-calendar.version}</include>
                 <include>toutatice-services.faq:toutatice-faq-portail:war:${toutatice-faq.version}</include>
-                <include>toutatice-services.dashboard.ecm:toutatice-dashboard-ecm-portail:war:${toutatice-dashboard.version}</include>
+                <!-- Dashboard -->
+                <include>toutatice-services.dashboard:toutatice-mytasks-portail:war:${mytasks.version}</include>
+                <include>toutatice-services.dashboard:toutatice-myworkspaces-portail:war:${myworkspaces.version}</include>
                 <!-- identity & user mgt tools -->
                 <include>outils.ldap:services-directory:war:${toutatice.annuaire.version}</include>
                 <include>toutatice-services.identite:toutatice-identite-fichepersonne-portail:war:${fichepersonne.version}</include>

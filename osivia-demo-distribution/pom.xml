@@ -47,6 +47,13 @@
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
+        
+        <dependency>
+            <groupId>${groupId}</groupId>
+            <artifactId>osivia-demo-charte-cns</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>        
 
         <dependency>
             <groupId>${groupId}</groupId>
@@ -166,11 +173,17 @@
         </dependency>
 
         <dependency>
-            <groupId>toutatice-services.dashboard.ecm</groupId>
-            <artifactId>toutatice-dashboard-ecm-portail</artifactId>
-            <version>${toutatice-dashboard.version}</version>
-            <type>war</type>
-        </dependency>
+            <groupId>toutatice-services.dashboard</groupId>
+    		<artifactId>toutatice-mytasks-portail</artifactId>
+    		<version>${mytasks.version}</version>
+    		<type>war</type>
+    	</dependency>
+        <dependency>
+            <groupId>toutatice-services.dashboard</groupId>
+    		<artifactId>toutatice-myworkspaces-portail</artifactId>
+    		<version>${myworkspaces.version}</version>
+    		<type>war</type>
+    	</dependency>
 
 
         <!-- Monitoring -->
