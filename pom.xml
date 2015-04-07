@@ -24,7 +24,7 @@
         <toutatice-dashboard.version>3.2-osivia-RC1</toutatice-dashboard.version>
         
         <!-- Identity & user mgt tools -->
-        <toutatice.annuaire.version>4.0-RC5</toutatice.annuaire.version>
+        <toutatice.annuaire.version>4.0-SNAPSHOT</toutatice.annuaire.version>
         <fichepersonne.version>4.0-RC6</fichepersonne.version>
         <ficheprofil.version>4.0-RC4</ficheprofil.version>
         <gestiongroupe.version>4.0-RC1</gestiongroupe.version>
@@ -46,10 +46,10 @@
         <module>osivia-demo-charte</module>
         <module>osivia-demo-charte-web</module>
         <module>osivia-demo-charte-montpellier</module>
-        <module>osivia-demo-charte-cns</module>
         <module>osivia-demo-customizer</module>
         <module>osivia-demo-cms-nuxeo-web</module>
         <module>osivia-demo-distribution</module>
+        
     </modules>
 
 
@@ -184,5 +184,16 @@
 
             </properties>
         </profile>
+        
+        <profile>
+        	<id>CNS</id>
+        	<activation><activeByDefault>false</activeByDefault></activation>
+        	<modules>
+        		<module>cns-ldap-connector</module>
+        		<module>osivia-demo-charte-cns</module>
+        	</modules>
+        </profile>
     </profiles>
+    
+    
 </project>

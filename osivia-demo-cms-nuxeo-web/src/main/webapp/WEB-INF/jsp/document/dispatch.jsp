@@ -26,6 +26,10 @@
     <c:when test="${'Picture' eq type}">
         <jsp:include page="view-picture.jsp" />
     </c:when>
+    
+    <c:when test="${'VEVENT' eq type}">
+        <jsp:include page="view-calendar-event.jsp" />
+    </c:when>    
         
     <c:otherwise>
         <jsp:include page="view-default.jsp" />

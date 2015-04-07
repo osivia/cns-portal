@@ -127,7 +127,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         Map<String, String> windowProperties = new HashMap<String, String>();
         windowProperties.put(Constants.WINDOW_PROP_VERSION, ctx.getDisplayLiveVersion());
-        windowProperties.put("osivia.cms.hideMetaDatas", "1");
+        //windowProperties.put("osivia.cms.hideMetaDatas", "1");
         windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
         windowProperties.put("osivia.cms.publishPathAlreadyConverted", "1");
         windowProperties.put("osivia.hideDecorators", "1");
@@ -180,7 +180,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         }
 
         CMSHandlerProperties player = super.getCMSPlayer(ctx);
-        player.getWindowProperties().put("osivia.cms.hideMetaDatas", "1");
+        //player.getWindowProperties().put("osivia.cms.hideMetaDatas", "1");
         return player;
     }
 
@@ -431,33 +431,43 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
      * @return customized CMS item types
      */
     private List<CMSItemType> getCustomizedCMSItemTypes() {
-        List<CMSItemType> customizedTypes = new ArrayList<CMSItemType>();
+    	
+    	List<CMSItemType> customizedTypes = new ArrayList<CMSItemType>();
+    	
+        // Workspace
+        customizedTypes.add(new CMSItemType("Workspace", true, false, true, true, false, false, Arrays.asList("File", "OrderedFolder", "Note", "DocumentUrlContainer", "AnnonceFolder","Forum","FaqFolder", "PictureBook"),
+                "/default/templates/workspace", "glyphicons glyphicons-group", true));
 
-        // FAQ folder
-        customizedTypes.add(new CMSItemType("FaqFolder", true, false, false, false, false, true, Arrays.asList("Question"), null, "circle_question_mark"));
-        // FAQ question
-        customizedTypes.add(new CMSItemType("Question", false, false, false, false, false, true, new ArrayList<String>(0), null, "circle_question_mark"));
-        // Blog site
-        customizedTypes
-                .add(new CMSItemType("BlogSite", true, false, false, false, true, true, Arrays.asList("BlogPost"), "/default/templates/blogSite", "blog"));
+        // Blog
+        customizedTypes.add(new CMSItemType("BlogSite", true, true, true, false, true, true, Arrays.asList("BlogPost", "ContextualLink"), null,
+                "glyphicons glyphicons-blog", true));
         // Blog post
-        customizedTypes.add(new CMSItemType("BlogPost", false, false, false, false, true, true, new ArrayList<String>(0), null, "blog"));
+        customizedTypes.add(new CMSItemType("BlogPost", false, false, false, false, true, true, new ArrayList<String>(0), null, "glyphicons glyphicons-blog"));
+        // FAQ folder
+        customizedTypes.add(new CMSItemType("FaqFolder", true, false, false, false, false, true, Arrays.asList("Question"), null,
+                "glyphicons glyphicons-circle-question-mark"));
+        // FAQ question
+        customizedTypes.add(new CMSItemType("Question", false, false, false, false, false, true, new ArrayList<String>(0), null,
+                "glyphicons glyphicons-circle-question-mark"));
+        // Forum
+        customizedTypes
+                .add(new CMSItemType("Forum", true, true, false, false, true, true, Arrays.asList("Thread"), null, "glyphicons glyphicons-conversation"));
+        // Forum thread
+        customizedTypes.add(new CMSItemType("Thread", false, false, false, false, true, true, new ArrayList<String>(0), null, "glyphicons glyphicons-chat"));
+
+        // Agenda
+        customizedTypes.add(new CMSItemType("Agenda", true, true, false, false, true, true, Arrays.asList("VEVENT"), null, "glyphicons glyphicons-calendar"));
+        // Agenda event
+        customizedTypes
+                .add(new CMSItemType("VEVENT", false, false, false, false, true, true, new ArrayList<String>(0), null, "glyphicons glyphicons-calendar"));
+
+
         // Wiki book
         customizedTypes.add(new CMSItemType("WikiBook", true, true, true, true, true, true, Arrays.asList("WikiSection"), null, "book"));
         // Wiki section
         customizedTypes.add(new CMSItemType("WikiSection", true, true, true, true, true, true, Arrays.asList("WikiSection"), null, "book"));
-        // Forum
-        customizedTypes.add(new CMSItemType("Forum", true, true, false, false, true, true, Arrays.asList("Thread"), null, "conversation"));
-        // Forum thread
-        customizedTypes.add(new CMSItemType("Thread", false, false, false, false, true, true, new ArrayList<String>(0), null, "chat"));
-        // Calendar
-        customizedTypes.add(new CMSItemType("Agenda", true, true, false, false, false, true, Arrays.asList("VEVENT"), null, "calendar"));
-        // Calendar events
-        customizedTypes.add(new CMSItemType("VEVENT", false, false, false, false, false, true, new ArrayList<String>(0), null, "calendar"));
-        // Picture book
-        customizedTypes.add(new CMSItemType("PictureBook", true, true, true, false, false, true, Arrays.asList("PictureBook", "Picture"), null, "picture"));
-        // Picture
-        customizedTypes.add(new CMSItemType("Picture", false, false, false, false, false, true, new ArrayList<String>(0), null, "picture"));
+        
+
 
         return customizedTypes;
     }
