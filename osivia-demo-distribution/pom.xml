@@ -50,13 +50,6 @@
         
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>osivia-demo-charte-cns</artifactId>
-            <version>${project.version}</version>
-            <type>war</type>
-        </dependency>        
-
-        <dependency>
-            <groupId>${groupId}</groupId>
             <artifactId>osivia-demo-cms-nuxeo-web</artifactId>
             <version>${project.version}</version>
             <type>war</type>
@@ -309,6 +302,54 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        
+        <!-- package spécifique CNS -->
+        
+        <profile>
+        	<id>CNS</id>
+        	<activation><activeByDefault>false</activeByDefault></activation>
+        	
+        	<dependencies>
+		        <dependency>
+		            <groupId>${groupId}</groupId>
+		            <artifactId>osivia-demo-charte-cns</artifactId>
+		            <version>${project.version}</version>
+		            <type>war</type>
+		        </dependency>
+		        <dependency>
+		            <groupId>${groupId}</groupId>
+		            <artifactId>cns-ldap-connector</artifactId>
+		            <version>${project.version}</version>
+		            <type>war</type>
+		        </dependency>		        
+        	</dependencies>
+        	<build>
+        		<plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>zip</id>
+                                <phase>process-resources</phase>
+                                <configuration>
+                                    <descriptors>
+                                        <descriptor>src/main/assembly/assembly-cns.xml</descriptor>
+                                    </descriptors>
+                                    <finalName>${project.artifactId}</finalName>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                    <attach>true</attach>
+                                </configuration>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+        		</plugins>
+        	</build>
+        
         </profile>
     </profiles>
 
