@@ -46,6 +46,18 @@ public class CustomNavigationItemAdapter extends NavigationItemAdapter {
     }
 
 
+    @Override
+    protected String getDefaultPageTemplate(Document doc) {
+        if ("WebSite".equals(doc.getType()))
+            return "/default/templates/webSitepublish";
+        else if ("BlogSite".equals(doc.getType()))
+            return "/default/templates/blogSite";
+        else if ("Workspace".equals(doc.getType()))
+            return "/default/templates/workspace";
+
+        return "/default/templates/portalSitepublish";
+
+    }
 
     public void adaptPublishSpaceNavigationItem(CMSItem publishSpaceNavigationItem, CMSItem publishSpaceItem) {
         super.adaptPublishSpaceNavigationItem(publishSpaceNavigationItem, publishSpaceItem);

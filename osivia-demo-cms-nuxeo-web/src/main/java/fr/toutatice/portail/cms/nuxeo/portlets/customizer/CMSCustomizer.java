@@ -434,10 +434,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     	
     	List<CMSItemType> customizedTypes = new ArrayList<CMSItemType>();
     	
-        // Workspace
-        customizedTypes.add(new CMSItemType("Workspace", true, false, true, true, false, false, Arrays.asList("File", "OrderedFolder", "Note", "DocumentUrlContainer", "AnnonceFolder","Forum","FaqFolder", "PictureBook"),
-                "/default/templates/workspace", "glyphicons glyphicons-group", true));
-
         // Blog
         customizedTypes.add(new CMSItemType("BlogSite", true, true, true, false, true, true, Arrays.asList("BlogPost", "ContextualLink"), null,
                 "glyphicons glyphicons-blog", true));
