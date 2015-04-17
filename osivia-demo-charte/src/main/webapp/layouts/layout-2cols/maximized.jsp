@@ -12,17 +12,34 @@
 <body>
     <jsp:include page="../includes/header.jsp" />
     
-    <div id="page-content" class="container">
-        <!-- Content navbar -->
-        <jsp:include page="../includes/content-navbar.jsp" />
-        
-        <!-- Notifications -->
-        <p:region regionName="notifications" />
+    <div class="wrapper-outer">
+        <div class="wrapper-inner">
+            <div id="page-content" class="container-fluid">
+                <!-- Content navbar -->
+                <jsp:include page="../includes/content-navbar.jsp" />
+                
+                <!-- Notifications -->
+                <p:region regionName="notifications" />
 
-        <!-- Content auxiliary navbar -->
-        <jsp:include page="../includes/content-auxiliary-navbar.jsp" />
-
-        <p:region regionName="maximized" />
+                <!-- Back -->
+                <p:region regionName="back" />
+                
+                <div class="row">
+                    <!-- Drawer -->
+                    <div id="drawer">
+                        <p:region regionName="drawer-toolbar" />
+                        
+                        <div class="col-sm-6">
+                            <p:region regionName="col1" />
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <p:region regionName="maximized" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <jsp:include page="../includes/footer.jsp" />

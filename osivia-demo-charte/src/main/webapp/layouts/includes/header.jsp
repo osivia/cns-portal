@@ -5,14 +5,18 @@
 <!-- Toolbar -->
 <p:region regionName="toolbar" />
 
-<header class="container">
+<header class="container-fluid hidden-xs">
     <!-- Banner -->
     <div class="banner clearfix">
         <!-- Logo -->
-        <p:region regionName="logo" />
+        <div class="logo">
+            <p:region regionName="logo" />
+        </div>
 
         <!-- Recherche -->
-        <p:region regionName="search" />
+        <div class="search">
+            <p:region regionName="search" />
+        </div>
     </div>
 
     <!-- Onglets -->

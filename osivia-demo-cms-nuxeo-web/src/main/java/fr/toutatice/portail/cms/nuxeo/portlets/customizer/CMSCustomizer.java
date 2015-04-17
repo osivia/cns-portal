@@ -32,6 +32,7 @@ import org.osivia.portal.core.cms.CMSItemType;
 import org.osivia.portal.core.cms.CMSPublicationInfos;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 
+import fr.toutatice.portail.cms.nuxeo.api.domain.ITemplateModule;
 import fr.toutatice.portail.cms.nuxeo.api.domain.ListTemplate;
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
 
@@ -106,7 +107,10 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         // Tiles
         templates.add(new ListTemplate(STYLE_TILE, bundle.getString("LIST_TEMPLATE_TILES"), SCHEMAS_ZOOM));
         // Picturebook
-        templates.add(new ListTemplate(STYLE_PICTUREBOOK, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), SCHEMAS_PICTUREBOOK));
+        ListTemplate picturebookTemplate = new ListTemplate(STYLE_PICTUREBOOK, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), SCHEMAS_PICTUREBOOK);
+        ITemplateModule picturebookModule = new PicturebookTemplateModule();
+        picturebookTemplate.setModule(picturebookModule);
+        templates.add(picturebookTemplate);
         // Blog
         templates.add(new ListTemplate(STYLE_BLOG, bundle.getString("LIST_TEMPLATE_BLOG"), SCHEMAS_BLOG));
         // Workspace
@@ -361,7 +365,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         windowProperties.put("osivia.cms.scope", ctx.getScope());
         windowProperties.put("osivia.cms.uri", doc.getPath());
         windowProperties.put("osivia.hideDecorators", "1");
-        windowProperties.put("theme.dyna.partial_refresh_enabled", "false");
+        windowProperties.put("osivia.ajaxLink", "1");
         windowProperties.put("osivia.cms.displayLiveVersion", ctx.getDisplayLiveVersion());
         windowProperties.put("osivia.cms.style", CMSCustomizer.STYLE_PICTUREBOOK);
         windowProperties.put("osivia.nuxeoRequest", this.createFolderRequest(ctx, false));
@@ -431,9 +435,9 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
      * @return customized CMS item types
      */
     private List<CMSItemType> getCustomizedCMSItemTypes() {
-    	
+
     	List<CMSItemType> customizedTypes = new ArrayList<CMSItemType>();
-    	
+
         // Blog
         customizedTypes.add(new CMSItemType("BlogSite", true, true, true, false, true, true, Arrays.asList("BlogPost", "ContextualLink"), null,
                 "glyphicons glyphicons-blog", true));
@@ -462,7 +466,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         customizedTypes.add(new CMSItemType("WikiBook", true, true, true, true, true, true, Arrays.asList("WikiSection"), null, "book"));
         // Wiki section
         customizedTypes.add(new CMSItemType("WikiSection", true, true, true, true, true, true, Arrays.asList("WikiSection"), null, "book"));
-        
+
 
 
         return customizedTypes;

@@ -42,7 +42,7 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
     /** "osivia-demo-charte-montpellier" context path init parameter name. */
     private static final String CHARTE_MONTPELLIER_CONTEXT = "customizer.regions.demo.montpellier.context";
     /** "osivia-demo-charte-montpellier" context path init parameter name. */
-    private static final String CHARTE_CNS_CONTEXT = "customizer.regions.demo.cns.context";    
+    private static final String CHARTE_CNS_CONTEXT = "customizer.regions.demo.cns.context";
 
     /** Customizer name. */
     private static final String CUSTOMIZER_NAME = "osivia.site.customizer.regions.name";
@@ -117,10 +117,10 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
 
             if (StringUtils.equals(contextPath, charteEnt)) {
                 // Customize regions
-                renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
+                // renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
                 renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp");
                 renderedRegion.customizeRenderedRegion("search", "/header/search.jsp");
-                renderedRegion.customizeRenderedRegion("back", "/header/back.jsp");
+                // renderedRegion.customizeRenderedRegion("back", "/header/back.jsp");
                 renderedRegion.removeRenderedRegion("footer");
             }
 
@@ -136,7 +136,7 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
                 renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp", contextPath);
                 renderedRegion.removeRenderedRegion("footer");
             }
-            
+
             if (StringUtils.equals(contextPath, charteCNS)) {
                 // Customize regions
             	renderedRegion.customizeRenderedRegion("header-metadata", "/header/header-metadata.jsp", contextPath);

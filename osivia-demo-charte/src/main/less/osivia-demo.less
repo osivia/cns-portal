@@ -6,6 +6,8 @@
 // Bootstrap
 @import "bootstrap/bootstrap.less";
 
+// Picturebook
+@import "demo/picturebook.less";
 
 
 
@@ -22,7 +24,7 @@ body {
 // Header
 
 header {
-    margin-bottom: @padding-small-vertical;
+    margin-bottom: @line-height-computed;
     
     .banner {
         position: relative;
@@ -39,9 +41,19 @@ header {
             background-color: @brand-primary;
         }
         
-        #search {
+        > .search {
             margin-top: @line-height-computed;
         }
+    }
+}
+
+
+
+// Drawer
+
+@media screen and (max-width: @screen-xs-max) {
+    .wrapper-outer {
+        padding-top: @navbar-height;
     }
 }
 
@@ -51,53 +63,8 @@ header {
 
 #page-content {
     margin-bottom: @line-height-computed;
-}
-
-
-
-// Content navbar
-
-.content-navbar {
-    margin-bottom: @padding-small-vertical;
-}
-
-
-
-// Footer
-
-footer {
-    margin-bottom: @line-height-computed;    
-}
-
-
-
-// Picture Book
-
-@picture-height: 100px;
-
-.picture-book {
-    .picture {
-        position: relative;
-        height: @picture-height + 2 * @thumbnail-padding + 2px;
-        
-        .thumbnail {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            
-            margin: 0;
-            
-            img {
-                max-height: @picture-height;
-            }
-        }
-    }
     
-    p {
+    @media screen and (max-width: @screen-xs-max) {
         padding-top: @padding-small-vertical;
-        padding-bottom: @padding-large-vertical;
-        
-        .text-overflow();
     }
 }

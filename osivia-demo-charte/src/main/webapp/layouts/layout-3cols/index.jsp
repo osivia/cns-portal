@@ -12,31 +12,46 @@
 <body>
     <jsp:include page="../includes/header.jsp" />
     
-    <div id="page-content" class="container">
-        <!-- Content navbar -->
-        <jsp:include page="../includes/content-navbar.jsp" />
-        
-        <!-- Notifications -->
-        <p:region regionName="notifications" />
+    <div class="wrapper-outer">
+        <div class="wrapper-inner">
+            <div id="page-content" class="container-fluid">
+                <!-- Content navbar -->
+                <jsp:include page="../includes/content-navbar.jsp" />
+                
+                <!-- Notifications -->
+                <p:region regionName="notifications" />
 
-        <!-- Content auxiliary navbar -->
-        <jsp:include page="../includes/content-auxiliary-navbar.jsp" />
-
-        <p:region regionName="top" />
-
-        <div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <p:region regionName="col1" />
+                <p:region regionName="top" />
+                
+                <div class="row">
+                    <!-- Drawer -->
+                    <div id="drawer">
+                        <p:region regionName="drawer-toolbar" />
+                        
+                        <div class="col-sm-4 col-lg-3">
+                            <p:region regionName="col1" />
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-8 col-lg-9">
+                        <!-- Back -->
+                        <p:region regionName="back" />
+                    
+                        <p:region regionName="col2" />
+                    
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p:region regionName="col21" />
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <p:region regionName="col22" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="col-sm-4">
-                    <p:region regionName="col2" />
-                </div>
-                
-                <div class="col-sm-4">
-                    <p:region regionName="col3" />
-                </div>
+                <p:region regionName="bottom" />
             </div>
         </div>
     </div>

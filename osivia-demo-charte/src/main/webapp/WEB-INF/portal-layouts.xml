@@ -18,17 +18,7 @@
             <region name="top" />
             <region name="col1" />
             <region name="col2" />
-        </regions>
-    </layout>
-    
-    <layout>
-        <name>osivia-demo-2cols-drawer</name>
-        <uri>/layouts/layout-2cols-drawer/index.jsp</uri>
-        <uri state="maximized">/layouts/layout-2cols-drawer/maximized.jsp</uri>
-        <regions>
-            <region name="top" />
-            <region name="col1" />
-            <region name="col2" />
+            <region name="bottom" />
         </regions>
     </layout>
     
@@ -40,25 +30,14 @@
             <region name="top" />
             <region name="col1" />
             <region name="col2" />
-            <region name="col3" />
-        </regions>
-    </layout>
-    
-    <layout>
-        <name>osivia-demo-3cols-drawer</name>
-        <uri>/layouts/layout-3cols-drawer/index.jsp</uri>
-        <uri state="maximized">/layouts/layout-3cols-drawer/maximized.jsp</uri>
-        <regions>
-            <region name="top" />
-            <region name="col1" />
-            <region name="col2" />
             <region name="col21" />
             <region name="col22" />
+            <region name="bottom" />
         </regions>
     </layout>
     
     <layout>
-        <name>osivia-demo-3cols-drawer-cms</name>
+        <name>osivia-demo-3cols-cms</name>
         <uri>/layouts/layout-3cols-drawer-cms/index.jsp</uri>
         <uri state="maximized">/layouts/layout-3cols-drawer-cms/maximized.jsp</uri>
         <regions>
@@ -67,18 +46,20 @@
             <region name="col2" />
             <region name="col21" />
             <region name="col22" />
+            <region name="bottom" />
             <region name="top-cms" />
             <region name="col1-cms" />
             <region name="col2-cms" />
             <region name="col21-cms" />
             <region name="col22-cms" />
+            <region name="bottom-cms" />
         </regions>
     </layout>
     
     <layout>
         <name>osivia-demo-home</name>
         <uri>/layouts/layout-home/index.jsp</uri>
-        <uri state="maximized">/layouts/layout-home/maximized.jsp</uri>
+        <uri state="maximized">/layouts/layout-1col/maximized.jsp</uri>
         <regions>
             <region name="top" />
             <region name="col1" />
