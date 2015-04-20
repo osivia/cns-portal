@@ -43,5 +43,5 @@ ficheProfil.config.enableMacroProfils=false
 ficheProfil.roles.roleAdministrateur=role_admin
 
 ### ----- Gestion workspaces -----
-gestionWorkspace.pathOpenWorkspaceDirectory=/cns/workspaces
+gestionWorkspace.pathOpenWorkspaceDirectory=/default/workspaces
 gestionWorkspace.cnRoleCreationOpenWks=role_admin

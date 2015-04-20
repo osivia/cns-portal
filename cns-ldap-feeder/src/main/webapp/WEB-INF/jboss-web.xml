@@ -1,0 +1,3 @@
+<jboss-web>
+<context-root>/cns-services-ldapFeeder</context-root>
+</jboss-web>

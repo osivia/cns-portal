@@ -86,6 +86,7 @@
             <directory>src/main/resources</directory>
             <excludes>
                 <exclude>custom/params/environnement_portail.properties.*</exclude>
+                <exclude>custom/params/ldap-portlets.properties.*</exclude>
                 <exclude>/jboss-as/server/production/run.conf.*</exclude>
                 <exclude>jboss-as/server/production/conf/jboss-log4j.*</exclude>
                 <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity/ldap_identity-config.*</exclude>
@@ -96,6 +97,11 @@
 
     <!-- copy local environment specific files -->
     <files>
+        <file>
+            <source>src/main/resources/custom/params/ldap-portlets.properties.cns</source>
+            <outputDirectory>/${artifactId}-${dest-env}-${project.version}/custom/params</outputDirectory>
+            <destName>ldap-portlets.properties</destName>
+        </file>    
         <file>
             <source>src/main/resources/custom/params/environnement_portail.properties.${dest-env}</source>
             <outputDirectory>/${artifactId}-${dest-env}-${project.version}/custom/params</outputDirectory>
