@@ -132,7 +132,6 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
 
             if (StringUtils.equals(contextPath, charteMontpellier)) {
                 // Customize regions
-                renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp", charteEnt);
                 renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp", contextPath);
                 renderedRegion.removeRenderedRegion("footer");
             }
@@ -140,7 +139,6 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
             if (StringUtils.equals(contextPath, charteCNS)) {
                 // Customize regions
             	renderedRegion.customizeRenderedRegion("header-metadata", "/header/header-metadata.jsp", contextPath);
-                renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp", charteEnt);
                 renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp", contextPath);
                 renderedRegion.removeRenderedRegion("footer");
             }

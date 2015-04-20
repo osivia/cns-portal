@@ -21,7 +21,7 @@ import fr.toutatice.portail.cms.nuxeo.api.services.NuxeoConnectionProperties;
  */
 public class ApplicationsAttributesBundle implements IAttributesBundle {
 
-    private static final String APP_ATTRIBUTE_NAME = "osivia.demo.customizer.applications";
+    private static final String APP_ATTRIBUTE_NAME = "osivia.sso.applications";
 
     private static final String NUXEO_LOGOUT = NuxeoConnectionProperties.getPublicBaseUri().toString().concat("/logout");
 
