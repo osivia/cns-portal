@@ -33,7 +33,9 @@ gestionpersonnes.config.enableOverldPwd=false
 gestionpersonnes.config.enableCreation=true
 gestionpersonnes.config.enableDeletion=true
 
+gestionpersonnes.roles.roleSuperAdministrateur=role_admin
 gestionpersonnes.roles.roleAdministrateur=role_admin
+gestionpersonnes.roles.roleAssistance=role_admin
 
 ### ----- Gestion groupes -----
 gestiongroupes.roleAdministrateur=role_admin

@@ -24,7 +24,7 @@
         <toutatice-dashboard.version>3.2-osivia-RC1</toutatice-dashboard.version>
         
         <!-- Identity & user mgt tools -->
-        <toutatice.annuaire.version>4.0-SNAPSHOT</toutatice.annuaire.version>
+        <toutatice.annuaire.version>4.1-SNAPSHOT</toutatice.annuaire.version>
         <fichepersonne.version>4.0-RC6</fichepersonne.version>
         <ficheprofil.version>4.0-RC4</ficheprofil.version>
         <gestiongroupe.version>4.0-RC1</gestiongroupe.version>
@@ -190,6 +190,8 @@
         	<activation><activeByDefault>false</activeByDefault></activation>
         	<modules>
         		<module>cns-ldap-connector</module>
+        		<module>cns-ldap-feeder</module>
+        		<module>cns-valve-sso</module>
         		<module>osivia-demo-charte-cns</module>
         	</modules>
         </profile>

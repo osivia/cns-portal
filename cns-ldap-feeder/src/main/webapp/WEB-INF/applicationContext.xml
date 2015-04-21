@@ -5,12 +5,15 @@
     xmlns:p="http://www.springframework.org/schema/p"
     xmlns:context="http://www.springframework.org/schema/context"
     xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:util="http://www.springframework.org/schema/util"
     xsi:schemaLocation="http://www.springframework.org/schema/beans 
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context 
                            http://www.springframework.org/schema/context/spring-context.xsd
                            http://www.springframework.org/schema/mvc
-                           http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+                           http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/util
+                           http://www.springframework.org/schema/util/spring-util.xsd">
 
 
     <bean class="org.springframework.web.portlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
@@ -59,5 +62,13 @@
 	
 	<bean id="feeder" class="com.osivia.cns.proto.ldap.Feeder"></bean>
 	
+	<util:map id="profilesMapping">
+		<entry key="cn=pilotage-cns,ou=entites,ou=groupes,dc=menesr,dc=gouv,dc=fr">
+			
+		</entry>
+		<entry key="cn=itil,ou=entites,ou=groupes,dc=menesr,dc=gouv,dc=fr">
+			<value>crt-itil</value>
+		</entry>
+	</util:map>
 	
 </beans>
