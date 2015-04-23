@@ -9,35 +9,38 @@
 </head>
 
 
-<body class="with-drawer">
+<body>
     <jsp:include page="../includes/header.jsp" />
     
     <div class="wrapper-outer">
         <div class="wrapper-inner">
             <div id="page-content" class="container">
-
+                <div class="clearfix">
+                    <div class="pull-left">
+                        <p:region regionName="breadcrumb" />
+                    </div>
+                    
+                    <div class="simple-menubar">
+                        <p:region regionName="menubar" />
+                    </div>
+                </div>
                 
-				<div class="media">
-					<div class="media-body hidden-xs">
-						<!-- Breadcrumb -->
-						<p:region regionName="breadcrumb" />
-					</div>
-
-					<div class="media-right simple-menubar">
-						<!-- Menubar -->
-						<p:region regionName="menubar" />
-					</div>
-				</div>
-				
                 <!-- Notifications -->
-                <p:region regionName="notifications" />				
-        
+                <p:region regionName="notifications" />
+
+                <!-- Back -->
+                <p:region regionName="back" />
+                
+                <p:region regionName="top" />
+                
                 <div class="row">
+                    <!-- Drawer -->
                     <div id="drawer">
+                        <p:region regionName="drawer-toolbar" />
+                        
                         <div class="col-sm-4 col-lg-3">
-                            <p:region regionName="col1-top" cms="true" />
-                            <p:region regionName="menu" />
-                            <p:region regionName="col1-bottom" cms="true" />
+                            <p:region regionName="col1-top" />
+                            <p:region regionName="col1-bottom" />
                         </div>
                     </div>
                     
@@ -45,6 +48,8 @@
                         <p:region regionName="maximized" />
                     </div>
                 </div>
+                
+                <p:region regionName="bottom" />
             </div>
         </div>
     </div>

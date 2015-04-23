@@ -10,7 +10,7 @@
 <p:region regionName="toolbar" />
 
 
-<header class="container">
+<header class="container hidden-xs">
     <!-- Banner -->
     <div class="banner clearfix">
         <!-- Logo -->
