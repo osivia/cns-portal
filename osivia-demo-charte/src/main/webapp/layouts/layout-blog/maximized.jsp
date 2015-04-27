@@ -5,7 +5,7 @@
 <html>
 
 <head>
-<jsp:include page="../includes/head.jsp" />
+    <jsp:include page="../includes/head.jsp" />
 </head>
 
 
@@ -43,20 +43,16 @@
 						</div>
 					</div>
 
-
 					<div class="col-sm-8">
-						<div class="media">
-							<div class="media-body hidden-xs">
-								<!-- Breadcrumb -->
-								<p:region regionName="breadcrumb" />
-							</div>
-
-							<div class="media-right simple-menubar">
-								<!-- Menubar -->
-								<p:region regionName="menubar" />
-							</div>
-						</div>
-
+						<div class="clearfix">
+                            <div class="pull-left">
+                                <p:region regionName="breadcrumb" />
+                            </div>
+                            
+                            <div class="simple-menubar">
+                                <p:region regionName="menubar" />
+                            </div>
+                        </div>
 
 						<p:region regionName="maximized" />
 					</div>
