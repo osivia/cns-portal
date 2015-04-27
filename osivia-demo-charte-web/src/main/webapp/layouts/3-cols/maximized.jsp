@@ -40,6 +40,7 @@
                         
                         <div class="col-sm-4 col-lg-3">
                             <p:region regionName="col1-top" />
+                            <p:region regionName="menu" />
                             <p:region regionName="col1-bottom" />
                         </div>
                     </div>
