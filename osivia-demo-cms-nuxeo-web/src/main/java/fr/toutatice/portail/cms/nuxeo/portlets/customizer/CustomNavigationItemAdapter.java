@@ -55,7 +55,7 @@ public class CustomNavigationItemAdapter extends NavigationItemAdapter {
         else if ("Workspace".equals(doc.getType()))
             return "/default/templates/workspace";
 
-        return "/default/templates/portalSitepublish";
+        return "/default/templates/portalSitePublish";
 
     }
 

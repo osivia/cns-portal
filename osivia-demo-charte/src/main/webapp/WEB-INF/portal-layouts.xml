@@ -38,8 +38,8 @@
     
     <layout>
         <name>osivia-demo-3cols-cms</name>
-        <uri>/layouts/layout-3cols-drawer-cms/index.jsp</uri>
-        <uri state="maximized">/layouts/layout-3cols-drawer-cms/maximized.jsp</uri>
+        <uri>/layouts/layout-3cols-cms/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-3cols-cms/maximized.jsp</uri>
         <regions>
             <region name="top" />
             <region name="col1" />
