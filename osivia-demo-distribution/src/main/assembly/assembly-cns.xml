@@ -104,7 +104,7 @@
             <destName>ldap-portlets.properties</destName>
         </file>    
         <file>
-            <source>src/main/resources/custom/params/environnement_portail.properties.${dest-env}</source>
+            <source>src/main/resources/custom/params/environnement_portail.properties.cns</source>
             <outputDirectory>/${artifactId}-${dest-env}-${project.version}/custom/params</outputDirectory>
             <destName>environnement_portail.properties</destName>
         </file>

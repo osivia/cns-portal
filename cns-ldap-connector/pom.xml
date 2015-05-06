@@ -15,16 +15,12 @@
     <name>Connecteur LDAP pour le portail CNS</name>
     <description>Portlet technique de connection à l'annuaire</description>
 
-	<properties>
-		<toutatice.identite.annuaire.version>4.0-SNAPSHOT</toutatice.identite.annuaire.version>
-	</properties>
-
     <dependencies>
 
         <dependency>
             <groupId>outils.ldap</groupId>
             <artifactId>services-directory</artifactId>
-            <version>${toutatice.identite.annuaire.version}</version>
+            <version>${toutatice.annuaire.version}</version>
             <type>war</type>
         </dependency>
         

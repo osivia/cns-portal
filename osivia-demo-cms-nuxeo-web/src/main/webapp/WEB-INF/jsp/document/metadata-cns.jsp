@@ -9,6 +9,8 @@
 <c:set var="vignetteURL"><ttc:getImageURL document="${document}" property="ttc:vignette" /></c:set>
 <c:set var="author" value="${document.properties['dc:creator']}" />
 
+<c:set var="keywords" value="${document.properties['ttc:keywords']}"></c:set>
+
 <c:set var="date" value="${document.properties['dc:modified']}" />
 <c:if test="${empty date}">
     <c:set var="date" value="${document.properties['dc:created']}" />
@@ -54,6 +56,15 @@
                         <strong><is:getProperty key="DOCUMENT_PUBLICATION_DATE" /></strong>
                         <span> : </span>
                         <span><fmt:formatDate value="${date}" type="both" dateStyle="full" timeStyle="short" /></span>
+                    </p>
+                    
+                    <!-- Mots clé -->
+                    <p>
+                    	<strong><is:getProperty key="DOCUMENT_KEYWORDS" /></strong>
+                    	<span> : </span>
+                    	<c:forEach items="${keywords}" var="keyword">
+                    		<span class="label label-default">${keyword}</span>
+                    	</c:forEach>
                     </p>
 
                     <p>

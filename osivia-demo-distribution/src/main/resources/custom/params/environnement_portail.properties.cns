@@ -39,3 +39,5 @@ ldap.timeout=10000
 ldap.base=dc=osivia,dc=org
 
 
+# Help
+osivia.toolbar.helpURL=/_webid/cns/aide-en-ligne

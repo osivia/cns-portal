@@ -41,33 +41,3 @@ ldap.groups.base.dn=ou=groups,dc=osivia,dc=org
 ldap.timeout=10000
 ldap.base=dc=osivia,dc=org
 
-
-
-### ===== Porlets de gestion des personnes
-
-#supprime la surcharge lors de la modification du mot de passe
-fichePersonne.deleteSurchageWhenUpdatePwd=false
-
-# Roles applicatifs du portlet fichePersonne
-fichePersonne.roleAdministrateur=userprofile_ADM
-fichePersonne.roleRazMdp=userprofile_ADM
-
-ficheEtablissement.roleAdministrateur=ficheEtablissement_ADM
-
-gestionapplications.roleAdministrateur=gestionAppli_ADM
-gestiongroupes.roleAdministrateur=groups_ADM
-gestionorganisations.roleAdministrateur=gestionOrganisation_ADM
-gestionpersonnes.roleAdministrateur=userprofile_ADM
-
-#rechercheapplication.roleAdministrateur=rechercheAppli_ADM
-#rechercheprofil.roleAdministrateur=rechercheProfil_ADM
-
-activationcompte.job=/home/portal/ldapOmatic/jobs.xml
-actiationcompte.variables=/home/portal/ldapOmatic/variables.xml
-
-ficheProfil.roleAdministrateur=userprofile_ADM
-
-gestionWorkspace.pathOpenWorkspaceDirectory=/default-domain/workspaces/espaces-collaboratifs
-gestionWorkspace.cnRoleCreationOpenWks=groups_ADM
-
-

@@ -63,9 +63,6 @@
 	<bean id="feeder" class="com.osivia.cns.proto.ldap.Feeder"></bean>
 	
 	<util:map id="profilesMapping">
-		<entry key="cn=pilotage-cns,ou=entites,ou=groupes,dc=menesr,dc=gouv,dc=fr">
-			
-		</entry>
 		<entry key="cn=itil,ou=entites,ou=groupes,dc=menesr,dc=gouv,dc=fr">
 			<value>crt-itil</value>
 		</entry>
