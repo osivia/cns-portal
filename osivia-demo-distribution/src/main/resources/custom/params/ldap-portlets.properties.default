@@ -47,3 +47,12 @@ ficheProfil.roles.roleAdministrateur=role_admin
 ### ----- Gestion workspaces -----
 gestionWorkspace.pathOpenWorkspaceDirectory=/default/workspaces
 gestionWorkspace.cnRoleCreationOpenWks=role_admin
+
+gestionWorkspace.config.wsShortName=webc:url
+gestionWorkspace.config.enableReaders=false
+gestionWorkspace.config.enableGroups=false
+gestionWorkspace.config.excludeUsers=admin
+
+gestionWorkspace.config.groupAnimateurs=_admins
+gestionWorkspace.config.groupContributeurs=_members
+gestionWorkspace.config.groupLecteurs=_readers
