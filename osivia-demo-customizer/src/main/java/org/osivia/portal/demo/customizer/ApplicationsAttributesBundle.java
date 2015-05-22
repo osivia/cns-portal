@@ -1,6 +1,7 @@
 package org.osivia.portal.demo.customizer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -10,6 +11,7 @@ import org.jboss.portal.core.controller.ControllerContext;
 import org.jboss.portal.core.controller.ControllerException;
 import org.jboss.portal.core.model.portal.command.render.RenderPageCommand;
 import org.jboss.portal.core.theme.PageRendition;
+import org.osivia.portal.api.PortalException;
 import org.osivia.portal.api.context.PortalControllerContext;
 import org.osivia.portal.api.locator.Locator;
 import org.osivia.portal.api.theming.IAttributesBundle;
@@ -28,6 +30,8 @@ public class ApplicationsAttributesBundle implements IAttributesBundle {
     private static final String APP_ATTRIBUTE_NAME = "osivia.sso.applications";
     
     private static final String HELP_ATTRIBUTE_NAME = "osivia.toolbar.helpURL";
+    
+    private static final String SEARCHINDIRECTORY_ATTRIBUTE_NAME = "osivia.search.directoryURL";
 
     private static final String NUXEO_LOGOUT = NuxeoConnectionProperties.getPublicBaseUri().toString().concat("/logout");
 
@@ -81,13 +85,14 @@ public class ApplicationsAttributesBundle implements IAttributesBundle {
      */
     public void fill(RenderPageCommand renderPageCommand, PageRendition pageRendition, Map<String, Object> attributes) throws ControllerException {
         attributes.put(APP_ATTRIBUTE_NAME, applications);
+
+        // Controller context
+        ControllerContext controllerContext = renderPageCommand.getControllerContext();
+        // Portal controller context
+        PortalControllerContext portalControllerContext = new PortalControllerContext(controllerContext);
         
         if(System.getProperty(HELP_ATTRIBUTE_NAME) != null) {
         
-	        // Controller context
-	        ControllerContext controllerContext = renderPageCommand.getControllerContext();
-	        // Portal controller context
-	        PortalControllerContext portalControllerContext = new PortalControllerContext(controllerContext);
 	
 	
 	        // help URL
@@ -96,6 +101,21 @@ public class ApplicationsAttributesBundle implements IAttributesBundle {
 	        		
 	        attributes.put(HELP_ATTRIBUTE_NAME, helpURL);
         }
+        
+		Map<String, String> properties = new HashMap<String, String>();
+		properties.put("osivia.title", "Annuaire");
+		properties.put("osivia.hideTitle", "1");
+		
+		Map<String, String> parameters = new HashMap<String, String>();
+        String directoryUrl = null;
+		try {
+
+			directoryUrl = portalURLFactory.getStartPageUrl(portalControllerContext, null, "/default/templates/Annuaire", properties, parameters);
+			
+		} catch (PortalException e) {
+			// Pas d'erreur
+		}
+        attributes.put(SEARCHINDIRECTORY_ATTRIBUTE_NAME, directoryUrl);
     }
 
 
