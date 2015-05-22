@@ -6,18 +6,15 @@
 // Core variables and mixins
 @import "bootstrap/bootstrap.less";
 
+// Picturebook
+@import "proto-cns/picturebook.less";
 
-// Body
-
-body {
-
-}
 
 
 // Header
 
 header {
-    margin-bottom: @padding-small-vertical;
+    margin-bottom: @line-height-computed;
     
     .banner {
         position: relative;
@@ -38,32 +35,10 @@ header {
             margin-top: @line-height-computed;
         }
     }
-}
-
-
-// Logo
-#logo {
-    & h1 {        
-        & small {
-            color: #10b0e3;
-        }
+    
+    h1 > span {
+        color: #10b0e3;
     }
-}
-
-
-
-// Page content
-
-#page-content {
-    margin-bottom: @line-height-computed;
-}
-
-
-
-// Content navbar
-
-.content-navbar {
-    margin-bottom: @padding-small-vertical;
 }
 
 
@@ -72,37 +47,4 @@ header {
 
 footer {
     margin-bottom: @line-height-computed;    
-}
-
-
-
-// Picture Book
-
-@picture-height: 100px;
-
-.picture-book {
-    .picture {
-        position: relative;
-        height: @picture-height + 2 * @thumbnail-padding + 2px;
-        
-        .thumbnail {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            
-            margin: 0;
-            
-            img {
-                max-height: @picture-height;
-            }
-        }
-    }
-    
-    p {
-        padding-top: @padding-small-vertical;
-        padding-bottom: @padding-large-vertical;
-        
-        .text-overflow();
-    }
 }
