@@ -28,8 +28,8 @@
         <fichepersonne.version>4.0-RC6</fichepersonne.version>
         <ficheprofil.version>4.0-RC4</ficheprofil.version>
         <gestiongroupe.version>4.0-RC1</gestiongroupe.version>
-        <gestionworkspace.version>4.0-RC5</gestionworkspace.version>
-        <participantswks.version>4.0-RC3</participantswks.version>
+        <gestionworkspace.version>4.1-osivia-SNAPSHOT</gestionworkspace.version>
+        <participantswks.version>4.1-osivia-SNAPSHOT</participantswks.version>
         <gestionpersonnes.version>4.0-RC3</gestionpersonnes.version>
         <creationpersonnes.version>3.1-osivia-RC1</creationpersonnes.version>
         <identity-sso.version>3.0.4</identity-sso.version>
