@@ -13,8 +13,9 @@
 .set-navbar-color(@color) when (iscolor(@color)) {
     @media screen and (min-width: @screen-sm-min) {
         .content-navbar {
-            background-color: @color;
             border-color: darken(@color, 10%);
+            
+            #gradient .vertical(@start-color: @color; @end-color: darken(@color, 5%); @start-percent: 0%; @end-percent: 100%);
         }
         
         .content-navbar-breadcrumb .breadcrumb {
@@ -141,17 +142,6 @@
             .panel-heading .portlet-mode-container a {
                 .set-link-color(@color: @color);
             }
-
-            &.menu-navigation {
-                @menu-navigation-color: darken(@color, 20%);
-                @menu-navigation-text-color: contrast(@menu-navigation-color, @panel-default-text, #fff);
-                
-                .panel-variant(@border: @panel-default-border; @heading-text-color: @menu-navigation-text-color; @heading-bg-color: @menu-navigation-color; @heading-border: @menu-navigation-color);
-                
-                .panel-heading .portlet-mode-container a {
-                    .set-link-color(@color: @menu-navigation-color);
-                }
-            }
         }
     }
 }
@@ -162,21 +152,15 @@
     .portlet-container {
         .portlet-header {
             margin-bottom: (@line-height-computed / 2);
-            padding: @panel-heading-padding;
             
-            .border-top-radius((@panel-border-radius - 1));
-            
-            color: contrast(@color, @text-color, #fff);
-            background-color: @color;
+            border-bottom-style: solid;
+            border-color: @color;
+            border-width: 2px;
             
             h2 {
-                margin: 0;
-
-                font-size: ceil((@font-size-base * 1.125));
+                margin-top: 0;
                 
-                a {
-                    .set-link-color(@color: @color);
-                }
+                font-size: @font-size-h3;
             }
         }
     }

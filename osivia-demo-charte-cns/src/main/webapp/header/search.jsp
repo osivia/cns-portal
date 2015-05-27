@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="internationalization" prefix="is" %>
 
-<c:if test="${!(empty requestScope['osivia.toolbar.principal'])}">
+<c:if test="${not empty requestScope['osivia.toolbar.principal']}">
 	
 	<script type="text/javascript">
 	
@@ -33,13 +33,10 @@
 	            </div>
 	        </div>
 	        
-	        <a class="btn btn-default" href="${requestScope['osivia.search.directoryURL']}" title="<is:getProperty key="DIRECTORY_TITLE" />" data-toggle="tooltip" data-placement="bottom">
+	        <a class="btn btn-default btn-sm" href="${requestScope['osivia.search.directoryURL']}" title="<is:getProperty key="DIRECTORY_TITLE" />" data-toggle="tooltip" data-placement="bottom">
 	        	<i class="glyphicons glyphicons-address-book"></i>
-	    		<is:getProperty key="DIRECTORY" />
+	    		<span><is:getProperty key="DIRECTORY" /></span>
 	    	</a>
 	    </form>
-	    
-	        
-	
 	</div>
 </c:if>

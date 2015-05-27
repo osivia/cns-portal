@@ -6,6 +6,8 @@
 // Core variables and mixins
 @import "bootstrap/bootstrap.less";
 
+// Menu
+@import "proto-cns/menu.less";
 // Picturebook
 @import "proto-cns/picturebook.less";
 
@@ -15,6 +17,8 @@
 
 header {
     margin-bottom: @line-height-computed;
+    
+    background-color: #fcfcfc;
     
     .banner {
         position: relative;
@@ -36,8 +40,13 @@ header {
         }
     }
     
-    h1 > span {
-        color: #10b0e3;
+    h1 {
+        color: @gray;
+    }
+    
+    .tabs-default {
+        margin: 0 floor(@grid-gutter-width / -2);
+        padding: 0 floor(@grid-gutter-width / 2);
     }
 }
 
