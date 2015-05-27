@@ -13,9 +13,10 @@
 .set-navbar-color(@color) when (iscolor(@color)) {
     @media screen and (min-width: @screen-sm-min) {
         .content-navbar {
+            background-color: @color;
             border-color: darken(@color, 10%);
             
-            #gradient .vertical(@start-color: @color; @end-color: darken(@color, 5%); @start-percent: 0%; @end-percent: 100%);
+            #gradient .vertical(@start-color: @color; @end-color: darken(@color, 5%));
         }
         
         .content-navbar-breadcrumb .breadcrumb {
@@ -64,12 +65,12 @@
     
     @media screen and (max-width: @screen-xs-max) {
         .drawer-toolbar-tabs {
-            a.btn {
+            .btn {
                 background-color: @color;
                 color: contrast(@color, @text-color, #fff);
                 border-color: darken(@color, 10%);
             }
-            .open > a.btn.dropdown-toggle, a.btn:hover, a.btn:focus {
+            .open > .btn.dropdown-toggle, .btn:hover, .btn:focus {
                 background-color: darken(@color, 10%);
                 color: contrast(@color, @text-color, #fff);
                 border-color: darken(@color, 20%);
@@ -111,7 +112,7 @@
     
     @media screen and (max-width: @screen-xs-max) {
         .drawer-toolbar-tabs {
-            a.btn .text-overflow {
+            .btn .text-overflow {
                 &::before {
                     content: @icon;
                     

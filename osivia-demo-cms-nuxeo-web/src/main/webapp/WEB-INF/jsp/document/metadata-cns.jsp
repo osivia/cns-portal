@@ -44,75 +44,58 @@
                 </c:if>
                 
                 <div class="media-body">
-                    <!-- Author -->
-                    <p>
-                        <strong><is:getProperty key="AUTHOR" /></strong>
-                        <span> : </span>
-                        <ttc:user name="${author}"/>
-                    </p>
-                    
-                    <!-- Publication date -->
-                    <p>
-                        <strong><is:getProperty key="DOCUMENT_PUBLICATION_DATE" /></strong>
-                        <span> : </span>
-                        <span><fmt:formatDate value="${date}" type="both" dateStyle="full" timeStyle="short" /></span>
-                    </p>
-                    
-                    <!-- Mots clé -->
-                    <p>
-                    	<strong><is:getProperty key="DOCUMENT_KEYWORDS" /></strong>
-                    	<span> : </span>
-                    	<c:forEach items="${keywords}" var="keyword">
-                    		<span class="label label-default">${keyword}</span>
-                    	</c:forEach>
-                    </p>
-
-                    <p>
-                        <strong><is:getProperty key="DOCUMENT_STATE" /></strong>
-                        <span> :  </span>
-                        <c:if test="${document.document.state == 'project'}">
-                            <span class="label label-info"><is:getProperty key="DOCUMENT_STATE_PROJECT" /></span>
-                        </c:if>
-                        <c:if test="${document.document.state == 'approved'}">
-                            <span class="label label-success"><is:getProperty key="DOCUMENT_STATE_APPROVED" /></span>
-                        </c:if>
-                    </p>
-
+                    <dl class="dl-horizontal">
+                        <!-- Author -->
+                        <dt><is:getProperty key="AUTHOR" /></dt>
+                        <dd><ttc:user name="${author}"/></dd>
+                        
+                        <!-- Publication date -->
+                        <dt><is:getProperty key="DOCUMENT_PUBLICATION_DATE" /></dt>
+                        <dd><fmt:formatDate value="${date}" type="both" dateStyle="full" timeStyle="short" /></dd>
+                        
+                        <!-- Keywords -->
+                        <dt><is:getProperty key="DOCUMENT_KEYWORDS" /></dt>
+                        <dd>
+                            <c:forEach items="${keywords}" var="keyword">
+                                <span class="label label-default">${keyword}</span>
+                            </c:forEach>
+                        </dd>
+                        
+                        <!-- Document state -->
+                        <dt><is:getProperty key="DOCUMENT_STATE" /></dt>
+                        <dd>
+                            <c:if test="${document.document.state eq 'project'}">
+                                <span class="label label-info"><is:getProperty key="DOCUMENT_STATE_PROJECT" /></span>
+                            </c:if>
+                            <c:if test="${document.document.state eq 'approved'}">
+                                <span class="label label-success"><is:getProperty key="DOCUMENT_STATE_APPROVED" /></span>
+                            </c:if>
+                        </dd>
+                    </dl>
                      
-                    <hr />
+                    <hr>
                     
-                    <!-- Meta données CNS -->
-                    <!--  Cycle de vie-->
-                    <p>
-                        <strong><is:getProperty key="META_CYCLE_VIE" /></strong>
-                        <span> : </span>
-                        <span><ttc:vocabularyLabel name="cycle_vie" key="${cycle_vie}"/></span>
-                    </p>
-                    
-                    <!--  Métiers-->
-                    <p>
-                        <strong><is:getProperty key="META_METIER" /></strong>
-                        <span> : </span>
-                        <span><ttc:vocabularyLabel name="metier" key="${metier}"/></span>
-                    </p>                    
-                    <!--  Nature-->
-                    <p>
-                        <strong><is:getProperty key="META_NATURE" /></strong>
-                        <span> : </span>
-                        <span><ttc:vocabularyLabel name="nature" key="${nature}"/></span>
-                    </p>
-                    <!--  SI cible-->
-                    <p>
-                        <strong><is:getProperty key="META_SI" /></strong>
-                        <span> : </span>
-                        <span><ttc:vocabularyLabel name="s_info_associe" key="${s_info_associe}"/></span>
-                    </p>
-                    <!--  Entite source--> 
-                    <p>
-                        <strong><is:getProperty key="META_ENTITE" /></strong>
-                        <span> : </span>
-                        <span><ttc:vocabularyLabel name="entite_cns" key="${entite_cns}"/></span>
-                    </p>
+                    <dl class="dl-horizontal">
+                        <!-- Cycle de vie -->
+                        <dt><is:getProperty key="META_CYCLE_VIE" /></dt>
+                        <dd><ttc:vocabularyLabel name="cycle_vie" key="${cycle_vie}"/></dd>
+                        
+                        <!-- Métiers -->
+                        <dt><is:getProperty key="META_METIER" /></dt>
+                        <dd><ttc:vocabularyLabel name="metier" key="${metier}"/></dd>
+                        
+                        <!-- Nature -->
+                        <dt><is:getProperty key="META_NATURE" /></dt>
+                        <dd><ttc:vocabularyLabel name="nature" key="${nature}"/></dd>
+                        
+                        <!-- SI cible -->
+                        <dt><is:getProperty key="META_SI" /></dt>
+                        <dd><ttc:vocabularyLabel name="s_info_associe" key="${s_info_associe}"/></dd>
+                        
+                        <!-- Entité source -->
+                        <dt><is:getProperty key="META_ENTITE" /></dt>
+                        <dd><ttc:vocabularyLabel name="entite_cns" key="${entite_cns}"/></dd>
+                    </dl>
                 </div>
             </div>
         </div>
