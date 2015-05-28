@@ -7,7 +7,17 @@
 
         <link rel="stylesheet" href="/css/proto-cns.min.css" title="OSIVIA" />
         <link rel="stylesheet" href="/css/tiles.min.css" />
-        <link rel="stylesheet" href="/css/menubar-publi.min.css" />    
+        <link rel="stylesheet" href="/css/theme-default.min.css" />
+    </theme>
+    
+    <theme>
+        <name>osivia-demo-charte-cns-publish</name>
+        <link rel="icon" href="/img/favicon.png" />
+        <!-- CSS -->
+
+        <link rel="stylesheet" href="/css/proto-cns.min.css" title="OSIVIA" />
+        <link rel="stylesheet" href="/css/tiles.min.css" />
+        <link rel="stylesheet" href="/css/theme-publish.min.css" />
     </theme>
     
     <theme>
@@ -17,7 +27,7 @@
 
         <link rel="stylesheet" href="/css/proto-cns.min.css" title="OSIVIA" />
         <link rel="stylesheet" href="/css/tiles.min.css" />
-        <link rel="stylesheet" href="/css/menubar-wks.min.css" />    
+        <link rel="stylesheet" href="/css/theme-workspace.min.css" />
     </theme>
     
     <theme>
@@ -27,7 +37,7 @@
 
         <link rel="stylesheet" href="/css/proto-cns.min.css" title="OSIVIA" />
         <link rel="stylesheet" href="/css/tiles.min.css" />
-        <link rel="stylesheet" href="/css/menubar-userwks.min.css" />    
+        <link rel="stylesheet" href="/css/theme-user-workspace.min.css" />    
     </theme>    
 
 </themes>

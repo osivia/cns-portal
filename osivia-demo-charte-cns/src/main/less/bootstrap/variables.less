@@ -14,11 +14,13 @@
 @gray-light:             lighten(@gray-base, 46.7%); // #777
 @gray-lighter:           lighten(@gray-base, 93.5%); // #eee
 
-@brand-primary:         #014b96;  // Default : darken(#428bca, 6.5%);
+@brand-primary:         #165d74;  //#014b96;  // Default : darken(#428bca, 6.5%);
 @brand-success:         #5cb85c;
 @brand-info:            #5bc0de;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
+
+@accessible-gray-light: #595959;
 
 
 //== Scaffolding
@@ -168,7 +170,7 @@
 @btn-danger-bg:                  @brand-danger;
 @btn-danger-border:              darken(@btn-danger-bg, 5%);
 
-@btn-link-disabled-color:        @gray-light;
+@btn-link-disabled-color:        @accessible-gray-light;
 
 
 //== Forms
@@ -449,7 +451,7 @@
 @pagination-active-bg:                 @brand-primary;
 @pagination-active-border:             @brand-primary;
 
-@pagination-disabled-color:            @gray-light;
+@pagination-disabled-color:            @accessible-gray-light;
 @pagination-disabled-bg:               #fff;
 @pagination-disabled-border:           #ddd;
 
@@ -837,13 +839,13 @@
 //** Horizontal offset for forms and lists.
 @component-offset-horizontal: 180px;
 //** Text muted color
-@text-muted:                  @gray-light;
+@text-muted:                  @accessible-gray-light;
 //** Abbreviations and acronyms border color
 @abbr-border-color:           @gray-light;
 //** Headings small color
-@headings-small-color:        @gray-light;
+@headings-small-color:        @accessible-gray-light;
 //** Blockquote small color
-@blockquote-small-color:      @gray-light;
+@blockquote-small-color:      @accessible-gray-light;
 //** Blockquote font size
 @blockquote-font-size:        (@font-size-base * 1.25);
 //** Blockquote border color

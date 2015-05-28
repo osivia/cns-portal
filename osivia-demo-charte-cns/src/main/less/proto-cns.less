@@ -16,37 +16,87 @@
 // Header
 
 header {
+    @header-height: floor(@font-size-h3 * @headings-line-height) + @line-height-computed + (@line-height-computed / 2);
+
     margin-bottom: @line-height-computed;
     
-    background-color: #fcfcfc;
+    background-color: desaturate(@brand-primary, 20%);
+        
+    #gradient .vertical(@start-color: lighten(desaturate(@brand-primary, 20%), 10%); @end-color: desaturate(@brand-primary, 20%));
     
     .banner {
         position: relative;
-        
-        .header-line {
-            position: absolute;
-            bottom: 16px;
-            left: 260px;
-            right: 0;
-            height: 16px;
-            width: auto;
-            z-index: -1; 
-            
-            background-color: @brand-primary;
+
+        > .logo {
+            h1 {
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    
+                    .user-select(@select: none);
+                }
+                
+                img {
+                    max-height: @header-height;
+                    
+                    margin-top: -@line-height-computed;
+                    margin-bottom: -(@line-height-computed / 2);
+                    
+                    vertical-align: top;
+                }
+                
+                span {
+                    margin-left: @padding-large-horizontal;
+                }
+            }
         }
-        
-        #search {
-            margin-top: @line-height-computed;
+
+        > .search {
+            form {
+                margin-top: @header-height - (@line-height-computed / 2) - @input-height-small;
+                margin-bottom: (@line-height-computed / 2);
+                margin-left: @padding-large-horizontal;
+            }
         }
     }
     
-    h1 {
-        color: @gray;
-    }
+    
     
     .tabs-default {
         margin: 0 floor(@grid-gutter-width / -2);
         padding: 0 floor(@grid-gutter-width / 2);
+        
+        border-color: darken(@brand-primary, 10%);
+        
+        ul li {
+            &.active {
+                a {
+                    border-color: darken(@brand-primary, 10%) darken(@brand-primary, 10%) transparent;
+                }
+            }
+            
+            &:not(.active) {
+                a {
+                    color: #f8f8f8;
+
+                    &:hover, &:focus {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// Drawer
+
+@media screen and (max-width: @screen-xs-max) {
+    #drawer-toolbar {
+        .drawer-toolbar-header {
+            background-color: @brand-primary;
+        }   
     }
 }
 

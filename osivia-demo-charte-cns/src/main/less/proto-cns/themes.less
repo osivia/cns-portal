@@ -159,9 +159,15 @@
             border-width: 2px;
             
             h2 {
-                margin-top: 0;
+                font-size: @font-size-h4;
+            }
+            
+            #maximized & {
+                border-style: none;
                 
-                font-size: @font-size-h3;
+                h2 {
+                    font-size: @font-size-h2;
+                }
             }
         }
     }
