@@ -95,7 +95,9 @@ header {
 @media screen and (max-width: @screen-xs-max) {
     #drawer-toolbar {
         .drawer-toolbar-header {
-            background-color: @brand-primary;
+            background-color: desaturate(@brand-primary, 20%);
+            
+            #gradient .vertical(@start-color: lighten(desaturate(@brand-primary, 20%), 10%); @end-color: desaturate(@brand-primary, 20%));
         }   
     }
 }
