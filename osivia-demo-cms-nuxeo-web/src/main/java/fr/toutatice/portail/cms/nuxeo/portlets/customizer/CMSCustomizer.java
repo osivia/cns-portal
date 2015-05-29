@@ -34,6 +34,7 @@ import org.osivia.portal.core.cms.CMSServiceCtx;
 
 import fr.toutatice.portail.cms.nuxeo.api.domain.ITemplateModule;
 import fr.toutatice.portail.cms.nuxeo.api.domain.ListTemplate;
+import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.MenuBarFormater;
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
 
 /**
@@ -69,6 +70,8 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /** Navigation item adapter. */
     public NavigationItemAdapter navigationItemAdapter;
+    /** Menu bar formatter. */
+    private MenuBarFormater menuBarFormater;
 
 
     /**
@@ -92,7 +95,17 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         return this.navigationItemAdapter;
     }
-
+    
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public MenuBarFormater getMenuBarFormater() {
+        if (this.menuBarFormater == null) {
+            this.menuBarFormater = new CustomMenuBarFormater(this.getPortletCtx(), this, this.getCmsService());
+        }
+        return this.menuBarFormater;
+    }
 
     /**
      * {@inheritDoc}

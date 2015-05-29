@@ -71,6 +71,9 @@
                                 <span class="label label-success"><is:getProperty key="DOCUMENT_STATE_APPROVED" /></span>
                             </c:if>
                         </dd>
+                        <!-- Remote publication spaces -->
+                	    <c:set var="doc" value="${document}" scope="request" />
+                        <jsp:include page="metadata-remote-sections.jsp" />
                     </dl>
                      
                     <hr>
