@@ -345,18 +345,15 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
      * @return Event player
      */
     private CMSHandlerProperties getEventPlayer(CMSServiceCtx ctx) {
-        Document doc = (Document) ctx.getDoc();
+        Document document = (Document) ctx.getDoc();
 
+        // Window properties
         Map<String, String> windowProperties = new HashMap<String, String>();
-        windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
-        windowProperties.put("osivia.title", doc.getTitle());
-        windowProperties.put("osivia.hideTitle", "1");
-        windowProperties.put("osivia.ajaxLink", "0");
-        windowProperties.put("osivia.cms.hideMetaDatas", "1");
+        windowProperties.put(Constants.WINDOW_PROP_URI, document.getPath());
 
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
-        linkProps.setPortletInstance("osivia-services-calendar-event-instance");
+        linkProps.setPortletInstance("toutatice-portail-cms-nuxeo-viewDocumentPortletInstance");
 
         return linkProps;
     }
