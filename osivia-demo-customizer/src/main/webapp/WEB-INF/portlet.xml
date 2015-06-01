@@ -69,4 +69,18 @@
         </portlet-info>     
     </portlet>
 
+    <portlet>
+        <portlet-name>osivia-demo-project-customizer</portlet-name>
+        <portlet-class>org.osivia.portal.demo.customizer.ProjectCustomizerPortlet</portlet-class>        
+        <expiration-cache>180</expiration-cache>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+          
+        <portlet-info>
+            <title>Project customizer</title>
+        </portlet-info>     
+    </portlet>
+
 </portlet-app>

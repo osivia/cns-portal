@@ -6,6 +6,10 @@
     <portlet>
         <portlet-name>osivia-demo-customizer</portlet-name>
     </portlet>
+    
+    <portlet>
+        <portlet-name>osivia-demo-project-customizer</portlet-name>
+    </portlet>
 
     <service>
         <service-name>CustomizationModulesRepository</service-name>

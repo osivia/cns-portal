@@ -2,7 +2,7 @@
 osivia.accepted-language=fr
 
 # Default error page
-error.defaultPageUri=/osivia-demo-charte/error/errorPage.jsp
+error.defaultPageUri=/osivia-demo-charte-cns/error/errorPage.jsp
 
 # Schémas additionnels de navigation (séparés par une virgule)
 nuxeo.navigationSchemas=wcm_navigation
