@@ -4,7 +4,7 @@
 
 
 <c:choose>
-    <c:when test="${('osivia-demo-charte-cns' eq theme) or ('osivia-demo-charte-cns-wks' eq theme) or ('osivia-demo-charte-cns-userwks' eq theme)}">
+    <c:when test="${('osivia-demo-charte-cns' eq theme) or ('osivia-demo-charte-cns-publish' eq theme) or ('osivia-demo-charte-cns-wks' eq theme) or ('osivia-demo-charte-cns-userwks' eq theme)}">
         <jsp:include page="metadata-cns.jsp" />
     </c:when>
     
