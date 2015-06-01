@@ -8,6 +8,8 @@ toutaticeAnnuaire.config.sortingEnabled=false
 
 ### ----- Fiche personne -----
 
+# Les mdp ne sont pas modifiables par le user
+fichePersonne.config.enableModeENT=true
 fichePersonne.config.enableParents=false
 fichePersonne.config.enableResetPwd=false
 fichePersonne.config.enableOverload=false
