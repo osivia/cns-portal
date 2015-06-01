@@ -14,7 +14,7 @@
         <toutatice.version>4.1.0-SNAPSHOT</toutatice.version>
 
         <!-- Services -->
-        <osivia-services-calendar.version>1.0</osivia-services-calendar.version>
+        <osivia-services-calendar.version>1.2</osivia-services-calendar.version>
         <osivia-services-forum.version>1.2</osivia-services-forum.version>
         <osivia-services-wiki.version>1.3-SNAPSHOT</osivia-services-wiki.version>
         <osivia-services-portal-api-demo.version>4.0-SNAPSHOT</osivia-services-portal-api-demo.version>
