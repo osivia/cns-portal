@@ -95,7 +95,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         return this.navigationItemAdapter;
     }
-    
+
     /**
      * {@inheritDoc}
      */
@@ -326,7 +326,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
         windowProperties.put("osivia.title", doc.getTitle());
         windowProperties.put("osivia.hideTitle", "1");
-        windowProperties.put("osivia.ajaxLink", "0");
+        windowProperties.put("osivia.ajaxLink", "1");
         windowProperties.put("osivia.cms.hideMetaDatas", "1");
         windowProperties.put("osivia.calendar.cmsPath", "${contentPath}");
 
