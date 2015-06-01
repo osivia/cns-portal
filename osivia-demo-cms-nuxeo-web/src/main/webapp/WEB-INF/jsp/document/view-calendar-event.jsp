@@ -7,27 +7,36 @@
 
 <article class="calendar-event">
     <dl class="dl-horizontal">
-        <!-- Date de début -->
-        <c:set var="begin" value="${document.properties['ttcevt:dateTimeBegin']}" />
-        <c:if test="${not empty begin}">
-            <dt>D&eacute;but</dt>
-            <dd>
-                <span><fmt:formatDate value="${begin}" type="date" dateStyle="long" /></span>
-                <span>&agrave;</span>
-                <span><fmt:formatDate value="${begin}" type="time" timeStyle="short" /></span>
-            </dd>
-        </c:if>
-        
-        <!-- Date de fin -->
-        <c:set var="end" value="${document.properties['ttcevt:dateTimeEnd']}" />
-        <c:if test="${not empty end}">
-            <dt>Fin</dt>
-            <dd>
-                <span><fmt:formatDate value="${end}" type="date" dateStyle="long" /></span>
-                <span>&agrave;</span>
-                <span><fmt:formatDate value="${end}" type="time" timeStyle="short" /></span>
-            </dd>
-        </c:if>
+        <c:choose>
+            <c:when test="${document.properties['vevent:allDay']}">
+                <!-- Toute la journée -->
+                <dt>Date</dt>
+                <dd>
+                    <span><fmt:formatDate value="${document.properties['vevent:dtstart']}" type="date" dateStyle="long" />,</span>
+                    <span>toute la journ&eacute;e</span>
+                </dd>
+            </c:when>
+            
+            <c:otherwise>
+                <!-- Date de début -->
+                <c:set var="begin" value="${document.properties['vevent:dtstart']}" />
+                <dt>D&eacute;but</dt>
+                <dd>
+                    <span><fmt:formatDate value="${begin}" type="date" dateStyle="long" /></span>
+                    <span>&agrave;</span>
+                    <span><fmt:formatDate value="${begin}" type="time" timeStyle="short" /></span>
+                </dd>
+                
+                <!-- Date de fin -->
+                <c:set var="end" value="${document.properties['vevent:dtend']}" />
+                <dt>Fin</dt>
+                <dd>
+                    <span><fmt:formatDate value="${end}" type="date" dateStyle="long" /></span>
+                    <span>&agrave;</span>
+                    <span><fmt:formatDate value="${end}" type="time" timeStyle="short" /></span>
+                </dd>
+            </c:otherwise>
+        </c:choose>
         
         <!-- Lieu -->
         <c:set var="location" value="${document.properties['vevent:location']}" />
