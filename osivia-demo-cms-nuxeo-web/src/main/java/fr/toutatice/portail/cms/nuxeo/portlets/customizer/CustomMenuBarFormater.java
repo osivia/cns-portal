@@ -82,13 +82,16 @@ public class CustomMenuBarFormater extends MenuBarFormater {
                                 requestParameters);
 
                         remotePubItem.setUrl(remotePublishingURL);
+                        menubar.add(remotePubItem);
+                    } else {
+                        remotePubItem.setDisabled(true);
+                        menubar.add(remotePubItem);
                     }
 
                 } else {
                     remotePubItem.setDisabled(true);
+                    menubar.add(remotePubItem);
                 }
-
-                menubar.add(remotePubItem);
 
             }
 
