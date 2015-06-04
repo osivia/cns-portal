@@ -66,10 +66,10 @@ public class CustomMenuBarFormater extends MenuBarFormater {
 
             // DCH: FIXME: state is "ExtendedInfo"...
             if (pubInfos.isRemotePublishable() && pubInfos.isLiveSpace() && ContextualizationHelper.isCurrentDocContextualized(cmsContext)) {
-                String url = StringUtils.EMPTY;
+                String url = "#";
 
                 MenubarDropdown parent = this.getCMSEditionDropdown(portalControllerContext, bundle);
-                MenubarItem remotePubItem = new MenubarItem("REMOTE_PUBLISHING_URL", bundle.getString("REMOTE_PUBLISHING"), null, parent, 14, url, null, null, "fancyframe_refresh");
+                MenubarItem remotePubItem = new MenubarItem("REMOTE_PUBLISHING_URL", bundle.getString("REMOTE_PUBLISHING"), null, parent, 14, url, null, null, null);
 
                 if (DocumentConstants.APPROVED_DOC_STATE.equals(document.getState())) {
 
@@ -82,6 +82,7 @@ public class CustomMenuBarFormater extends MenuBarFormater {
                                 requestParameters);
 
                         remotePubItem.setUrl(remotePublishingURL);
+                        remotePubItem.setHtmlClasses("fancyframe_refresh");
                         menubar.add(remotePubItem);
                     } else {
                         remotePubItem.setDisabled(true);
