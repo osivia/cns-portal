@@ -8,7 +8,7 @@
 <div class="pull-left">
     <h1 class="h3">
         <a href="${requestScope['osivia.home.url']}">
-            <img src="${pageContext.request.contextPath}/img/logo.png" alt="${logoAlt}">
+            <img src="${pageContext.request.contextPath}/img/logo_MENESR.png" alt="${logoAlt}">
             <span><is:getProperty key="PORTAL_TITLE" /></span>
         </a>
     </h1>

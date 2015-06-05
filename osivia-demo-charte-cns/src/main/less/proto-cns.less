@@ -39,10 +39,10 @@ header {
                 }
                 
                 img {
-                    max-height: @header-height;
+                    max-height: (@header-height - 10);
                     
-                    margin-top: -@line-height-computed;
-                    margin-bottom: -(@line-height-computed / 2);
+                    margin-top: -@line-height-computed + 5 ;
+                    margin-bottom: -(@line-height-computed / 2) + 5;
                     
                     vertical-align: top;
                 }
