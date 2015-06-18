@@ -17,7 +17,7 @@
         <osivia-services-calendar.version>1.3</osivia-services-calendar.version>
         <osivia-services-forum.version>1.3</osivia-services-forum.version>
         <osivia-services-wiki.version>1.3</osivia-services-wiki.version>
-        <osivia-services-portal-api-demo.version>4.0-SNAPSHOT</osivia-services-portal-api-demo.version> 
+        <osivia-services-portal-api-demo.version>4.1.0</osivia-services-portal-api-demo.version> 
 
         <!-- Collab tools -->
         <toutatice-faq.version>3.4</toutatice-faq.version>
