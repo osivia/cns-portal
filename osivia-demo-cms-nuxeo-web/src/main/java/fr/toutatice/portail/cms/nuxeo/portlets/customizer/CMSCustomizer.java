@@ -32,7 +32,6 @@ import org.osivia.portal.core.cms.CMSItemType;
 import org.osivia.portal.core.cms.CMSPublicationInfos;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 
-import fr.toutatice.portail.cms.nuxeo.api.domain.ITemplateModule;
 import fr.toutatice.portail.cms.nuxeo.api.domain.ListTemplate;
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.MenuBarFormater;
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
@@ -49,8 +48,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     public static final String SCHEMAS_SEARCH = "dublincore, common, file, uid, toutatice";
     /** Zoom schemas. */
     public static final String SCHEMAS_ZOOM = "dublincore, toutatice, zoom";
-    /** Picturebook schemas. */
-    public static final String SCHEMAS_PICTUREBOOK = "dublincore, common, toutatice, note, files, acaren, webcontainer, file, picture";
     /** Blog schemas. */
     public static final String SCHEMAS_BLOG = "dublincore, common, toutatice, webpage";
     /** Annonce schemas. */
@@ -58,8 +55,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /** Tiles list template. */
     public static final String STYLE_TILE = "tuile";
-    /** Picturebook list template. */
-    public static final String STYLE_PICTUREBOOK = "picturebook";
     /** Blog list template. */
     public static final String STYLE_BLOG = "blog";
     /** Workspace list template. */
@@ -119,11 +114,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         // Tiles
         templates.add(new ListTemplate(STYLE_TILE, bundle.getString("LIST_TEMPLATE_TILES"), SCHEMAS_ZOOM));
-        // Picturebook
-        ListTemplate picturebookTemplate = new ListTemplate(STYLE_PICTUREBOOK, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), SCHEMAS_PICTUREBOOK);
-        ITemplateModule picturebookModule = new PicturebookTemplateModule();
-        picturebookTemplate.setModule(picturebookModule);
-        templates.add(picturebookTemplate);
         // Blog
         templates.add(new ListTemplate(STYLE_BLOG, bundle.getString("LIST_TEMPLATE_BLOG"), SCHEMAS_BLOG));
         // Workspace
@@ -162,43 +152,40 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
      * {@inheritDoc}
      */
     @Override
-    public CMSHandlerProperties getCMSPlayer(CMSServiceCtx ctx) throws Exception {
-        Document doc = (Document) ctx.getDoc();
-        if ("WikiBook".equals(doc.getType()) || "WikiSection".equals(doc.getType())) {
-            return this.getWikiPlayer(ctx);
+    public CMSHandlerProperties getCMSPlayer(CMSServiceCtx cmsContext) throws Exception {
+        Document document = (Document) cmsContext.getDoc();
+
+
+        if ("WikiBook".equals(document.getType()) || "WikiSection".equals(document.getType())) {
+            return this.getWikiPlayer(cmsContext);
         }
 
-        if ("FaqFolder".equals(doc.getType()) || "Question".equals(doc.getType())) {
-            return this.getFaqPlayer(ctx);
+        if ("FaqFolder".equals(document.getType()) || "Question".equals(document.getType())) {
+            return this.getFaqPlayer(cmsContext);
         }
 
-        if ("BlogPost".equals(doc.getType())) {
-            return this.getCMSMinimalPlayer(ctx);
+        if ("BlogPost".equals(document.getType())) {
+            return this.getCMSMinimalPlayer(cmsContext);
         }
 
-        if ("Forum".equals(doc.getType())) {
-            return this.getForumPlayer(ctx);
+        if ("Forum".equals(document.getType())) {
+            return this.getForumPlayer(cmsContext);
         }
 
-        if ("Thread".equals(doc.getType())) {
-            return this.getForumThreadPlayer(ctx);
+        if ("Thread".equals(document.getType())) {
+            return this.getForumThreadPlayer(cmsContext);
         }
 
-        if ("Agenda".equals(doc.getType())) {
-            return this.getCalendarPlayer(ctx);
+        if ("Agenda".equals(document.getType())) {
+            return this.getCalendarPlayer(cmsContext);
         }
 
-        if ("VEVENT".equals(doc.getType())) {
-            return this.getEventPlayer(ctx);
+        if ("VEVENT".equals(document.getType())) {
+            return this.getEventPlayer(cmsContext);
         }
 
-        if ("PictureBook".equals(doc.getType())) {
-            return this.getCMSPictureBookPlayer(ctx);
-        }
 
-        CMSHandlerProperties player = super.getCMSPlayer(ctx);
-        //player.getWindowProperties().put("osivia.cms.hideMetaDatas", "1");
-        return player;
+        return super.getCMSPlayer(cmsContext);
     }
 
 
@@ -354,38 +341,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         CMSHandlerProperties linkProps = new CMSHandlerProperties();
         linkProps.setWindowProperties(windowProperties);
         linkProps.setPortletInstance("toutatice-portail-cms-nuxeo-viewDocumentPortletInstance");
-
-        return linkProps;
-    }
-
-
-    /**
-     * Get PictureBook player.
-     *
-     * @param ctx
-     * @return PictureBook player
-     * @throws Exception
-     */
-    private CMSHandlerProperties getCMSPictureBookPlayer(CMSServiceCtx ctx) throws Exception {
-        Document doc = (Document) ctx.getDoc();
-
-        Map<String, String> windowProperties = new HashMap<String, String>();
-
-        windowProperties.put("osivia.title", doc.getTitle());
-        windowProperties.put("osivia.cms.scope", ctx.getScope());
-        windowProperties.put("osivia.cms.uri", doc.getPath());
-        windowProperties.put("osivia.hideDecorators", "1");
-        windowProperties.put("osivia.ajaxLink", "1");
-        windowProperties.put("osivia.cms.displayLiveVersion", ctx.getDisplayLiveVersion());
-        windowProperties.put("osivia.cms.style", CMSCustomizer.STYLE_PICTUREBOOK);
-        windowProperties.put("osivia.nuxeoRequest", this.createFolderRequest(ctx, false));
-        windowProperties.put("osivia.cms.pageSize", "10");
-        windowProperties.put("osivia.cms.pageSizeMax", "20");
-        windowProperties.put("osivia.cms.maxItems", "100");
-
-        CMSHandlerProperties linkProps = new CMSHandlerProperties();
-        linkProps.setWindowProperties(windowProperties);
-        linkProps.setPortletInstance("toutatice-portail-cms-nuxeo-viewListPortletInstance");
 
         return linkProps;
     }
