@@ -81,23 +81,23 @@
                     <dl class="dl-horizontal">
                         <!-- Cycle de vie -->
                         <dt><is:getProperty key="META_CYCLE_VIE" /></dt>
-                        <dd><ttc:vocabularyLabel name="cycle_vie" key="${cycle_vie}"/></dd>
+                        <dd><ttc:vocabularyLabel name="[CNS] Cycle de vie" key="${cycle_vie}"/></dd>
                         
                         <!-- Métiers -->
                         <dt><is:getProperty key="META_METIER" /></dt>
-                        <dd><ttc:vocabularyLabel name="metier" key="${metier}"/></dd>
+                        <dd><ttc:vocabularyLabel name="[CNS] Metier" key="${metier}"/></dd>
                         
                         <!-- Nature -->
                         <dt><is:getProperty key="META_NATURE" /></dt>
-                        <dd><ttc:vocabularyLabel name="nature" key="${nature}"/></dd>
+                        <dd><ttc:vocabularyLabel name="[CNS] Nature" key="${nature}"/></dd>
                         
                         <!-- SI cible -->
                         <dt><is:getProperty key="META_SI" /></dt>
-                        <dd><ttc:vocabularyLabel name="s_info_associe" key="${s_info_associe}"/></dd>
+                        <dd><ttc:vocabularyLabel name="[CNS] SI" key="${s_info_associe}"/></dd>
                         
                         <!-- Entité source -->
                         <dt><is:getProperty key="META_ENTITE" /></dt>
-                        <dd><ttc:vocabularyLabel name="entite_cns" key="${entite_cns}"/></dd>
+                        <dd><ttc:vocabularyLabel name="[CNS] Entité" key="${entite_cns}"/></dd>
                     </dl>
                 </div>
             </div>
