@@ -24,8 +24,8 @@
         
         <!-- Identity & user mgt tools -->
         <toutatice.annuaire.version>4.1.0</toutatice.annuaire.version>
-        <fichepersonne.version>4.1-cns</fichepersonne.version>
-        <gestionpersonnes.version>4.1-cns</gestionpersonnes.version>
+        <fichepersonne.version>4.2-cns</fichepersonne.version>
+        <gestionpersonnes.version>4.2-cns</gestionpersonnes.version>
         <ficheprofil.version>4.0</ficheprofil.version>
         <gestiongroupe.version>4.0</gestiongroupe.version>
         <gestionworkspace.version>4.1.0-osivia</gestionworkspace.version>

@@ -110,7 +110,7 @@
             <destName>run.conf</destName>
         </file>
         <file>
-            <source>target/toutatice-distribution/jboss-as/server/production/conf/jboss-log4j.xml.${src-env}</source>
+            <source>src/main/resources/jboss-as/server/production/conf/jboss-log4j.xml.cns</source>
             <outputDirectory>/${artifactId}-${dest-env}-${project.version}/jboss-as/server/production/conf</outputDirectory>
             <destName>jboss-log4j.xml</destName>
         </file>

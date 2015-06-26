@@ -56,16 +56,67 @@
 		<property name="BASE_DN" value="${ldapSource.base}" />
 		
 		<property name="mail" value="${personneCnsDao.mail}" />
-		
-		
+		<property name="entite" value="${personneCnsDao.entite}" />
+
 	</bean>
 	
 	<bean id="feeder" class="com.osivia.cns.proto.ldap.Feeder"></bean>
 	
 	<util:map id="profilesMapping">
-		<entry key="cn=itil,ou=entites,ou=groupes,dc=menesr,dc=gouv,dc=fr">
-			<value>crt-itil</value>
+		<entry key="commun">
+			<value>cn=Transverse_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
 		</entry>
+		
+		<entry key="CNS_DIR">
+			<value>cn=CNSDirection_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>
+		
+		<entry key="CES_CHOREGIE">
+			<value>cn=CESChoregie_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>
+		
+		<entry key="CES_GOSPEL">
+			<value>cn=CESGospel_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>
+		
+		<entry key="CES_DECISIONNEL">
+			<value>cn=CESDecisionnel_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>
+		
+		<entry key="CES_SIRHEN">
+			<value>cn=CESSIRHEN-2_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>
+		
+		<entry key="CRT_FOAD">
+			<value>cn=CRTFOAD_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>		
+		
+		<entry key="CRT_SUP">
+			<value>cn=CRTSUP_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>
+		
+		<entry key="CRT_HEB">
+			<value>cn=CRTHebergement_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>
+		
+		<entry key="CRT_RSO">
+			<value>cn=CRTRSO_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>
+		
+		<entry key="CRT_FIM">
+			<value>cn=CRTFIM_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>
+		
+		<entry key="CRT_ITIL">
+			<value>cn=CRTITIL_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>
+		
+		<entry key="CRT_ECD">
+			<value>cn=CRTECD_members,ou=profiles,ou=groups,dc=osivia,dc=org</value>
+		</entry>
+		
+		
+		
 	</util:map>
 	
 </beans>

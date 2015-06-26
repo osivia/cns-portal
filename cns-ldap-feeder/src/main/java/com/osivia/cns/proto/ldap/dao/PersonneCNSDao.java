@@ -43,6 +43,8 @@ public class PersonneCNSDao {
 	private String displayName ="";
 	
 	private String mail ="";
+	
+	private String entite ="";
 
 	private String categorie ="";
 	private String classObjet ="";
@@ -86,6 +88,14 @@ public class PersonneCNSDao {
 			}
 			else { 
 				p.setCn("");}
+			
+			attr = attrs.get(entite);
+			if (attr != null)
+			{
+				p.setEntite(attr.get().toString());
+			}
+			else { 
+				p.setEntite("");}			
 			
 			attr = attrs.get(sn);
 			if (attr != null)
@@ -191,6 +201,23 @@ public class PersonneCNSDao {
 
 	public void setMail(String mail) {
 		this.mail = mail;
+	}
+
+	
+
+	/**
+	 * @return the entite
+	 */
+	public String getEntite() {
+		return entite;
+	}
+
+
+	/**
+	 * @param entite the entite to set
+	 */
+	public void setEntite(String entite) {
+		this.entite = entite;
 	}
 
 

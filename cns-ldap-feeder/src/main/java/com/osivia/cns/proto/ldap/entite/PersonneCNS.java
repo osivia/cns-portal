@@ -18,7 +18,9 @@ public class PersonneCNS {
 	
 	private String displayName;
 	
-	private String mail;	
+	private String mail;
+	
+	private String entite;
 
 	public String getUid() {
 		return uid;
@@ -66,6 +68,20 @@ public class PersonneCNS {
 
 	public void setMail(String mail) {
 		this.mail = mail;
+	}
+
+	/**
+	 * @return the entite
+	 */
+	public String getEntite() {
+		return entite;
+	}
+
+	/**
+	 * @param entite the entite to set
+	 */
+	public void setEntite(String entite) {
+		this.entite = entite;
 	}
 	
 	
