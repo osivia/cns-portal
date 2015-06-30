@@ -102,14 +102,19 @@ public class Feeder implements IUserDatasModule {
 					String entite = pSource.getEntite();
 					if(StringUtils.isNotBlank(entite)) {
 						String dnProfilSpecif = profilesMapping.get(StringUtils.upperCase(entite));
-						Profil profilSpecif = Profil.findProfilByDn(dnProfilSpecif);
-						
-						if(profilSpecif != null) {
-							profilSpecif.addMember(person2.getDn());
+						if(StringUtils.isNotBlank(dnProfilSpecif)) {
+							Profil profilSpecif = Profil.findProfilByDn(dnProfilSpecif);
 							
-							logger.info("Entite "+entite+" trouvée, Ajout au groupe spécifique : " + profilSpecif.getDn());
-							
-							profilSpecif.updateProfil();
+							if(profilSpecif != null) {
+								profilSpecif.addMember(person2.getDn());
+								
+								logger.info("Entite "+entite+" trouvée, Ajout au groupe spécifique : " + profilSpecif.getDn());
+								
+								profilSpecif.updateProfil();
+							}
+							else {
+								logger.error("Entite  "+entite+" trouvée sans espace de rattachement");
+							}
 						}
 						else {
 							logger.error("Entite  "+entite+" trouvée sans espace de rattachement");
