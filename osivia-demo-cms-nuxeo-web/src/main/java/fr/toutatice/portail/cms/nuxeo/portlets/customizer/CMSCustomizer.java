@@ -52,6 +52,8 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     public static final String SCHEMAS_BLOG = "dublincore, common, toutatice, webpage";
     /** Annonce schemas. */
     public static final String SCHEMAS_ANNONCE = "dublincore, common, toutatice, annonce, note";
+    /** Forum schemas. */
+    public static final String FORUM_SCHEMAS = "dublincore, common, toutatice, file, thread_toutatice";
 
     /** Tiles list template. */
     public static final String STYLE_TILE = "tuile";
@@ -119,7 +121,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         // Workspace
         templates.add(new ListTemplate(STYLE_WORKSPACE, bundle.getString("LIST_TEMPLATE_WORKSPACE"), DEFAULT_SCHEMAS));
         // Forum
-        templates.add(new ListTemplate(STYLE_FORUM, bundle.getString("LIST_TEMPLATE_FORUM"), DEFAULT_SCHEMAS));
+        templates.add(new ListTemplate(STYLE_FORUM, bundle.getString("LIST_TEMPLATE_FORUM"), FORUM_SCHEMAS));
 
         return templates;
     }
