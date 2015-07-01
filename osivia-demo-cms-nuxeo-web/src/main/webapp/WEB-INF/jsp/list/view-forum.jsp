@@ -22,7 +22,7 @@
             <a href="${url}" class="list-group-item">
                 <div class="media">
                     <div class="media-left">
-	                    <h3 class="h3 text-center media-heading">${nbAnswers}</h3> 
+	                    <span class="h3 text-center media-heading">${nbAnswers}</span> 
 	                    <p class="small"><is:getProperty key="ANSWERS" /></p>
                     </div>
                     <c:if test="${not empty vignetteURL}">
@@ -34,7 +34,7 @@
                     <div class="media-body">
                         <h3 class="h4 media-heading">${document.title}</h3>
                         <p>${description}</p>
-	                        <div class="small panel-body">
+	                        <div class="small">
 	                           <span><is:getProperty key="LAST_ANSWER" /></span>
 	                           <span><is:getProperty key="DATE_ARTICLE_PREFIX" /></span>
                                <span><fmt:formatDate value="${modificationDate}" type="date" dateStyle="long" /></span>
