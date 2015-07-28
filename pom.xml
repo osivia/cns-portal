@@ -4,14 +4,14 @@
 
     <groupId>org.osivia.demo</groupId>
     <artifactId>osivia-demo-parent</artifactId>
-    <version>4.1.1-SNAPSHOT</version>
+    <version>4.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Demonstrateur OSIVIA - Parent</name>
 
 
     <properties>
         <!-- Socle -->
-        <toutatice.version>4.1.1</toutatice.version>
+        <toutatice.version>4.2.0-SNAPSHOT</toutatice.version>
 
         <!-- Services -->
         <osivia-services-calendar.version>1.3</osivia-services-calendar.version>
@@ -49,7 +49,7 @@
         <module>osivia-demo-customizer</module>
         <module>osivia-demo-cms-nuxeo-web</module>
         <module>osivia-demo-distribution</module>
-        
+        <module>osivia-demo-picture-customizer</module>
     </modules>
 
 

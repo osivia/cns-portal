@@ -34,6 +34,18 @@
         
 	</portlet>
 	
+ 	<portlet>
+        <portlet-name>osivia-demo-project-cms-customizerPortlet</portlet-name>
+        <portlet-class>org.osivia.portal.demo.project.customizer.ProjectCMSCustomizerPortlet</portlet-class>
+        <expiration-cache>180</expiration-cache>
 
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+          
+        <portlet-info>
+            <title>CMS customizer</title>
+        </portlet-info>	
+	</portlet>
 	
  </portlet-app>

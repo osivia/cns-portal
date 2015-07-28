@@ -20,5 +20,16 @@
             </icon>
         </portlet-info>
     </portlet>
-</portlet-app>
-	
+
+
+    <portlet>
+        <portlet-name>osivia-demo-project-cms-customizerPortlet</portlet-name>
+    </portlet>
+
+    <service>
+        <service-name>CustomizationModulesRepository</service-name>
+        <service-class>org.osivia.portal.api.customization.ICustomizationModulesRepository</service-class>
+        <service-ref>osivia:service=CustomizationService</service-ref>
+    </service>
+
+</portlet-app>	

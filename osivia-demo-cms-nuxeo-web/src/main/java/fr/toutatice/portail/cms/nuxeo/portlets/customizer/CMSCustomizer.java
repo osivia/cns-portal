@@ -20,11 +20,14 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
+import java.util.Map.Entry;
 
 import javax.portlet.PortletContext;
 
 import org.nuxeo.ecm.automation.client.model.Document;
 import org.osivia.portal.api.Constants;
+import org.osivia.portal.api.customization.CustomizationContext;
 import org.osivia.portal.api.internationalization.Bundle;
 import org.osivia.portal.core.cms.CMSException;
 import org.osivia.portal.core.cms.CMSHandlerProperties;
@@ -32,8 +35,8 @@ import org.osivia.portal.core.cms.CMSItemType;
 import org.osivia.portal.core.cms.CMSPublicationInfos;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 
+import fr.toutatice.portail.cms.nuxeo.api.domain.ITemplateModule;
 import fr.toutatice.portail.cms.nuxeo.api.domain.ListTemplate;
-import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.MenuBarFormater;
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
 
 /**
@@ -48,15 +51,17 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     public static final String SCHEMAS_SEARCH = "dublincore, common, file, uid, toutatice";
     /** Zoom schemas. */
     public static final String SCHEMAS_ZOOM = "dublincore, toutatice, zoom";
+    /** Picturebook schemas. */
+    public static final String SCHEMAS_PICTUREBOOK = "dublincore, common, toutatice, note, files, acaren, webcontainer, file, picture";
     /** Blog schemas. */
     public static final String SCHEMAS_BLOG = "dublincore, common, toutatice, webpage";
     /** Annonce schemas. */
     public static final String SCHEMAS_ANNONCE = "dublincore, common, toutatice, annonce, note";
-    /** Forum schemas. */
-    public static final String FORUM_SCHEMAS = "dublincore, common, toutatice, file, thread_toutatice";
 
     /** Tiles list template. */
     public static final String STYLE_TILE = "tuile";
+    /** Picturebook list template. */
+    public static final String STYLE_PICTUREBOOK = "picturebook";
     /** Blog list template. */
     public static final String STYLE_BLOG = "blog";
     /** Workspace list template. */
@@ -67,8 +72,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
     /** Navigation item adapter. */
     public NavigationItemAdapter navigationItemAdapter;
-    /** Menu bar formatter. */
-    private MenuBarFormater menuBarFormater;
 
 
     /**
@@ -93,35 +96,30 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         return this.navigationItemAdapter;
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public MenuBarFormater getMenuBarFormater() {
-        if (this.menuBarFormater == null) {
-            this.menuBarFormater = new CustomMenuBarFormater(this.getPortletCtx(), this, this.getCmsService());
-        }
-        return this.menuBarFormater;
-    }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public List<ListTemplate> getListTemplates(Locale locale) {
-        List<ListTemplate> templates = super.getListTemplates(locale);
+    public List<ListTemplate> initListTemplates(Locale locale) {
+        List<ListTemplate> templates = super.initListTemplates(locale);
 
         // Bundle
         Bundle bundle = this.getBundleFactory().getBundle(locale);
 
         // Tiles
         templates.add(new ListTemplate(STYLE_TILE, bundle.getString("LIST_TEMPLATE_TILES"), SCHEMAS_ZOOM));
+        // Picturebook
+//        ListTemplate picturebookTemplate = new ListTemplate(STYLE_PICTUREBOOK, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), SCHEMAS_PICTUREBOOK);
+//        ITemplateModule picturebookModule = new PicturebookTemplateModule();
+//        picturebookTemplate.setModule(picturebookModule);
+//        templates.add(picturebookTemplate);
         // Blog
         templates.add(new ListTemplate(STYLE_BLOG, bundle.getString("LIST_TEMPLATE_BLOG"), SCHEMAS_BLOG));
         // Workspace
         templates.add(new ListTemplate(STYLE_WORKSPACE, bundle.getString("LIST_TEMPLATE_WORKSPACE"), DEFAULT_SCHEMAS));
-        // Forum
-        templates.add(new ListTemplate(STYLE_FORUM, bundle.getString("LIST_TEMPLATE_FORUM"), FORUM_SCHEMAS));
+//        // Forum
+//        templates.add(new ListTemplate(STYLE_FORUM, bundle.getString("LIST_TEMPLATE_FORUM"), DEFAULT_SCHEMAS));
 
         return templates;
     }
@@ -154,40 +152,43 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
      * {@inheritDoc}
      */
     @Override
-    public CMSHandlerProperties getCMSPlayer(CMSServiceCtx cmsContext) throws Exception {
-        Document document = (Document) cmsContext.getDoc();
-
-
-        if ("WikiBook".equals(document.getType()) || "WikiSection".equals(document.getType())) {
-            return this.getWikiPlayer(cmsContext);
+    public CMSHandlerProperties getCMSPlayer(CMSServiceCtx ctx) throws Exception {
+        Document doc = (Document) ctx.getDoc();
+        if ("WikiBook".equals(doc.getType()) || "WikiSection".equals(doc.getType())) {
+            return this.getWikiPlayer(ctx);
         }
 
-        if ("FaqFolder".equals(document.getType()) || "Question".equals(document.getType())) {
-            return this.getFaqPlayer(cmsContext);
+        if ("FaqFolder".equals(doc.getType()) || "Question".equals(doc.getType())) {
+            return this.getFaqPlayer(ctx);
         }
 
-        if ("BlogPost".equals(document.getType())) {
-            return this.getCMSMinimalPlayer(cmsContext);
+        if ("BlogPost".equals(doc.getType())) {
+            return this.getCMSMinimalPlayer(ctx);
+        }
+//
+//        if ("Forum".equals(doc.getType())) {
+//            return this.getForumPlayer(ctx);
+//        }
+//
+//        if ("Thread".equals(doc.getType())) {
+//            return this.getForumThreadPlayer(ctx);
+//        }
+
+        if ("Agenda".equals(doc.getType())) {
+            return this.getCalendarPlayer(ctx);
         }
 
-        if ("Forum".equals(document.getType())) {
-            return this.getForumPlayer(cmsContext);
+        if ("VEVENT".equals(doc.getType())) {
+            return this.getEventPlayer(ctx);
         }
 
-        if ("Thread".equals(document.getType())) {
-            return this.getForumThreadPlayer(cmsContext);
-        }
+//        if ("PictureBook".equals(doc.getType())) {
+//            return this.getCMSPictureBookPlayer(ctx);
+//        }
 
-        if ("Agenda".equals(document.getType())) {
-            return this.getCalendarPlayer(cmsContext);
-        }
-
-        if ("VEVENT".equals(document.getType())) {
-            return this.getEventPlayer(cmsContext);
-        }
-
-
-        return super.getCMSPlayer(cmsContext);
+        CMSHandlerProperties player = super.getCMSPlayer(ctx);
+        //player.getWindowProperties().put("osivia.cms.hideMetaDatas", "1");
+        return player;
     }
 
 
@@ -234,72 +235,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     }
 
 
-    /**
-     * Get forum player.
-     *
-     * @param ctx CMS context
-     * @return CMS forum player
-     * @throws CMSException
-     */
-    private CMSHandlerProperties getForumPlayer(CMSServiceCtx ctx) throws CMSException {
-        Map<String, String> windowProperties = new HashMap<String, String>();
-        windowProperties.put("osivia.nuxeoRequest", this.createForumPlayerRequest(ctx));
-        windowProperties.put("osivia.cms.style", CMSCustomizer.STYLE_FORUM);
-        windowProperties.put("osivia.hideDecorators", "1");
-        windowProperties.put("theme.dyna.partial_refresh_enabled", "false");
-        windowProperties.put(Constants.WINDOW_PROP_SCOPE, ctx.getScope());
-        windowProperties.put("osivia.ajaxLink", "1");
-        windowProperties.put(Constants.WINDOW_PROP_VERSION, ctx.getDisplayLiveVersion());
 
-
-        CMSHandlerProperties linkProps = new CMSHandlerProperties();
-        linkProps.setWindowProperties(windowProperties);
-        linkProps.setPortletInstance("toutatice-portail-cms-nuxeo-viewListPortletInstance");
-
-        return linkProps;
-    }
-
-    /**
-     * Utility method used to create forum player request.
-     *
-     * @param cmsContext CMS context
-     * @return request
-     * @throws CMSException
-     */
-    private String createForumPlayerRequest(CMSServiceCtx cmsContext) throws CMSException {
-        // Document
-        Document document = (Document) cmsContext.getDoc();
-        // Publication infos
-        CMSPublicationInfos pubInfos = this.getCmsService().getPublicationInfos(cmsContext, document.getPath());
-
-        StringBuilder request = new StringBuilder();
-        request.append("ecm:parentId = '").append(pubInfos.getLiveId()).append("' ");
-        request.append("AND ecm:primaryType = 'Thread' ");
-        request.append("ORDER BY dc:modified DESC ");
-        return request.toString();
-    }
-
-
-    /**
-     * Get forum thread player.
-     *
-     * @param cmsContext CMS context
-     * @return forum thread player
-     */
-    private CMSHandlerProperties getForumThreadPlayer(CMSServiceCtx cmsContext) {
-        Document document = (Document) cmsContext.getDoc();
-
-        Map<String, String> windowProperties = new HashMap<String, String>();
-        windowProperties.put(Constants.WINDOW_PROP_URI, document.getPath());
-        windowProperties.put("osivia.hideDecorators", "1");
-        windowProperties.put("osivia.ajaxLink", "1");
-
-        CMSHandlerProperties linkProps = new CMSHandlerProperties();
-        linkProps.setWindowProperties(windowProperties);
-        linkProps.setPortletInstance("osivia-services-forum-portletInstance");
-
-        return linkProps;
-    }
 
 
     /**
@@ -348,6 +284,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     }
 
 
+
     /**
      * Get minimal player.
      *
@@ -373,35 +310,15 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     }
 
 
-    private Map<String, CMSItemType> customCMSItemTypes;
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Map<String, CMSItemType> getCMSItemTypes() {
-
-        if (this.customCMSItemTypes == null) {
-
-            this.customCMSItemTypes = new LinkedHashMap<String, CMSItemType>();
-            this.customCMSItemTypes.putAll(super.getCMSItemTypes());
-
-            List<CMSItemType> customizedTypes = this.getCustomizedCMSItemTypes();
-            for (CMSItemType customizedType : customizedTypes) {
-                this.customCMSItemTypes.put(customizedType.getName(), customizedType);
-            }
-        }
-
-        return this.customCMSItemTypes;
-    }
-
-
+  
     /**
      * Get customized CMS item types.
      *
      * @return customized CMS item types
      */
-    private List<CMSItemType> getCustomizedCMSItemTypes() {
+    @Override
+    protected List<CMSItemType> getCustomizedCMSItemTypes() {
 
     	List<CMSItemType> customizedTypes = new ArrayList<CMSItemType>();
 
@@ -417,10 +334,10 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         customizedTypes.add(new CMSItemType("Question", false, false, false, false, false, true, new ArrayList<String>(0), null,
                 "glyphicons glyphicons-circle-question-mark"));
         // Forum
-        customizedTypes
-                .add(new CMSItemType("Forum", true, true, false, false, true, true, Arrays.asList("Thread"), null, "glyphicons glyphicons-conversation"));
-        // Forum thread
-        customizedTypes.add(new CMSItemType("Thread", false, false, false, false, true, true, new ArrayList<String>(0), null, "glyphicons glyphicons-chat"));
+//        customizedTypes
+//                .add(new CMSItemType("Forum", true, true, false, false, true, true, Arrays.asList("Thread"), null, "glyphicons glyphicons-conversation"));
+//        // Forum thread
+//        customizedTypes.add(new CMSItemType("Thread", false, false, false, false, true, true, new ArrayList<String>(0), null, "glyphicons glyphicons-chat"));
 
         // Agenda
         customizedTypes.add(new CMSItemType("Agenda", true, true, false, false, true, true, Arrays.asList("VEVENT"), null, "glyphicons glyphicons-calendar"));

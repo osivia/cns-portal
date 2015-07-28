@@ -68,6 +68,20 @@
             <title>Attributes bundles customizer</title>
         </portlet-info>     
     </portlet>
+    
+   <portlet>
+        <portlet-name>osivia-demo-cms-customizerPortlet</portlet-name>
+        <portlet-class>org.osivia.portal.demo.customizer.CMSDemoCustomizerPortlet</portlet-class>
+        <expiration-cache>180</expiration-cache>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+          
+        <portlet-info>
+            <title>CMS customizer</title>
+        </portlet-info>     
+    </portlet>
 
     <portlet>
         <portlet-name>osivia-demo-project-customizer</portlet-name>
@@ -82,5 +96,6 @@
             <title>Project customizer</title>
         </portlet-info>     
     </portlet>
+
 
 </portlet-app>

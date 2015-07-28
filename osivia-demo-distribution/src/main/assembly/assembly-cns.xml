@@ -18,6 +18,7 @@
             <includes>
                 <!-- demo -->
                 <include>${groupId}:osivia-demo-customizer:war:${project.version}</include>
+				<include>${groupId}:osivia-demo-picture-customizer:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-charte:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-charte-cns:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-cms-nuxeo-web:war:${project.version}</include>               

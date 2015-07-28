@@ -11,12 +11,12 @@ import org.osivia.portal.core.cms.CMSHandlerProperties;
 import org.osivia.portal.core.cms.CMSPublicationInfos;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 import org.osivia.portal.core.cms.ICMSService;
-import org.osivia.portal.core.constants.FileBrowserView;
 import org.osivia.portal.core.constants.InternalConstants;
 
+import fr.toutatice.portail.cms.nuxeo.api.FileBrowserView;
 import fr.toutatice.portail.cms.nuxeo.api.domain.CMSCustomizerModule;
 import fr.toutatice.portail.cms.nuxeo.api.domain.IPlayerModule;
-import fr.toutatice.portail.cms.nuxeo.api.services.INuxeoCustomizer;
+
 
 
 
