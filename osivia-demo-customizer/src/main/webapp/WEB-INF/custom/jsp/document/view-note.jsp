@@ -5,7 +5,6 @@
 
 <%@ page isELIgnored="false"%>
 
-demo4 customization
 
 <c:set var="author" value="${document.properties['dc:creator']}" />
 <c:set var="date" value="${document.properties['dc:modified']}" />
