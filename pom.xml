@@ -14,13 +14,15 @@
         <toutatice.version>4.2.0-SNAPSHOT</toutatice.version>
 
         <!-- Services -->
-        <osivia-services-calendar.version>1.3</osivia-services-calendar.version>
-        <osivia-services-forum.version>1.4</osivia-services-forum.version>
-        <osivia-services-wiki.version>1.3</osivia-services-wiki.version>
+        <osivia-services-calendar.version>2.0.0-SNAPSHOT</osivia-services-calendar.version>
+        <osivia-services-forum.version>2.0.0-SNAPSHOT</osivia-services-forum.version>
+        <osivia-services-webedition.version>1.0.0-SNAPSHOT</osivia-services-webedition.version>
+        <osivia-services-widgets.version>1.0.0-SNAPSHOT</osivia-services-widgets.version>
+        <osivia-services-wiki.version>2.0.0-SNAPSHOT</osivia-services-wiki.version>
         <osivia-services-portal-api-demo.version>4.1.0</osivia-services-portal-api-demo.version> 
 
         <!-- Collab tools -->
-        <toutatice-faq.version>3.4</toutatice-faq.version>
+        <toutatice-faq.version>4.0.0-SNAPSHOT</toutatice-faq.version>
         
         <!-- Identity & user mgt tools -->
         <toutatice.annuaire.version>4.1.0</toutatice.annuaire.version>
@@ -45,11 +47,10 @@
     <modules>
         <module>osivia-demo-charte</module>
         <module>osivia-demo-charte-web</module>
-        <module>osivia-demo-charte-montpellier</module>
+        <!-- <module>osivia-demo-charte-montpellier</module>  -->
         <module>osivia-demo-customizer</module>
         <module>osivia-demo-cms-nuxeo-web</module>
         <module>osivia-demo-distribution</module>
-        <module>osivia-demo-picture-customizer</module>
     </modules>
 
 

@@ -14,28 +14,21 @@
 package fr.toutatice.portail.cms.nuxeo.portlets.customizer;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.Set;
-import java.util.Map.Entry;
 
 import javax.portlet.PortletContext;
 
 import org.nuxeo.ecm.automation.client.model.Document;
 import org.osivia.portal.api.Constants;
-import org.osivia.portal.api.customization.CustomizationContext;
 import org.osivia.portal.api.internationalization.Bundle;
 import org.osivia.portal.core.cms.CMSException;
 import org.osivia.portal.core.cms.CMSHandlerProperties;
 import org.osivia.portal.core.cms.CMSItemType;
-import org.osivia.portal.core.cms.CMSPublicationInfos;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 
-import fr.toutatice.portail.cms.nuxeo.api.domain.ITemplateModule;
 import fr.toutatice.portail.cms.nuxeo.api.domain.ListTemplate;
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
 
@@ -53,8 +46,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     public static final String SCHEMAS_ZOOM = "dublincore, toutatice, zoom";
     /** Picturebook schemas. */
     public static final String SCHEMAS_PICTUREBOOK = "dublincore, common, toutatice, note, files, acaren, webcontainer, file, picture";
-    /** Blog schemas. */
-    public static final String SCHEMAS_BLOG = "dublincore, common, toutatice, webpage";
     /** Annonce schemas. */
     public static final String SCHEMAS_ANNONCE = "dublincore, common, toutatice, annonce, note";
 
@@ -62,12 +53,8 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     public static final String STYLE_TILE = "tuile";
     /** Picturebook list template. */
     public static final String STYLE_PICTUREBOOK = "picturebook";
-    /** Blog list template. */
-    public static final String STYLE_BLOG = "blog";
     /** Workspace list template. */
     public static final String STYLE_WORKSPACE = "workspace";
-    /** Forum list template. */
-    public static final String STYLE_FORUM = "forum";
 
 
     /** Navigation item adapter. */
@@ -109,17 +96,8 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
         // Tiles
         templates.add(new ListTemplate(STYLE_TILE, bundle.getString("LIST_TEMPLATE_TILES"), SCHEMAS_ZOOM));
-        // Picturebook
-//        ListTemplate picturebookTemplate = new ListTemplate(STYLE_PICTUREBOOK, bundle.getString("LIST_TEMPLATE_PICTUREBOOK"), SCHEMAS_PICTUREBOOK);
-//        ITemplateModule picturebookModule = new PicturebookTemplateModule();
-//        picturebookTemplate.setModule(picturebookModule);
-//        templates.add(picturebookTemplate);
-        // Blog
-        templates.add(new ListTemplate(STYLE_BLOG, bundle.getString("LIST_TEMPLATE_BLOG"), SCHEMAS_BLOG));
         // Workspace
         templates.add(new ListTemplate(STYLE_WORKSPACE, bundle.getString("LIST_TEMPLATE_WORKSPACE"), DEFAULT_SCHEMAS));
-//        // Forum
-//        templates.add(new ListTemplate(STYLE_FORUM, bundle.getString("LIST_TEMPLATE_FORUM"), DEFAULT_SCHEMAS));
 
         return templates;
     }
@@ -145,215 +123,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         linkProps.setPortletInstance("toutatice-portail-cms-nuxeo-viewDocumentPortletInstance");
 
         return linkProps;
-    }
-
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public CMSHandlerProperties getCMSPlayer(CMSServiceCtx ctx) throws Exception {
-        Document doc = (Document) ctx.getDoc();
-        if ("WikiBook".equals(doc.getType()) || "WikiSection".equals(doc.getType())) {
-            return this.getWikiPlayer(ctx);
-        }
-
-        if ("FaqFolder".equals(doc.getType()) || "Question".equals(doc.getType())) {
-            return this.getFaqPlayer(ctx);
-        }
-
-        if ("BlogPost".equals(doc.getType())) {
-            return this.getCMSMinimalPlayer(ctx);
-        }
-//
-//        if ("Forum".equals(doc.getType())) {
-//            return this.getForumPlayer(ctx);
-//        }
-//
-//        if ("Thread".equals(doc.getType())) {
-//            return this.getForumThreadPlayer(ctx);
-//        }
-
-        if ("Agenda".equals(doc.getType())) {
-            return this.getCalendarPlayer(ctx);
-        }
-
-        if ("VEVENT".equals(doc.getType())) {
-            return this.getEventPlayer(ctx);
-        }
-
-//        if ("PictureBook".equals(doc.getType())) {
-//            return this.getCMSPictureBookPlayer(ctx);
-//        }
-
-        CMSHandlerProperties player = super.getCMSPlayer(ctx);
-        //player.getWindowProperties().put("osivia.cms.hideMetaDatas", "1");
-        return player;
-    }
-
-
-    /**
-     * Get Wiki player.
-     *
-     * @param ctx CMS service context
-     * @return Wiki player
-     */
-    private CMSHandlerProperties getWikiPlayer(CMSServiceCtx ctx) {
-        Document doc = (Document) ctx.getDoc();
-
-        Map<String, String> windowProperties = new HashMap<String, String>();
-        windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
-        windowProperties.put("osivia.hideDecorators", "1");
-        windowProperties.put("osivia.ajaxLink", "1");
-
-        CMSHandlerProperties linkProps = new CMSHandlerProperties();
-        linkProps.setWindowProperties(windowProperties);
-        linkProps.setPortletInstance("osivia-services-wiki-wikiPortletInstance");
-
-        return linkProps;
-    }
-
-
-    /**
-     * Get FAQ player.
-     *
-     * @param ctx CMS service context
-     * @return FAQ player
-     */
-    private CMSHandlerProperties getFaqPlayer(CMSServiceCtx ctx) {
-        Document doc = (Document) ctx.getDoc();
-
-        Map<String, String> windowProperties = new HashMap<String, String>();
-        windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
-        windowProperties.put("osivia.ajaxLink", "1");
-        windowProperties.put("osivia.hideDecorators", "1");
-        CMSHandlerProperties linkProps = new CMSHandlerProperties();
-        linkProps.setWindowProperties(windowProperties);
-        linkProps.setPortletInstance("toutatice-faq-portletInstance");
-
-        return linkProps;
-    }
-
-
-
-
-
-    /**
-     * Get calendar player.
-     *
-     * @param ctx
-     * @return calendar player
-     */
-    private CMSHandlerProperties getCalendarPlayer(CMSServiceCtx ctx) {
-        Document doc = (Document) ctx.getDoc();
-
-        Map<String, String> windowProperties = new HashMap<String, String>();
-        windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
-        windowProperties.put("osivia.title", doc.getTitle());
-        windowProperties.put("osivia.hideTitle", "1");
-        windowProperties.put("osivia.ajaxLink", "1");
-        windowProperties.put("osivia.cms.hideMetaDatas", "1");
-        windowProperties.put("osivia.calendar.cmsPath", "${contentPath}");
-
-        CMSHandlerProperties linkProps = new CMSHandlerProperties();
-        linkProps.setWindowProperties(windowProperties);
-        linkProps.setPortletInstance("osivia-services-calendar-instance");
-
-        return linkProps;
-    }
-
-
-    /**
-     * Get the event player.
-     *
-     * @param ctx
-     * @return Event player
-     */
-    private CMSHandlerProperties getEventPlayer(CMSServiceCtx ctx) {
-        Document document = (Document) ctx.getDoc();
-
-        // Window properties
-        Map<String, String> windowProperties = new HashMap<String, String>();
-        windowProperties.put(Constants.WINDOW_PROP_URI, document.getPath());
-
-        CMSHandlerProperties linkProps = new CMSHandlerProperties();
-        linkProps.setWindowProperties(windowProperties);
-        linkProps.setPortletInstance("toutatice-portail-cms-nuxeo-viewDocumentPortletInstance");
-
-        return linkProps;
-    }
-
-
-
-    /**
-     * Get minimal player.
-     *
-     * @param ctx CMS service context
-     * @return minimal player
-     */
-    private CMSHandlerProperties getCMSMinimalPlayer(CMSServiceCtx ctx) {
-        Document doc = (Document) ctx.getDoc();
-
-        Map<String, String> windowProperties = new HashMap<String, String>();
-        windowProperties.put(Constants.WINDOW_PROP_SCOPE, ctx.getScope());
-        windowProperties.put(Constants.WINDOW_PROP_URI, doc.getPath());
-        windowProperties.put("osivia.hideTitle", "1");
-        windowProperties.put("osivia.ajaxLink", "1");
-        windowProperties.put("osivia.cms.hideMetaDatas", "1");
-        windowProperties.put(Constants.WINDOW_PROP_VERSION, ctx.getDisplayLiveVersion());
-
-        CMSHandlerProperties linkProps = new CMSHandlerProperties();
-        linkProps.setWindowProperties(windowProperties);
-        linkProps.setPortletInstance("toutatice-portail-cms-nuxeo-viewDocumentPortletInstance");
-
-        return linkProps;
-    }
-
-
-
-  
-    /**
-     * Get customized CMS item types.
-     *
-     * @return customized CMS item types
-     */
-    @Override
-    protected List<CMSItemType> getCustomizedCMSItemTypes() {
-
-    	List<CMSItemType> customizedTypes = new ArrayList<CMSItemType>();
-
-        // Blog
-        customizedTypes.add(new CMSItemType("BlogSite", true, true, true, false, true, true, Arrays.asList("BlogPost", "ContextualLink"), null,
-                "glyphicons glyphicons-blog", true));
-        // Blog post
-        customizedTypes.add(new CMSItemType("BlogPost", false, false, false, false, true, true, new ArrayList<String>(0), null, "glyphicons glyphicons-blog"));
-        // FAQ folder
-        customizedTypes.add(new CMSItemType("FaqFolder", true, false, false, false, false, true, Arrays.asList("Question"), null,
-                "glyphicons glyphicons-circle-question-mark"));
-        // FAQ question
-        customizedTypes.add(new CMSItemType("Question", false, false, false, false, false, true, new ArrayList<String>(0), null,
-                "glyphicons glyphicons-circle-question-mark"));
-        // Forum
-//        customizedTypes
-//                .add(new CMSItemType("Forum", true, true, false, false, true, true, Arrays.asList("Thread"), null, "glyphicons glyphicons-conversation"));
-//        // Forum thread
-//        customizedTypes.add(new CMSItemType("Thread", false, false, false, false, true, true, new ArrayList<String>(0), null, "glyphicons glyphicons-chat"));
-
-        // Agenda
-        customizedTypes.add(new CMSItemType("Agenda", true, true, false, false, true, true, Arrays.asList("VEVENT"), null, "glyphicons glyphicons-calendar"));
-        // Agenda event
-        customizedTypes
-                .add(new CMSItemType("VEVENT", false, false, false, false, true, true, new ArrayList<String>(0), null, "glyphicons glyphicons-calendar"));
-
-
-        // Wiki book
-        customizedTypes.add(new CMSItemType("WikiBook", true, true, true, true, true, true, Arrays.asList("WikiSection"), null, "book"));
-        // Wiki section
-        customizedTypes.add(new CMSItemType("WikiSection", true, true, true, true, true, true, Arrays.asList("WikiSection"), null, "book"));
-
-
-
-        return customizedTypes;
     }
 
 }

@@ -15,7 +15,7 @@ import org.osivia.portal.api.windows.PortalWindow;
 import org.osivia.portal.api.windows.WindowFactory;
 
 import fr.toutatice.portail.cms.nuxeo.api.NuxeoController;
-import fr.toutatice.portail.cms.nuxeo.api.domain.CMSCustomizerModule;
+import fr.toutatice.portail.cms.nuxeo.api.domain.PluginModule;
 import fr.toutatice.portail.cms.nuxeo.api.domain.IFragmentModule;
 
 /**
@@ -23,7 +23,7 @@ import fr.toutatice.portail.cms.nuxeo.api.domain.IFragmentModule;
  * 
  * @see IFragmentModule
  */
-public class TitleFragmentModule extends CMSCustomizerModule implements IFragmentModule {
+public class TitleFragmentModule extends PluginModule implements IFragmentModule {
 
     /** Link fragment identifier. */
     public static final String ID = "title";

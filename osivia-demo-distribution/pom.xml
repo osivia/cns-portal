@@ -27,13 +27,6 @@
             <type>war</type>
         </dependency>
 
-       <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>osivia-demo-picture-customizer</artifactId>
-            <version>${project.version}</version>
-            <type>war</type>
-        </dependency>
-
 
 
 
@@ -51,13 +44,6 @@
             <type>war</type>
         </dependency>
 
-        <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>osivia-demo-charte-montpellier</artifactId>
-            <version>${project.version}</version>
-            <type>war</type>
-        </dependency>
-        
         <dependency>
             <groupId>${groupId}</groupId>
             <artifactId>osivia-demo-cms-nuxeo-web</artifactId>
@@ -151,6 +137,20 @@
             <groupId>org.osivia.services</groupId>
             <artifactId>osivia-services-wiki</artifactId>
             <version>${osivia-services-wiki.version}</version>
+            <type>war</type>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.osivia.services</groupId>
+            <artifactId>osivia-services-webedition</artifactId>
+            <version>${osivia-services-webedition.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.osivia.services</groupId>
+            <artifactId>osivia-services-widgets</artifactId>
+            <version>${osivia-services-widgets.version}</version>
             <type>war</type>
         </dependency>
 
