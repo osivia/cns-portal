@@ -13,7 +13,6 @@
  */
 package fr.toutatice.portail.cms.nuxeo.portlets.customizer;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -24,9 +23,10 @@ import javax.portlet.PortletContext;
 import org.nuxeo.ecm.automation.client.model.Document;
 import org.osivia.portal.api.Constants;
 import org.osivia.portal.api.internationalization.Bundle;
+import org.osivia.portal.api.taskbar.TaskbarPlayer;
+import org.osivia.portal.api.taskbar.TaskbarTask;
 import org.osivia.portal.core.cms.CMSException;
 import org.osivia.portal.core.cms.CMSHandlerProperties;
-import org.osivia.portal.core.cms.CMSItemType;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 
 import fr.toutatice.portail.cms.nuxeo.api.domain.ListTemplate;
@@ -58,7 +58,9 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
 
 
     /** Navigation item adapter. */
-    public NavigationItemAdapter navigationItemAdapter;
+    private NavigationItemAdapter navigationItemAdapter;
+    /** Customized taskbar tasks. */
+    private List<TaskbarTask> customTasks;
 
 
     /**
@@ -123,6 +125,50 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         linkProps.setPortletInstance("toutatice-portail-cms-nuxeo-viewDocumentPortletInstance");
 
         return linkProps;
+    }
+
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<TaskbarTask> getTaskbarTasks(CMSServiceCtx cmsContext) {
+        if (this.customTasks == null) {
+            this.customTasks = super.getTaskbarTasks(cmsContext);
+
+            // Gestion participants
+            this.customTasks.add(this.getGestionParticipantsTask(cmsContext));
+        }
+        return this.customTasks;
+    }
+
+
+    /**
+     * Get gestion participants task.
+     *
+     * @param cmsContext CMS context
+     * @return task
+     */
+    protected TaskbarTask getGestionParticipantsTask(CMSServiceCtx cmsContext) {
+        // Task
+        TaskbarTask task = new TaskbarTask();
+
+        // Identifier
+        task.setId("GESTION_PARTICIPANTS");
+        // Name
+        task.setName("Gestion des participants");
+        // Icon
+        task.setIcon("glyphicons glyphicons-group");
+        // Taskbar player
+        TaskbarPlayer taskbarPlayer = new TaskbarPlayer();
+        taskbarPlayer.setInstance("toutatice-portail-cms-nuxeo-viewFragmentPortletInstance");
+        task.setTaskbarPlayer(taskbarPlayer);
+        // Maximized player
+        TaskbarPlayer maximizedPlayer = new TaskbarPlayer();
+        maximizedPlayer.setInstance("toutatice-workspace-participantsworkspace-portailPortletInstance");
+        task.setMaximizedPlayer(maximizedPlayer);
+
+        return task;
     }
 
 }

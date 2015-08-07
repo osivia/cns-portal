@@ -57,6 +57,19 @@
     </layout>
     
     <layout>
+        <name>osivia-demo-3cols-taskbar</name>
+        <uri>/layouts/layout-3cols-taskbar/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-3cols-taskbar/maximized.jsp</uri>
+        <regions>
+            <region name="top" />
+            <region name="taskbar" />
+            <region name="col1" />
+            <region name="col2" />
+            <region name="bottom" />
+        </regions>
+    </layout>
+    
+    <layout>
         <name>osivia-demo-home</name>
         <uri>/layouts/layout-home/index.jsp</uri>
         <uri state="maximized">/layouts/layout-1col/maximized.jsp</uri>

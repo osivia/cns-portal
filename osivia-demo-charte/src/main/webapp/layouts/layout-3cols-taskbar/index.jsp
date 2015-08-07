@@ -40,22 +40,12 @@
                         <p:region regionName="back" />
                     
                         <div class="row">
-                            <div class="col-sm-4 col-lg-3">
+                            <div class="col-sm-6">
                                 <p:region regionName="col1" />
                             </div>
                             
-                            <div class="col-sm-8 col-lg-9">
+                            <div class="col-sm-6">
                                 <p:region regionName="col2" />
-                            
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <p:region regionName="col21" />
-                                    </div>
-                                    
-                                    <div class="col-sm-6">
-                                        <p:region regionName="col22" />
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
