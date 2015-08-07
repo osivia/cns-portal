@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.osivia.demo</groupId>
+    <artifactId>osivia-demo-parent</artifactId>
+    <version>4.2.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Demonstrateur OSIVIA - Parent</name>
+
+
+    <properties>
+        <!-- Socle -->
+        <toutatice.version>4.2.0-SNAPSHOT</toutatice.version>
+
+        <!-- Services -->
+        <osivia-services-calendar.version>2.0.0-SNAPSHOT</osivia-services-calendar.version>
+        <osivia-services-forum.version>2.0.0-SNAPSHOT</osivia-services-forum.version>
+        <osivia-services-webedition.version>1.0.0-SNAPSHOT</osivia-services-webedition.version>
+        <osivia-services-widgets.version>1.0.0-SNAPSHOT</osivia-services-widgets.version>
+        <osivia-services-wiki.version>2.0.0-SNAPSHOT</osivia-services-wiki.version>
+        <osivia-services-portal-api-demo.version>4.1.0</osivia-services-portal-api-demo.version> 
+
+        <!-- Collab tools -->
+        <toutatice-faq.version>4.0.0-SNAPSHOT</toutatice-faq.version>
+        
+        <!-- Identity & user mgt tools -->
+        <toutatice.annuaire.version>4.1.0</toutatice.annuaire.version>
+        <fichepersonne.version>4.2-cns</fichepersonne.version>
+        <gestionpersonnes.version>4.2-cns</gestionpersonnes.version>
+        <ficheprofil.version>4.0</ficheprofil.version>
+        <gestiongroupe.version>4.0</gestiongroupe.version>
+        <gestionworkspace.version>4.1.0-osivia</gestionworkspace.version>
+        <participantswks.version>4.1.0-osivia</participantswks.version>
+        
+        <creationpersonnes.version>3.1-osivia-RC1</creationpersonnes.version>
+        <identity-sso.version>3.0.4</identity-sso.version>
+        
+        <myworkspaces.version>4.2</myworkspaces.version>
+        <mytasks.version>4.1</mytasks.version>        
+
+        <!-- Admin tools -->
+        <osivia-services-java-melody-integration.version>1.2</osivia-services-java-melody-integration.version>
+    </properties>
+
+
+    <modules>
+        <module>osivia-demo-charte</module>
+        <module>osivia-demo-charte-web</module>
+        <!-- <module>osivia-demo-charte-montpellier</module>  -->
+        <module>osivia-demo-customizer</module>
+        <module>osivia-demo-cms-nuxeo-web</module>
+        <module>osivia-demo-distribution</module>
+    </modules>
+
+
+    <prerequisites>
+        <maven>2.0.9</maven>
+    </prerequisites>
+
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Toutatice CMS -->
+
+            <dependency>
+                <groupId>toutatice-portail.cms</groupId>
+                <artifactId>toutatice-portail-cms-nuxeo-dependencies</artifactId>
+                <version>${toutatice.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>toutatice-portail.cms</groupId>
+                <artifactId>toutatice-portail-cms-nuxeo-dependencies-test</artifactId>
+                <version>${toutatice.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>toutatice-portail.cms</groupId>
+                <artifactId>toutatice-portail-cms-nuxeo-web</artifactId>
+                <version>${toutatice.version}</version>
+                <type>war</type>
+                <scope>compile</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>toutatice-portail.cms</groupId>
+                <artifactId>toutatice-portail-cms-nuxeo-web</artifactId>
+                <classifier>classes</classifier>
+                <version>${toutatice.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>toutatice-portail.cms</groupId>
+            <artifactId>toutatice-portail-cms-nuxeo-dependencies</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>toutatice-portail.cms</groupId>
+            <artifactId>toutatice-portail-cms-nuxeo-dependencies-test</artifactId>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+        <plugins>
+        
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.3</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.2.1</version>
+                <configuration>
+                    <tagBase>http://www.osivia.org/repos/osivia-demo/tags</tagBase>
+                    <releaseProfiles>unpack,pack</releaseProfiles>
+                    <preparationGoals>clean install</preparationGoals>
+                    <goals>deploy</goals>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+
+    <scm>
+        <developerConnection>scm:svn:http://www.osivia.org/repos/osivia-demo/trunk/osivia-demo-portal</developerConnection>
+    </scm>
+
+
+    <distributionManagement>
+        <repository>
+            <id>osivia-releases</id>
+            <url>http://www.osivia.org/nexus/content/repositories/osivia-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>osivia-snapshots</id>
+            <url>http://www.osivia.org/nexus/content/repositories/osivia-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <profiles>
+        <profile>
+            <id>jenkins</id>
+            <properties>
+                <toutatice.version>3.2.0</toutatice.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>portal-snapshots</id>
+            <properties>
+
+            </properties>
+        </profile>
+        
+        <profile>
+        	<id>CNS</id>
+        	<activation><activeByDefault>false</activeByDefault></activation>
+        	<modules>
+        		<module>cns-ldap-connector</module>
+        		<module>cns-ldap-feeder</module>
+        		<module>cns-valve-sso</module>
+        		<module>osivia-demo-charte-cns</module>
+        	</modules>
+        </profile>
+    </profiles>
+    
+    
+</project>

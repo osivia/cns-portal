@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<portlet-app
+    xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+    version="2.0">
+
+
+    <portlet>
+        <portlet-name>osivia-demo-regions-customizerPortlet</portlet-name>
+        <portlet-class>org.osivia.portal.demo.customizer.RegionsCustomizerPortlet</portlet-class>
+
+        <init-param>
+            <name>customizer.regions.demo.context</name>
+            <value>/osivia-demo-charte</value>
+        </init-param>
+        <init-param>
+            <name>customizer.regions.demo.sitesweb.context</name>
+            <value>/osivia-demo-charte-web</value>
+        </init-param>
+        <init-param>
+            <name>customizer.regions.demo.montpellier.context</name>
+            <value>/osivia-demo-charte-montpellier</value>
+        </init-param>
+        <init-param>
+            <name>customizer.regions.demo.cns.context</name>
+            <value>/osivia-demo-charte-cns</value>
+        </init-param>        
+
+        <expiration-cache>180</expiration-cache>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+          
+        <portlet-info>
+            <title>Regions customizer</title>
+        </portlet-info>
+    </portlet>
+    
+    
+    <portlet>
+        <portlet-name>osivia-demo-internationalization-customizerPortlet</portlet-name>
+        <portlet-class>org.osivia.portal.demo.customizer.InternationalizationCustomizerPortlet</portlet-class>
+        <expiration-cache>180</expiration-cache>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+          
+        <portlet-info>
+            <title>Internationalization customizer</title>
+        </portlet-info>     
+    </portlet>
+    
+
+    <portlet>
+        <portlet-name>osivia-demo-attributesBundles-customizerPortlet</portlet-name>
+        <portlet-class>org.osivia.portal.demo.customizer.AttributesBundlesCustomizerPortlet</portlet-class>
+        <expiration-cache>180</expiration-cache>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+          
+        <portlet-info>
+            <title>Attributes bundles customizer</title>
+        </portlet-info>     
+    </portlet>
+
+    <portlet>
+        <portlet-name>osivia-demo-project-customizer</portlet-name>
+        <portlet-class>org.osivia.portal.demo.customizer.ProjectCustomizerPortlet</portlet-class>        
+        <expiration-cache>180</expiration-cache>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+          
+        <portlet-info>
+            <title>Project customizer</title>
+        </portlet-info>     
+    </portlet>
+
+
+</portlet-app>

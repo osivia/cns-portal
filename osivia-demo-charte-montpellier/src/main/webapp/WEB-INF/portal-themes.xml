@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<themes>
+    <theme>
+        <name>osivia-demo-charte-montpellier</name>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/ac-montpellier.min.css" title="OSIVIA" />
+    </theme>
+
+
+    <theme>
+        <name>osivia-demo-charte-montpellier-alt</name>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/ac-montpellier-alt.min.css" title="OSIVIA" />
+    </theme>
+</themes>

@@ -1,0 +1,19 @@
+//
+// Style spécifique au composant de menu
+// --------------------------------------------------
+
+
+.menu-default {    
+    .list-group-item.active {
+        z-index: auto;
+        
+        background-color: inherit;
+        color: @link-color;
+        font-weight: bold;
+
+        &:hover, &:focus {
+            background-color: @list-group-hover-bg;
+            color: @link-hover-color;
+        }
+    }
+}
