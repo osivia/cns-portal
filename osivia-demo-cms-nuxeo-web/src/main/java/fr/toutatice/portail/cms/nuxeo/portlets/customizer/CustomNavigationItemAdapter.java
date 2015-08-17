@@ -18,7 +18,6 @@ import java.util.Map;
 
 import javax.portlet.PortletContext;
 
-import org.apache.commons.lang.StringUtils;
 import org.nuxeo.ecm.automation.client.model.Document;
 import org.osivia.portal.core.cms.CMSItem;
 
@@ -64,21 +63,6 @@ public class CustomNavigationItemAdapter extends NavigationItemAdapter {
         Document doc = (Document) publishSpaceNavigationItem.getNativeItem();
         Map<String, String> properties = publishSpaceNavigationItem.getProperties();
         
-
-        // juste pour tester les themes
-        // A supprimer quand administrable dans Nuxeo
-        
-        if("Workspace".equals(doc.getType()))   {
-
-            if(StringUtils.endsWith(doc.getPath(), "espace-theme-site-web"))
-                properties.put("theme", "osivia-sitesweb-theme");
-        }
-        
-        if("Folder".equals(doc.getType()))   {
-            if(StringUtils.endsWith(doc.getPath(), "theme-defaut"))
-                properties.put("theme", "osivia-demo-charte");            
-        }
-
         if("Workspace".equals(doc.getType()))   {
             if (doc.getPath().contains("/UserWorkspaces/")) {
                     properties.put("defaultTemplate", "1");

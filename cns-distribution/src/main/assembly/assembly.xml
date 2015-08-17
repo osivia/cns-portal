@@ -1,0 +1,122 @@
+<assembly
+    xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+
+    <id>bin</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/${artifactId}-${dest-env}-${project.version}/custom/deploy</outputDirectory>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+            <includes>
+                <!-- demo -->
+                <include>${groupId}:osivia-demo-customizer:war:${project.version}</include>
+                <include>${groupId}:osivia-demo-charte:war:${project.version}</include>                
+                <include>${groupId}:cns-charte:war:${project.version}</include>
+                <include>${groupId}:osivia-demo-cms-nuxeo-web:war:${project.version}</include>               
+                <!-- collab tools -->
+                <include>org.osivia.services:osivia-services-forum:war:${osivia-services-forum.version}</include>
+                <include>org.osivia.services:osivia-services-calendar:war:${osivia-services-calendar.version}</include>
+                <include>org.osivia.services:osivia-services-webedition:war:${osivia-services-webedition.version}</include>
+                <include>org.osivia.services:osivia-services-widgets:war:${osivia-services-widgets.version}</include>
+                <include>toutatice-services.faq:toutatice-faq-portail:war:${toutatice-faq.version}</include>
+                <!-- Dashboard -->
+                <include>toutatice-services.dashboard:toutatice-mytasks-portail:war:${mytasks.version}</include>
+                <include>toutatice-services.dashboard:toutatice-myworkspaces-portail:war:${myworkspaces.version}</include>
+                <!-- identity & user mgt tools -->
+                <include>${groupId}:cns-ldap-connector:war:${project.version}</include>
+                <include>${groupId}:cns-ldap-feeder:war:${project.version}</include>
+                <include>toutatice-services.identite:toutatice-identite-fichepersonne-portail:war:${fichepersonne.version}</include>
+                <include>toutatice-services.identite:toutatice-identite-creationpersonnes-portail:war:${creationpersonnes.version}</include>
+                <include>toutatice-services.identite:toutatice-identite-gestionpersonnes-portail:war:${gestionpersonnes.version}</include>
+                <include>toutatice-services.identite:toutatice-identite-gestiongroupes-portail:war:${gestiongroupe.version}</include>
+                <include>toutatice-services.identite:toutatice-identite-ficheprofil-portail:war:${ficheprofil.version}</include>
+                <include>toutatice-services.nuxeo:toutatice-nuxeo-gestionworkspace-portail:war:${gestionworkspace.version}</include>
+                <include>toutatice-services.nuxeo:toutatice-nuxeo-participantsworkspace-portail:war:${participantswks.version}</include>
+            </includes>
+        </dependencySet>
+        
+        <dependencySet>
+            <outputDirectory>/${artifactId}-${dest-env}-${project.version}/jboss-as/server/production/lib</outputDirectory>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+            <includes>
+            	<include>${groupId}:cns-valve-sso:jar:${project.version}</include>
+                <include>outils.ldap:toutatice-annuaire-interfaces:jar:${toutatice.annuaire.version}</include>
+                <include>org.osivia.services:osivia-services-java-melody-integration:jar:${osivia-services-java-melody-integration.version}</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+
+
+    <fileSets>
+        <!-- socle -->
+        <fileSet>
+            <outputDirectory>/${artifactId}-${dest-env}-${project.version}</outputDirectory>
+            <directory>target/toutatice-distribution</directory>
+            <includes>
+                <include>jboss-as/**</include>
+                <include>custom/**</include>
+            </includes>
+            <excludes>
+                <exclude>jboss-as/server/production/run.conf.*</exclude>
+                <exclude>jboss-as/server/production/conf/jboss-log4j.*</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/data/default-object.xml</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity/ldap_identity-config.xml</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity/profile-config.xml</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-server.war/login.jsp</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-server.war/WEB-INF/context.xml</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-server.war/WEB-INF/web.xml</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-core.war/css/login.css</exclude>
+            </excludes>
+        </fileSet>
+
+        <fileSet>
+            <outputDirectory>/${artifactId}-${dest-env}-${project.version}</outputDirectory>
+            <directory>src/main/resources</directory>
+            <excludes>
+                <exclude>/jboss-as/server/production/run.conf.*</exclude>
+                <exclude>jboss-as/server/production/conf/jboss-log4j.*</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity/ldap_identity-config.*</exclude>
+            </excludes>
+        </fileSet>
+    </fileSets>
+
+
+    <!-- copy local environment specific files -->
+    <files>
+        <file>
+            <source>src/main/resources/jboss-as/server/production/run.conf.${dest-env}</source>
+            <outputDirectory>/${artifactId}-${dest-env}-${project.version}/jboss-as/server/production</outputDirectory>
+            <destName>run.conf</destName>
+        </file>
+        <file>
+            <source>src/main/resources/jboss-as/server/production/conf/jboss-log4j.xml.cns</source>
+            <outputDirectory>/${artifactId}-${dest-env}-${project.version}/jboss-as/server/production/conf</outputDirectory>
+            <destName>jboss-log4j.xml</destName>
+        </file>
+        <file>
+            <source>src/main/resources/jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-server.war/login.jsp</source>
+            <outputDirectory>/${artifactId}-${dest-env}-${project.version}/jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-server.war</outputDirectory>
+            <destName>login.jsp</destName>
+        </file>
+        <file>
+            <source>src/main/resources/jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-core.war/css/login.css</source>
+            <outputDirectory>/${artifactId}-${dest-env}-${project.version}/jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-core.war/css</outputDirectory>
+            <destName>login.css</destName>
+        </file>
+        <file>
+            <source>src/main/resources/jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity/ldap_identity-config.xml.${dest-env}</source>
+            <outputDirectory>/${artifactId}-${dest-env}-${project.version}/jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity</outputDirectory>
+            <destName>ldap_identity-config.xml</destName>
+        </file>
+    </files>
+
+</assembly>

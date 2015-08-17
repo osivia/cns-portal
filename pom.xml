@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.osivia.demo</groupId>
-    <artifactId>osivia-demo-parent</artifactId>
+    <groupId>cns.portal</groupId>
+    <artifactId>cns-portal-parent</artifactId>
     <version>4.2.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Demonstrateur OSIVIA - Parent</name>
+    <name>CNS Portal - Parent</name>
 
 
     <properties>
@@ -46,11 +46,13 @@
 
     <modules>
         <module>osivia-demo-charte</module>
-        <module>osivia-demo-charte-web</module>
-        <!-- <module>osivia-demo-charte-montpellier</module>  -->
         <module>osivia-demo-customizer</module>
         <module>osivia-demo-cms-nuxeo-web</module>
-        <module>osivia-demo-distribution</module>
+        <module>cns-distribution</module>
+   		<module>cns-ldap-connector</module>
+   		<module>cns-ldap-feeder</module>
+   		<module>cns-valve-sso</module>
+   		<module>cns-charte</module>        
     </modules>
 
 
@@ -144,7 +146,7 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.2.1</version>
                 <configuration>
-                    <tagBase>http://www.osivia.org/repos/osivia-demo/tags</tagBase>
+                    <tagBase>http://www.osivia.org/repos/osivia-demo/cns/portal/tags</tagBase>
                     <releaseProfiles>unpack,pack</releaseProfiles>
                     <preparationGoals>clean install</preparationGoals>
                     <goals>deploy</goals>
@@ -156,7 +158,7 @@
 
 
     <scm>
-        <developerConnection>scm:svn:http://www.osivia.org/repos/osivia-demo/trunk/osivia-demo-portal</developerConnection>
+        <developerConnection>scm:svn:http://www.osivia.org/repos/osivia-demo/cns/portal/trunk</developerConnection>
     </scm>
 
 
@@ -170,33 +172,5 @@
             <url>http://www.osivia.org/nexus/content/repositories/osivia-snapshots</url>
         </snapshotRepository>
     </distributionManagement>
-
-    <profiles>
-        <profile>
-            <id>jenkins</id>
-            <properties>
-                <toutatice.version>3.2.0</toutatice.version>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>portal-snapshots</id>
-            <properties>
-
-            </properties>
-        </profile>
-        
-        <profile>
-        	<id>CNS</id>
-        	<activation><activeByDefault>false</activeByDefault></activation>
-        	<modules>
-        		<module>cns-ldap-connector</module>
-        		<module>cns-ldap-feeder</module>
-        		<module>cns-valve-sso</module>
-        		<module>osivia-demo-charte-cns</module>
-        	</modules>
-        </profile>
-    </profiles>
-    
     
 </project>

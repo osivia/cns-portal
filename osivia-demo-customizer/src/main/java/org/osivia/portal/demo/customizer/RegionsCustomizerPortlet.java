@@ -37,10 +37,6 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
 
     /** "osivia-demo-charte" context path init parameter name. */
     private static final String CHARTE_CONTEXT = "customizer.regions.demo.context";
-    /** "osivia-demo-charte-sitesweb" context path init parameter name. */
-    private static final String CHARTE_SITESWEB_CONTEXT = "customizer.regions.demo.sitesweb.context";
-    /** "osivia-demo-charte-montpellier" context path init parameter name. */
-    private static final String CHARTE_MONTPELLIER_CONTEXT = "customizer.regions.demo.montpellier.context";
     /** "osivia-demo-charte-montpellier" context path init parameter name. */
     private static final String CHARTE_CNS_CONTEXT = "customizer.regions.demo.cns.context";
 
@@ -105,37 +101,20 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
     @Override
     public void customize(String customizationID, CustomizationContext context) {
         String charteEnt = this.getInitParameter(CHARTE_CONTEXT);
-        String charteSitesWeb = this.getInitParameter(CHARTE_SITESWEB_CONTEXT);
-        String charteMontpellier = this.getInitParameter(CHARTE_MONTPELLIER_CONTEXT);
         String charteCNS = this.getInitParameter(CHARTE_CNS_CONTEXT);
 
         Map<String, Object> attributes = context.getAttributes();
         String contextPath = (String) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_THEME_CONTEXT_PATH);
-        if (StringUtils.equals(contextPath, charteEnt) || StringUtils.equals(contextPath, charteSitesWeb) || StringUtils.equals(contextPath, charteMontpellier)
+        if (StringUtils.equals(contextPath, charteEnt) 
         		|| StringUtils.equals(contextPath, charteCNS)) {
             IRenderedRegions renderedRegion = (IRenderedRegions) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_RENDERED_REGIONS);
 
             if (StringUtils.equals(contextPath, charteEnt)) {
                 // Customize regions
-                // renderedRegion.customizeRenderedRegion("toolbar", "/header/toolbar.jsp");
                 renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp");
                 renderedRegion.customizeRenderedRegion("search", "/header/search.jsp");
-                // renderedRegion.customizeRenderedRegion("back", "/header/back.jsp");
                 renderedRegion.removeRenderedRegion("footer");
             }
-
-            if (StringUtils.equals(contextPath, charteSitesWeb)) {
-                // Customize regions
-                renderedRegion.customizeRenderedRegion("title", "/header/title.jsp");
-                renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp", charteEnt);
-            }
-
-            if (StringUtils.equals(contextPath, charteMontpellier)) {
-                // Customize regions
-                renderedRegion.customizeRenderedRegion("logo", "/header/logo.jsp", contextPath);
-                renderedRegion.removeRenderedRegion("footer");
-            }
-
             if (StringUtils.equals(contextPath, charteCNS)) {
                 // Customize regions
             	renderedRegion.customizeRenderedRegion("header-metadata", "/header/header-metadata.jsp", contextPath);

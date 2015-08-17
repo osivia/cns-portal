@@ -15,21 +15,18 @@ package fr.toutatice.portail.cms.nuxeo.portlets.customizer;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import javax.portlet.PortletContext;
 
 import org.nuxeo.ecm.automation.client.model.Document;
 import org.osivia.portal.api.Constants;
-import org.osivia.portal.api.internationalization.Bundle;
 import org.osivia.portal.api.taskbar.TaskbarPlayer;
 import org.osivia.portal.api.taskbar.TaskbarTask;
 import org.osivia.portal.core.cms.CMSException;
 import org.osivia.portal.core.cms.CMSHandlerProperties;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 
-import fr.toutatice.portail.cms.nuxeo.api.domain.ListTemplate;
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
 
 /**
@@ -40,21 +37,6 @@ import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItem
  */
 public class CMSCustomizer extends DefaultCMSCustomizer {
 
-    /** Search schemas. */
-    public static final String SCHEMAS_SEARCH = "dublincore, common, file, uid, toutatice";
-    /** Zoom schemas. */
-    public static final String SCHEMAS_ZOOM = "dublincore, toutatice, zoom";
-    /** Picturebook schemas. */
-    public static final String SCHEMAS_PICTUREBOOK = "dublincore, common, toutatice, note, files, acaren, webcontainer, file, picture";
-    /** Annonce schemas. */
-    public static final String SCHEMAS_ANNONCE = "dublincore, common, toutatice, annonce, note";
-
-    /** Tiles list template. */
-    public static final String STYLE_TILE = "tuile";
-    /** Picturebook list template. */
-    public static final String STYLE_PICTUREBOOK = "picturebook";
-    /** Workspace list template. */
-    public static final String STYLE_WORKSPACE = "workspace";
 
 
     /** Navigation item adapter. */
@@ -85,24 +67,6 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         return this.navigationItemAdapter;
     }
 
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public List<ListTemplate> initListTemplates(Locale locale) {
-        List<ListTemplate> templates = super.initListTemplates(locale);
-
-        // Bundle
-        Bundle bundle = this.getBundleFactory().getBundle(locale);
-
-        // Tiles
-        templates.add(new ListTemplate(STYLE_TILE, bundle.getString("LIST_TEMPLATE_TILES"), SCHEMAS_ZOOM));
-        // Workspace
-        templates.add(new ListTemplate(STYLE_WORKSPACE, bundle.getString("LIST_TEMPLATE_WORKSPACE"), DEFAULT_SCHEMAS));
-
-        return templates;
-    }
 
 
     /**
