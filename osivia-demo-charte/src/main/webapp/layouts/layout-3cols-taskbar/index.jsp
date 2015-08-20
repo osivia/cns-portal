@@ -30,7 +30,7 @@
                         
                         <div class="taskbar taskbar-default closed">
                             <div class="taskbar-affix">
-                                <p:region regionName="taskbar" />
+                                <p:region regionName="col1" />
                             </div>
                         </div>
                     </div>
@@ -38,14 +38,15 @@
                     <div>
                         <!-- Back -->
                         <p:region regionName="back" />
+                        <p:region regionName="col2" />
                     
                         <div class="row">
                             <div class="col-sm-6">
-                                <p:region regionName="col1" />
+                                <p:region regionName="col21" />
                             </div>
                             
                             <div class="col-sm-6">
-                                <p:region regionName="col2" />
+                                <p:region regionName="col22" />
                             </div>
                         </div>
                     </div>

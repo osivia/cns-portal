@@ -62,9 +62,10 @@
         <uri state="maximized">/layouts/layout-3cols-taskbar/maximized.jsp</uri>
         <regions>
             <region name="top" />
-            <region name="taskbar" />
             <region name="col1" />
             <region name="col2" />
+            <region name="col21" />
+            <region name="col22" />
             <region name="bottom" />
         </regions>
     </layout>

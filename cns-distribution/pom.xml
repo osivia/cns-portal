@@ -22,7 +22,7 @@
 
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>osivia-demo-customizer</artifactId>
+            <artifactId>cns-customizer</artifactId>
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
@@ -37,7 +37,7 @@
 
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>osivia-demo-cms-nuxeo-web</artifactId>
+            <artifactId>cns-cms-nuxeo-web</artifactId>
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
@@ -184,6 +184,13 @@
             <version>${osivia-services-calendar.version}</version>
             <type>war</type>
         </dependency>
+        
+        <dependency>
+            <groupId>org.osivia.services</groupId>
+            <artifactId>osivia-services-taskbar</artifactId>
+            <version>${osivia-services-taskbar.version}</version>
+            <type>war</type>
+        </dependency>        
 
         <dependency>
             <groupId>toutatice-services.faq</groupId>

@@ -17,15 +17,16 @@
             <scope>runtime</scope>
             <includes>
                 <!-- demo -->
-                <include>${groupId}:osivia-demo-customizer:war:${project.version}</include>
+                <include>${groupId}:cns-customizer:war:${project.version}</include>
                 <include>${groupId}:osivia-demo-charte:war:${project.version}</include>                
                 <include>${groupId}:cns-charte:war:${project.version}</include>
-                <include>${groupId}:osivia-demo-cms-nuxeo-web:war:${project.version}</include>               
+                <include>${groupId}:cns-cms-nuxeo-web:war:${project.version}</include>               
                 <!-- collab tools -->
                 <include>org.osivia.services:osivia-services-forum:war:${osivia-services-forum.version}</include>
                 <include>org.osivia.services:osivia-services-calendar:war:${osivia-services-calendar.version}</include>
                 <include>org.osivia.services:osivia-services-webedition:war:${osivia-services-webedition.version}</include>
                 <include>org.osivia.services:osivia-services-widgets:war:${osivia-services-widgets.version}</include>
+                <include>org.osivia.services:osivia-services-taskbar:war:${osivia-services-taskbar.version}</include>
                 <include>toutatice-services.faq:toutatice-faq-portail:war:${toutatice-faq.version}</include>
                 <!-- Dashboard -->
                 <include>toutatice-services.dashboard:toutatice-mytasks-portail:war:${mytasks.version}</include>

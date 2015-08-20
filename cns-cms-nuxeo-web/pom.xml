@@ -8,9 +8,9 @@
 		<version>4.2.0-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>osivia-demo-cms-nuxeo-web</artifactId>
+	<artifactId>cns-cms-nuxeo-web</artifactId>
 	<packaging>war</packaging>
-	<name>Demonstrateur OSIVIA - CMS customizer</name>
+	<name>CNS - CMS customizer</name>
 	<description>Intégration CMS du démonstrateur du portail OSIVIA</description>
 
 

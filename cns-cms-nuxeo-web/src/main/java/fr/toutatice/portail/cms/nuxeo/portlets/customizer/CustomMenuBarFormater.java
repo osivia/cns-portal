@@ -7,7 +7,6 @@ import java.util.Map;
 import javax.portlet.PortletContext;
 
 import org.apache.commons.lang.BooleanUtils;
-import org.apache.commons.lang.StringUtils;
 import org.nuxeo.ecm.automation.client.model.Document;
 import org.osivia.portal.api.context.PortalControllerContext;
 import org.osivia.portal.api.ecm.EcmViews;
@@ -19,7 +18,7 @@ import org.osivia.portal.core.cms.CMSExtendedDocumentInfos;
 import org.osivia.portal.core.cms.CMSPublicationInfos;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 
-import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.ContextualizationHelper;
+import fr.toutatice.portail.cms.nuxeo.api.ContextualizationHelper;
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.MenuBarFormater;
 import fr.toutatice.portail.cms.nuxeo.portlets.document.helpers.DocumentConstants;
 import fr.toutatice.portail.cms.nuxeo.portlets.document.helpers.DocumentHelper;
@@ -54,15 +53,12 @@ public class CustomMenuBarFormater extends MenuBarFormater {
      * @throws CMSException
      */
     @Override
-    protected void getRemotePublishingLink(PortalControllerContext portalControllerContext, CMSServiceCtx cmsContext, List<MenubarItem> menubar, Bundle bundle,
+    protected void getRemotePublishingLink(PortalControllerContext portalControllerContext, CMSServiceCtx cmsContext, CMSPublicationInfos pubInfos, List<MenubarItem> menubar, Bundle bundle,
             CMSExtendedDocumentInfos extendedInfos) throws CMSException {
 
         Document document = (Document) cmsContext.getDoc();
 
         if (!DocumentHelper.isFolder(document)) {
-
-            String path = document.getPath();
-            CMSPublicationInfos pubInfos = super.getCmsService().getPublicationInfos(cmsContext, path);
 
             // DCH: FIXME: state is "ExtendedInfo"...
             if (pubInfos.isRemotePublishable() && pubInfos.isLiveSpace() && ContextualizationHelper.isCurrentDocContextualized(cmsContext)) {

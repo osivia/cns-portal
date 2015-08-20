@@ -19,6 +19,7 @@
         <osivia-services-webedition.version>1.0.0-SNAPSHOT</osivia-services-webedition.version>
         <osivia-services-widgets.version>1.0.0-SNAPSHOT</osivia-services-widgets.version>
         <osivia-services-wiki.version>2.0.0-SNAPSHOT</osivia-services-wiki.version>
+        <osivia-services-taskbar.version>1.0-SNAPSHOT</osivia-services-taskbar.version>
         <osivia-services-portal-api-demo.version>4.1.0</osivia-services-portal-api-demo.version> 
 
         <!-- Collab tools -->
@@ -30,7 +31,7 @@
         <gestionpersonnes.version>4.2-cns</gestionpersonnes.version>
         <ficheprofil.version>4.0</ficheprofil.version>
         <gestiongroupe.version>4.0</gestiongroupe.version>
-        <gestionworkspace.version>4.1.0-osivia</gestionworkspace.version>
+        <gestionworkspace.version>4.2.0-osivia-SNAPSHOT</gestionworkspace.version>
         <participantswks.version>4.1.0-osivia</participantswks.version>
         
         <creationpersonnes.version>3.1-osivia-RC1</creationpersonnes.version>
@@ -46,8 +47,8 @@
 
     <modules>
         <module>osivia-demo-charte</module>
-        <module>osivia-demo-customizer</module>
-        <module>osivia-demo-cms-nuxeo-web</module>
+        <module>cns-customizer</module>
+        <module>cns-cms-nuxeo-web</module>
         <module>cns-distribution</module>
    		<module>cns-ldap-connector</module>
    		<module>cns-ldap-feeder</module>

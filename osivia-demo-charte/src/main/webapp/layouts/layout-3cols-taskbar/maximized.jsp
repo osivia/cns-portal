@@ -30,7 +30,7 @@
                         
                         <div class="taskbar taskbar-default">
                             <div class="taskbar-affix">
-                                <p:region regionName="taskbar" />
+                                <p:region regionName="col1" />
                             </div>
                         </div>
                     </div>

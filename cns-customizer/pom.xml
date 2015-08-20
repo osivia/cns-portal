@@ -9,9 +9,9 @@
     </parent>
 
 
-    <artifactId>osivia-demo-customizer</artifactId>
+    <artifactId>cns-customizer</artifactId>
     <packaging>war</packaging>
-    <name>Démonstrateur OSIVIA - Customizer</name>
+    <name>CNS - Customizer</name>
     <description>Portlet technique de personnalisation</description>
 
 
