@@ -1,5 +1,7 @@
 package com.osivia.cns.proto.ldap.dao;
 
+import java.util.List;
+
 import javax.naming.Name;
 import javax.naming.directory.Attribute;
 import javax.naming.directory.Attributes;
@@ -10,10 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Scope;
-import org.springframework.ldap.NameNotFoundException;
 import org.springframework.ldap.core.AttributesMapper;
 import org.springframework.ldap.core.DistinguishedName;
 import org.springframework.ldap.core.LdapTemplate;
+import org.springframework.ldap.filter.AndFilter;
+import org.springframework.ldap.filter.EqualsFilter;
 import org.springframework.stereotype.Repository;
 
 import com.osivia.cns.proto.ldap.entite.PersonneCNS;
@@ -40,7 +43,7 @@ public class PersonneCNSDao {
 	
 	private String givenName ="";
 	
-	private String displayName ="";
+//	private String displayName ="";
 	
 	private String mail ="";
 	
@@ -74,12 +77,12 @@ public class PersonneCNSDao {
 			else { 
 				p.setGivenName("");}
 			
-			attr = attrs.get(displayName);
-			if (attr != null) {
-				p.setDisplayName(attr.get().toString());
-			}
-			else { 
-				p.setDisplayName("");}
+//			attr = attrs.get(displayName);
+//			if (attr != null) {
+//				p.setDisplayName(attr.get().toString());
+//			}
+//			else { 
+//				p.setDisplayName("");}
 
 			attr = attrs.get(cn);
 			if (attr != null)
@@ -133,21 +136,28 @@ public class PersonneCNSDao {
 	}
 	
 	
-	public PersonneCNS findByPrimaryKey(String uid){
+	public PersonneCNS search(String uid){
 		
 		logger.debug("findByPrimaryKey/" + uid);
 
 		PersonneCNS person = null;
 		if(!uid.trim().isEmpty()){
 			
-			Name dn = buildDn(uid);
+			//Name dn = buildDn(uid);
+
+			PersonAttributMapper personAttributMapper = new PersonAttributMapper();
+			//person = (PersonneCNS) ldapTemplateLecture.lookup(dn, personAttributMapper);
 			
-			try {
-				PersonAttributMapper personAttributMapper = new PersonAttributMapper();
-				person = (PersonneCNS) ldapTemplateLecture.lookup(dn, personAttributMapper);
-			} 
-			catch (NameNotFoundException e) {
-				logger.warn("Recherche d'une personne dans l'annuaire : l'identifiant n'existe pas " + uid);
+			AndFilter filter = new AndFilter();
+			filter.and(new EqualsFilter("objectclass", classObjet));
+			filter.and(new EqualsFilter(this.uid, uid));
+			
+			List<PersonneCNS> search = ldapTemplateLecture.search(BASE_DN , filter.encode() , personAttributMapper);
+			
+			logger.error("base = "+BASE_DN+", filtre = "+filter.encode());
+			
+			if(search.size() > 0) {
+				person = search.get(0);
 			}
 
 		}
@@ -187,14 +197,14 @@ public class PersonneCNSDao {
 		this.givenName = givenName;
 	}
 
-	public String getDisplayName() {
-		return displayName;
-	}
-
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
-	}
-	
+//	public String getDisplayName() {
+//		return displayName;
+//	}
+//
+//	public void setDisplayName(String displayName) {
+//		this.displayName = displayName;
+//	}
+//	
 	public String getMail() {
 		return mail;
 	}

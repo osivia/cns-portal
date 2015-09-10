@@ -46,7 +46,7 @@
 	
 	<bean id="personneCnsDao" class="com.osivia.cns.proto.ldap.dao.PersonneCNSDao">
 		<property name="givenName" value="${personneCnsDao.givenName}" />
-		<property name="displayName" value="${personneCnsDao.displayName}" />
+		<!-- <property name="displayName" value="${personneCnsDao.displayName}" /> -->
 		<property name="sn" value="${personneCnsDao.sn}" />
 		<property name="cn" value="${personneCnsDao.cn}" />
 		<property name="uid" value="${personneCnsDao.uid}" />

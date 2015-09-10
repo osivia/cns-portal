@@ -70,7 +70,7 @@ public class Feeder implements IUserDatasModule {
 
 	public DirectoryPerson computeUser(String username) {
 		// Recherche personne dans le LDAP auxiliaire
-        PersonneCNS pSource = srcPersonneDao.findByPrimaryKey(username);
+        PersonneCNS pSource = srcPersonneDao.search(username);
         
         
         Person pDest = person.findUtilisateur(username);
@@ -80,12 +80,12 @@ public class Feeder implements IUserDatasModule {
 			
 			
 			if (pDest == null) {
-				logger.info("Recherche Annuaire PHM pour "+username+" trouvée : " + pSource.getDisplayName());
+				logger.info("Recherche Annuaire PHM pour "+username+" trouvée : " + pSource.getCn());
 				
 				Person person2 = toPerson(pSource);
 				try {
 					
-					logger.info("Création de la personne : " + pSource.getDisplayName());
+					logger.info("Création de la personne : " + pSource.getCn());
 					person2.create();
 					
 					// Association au membres communs.
@@ -126,7 +126,7 @@ public class Feeder implements IUserDatasModule {
 					
 					
 				} catch (ToutaticeAnnuaireException e) {
-					logger.error("Impossible de créer la personne "+pSource.getDisplayName());
+					logger.error("Impossible de créer la personne "+pSource.getCn());
 					logger.error(e);
 				}
 			} else {
@@ -143,8 +143,11 @@ public class Feeder implements IUserDatasModule {
 		Person p = context.getBean(Person.class);
 		
 		p.setUid(pSource.getUid());
-		p.setCn(pSource.getCn());
-		p.setDisplayName(pSource.getDisplayName());
+		
+		String fullName = pSource.getGivenName() + " " +pSource.getSn();
+		
+		p.setCn(fullName);
+		p.setDisplayName(fullName);
 		p.setGivenName(pSource.getGivenName());
 		p.setEmail(pSource.getMail());
 		p.setSn(pSource.getSn());

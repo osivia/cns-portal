@@ -16,7 +16,7 @@ public class PersonneCNS {
 	
 	private String givenName;
 	
-	private String displayName;
+//	private String displayName;
 	
 	private String mail;
 	
@@ -54,13 +54,13 @@ public class PersonneCNS {
 		this.givenName = givenName;
 	}
 
-	public String getDisplayName() {
-		return displayName;
-	}
-
-	public void setDisplayName(String displayName) {
-		this.displayName = displayName;
-	}
+//	public String getDisplayName() {
+//		return displayName;
+//	}
+//
+//	public void setDisplayName(String displayName) {
+//		this.displayName = displayName;
+//	}
 
 	public String getMail() {
 		return mail;
