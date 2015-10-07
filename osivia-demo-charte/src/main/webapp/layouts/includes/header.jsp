@@ -1,5 +1,5 @@
-<%@ taglib prefix="p" uri="portal-layout"%>
-<%@ taglib uri="internationalization" prefix="is" %>
+<%@ taglib uri="portal-layout" prefix="p" %>
+<%@ taglib uri="http://www.osivia.org/jsp/taglib/osivia-portal" prefix="op" %>
 
 
 <!-- Toolbar -->

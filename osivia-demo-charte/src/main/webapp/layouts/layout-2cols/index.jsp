@@ -21,9 +21,6 @@
                 <!-- Notifications -->
                 <p:region regionName="notifications" />
                 
-                <!-- Back -->
-                <p:region regionName="back" />
-                
                 <p:region regionName="top" />
                 
                 <div class="row">

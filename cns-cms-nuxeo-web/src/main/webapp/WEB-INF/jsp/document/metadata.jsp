@@ -1,12 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="internationalization" prefix="is" %>
-<%@ taglib uri="toutatice" prefix="ttc" %>
+<%@ taglib uri="http://www.osivia.org/jsp/taglib/osivia-portal" prefix="op" %>
+<%@ taglib uri="http://www.toutatice.fr/jsp/taglib/toutatice" prefix="ttc"%>
 
 <%@ page isELIgnored="false"%>
 
 
-<c:set var="vignetteURL"><ttc:getImageURL document="${document}" property="ttc:vignette" /></c:set>
+<c:set var="vignetteURL"><ttc:pictureLink document="${document}" property="ttc:vignette" /></c:set>
 <c:set var="author" value="${document.properties['dc:creator']}" />
 
 <c:set var="keywords" value="${document.properties['ttc:keywords']}"></c:set>
@@ -30,7 +30,7 @@
         <div class="panel-heading">
             <h3 class="panel-title">
                 <i class="halflings halflings-tags"></i>
-                <span><is:getProperty key="METADATA" /></span>
+                <span><op:translate key="METADATA" /></span>
             </h3>
         </div>
     
@@ -46,15 +46,15 @@
                 <div class="media-body">
                     <dl class="dl-horizontal">
                         <!-- Author -->
-                        <dt><is:getProperty key="AUTHOR" /></dt>
+                        <dt><op:translate key="AUTHOR" /></dt>
                         <dd><ttc:user name="${author}"/></dd>
                         
                         <!-- Publication date -->
-                        <dt><is:getProperty key="DOCUMENT_PUBLICATION_DATE" /></dt>
+                        <dt><op:translate key="DOCUMENT_PUBLICATION_DATE" /></dt>
                         <dd><fmt:formatDate value="${date}" type="both" dateStyle="full" timeStyle="short" /></dd>
                         
                         <!-- Keywords -->
-                        <dt><is:getProperty key="DOCUMENT_KEYWORDS" /></dt>
+                        <dt><op:translate key="DOCUMENT_KEYWORDS" /></dt>
                         <dd>
                             <c:forEach items="${keywords}" var="keyword">
                                 <span class="label label-default">${keyword}</span>
@@ -62,13 +62,13 @@
                         </dd>
                         
                         <!-- Document state -->
-                        <dt><is:getProperty key="DOCUMENT_STATE" /></dt>
+                        <dt><op:translate key="DOCUMENT_STATE" /></dt>
                         <dd>
                             <c:if test="${document.document.state eq 'project'}">
-                                <span class="label label-info"><is:getProperty key="DOCUMENT_STATE_PROJECT" /></span>
+                                <span class="label label-info"><op:translate key="DOCUMENT_STATE_PROJECT" /></span>
                             </c:if>
                             <c:if test="${document.document.state eq 'approved'}">
-                                <span class="label label-success"><is:getProperty key="DOCUMENT_STATE_APPROVED" /></span>
+                                <span class="label label-success"><op:translate key="DOCUMENT_STATE_APPROVED" /></span>
                             </c:if>
                         </dd>
                         <!-- Remote publication spaces -->
@@ -80,23 +80,23 @@
                     
                     <dl class="dl-horizontal">
                         <!-- Cycle de vie -->
-                        <dt><is:getProperty key="META_CYCLE_VIE" /></dt>
+                        <dt><op:translate key="META_CYCLE_VIE" /></dt>
                         <dd><ttc:vocabularyLabel name="[CNS] Cycle de vie" key="${cycle_vie}"/></dd>
                         
                         <!-- Métiers -->
-                        <dt><is:getProperty key="META_METIER" /></dt>
+                        <dt><op:translate key="META_METIER" /></dt>
                         <dd><ttc:vocabularyLabel name="[CNS] Metier" key="${metier}"/></dd>
                         
                         <!-- Nature -->
-                        <dt><is:getProperty key="META_NATURE" /></dt>
+                        <dt><op:translate key="META_NATURE" /></dt>
                         <dd><ttc:vocabularyLabel name="[CNS] Nature" key="${nature}"/></dd>
                         
                         <!-- SI cible -->
-                        <dt><is:getProperty key="META_SI" /></dt>
+                        <dt><op:translate key="META_SI" /></dt>
                         <dd><ttc:vocabularyLabel name="[CNS] SI" key="${s_info_associe}"/></dd>
                         
                         <!-- Entité source -->
-                        <dt><is:getProperty key="META_ENTITE" /></dt>
+                        <dt><op:translate key="META_ENTITE" /></dt>
                         <dd><ttc:vocabularyLabel name="[CNS] Entité" key="${entite_cns}"/></dd>
                     </dl>
                 </div>

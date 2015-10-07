@@ -149,7 +149,15 @@
 
 
         <!-- Collab tools -->
+        
+        <dependency>
+            <groupId>org.osivia.services</groupId>
+            <artifactId>osivia-services</artifactId>
+            <version>${osivia-services.version}</version>
+            <type>ear</type>
+        </dependency>
 
+		<!-- 
         <dependency>
             <groupId>org.osivia.services</groupId>
             <artifactId>osivia-services-wiki</artifactId>
@@ -198,7 +206,7 @@
             <version>${toutatice-faq.version}</version>
             <type>war</type>
         </dependency>
-
+ -->
         <dependency>
             <groupId>toutatice-services.dashboard</groupId>
     		<artifactId>toutatice-mytasks-portail</artifactId>

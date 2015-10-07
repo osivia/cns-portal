@@ -14,16 +14,18 @@
         <toutatice.version>4.2.0-SNAPSHOT</toutatice.version>
 
         <!-- Services -->
+        <osivia-services.version>4.2.0-SNAPSHOT</osivia-services.version>
+        <!-- 
         <osivia-services-calendar.version>2.0.0-SNAPSHOT</osivia-services-calendar.version>
         <osivia-services-forum.version>2.0.0-SNAPSHOT</osivia-services-forum.version>
         <osivia-services-webedition.version>1.0.0-SNAPSHOT</osivia-services-webedition.version>
         <osivia-services-widgets.version>1.0.0-SNAPSHOT</osivia-services-widgets.version>
         <osivia-services-wiki.version>2.0.0-SNAPSHOT</osivia-services-wiki.version>
-        <osivia-services-taskbar.version>1.0-SNAPSHOT</osivia-services-taskbar.version>
+        <osivia-services-taskbar.version>1.0-SNAPSHOT</osivia-services-taskbar.version>  -->
         <osivia-services-portal-api-demo.version>4.1.0</osivia-services-portal-api-demo.version> 
 
         <!-- Collab tools -->
-        <toutatice-faq.version>4.0.0-SNAPSHOT</toutatice-faq.version>
+        <!-- <toutatice-faq.version>4.0.0-SNAPSHOT</toutatice-faq.version> -->
         
         <!-- Identity & user mgt tools -->
         <toutatice.annuaire.version>4.1.0</toutatice.annuaire.version>

@@ -20,9 +20,6 @@
                 
                 <!-- Notifications -->
                 <p:region regionName="notifications" />
-
-                <!-- Back -->
-                <p:region regionName="back" />
                 
                 <div class="row">
                     <!-- Drawer -->

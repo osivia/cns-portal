@@ -1,4 +1,4 @@
-<%@ taglib uri="internationalization" prefix="is" %>
+<%@ taglib uri="http://www.osivia.org/jsp/taglib/osivia-portal" prefix="op" %>
 
 
 <script type="text/javascript">
@@ -18,9 +18,9 @@ function onsubmitGlobalSearch(form) {
         <div class="form-group">
             <label class="sr-only" for="search-input">Search</label>
             <div class="input-group input-group-sm">
-                <input id="search-input" type="text" name="keywords" class="form-control" placeholder='<is:getProperty key="SEARCH_PLACEHOLDER" />'>
+                <input id="search-input" type="text" name="keywords" class="form-control" placeholder='<op:translate key="SEARCH_PLACEHOLDER" />'>
                 <span class="input-group-btn">
-                    <button type="submit" class="btn btn-default" title='<is:getProperty key="SEARCH_TITLE" />' data-toggle="tooltip" data-placement="bottom">
+                    <button type="submit" class="btn btn-default" title='<op:translate key="SEARCH_TITLE" />' data-toggle="tooltip" data-placement="bottom">
                         <span class="glyphicons halflings search"></span>
                     </button>
                 </span>
@@ -28,7 +28,7 @@ function onsubmitGlobalSearch(form) {
         </div>
                
         <div class="form-group">
-            <a href="${requestScope['osivia.advancedSearch.url']}" class="btn btn-default btn-sm"><is:getProperty key="ADVANCED_SEARCH" /></a>
+            <a href="${requestScope['osivia.advancedSearch.url']}" class="btn btn-default btn-sm"><op:translate key="ADVANCED_SEARCH" /></a>
         </div>
     </form>
 </div>

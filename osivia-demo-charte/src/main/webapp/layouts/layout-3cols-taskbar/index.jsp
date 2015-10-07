@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<%@ taglib prefix="p" uri="portal-layout"%>
+<%@ taglib prefix="p" uri="portal-layout" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <html>
@@ -17,36 +18,47 @@
             <div id="page-content" class="container-fluid">
                 <!-- Content navbar -->
                 <jsp:include page="../includes/content-navbar.jsp" />
-                
+
                 <!-- Notifications -->
                 <p:region regionName="notifications" />
 
                 <p:region regionName="top" />
                 
-                <div class="clearfix">
+                <div class="row">
                     <!-- Drawer -->
                     <div id="drawer" class="taskbar-container">
                         <p:region regionName="drawer-toolbar" />
-                        
-                        <div class="taskbar taskbar-default closed">
-                            <div class="taskbar-affix">
-                                <p:region regionName="col1" />
+ 
+                        <div class="col-auto">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <p:region regionName="col1" />
+                                </div>
+                                
+                                <div
+                                    <c:choose>
+                                        <c:when test="${requestScope['osivia.panels.navigation-panel.closed']}">class="hidden"</c:when>
+                                        <c:otherwise>class="col-auto"</c:otherwise>
+                                    </c:choose>
+                                >
+                                    <p:region regionName="navigation-panel" />
+                                </div>
                             </div>
                         </div>
                     </div>
                     
                     <div>
-                        <!-- Back -->
-                        <p:region regionName="back" />
-                        <p:region regionName="col2" />
-                    
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <p:region regionName="col21" />
-                            </div>
-                            
-                            <div class="col-sm-6">
-                                <p:region regionName="col22" />
+                        <div class="col-sm-12">
+                            <p:region regionName="col2" />
+                        
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <p:region regionName="col21" />
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                    <p:region regionName="col22" />
+                                </div>
                             </div>
                         </div>
                     </div>

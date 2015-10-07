@@ -21,10 +21,9 @@ import javax.portlet.PortletContext;
 
 import org.nuxeo.ecm.automation.client.model.Document;
 import org.osivia.portal.api.Constants;
-import org.osivia.portal.api.taskbar.TaskbarPlayer;
+import org.osivia.portal.api.panels.PanelPlayer;
+import org.osivia.portal.api.player.Player;
 import org.osivia.portal.api.taskbar.TaskbarTask;
-import org.osivia.portal.core.cms.CMSException;
-import org.osivia.portal.core.cms.CMSHandlerProperties;
 import org.osivia.portal.core.cms.CMSServiceCtx;
 
 import fr.toutatice.portail.cms.nuxeo.portlets.customizer.helpers.NavigationItemAdapter;
@@ -73,7 +72,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
      * {@inheritDoc}
      */
     @Override
-    public CMSHandlerProperties getCMSDefaultPlayer(CMSServiceCtx ctx) throws CMSException {
+    public Player getCMSDefaultPlayer(CMSServiceCtx ctx) {
         Document doc = (Document) ctx.getDoc();
 
         Map<String, String> windowProperties = new HashMap<String, String>();
@@ -84,7 +83,7 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         windowProperties.put("osivia.hideDecorators", "1");
         windowProperties.put("theme.dyna.partial_refresh_enabled", "false");
 
-        CMSHandlerProperties linkProps = new CMSHandlerProperties();
+        Player linkProps = new Player();
         linkProps.setWindowProperties(windowProperties);
         linkProps.setPortletInstance("toutatice-portail-cms-nuxeo-viewDocumentPortletInstance");
 
@@ -96,12 +95,12 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
      * {@inheritDoc}
      */
     @Override
-    public List<TaskbarTask> getTaskbarTasks(CMSServiceCtx cmsContext) {
+    public List<TaskbarTask> getTaskbarTasks() {
         if (this.customTasks == null) {
-            this.customTasks = super.getTaskbarTasks(cmsContext);
+            this.customTasks = super.getTaskbarTasks();
 
             // Gestion participants
-            this.customTasks.add(this.getGestionParticipantsTask(cmsContext));
+            this.customTasks.add(this.getGestionParticipantsTask());
         }
         return this.customTasks;
     }
@@ -110,10 +109,9 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
     /**
      * Get gestion participants task.
      *
-     * @param cmsContext CMS context
      * @return task
      */
-    protected TaskbarTask getGestionParticipantsTask(CMSServiceCtx cmsContext) {
+    protected TaskbarTask getGestionParticipantsTask() {
         // Task
         TaskbarTask task = new TaskbarTask();
 
@@ -123,12 +121,9 @@ public class CMSCustomizer extends DefaultCMSCustomizer {
         task.setName("Gestion des participants");
         // Icon
         task.setIcon("glyphicons glyphicons-group");
-        // Taskbar player
-        TaskbarPlayer taskbarPlayer = new TaskbarPlayer();
-        taskbarPlayer.setInstance("toutatice-portail-cms-nuxeo-viewFragmentPortletInstance");
-        task.setTaskbarPlayer(taskbarPlayer);
+
         // Maximized player
-        TaskbarPlayer maximizedPlayer = new TaskbarPlayer();
+        PanelPlayer maximizedPlayer = new PanelPlayer();
         maximizedPlayer.setInstance("toutatice-workspace-participantsworkspace-portailPortletInstance");
         task.setMaximizedPlayer(maximizedPlayer);
 

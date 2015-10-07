@@ -26,9 +26,6 @@
                     <p:region regionName="drawer-toolbar" />
                 </div>
                 
-                <!-- Back -->
-                <p:region regionName="back" />
-                
                 <p:region regionName="col1" />
             </div>
         </div>

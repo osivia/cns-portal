@@ -36,9 +36,6 @@
                     </div>
                     
                     <div class="col-sm-8 col-lg-9">
-                        <!-- Back -->
-                        <p:region regionName="back" />
-                    
                         <p:region regionName="col2" />
                         <p:region regionName="col2-cms" cms="true" />
                     
