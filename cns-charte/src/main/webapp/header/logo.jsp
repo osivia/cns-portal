@@ -1,8 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="internationalization" prefix="is" %>
+<%@ taglib uri="http://www.osivia.org/jsp/taglib/osivia-portal" prefix="op" %>
 
 
-<c:set var="logoAlt"><is:getProperty key="LOGO_ALT" /></c:set>
+<c:set var="logoAlt"><op:translate key="LOGO_ALT"/> </c:set>
 
 
 <c:choose>
@@ -19,7 +19,7 @@
     <h1 class="h3">
         <a href="${logoURL}">
             <img src="${pageContext.request.contextPath}/img/logo_MENESR.png" alt="${logoAlt}">
-            <span><is:getProperty key="PORTAL_TITLE" /></span>
+            <span><op:translate key="PORTAL_TITLE"/></span>
         </a>
     </h1>
 </div>

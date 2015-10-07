@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="internationalization" prefix="is" %>
+<%@ taglib uri="http://www.osivia.org/jsp/taglib/osivia-portal" prefix="op" %>
 
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
-<c:set var="logoAlt"><is:getProperty key="LOGO_ALT" /></c:set>
+<c:set var="logoAlt"><op:translate key="LOGO_ALT" /></c:set>
 
 
 <html>
 
 <head>
-    <title><is:getProperty key="ERROR" /> - <is:getProperty key="BRAND" /></title>
+    <title><op:translate key="ERROR" /> - <op:translate key="BRAND" /></title>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +33,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <!-- Brand -->
-                    <a href="/" class="navbar-brand hidden-xs"><is:getProperty key="BRAND" /></a>
+                    <a href="/" class="navbar-brand hidden-xs"><op:translate key="BRAND" /></a>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
                     <h1 class="h3">
                         <a href="/">
                             <img src="${contextPath}/img/logo.png" alt="${logoAlt}">
-                            <span><is:getProperty key="PORTAL_TITLE" /></span>
+                            <span><op:translate key="PORTAL_TITLE" /></span>
                         </a>
                     </h1>
                 </div>
@@ -64,11 +64,11 @@
                 
                 <c:choose>
                     <c:when test="${(param['httpCode'] eq 401) || (param['httpCode'] eq 403) || (param['httpCode'] eq 404)}">
-                        <span><is:getProperty key="ERROR_${param['httpCode']}" /></span>
+                        <span><op:translate key="ERROR_${param['httpCode']}" /></span>
                     </c:when>
     
                     <c:otherwise>
-                        <span><is:getProperty key="ERROR_GENERIC_MESSAGE" /></span>
+                        <span><op:translate key="ERROR_GENERIC_MESSAGE" /></span>
                     </c:otherwise>
                 </c:choose>
             </h2>
