@@ -115,7 +115,7 @@
             </option>
             <option>
                 <name>membershipAttributeID</name>
-                <value>member</value>
+                <value>uniqueMember</value>
             </option>
         </option-group>
         <option-group>
@@ -123,7 +123,7 @@
             <option>
                 <name>objectClass</name>
                 <value>top</value>
-                <value>groupOfNames</value>
+                <value>groupOfUniqueNames</value>
             </option>
         </option-group>
     </options>

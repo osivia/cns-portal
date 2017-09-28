@@ -6,21 +6,24 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
     version="2.0">
 
-
+    <!-- Plugin -->
     <portlet>
-        <portlet-name>osivia-demo-regions-customizerPortlet</portlet-name>
-        <portlet-class>org.osivia.portal.demo.customizer.RegionsCustomizerPortlet</portlet-class>
+        <portlet-name>cns-plugin</portlet-name>
+        <portlet-class>fr.gouv.education.cns.customizer.plugin.CnsPlugin</portlet-class>
 
-        <init-param>
-            <name>customizer.regions.demo.context</name>
-            <value>/osivia-demo-charte</value>
-        </init-param>
-        <init-param>
-            <name>customizer.regions.demo.cns.context</name>
-            <value>/osivia-demo-charte-cns</value>
-        </init-param>        
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
 
-        <expiration-cache>180</expiration-cache>
+        <portlet-info>
+            <title>Plugin</title>
+        </portlet-info>
+    </portlet>
+
+    <!-- Regions -->
+    <portlet>
+        <portlet-name>cns-regions-customizer</portlet-name>
+        <portlet-class>fr.gouv.education.cns.customizer.regions.RegionsCustomizerPortlet</portlet-class>
 
         <supports>
             <mime-type>text/html</mime-type>
@@ -32,10 +35,10 @@
     </portlet>
     
     
+    <!-- Internationalization -->
     <portlet>
-        <portlet-name>osivia-demo-internationalization-customizerPortlet</portlet-name>
-        <portlet-class>org.osivia.portal.demo.customizer.InternationalizationCustomizerPortlet</portlet-class>
-        <expiration-cache>180</expiration-cache>
+        <portlet-name>cns-internationalization-customizer</portlet-name>
+        <portlet-class>fr.gouv.education.cns.customizer.internationalization.InternationalizationCustomizerPortlet</portlet-class>
 
         <supports>
             <mime-type>text/html</mime-type>
@@ -47,10 +50,10 @@
     </portlet>
     
 
+    <!-- Attributes bundle customizer -->
     <portlet>
-        <portlet-name>osivia-demo-attributesBundles-customizerPortlet</portlet-name>
-        <portlet-class>org.osivia.portal.demo.customizer.AttributesBundlesCustomizerPortlet</portlet-class>
-        <expiration-cache>180</expiration-cache>
+        <portlet-name>cns-attributes-bundles-customizer</portlet-name>
+        <portlet-class>fr.gouv.education.cns.customizer.attributes.AttributesBundlesCustomizerPortlet</portlet-class>
 
         <supports>
             <mime-type>text/html</mime-type>
@@ -61,10 +64,10 @@
         </portlet-info>     
     </portlet>
 
+    <!-- Project -->
     <portlet>
-        <portlet-name>osivia-demo-project-customizer</portlet-name>
-        <portlet-class>org.osivia.portal.demo.customizer.ProjectCustomizerPortlet</portlet-class>        
-        <expiration-cache>180</expiration-cache>
+        <portlet-name>cns-project-customizer</portlet-name>
+        <portlet-class>fr.gouv.education.cns.customizer.project.ProjectCustomizerPortlet</portlet-class>        
 
         <supports>
             <mime-type>text/html</mime-type>
@@ -74,6 +77,5 @@
             <title>Project customizer</title>
         </portlet-info>     
     </portlet>
-
 
 </portlet-app>

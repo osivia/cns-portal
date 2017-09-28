@@ -5,24 +5,31 @@
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
+<c:set var="brand"><op:translate key="BRAND" /></c:set>
 <c:set var="logoAlt"><op:translate key="LOGO_ALT" /></c:set>
 
 
 <html>
 
 <head>
-    <title><op:translate key="ERROR" /> - <op:translate key="BRAND" /></title>
-
+    <title><op:translate key="ERROR" /> - ${brand}</title>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Socle -->
+    <link rel='stylesheet' href='/osivia-portal-custom-web-assets/css/osivia.min.css'>
     
+    <!-- Glyphicons -->
+    <link rel='stylesheet' href='/osivia-portal-custom-web-assets/css/glyphicons.min.css'>
+    
+    <!-- CNS -->
+    <meta http-equiv="default-style" content="CNS">
     <link rel="icon" href="${contextPath}/img/favicon.png" />
-    <link rel="stylesheet" href="${contextPath}/css/proto-cns.min.css" />
-    <link rel="stylesheet" href="${contextPath}/css/tiles.min.css" />
+    <link rel="stylesheet" href="${contextPath}/css/cns.min.css" title="CNS" />
     <link rel="stylesheet" href="${contextPath}/css/theme-default.min.css" />
-    <link rel="stylesheet" href="/osivia-portal-custom-web-assets/css/osivia.min.css">
-    <link rel="stylesheet" href="/osivia-portal-custom-web-assets/components/glyphicons/css/glyphicons-halflings.css">
+    
 </head>
 
 
@@ -84,7 +91,7 @@
         <p class="text-center visible-xs">
             <a href="/" class="btn btn-default">
                 <i class="halflings halflings-home"></i>
-                <span>Accueil</span>
+                <span><op:translate key="HOME" /></span>
             </a>
         </p>
     </div>

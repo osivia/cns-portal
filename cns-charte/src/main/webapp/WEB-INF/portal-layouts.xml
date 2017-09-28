@@ -1,4 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layouts>
 
+    <layout>
+        <name>osivia-demo-1col</name>
+        <uri>/layouts/layout-1col/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-1col/maximized.jsp</uri>
+        <regions>
+            <region name="col1" />
+        </regions>
+    </layout>
+
+    <layout>
+        <name>osivia-demo-2cols</name>
+        <uri>/layouts/layout-2cols/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-2cols/maximized.jsp</uri>
+        <regions>
+            <region name="top" />
+            <region name="col1" />
+            <region name="col2" />
+            <region name="bottom" />
+        </regions>
+    </layout>
+    
+    <layout>
+        <name>osivia-demo-3cols</name>
+        <uri>/layouts/layout-3cols/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-3cols/maximized.jsp</uri>
+        <regions>
+            <region name="top" />
+            <region name="col1" />
+            <region name="col2" />
+            <region name="col21" />
+            <region name="col22" />
+            <region name="bottom" />
+        </regions>
+    </layout>
+    
+    <layout>
+        <name>osivia-demo-3cols-cms</name>
+        <uri>/layouts/layout-3cols-cms/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-3cols-cms/maximized.jsp</uri>
+        <regions>
+            <region name="top" />
+            <region name="col1" />
+            <region name="col2" />
+            <region name="col21" />
+            <region name="col22" />
+            <region name="bottom" />
+            <region name="top-cms" />
+            <region name="col1-cms" />
+            <region name="col2-cms" />
+            <region name="col21-cms" />
+            <region name="col22-cms" />
+            <region name="bottom-cms" />
+        </regions>
+    </layout>
+    
+    <layout>
+        <name>osivia-demo-3cols-taskbar</name>
+        <uri>/layouts/layout-3cols-taskbar/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-3cols-taskbar/maximized.jsp</uri>
+        <regions>
+            <region name="top" />
+            <region name="col1" />
+            <region name="col2" />
+            <region name="col21" />
+            <region name="col22" />
+            <region name="bottom" />
+        </regions>
+    </layout>
+    
+    <layout>
+        <name>osivia-demo-home</name>
+        <uri>/layouts/layout-home/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-1col/maximized.jsp</uri>
+        <regions>
+            <region name="top" />
+            <region name="col1" />
+            <region name="col2" />
+        </regions>
+    </layout>
+    
+    <layout>
+        <name>osivia-demo-blog</name>
+        <uri>/layouts/layout-blog/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-blog/maximized.jsp</uri>
+        <regions>
+            <region name="blog_logo" />
+            <region name="blog_title" />
+            <region name="blog_tools" />
+            <region name="col1" />
+            <region name="col2" />
+        </regions>
+    </layout>
+    
+    <layout>
+        <name>cns-workspace</name>
+        <uri>/layouts/layout-workspace/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-workspace/maximized.jsp</uri>
+        <regions>
+            <region name="col-1" />
+            <region name="cols-top" />
+            <region name="col-2" />
+            <region name="col-3" />
+            <region name="cols-bottom" />
+        </regions>
+    </layout>
+
 </layouts>

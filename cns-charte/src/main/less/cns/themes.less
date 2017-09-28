@@ -1,0 +1,228 @@
+//
+// Themes functions
+// --------------------------------------------------
+
+
+// Bootstrap variables
+@import "../bootstrap/variables.less";
+// Bootstrap mixins
+@import "../bootstrap/mixins.less";
+
+
+// Set navbar color
+.set-navbar-color(@color) when (iscolor(@color)) {
+    .content-navbar {
+        @media screen and (min-width: @screen-sm-min) {
+            background-color: @color;
+            border-color: darken(@color, 10%);
+            
+            #gradient .vertical(@start-color: @color; @end-color: darken(@color, 5%));
+        }
+    }
+    
+    .content-navbar-breadcrumb {
+        .breadcrumb {
+            > li {
+                + li::before {
+                    color: contrast(@color, lighten(@navbar-default-link-color, 10%), darken(#f8f8f8, 10%));
+                }
+                
+                > a, > .dropdown > a {
+                    color: contrast(@color, @navbar-default-link-color, #f8f8f8);
+                
+                    &:hover, &:focus {
+                        color: contrast(@color, @navbar-default-link-hover-color, #fff);
+                    }
+                }
+                
+                > .dropdown {
+                    &.open {
+                        background-color: darken(@color, 10%);
+                    }
+                }
+            }
+        }
+    }
+    
+    .content-navbar-actions {
+        .menubar {
+            @media screen and (min-width: @screen-sm-min) {
+                > li {
+                    &.contextual {
+                        border-color: darken(@color, 10%);
+                    }
+                    
+                    > ul > li {
+                        > a {
+                            color: contrast(@color, @navbar-default-link-color, #f8f8f8);
+                            
+                            &:hover, &:focus {
+    //                            background-color: @navbar-default-link-hover-bg;
+                                color: contrast(@color, @navbar-default-link-hover-color, #fff);
+                            }
+                        }
+                        
+                        &.dropdown {
+                            &.open {
+                                background-color: darken(@color, 10%);
+                                color: contrast(@color, @navbar-default-link-hover-color, #fff);
+                            }
+                            
+                            > a.dropdown-toggle {
+                                .caret {
+                                    right: floor(@navbar-padding-horizontal / 2);
+                                }
+                            }
+                        }
+                        
+    //                    &.active > a {
+    //                        color: contrast(@color, @state-info-text, @state-info-bg);
+    //                        
+    //                        &:hover, &:focus {
+    //                            color: contrast(@color, darken(@state-info-text, 15%), #fff);
+    //                        }
+    //                    }
+                    }
+                }
+            }
+        }
+    }
+    
+    .drawer-toolbar-tabs {
+        .btn {
+            background-color: @color;
+            color: contrast(@color, @text-color, #fff);
+            border-color: darken(@color, 10%);
+        }
+        .open > .btn.dropdown-toggle, .btn:hover, .btn:focus {
+            background-color: darken(@color, 10%);
+            color: contrast(@color, @text-color, #fff);
+            border-color: darken(@color, 20%);
+        }
+    }
+}
+
+
+// Set navbar icon
+.set-navbar-icon(@icon, @color: @navbar-default-bg, @margin: 0) when (iscolor(@color)) {
+    @indicator-size: 30px;
+    
+    @media screen and (min-width: @screen-sm-min) {
+        .content-navbar-breadcrumb .breadcrumb {
+            position: relative;
+            margin-left: @indicator-size + @navbar-padding-horizontal;
+            
+            &::before {
+                content: @icon;
+                
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -@indicator-size;
+                height: @indicator-size;
+                margin: auto;
+
+                font-family: "Glyphicons Regular";
+                font-style: normal;
+                font-weight: normal;
+                font-size: @indicator-size;
+                line-height: 1;
+                
+                color: contrast(@color, @navbar-default-color, #f8f8f8);
+            }
+        }
+    }
+    
+    @media screen and (max-width: @screen-xs-max) {
+        .drawer-toolbar-tabs {
+            .btn .text-overflow {
+                &::before {
+                    content: @icon;
+                    
+                    position: relative;
+                    top: 1px;
+                    margin: 0 @margin;
+                    padding-right: 5px;
+                    
+                    font-family: "Glyphicons Regular";
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+}
+
+
+// Set portlet container color
+.set-portlet-container-color(@color) when (iscolor(@color)) {
+    .portlet-container {
+        &.panel-default {
+            @text-color: contrast(@color, @panel-default-text, #fff);
+            
+            .panel-variant(@border: @panel-default-border; @heading-text-color: @text-color; @heading-bg-color: @color; @heading-border: @color);
+
+            .panel-heading .portlet-mode-container a {
+                .set-link-color(@color: @color);
+            }
+        }
+    }
+}
+
+
+// Set portlet container title
+.set-portlet-container-title(@color) when (iscolor(@color)) {
+    .portlet-container {
+        .portlet-header {
+            margin-bottom: (@line-height-computed / 2);
+            
+            border-bottom-style: solid;
+            border-color: @color;
+            border-width: 2px;
+            
+            h2 {
+                font-size: @font-size-h4;
+            }
+            
+            #maximized & {
+                border-style: none;
+                
+                h2 {
+                    font-size: @font-size-h2;
+                }
+            }
+        }
+    }
+}
+
+
+
+// Set page content background primary
+.set-background-primary(@color) when (iscolor(@color)) {
+    // Buttons
+    .btn-primary {
+        .button-variant(@color: contrast(@color, @btn-default-color, #fff); @background: @color; @border: darken(@color, 5%));
+    }
+
+    // Pagination
+    .pagination {
+        > .active > a, > .active > span {
+            &, &:hover, &:focus {
+                color: contrast(@color, @btn-default-color, @pagination-active-color);
+                background-color: @color;
+                border-color: @color;
+            }
+        }
+    }
+}
+
+
+.set-link-color(@color) when(iscolor(@color)) {
+    color: contrast(@color, @link-color, #f8f8f8);
+    
+    &:hover, &:focus {
+        color: contrast(@color, @link-hover-color, #fff);
+    }
+}
+

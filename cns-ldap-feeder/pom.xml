@@ -6,7 +6,7 @@
     <parent>
 	    <groupId>cns.portal</groupId>
 	    <artifactId>cns-portal-parent</artifactId>
-        <version>4.2.0-SNAPSHOT</version>
+        <version>4.6-SNAPSHOT</version>
     </parent>
     
     <artifactId>cns-ldap-feeder</artifactId>
@@ -21,14 +21,6 @@
 	</properties>
 
     <dependencies>
-    
-		<dependency>
-			<groupId>outils.ldap</groupId>
-			<artifactId>toutatice-annuaire-interfaces</artifactId>
-			<version>${toutatice.annuaire.version}</version>
-            <scope>provided</scope>
-		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -36,7 +28,6 @@
 			<version>${springsecurity.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.ldap</groupId>
@@ -48,35 +39,4 @@
 
     </dependencies>
 
-    <build>
-
-    </build>
-
-    <profiles>
-        <profile>
-            <id>deploy-osivia-modules</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-antrun-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>copy-jar</id>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                                <configuration>
-                                    <tasks>
-                                        <copy file="${basedir}/target/${project.build.finalName}.war" todir="${deploy.osivia.dir}" />
-                                    </tasks>
-                                </configuration>
-                                <phase>package</phase>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>    
 </project>

@@ -35,7 +35,7 @@
 	        
 	        <a class="btn btn-default btn-sm" href="${requestScope['osivia.search.directoryURL']}" title="<op:translate key="DIRECTORY_TITLE" />" data-toggle="tooltip" data-placement="bottom">
 	        	<i class="glyphicons glyphicons-address-book"></i>
-	    		<span><op:translate key="DIRECTORY"/> </span>
+	    		<span><op:translate key="DIRECTORY"/></span>
 	    	</a>
 	    </form>
 	</div>
