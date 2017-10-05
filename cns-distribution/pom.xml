@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-	    <groupId>cns.portal</groupId>
+	    <groupId>fr.gouv.education.cns.portal</groupId>
 	    <artifactId>cns-portal-parent</artifactId>
         <version>4.6-SNAPSHOT</version>
     </parent>
@@ -29,27 +29,28 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
+            <artifactId>cns-charte-forums</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
             <artifactId>cns-customizer</artifactId>
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
-        <!-- <dependency>
+        <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>cns-ldap-connector</artifactId>
+            <artifactId>cns-customizer</artifactId>
             <version>${project.version}</version>
             <type>war</type>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>cns-ldap-feeder</artifactId>
+            <groupId>${project.groupId}.directory</groupId>
+            <artifactId>cns-directory-ear</artifactId>
             <version>${project.version}</version>
-            <type>war</type>
+            <type>ear</type>
         </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>cns-valve-sso</artifactId>
-            <version>${project.version}</version>
-        </dependency>	 -->	        
 
         <!-- Toutatice CMS -->
         <dependency>
@@ -60,12 +61,6 @@
         </dependency>
         
         <!-- Directory -->
-        <dependency>
-            <groupId>org.osivia.services.directory</groupId>
-            <artifactId>osivia-services-directory-ear</artifactId>
-            <version>${directory.version}</version>
-            <type>ear</type>
-        </dependency>
         <dependency>
             <groupId>org.osivia.services.directory.socle</groupId>
             <artifactId>osivia-services-directory-socle-interfaces</artifactId>
@@ -91,12 +86,6 @@
             <groupId>org.osivia.services</groupId>
             <artifactId>osivia-services-procedure</artifactId>
             <version>${procedure.version}</version>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>org.osivia.services.cgu</groupId>
-            <artifactId>osivia-services-cgu-portail</artifactId>
-            <version>${cgu.version}</version>
             <type>war</type>
         </dependency>
         

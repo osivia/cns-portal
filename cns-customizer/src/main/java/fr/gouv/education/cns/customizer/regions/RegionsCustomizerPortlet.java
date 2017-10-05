@@ -19,6 +19,7 @@ import java.util.Map;
 import javax.portlet.GenericPortlet;
 import javax.portlet.PortletException;
 
+import org.apache.commons.lang.StringUtils;
 import org.osivia.portal.api.customization.CustomizationContext;
 import org.osivia.portal.api.customization.CustomizationModuleMetadatas;
 import org.osivia.portal.api.customization.ICustomizationModule;
@@ -39,8 +40,15 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
     /** Customization modules repository attribute name. */
     private static final String ATTRIBUTE_CUSTOMIZATION_MODULES_REPOSITORY = "CustomizationModulesRepository";
 
+    /** Charte CNS context path init parameter name. */
+    private static final String CHARTE_CNS_CONTEXT = "customizer.regions.cns.context";
+    /** "osivia-demo-charte-montpellier" context path init parameter name. */
+    private static final String CHARTE_CNS_FORUMS_CONTEXT = "customizer.regions.cns.forums.context";
+
+
     /** Customization modules repository. */
     private ICustomizationModulesRepository repository;
+
     /** Internationalization customization module metadatas. */
     private final CustomizationModuleMetadatas metadatas;
 
@@ -94,16 +102,25 @@ public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomi
      */
     @Override
     public void customize(CustomizationContext context) {
+        String charteCns = this.getInitParameter(CHARTE_CNS_CONTEXT);
+        String charteCnsForums = this.getInitParameter(CHARTE_CNS_FORUMS_CONTEXT);
+
+
         Map<String, Object> attributes = context.getAttributes();
-        // String contextPath = (String) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_THEME_CONTEXT_PATH);
+        String contextPath = (String) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_THEME_CONTEXT_PATH);
         IRenderedRegions renderedRegion = (IRenderedRegions) attributes.get(IRenderedRegions.CUSTOMIZER_ATTRIBUTE_RENDERED_REGIONS);
 
-        // Customize regions
-        // renderedRegion.customizeRenderedRegion("header-metadata", "/header/header-metadata.jsp");
-        renderedRegion.customizeRenderedRegion("logo", "/regions/logo.jsp");
-        renderedRegion.customizeRenderedRegion("search", "/regions/search.jsp");
-        // renderedRegion.customizeRenderedRegion("tabs", "/header/tabs.jsp");
-        renderedRegion.removeRenderedRegion("footer");
+        if (StringUtils.equals(contextPath, charteCns) || StringUtils.equals(contextPath, charteCnsForums)) {
+            // Customize regions
+            if (StringUtils.equals(contextPath, charteCns)) {
+                renderedRegion.customizeRenderedRegion("logo", "/regions/logo.jsp");
+                renderedRegion.customizeRenderedRegion("search", "/regions/search.jsp");
+            } else if (StringUtils.equals(contextPath, charteCnsForums)) {
+                renderedRegion.customizeRenderedRegion("toolbar", "/regions/toolbar.jsp", charteCnsForums);
+                renderedRegion.removeRenderedRegion("search");
+            }
+            renderedRegion.removeRenderedRegion("footer");
+        }
     }
 
 }

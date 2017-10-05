@@ -5,10 +5,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cns.portal</groupId>
+    <groupId>fr.gouv.education.cns.portal</groupId>
     <artifactId>cns-portal-parent</artifactId>
     <version>4.6-SNAPSHOT</version>
     <packaging>pom</packaging>
+    
     <name>CNS Portal - Parent</name>
 
 
@@ -37,11 +38,10 @@
 
     <modules>
         <module>cns-charte</module>
+        <module>cns-charte-forums</module>
         <module>cns-customizer</module>
+        <module>cns-directory</module>
         <module>cns-distribution</module>
-        <!-- <module>cns-ldap-connector</module>
-        <module>cns-ldap-feeder</module>
-        <module>cns-valve-sso</module> -->
     </modules>
 
 
@@ -100,6 +100,20 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>2.6</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                        </archive>
+                    </configuration>
+                </plugin>
+                
+                <!-- EAR -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-ear-plugin</artifactId>
+                    <version>2.10.1</version>
                     <configuration>
                         <archive>
                             <manifest>

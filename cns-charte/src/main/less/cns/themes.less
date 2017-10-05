@@ -23,6 +23,10 @@
     .content-navbar-breadcrumb {
         .breadcrumb {
             > li {
+                &.active {
+                    color: contrast(@color, @navbar-default-link-color, #f8f8f8);
+                }
+                
                 + li::before {
                     color: contrast(@color, lighten(@navbar-default-link-color, 10%), darken(#f8f8f8, 10%));
                 }
@@ -57,7 +61,6 @@
                             color: contrast(@color, @navbar-default-link-color, #f8f8f8);
                             
                             &:hover, &:focus {
-    //                            background-color: @navbar-default-link-hover-bg;
                                 color: contrast(@color, @navbar-default-link-hover-color, #fff);
                             }
                         }
@@ -74,14 +77,6 @@
                                 }
                             }
                         }
-                        
-    //                    &.active > a {
-    //                        color: contrast(@color, @state-info-text, @state-info-bg);
-    //                        
-    //                        &:hover, &:focus {
-    //                            color: contrast(@color, darken(@state-info-text, 15%), #fff);
-    //                        }
-    //                    }
                     }
                 }
             }
@@ -193,6 +188,11 @@
                 }
             }
         }
+    }
+    
+    #maximized > .page-header {
+        border-color: @color;
+        border-width: 2px;
     }
 }
 

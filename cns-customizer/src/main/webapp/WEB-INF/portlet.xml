@@ -25,6 +25,15 @@
         <portlet-name>cns-regions-customizer</portlet-name>
         <portlet-class>fr.gouv.education.cns.customizer.regions.RegionsCustomizerPortlet</portlet-class>
 
+        <init-param>
+            <name>customizer.regions.cns.context</name>
+            <value>/osivia-demo-charte-cns</value>
+        </init-param>
+        <init-param>
+            <name>customizer.regions.cns.forums.context</name>
+            <value>/cns-charte-forums</value>
+        </init-param>
+
         <supports>
             <mime-type>text/html</mime-type>
         </supports>

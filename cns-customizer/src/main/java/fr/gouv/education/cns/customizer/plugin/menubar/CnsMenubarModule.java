@@ -33,8 +33,14 @@ import fr.toutatice.portail.cms.nuxeo.api.services.NuxeoConnectionProperties;
  */
 public class CnsMenubarModule implements MenubarModule {
 
+    /** Forums domain path. */
+    private static final String FORUMS_DOMAIN_PATH = "/forums";
+
     /** Remote publishing menubar item identifier. */
     private static final String REMOTE_PUBLISHING_ID = "REMOTE_PUBLISHING_URL";
+    /** Validation workflow menubar item identifier. */
+    private static final String VALIDATION_WORKFLOW_ID = "VALIDATION_WF_URL";
+
     /** Approved document state. */
     private static final String APPROVED_STATE = "approved";
 
@@ -88,6 +94,9 @@ public class CnsMenubarModule implements MenubarModule {
             if (REMOTE_PUBLISHING_ID.equals(item.getId())) {
                 // Customize remote publishing menubar item
                 this.customizeRemotePublishing(documentContext, item);
+            } else if (VALIDATION_WORKFLOW_ID.equals(item.getId())) {
+                // Customize validation workflow menubar item
+                this.customizeValidationWorkflow(documentContext, item);
             }
         }
 
@@ -106,9 +115,7 @@ public class CnsMenubarModule implements MenubarModule {
         // Visible menubar item indicator
         boolean visible;
 
-        if (documentContext == null) {
-            visible = false;
-        } else if (StringUtils.startsWith(documentContext.getPath(), "/forums")) {
+        if ((documentContext == null) || StringUtils.startsWith(documentContext.getPath(), FORUMS_DOMAIN_PATH)) {
             visible = false;
         } else if (documentContext instanceof NuxeoDocumentContext) {
             // Nuxeo document context
@@ -126,6 +133,15 @@ public class CnsMenubarModule implements MenubarModule {
     }
 
 
+    private void customizeValidationWorkflow(DocumentContext documentContext, MenubarItem item) {
+        // Visible menubar item indicator
+        boolean visible = (documentContext != null) && !StringUtils.startsWith(documentContext.getPath(), FORUMS_DOMAIN_PATH);
+
+        // Update menubar item
+        item.setVisible(visible);
+    }
+
+
     /**
      * Add mass validation menubar item.
      * 
@@ -134,7 +150,7 @@ public class CnsMenubarModule implements MenubarModule {
      * @param documentContext document context
      */
     private void addMassValidation(PortalControllerContext portalControllerContext, List<MenubarItem> menubar, DocumentContext documentContext) {
-        if ((documentContext != null) && !StringUtils.startsWith(documentContext.getPath(), "/forums")) {
+        if ((documentContext != null) && !StringUtils.startsWith(documentContext.getPath(), FORUMS_DOMAIN_PATH)) {
             // Document type
             DocumentType documentType = documentContext.getDocumentType();
 

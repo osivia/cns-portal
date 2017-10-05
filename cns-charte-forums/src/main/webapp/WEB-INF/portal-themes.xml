@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<themes>
+    <theme>
+        <name>charte-cns-forums</name>
+        <link rel="icon" href="/img/favicon.png" />
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/cns-forums.min.css" title="CNS" />
+    </theme>
+
+</themes>

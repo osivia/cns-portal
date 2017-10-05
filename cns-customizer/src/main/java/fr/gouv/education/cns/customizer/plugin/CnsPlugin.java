@@ -2,8 +2,13 @@ package fr.gouv.education.cns.customizer.plugin;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import org.osivia.portal.api.customization.CustomizationContext;
+import org.osivia.portal.api.internationalization.Bundle;
+import org.osivia.portal.api.internationalization.IBundleFactory;
+import org.osivia.portal.api.internationalization.IInternationalizationService;
+import org.osivia.portal.api.locator.Locator;
 import org.osivia.portal.api.menubar.MenubarModule;
 import org.osivia.portal.api.taskbar.TaskbarFactory;
 import org.osivia.portal.api.taskbar.TaskbarItem;
@@ -11,6 +16,7 @@ import org.osivia.portal.api.taskbar.TaskbarItems;
 
 import fr.gouv.education.cns.customizer.plugin.menubar.CnsMenubarModule;
 import fr.toutatice.portail.cms.nuxeo.api.domain.AbstractPluginPortlet;
+import fr.toutatice.portail.cms.nuxeo.api.domain.ListTemplate;
 
 /**
  * CNS plugin.
@@ -24,11 +30,20 @@ public class CnsPlugin extends AbstractPluginPortlet {
     private static final String PLUGIN_NAME = "cns.plugin";
 
 
+    /** Internationalization bundle factory. */
+    private final IBundleFactory bundleFactory;
+
+
     /**
      * Constructor.
      */
     public CnsPlugin() {
         super();
+
+        // Internationalization bundle factory
+        IInternationalizationService internationalizationService = Locator.findMBean(IInternationalizationService.class,
+                IInternationalizationService.MBEAN_NAME);
+        this.bundleFactory = internationalizationService.getBundleFactory(this.getClass().getClassLoader());
     }
 
 
@@ -55,10 +70,38 @@ public class CnsPlugin extends AbstractPluginPortlet {
      */
     @Override
     protected void customizeCMSProperties(CustomizationContext context) {
+        // List templates
+        this.customizeListTemplates(context);
         // Menubar
         this.customizeMenubar(context);
         // Taskbar items
         this.customizeTaskbarItems(context);
+    }
+
+
+    /**
+     * Customize list templates.
+     * 
+     * @param context customization context
+     */
+    private void customizeListTemplates(CustomizationContext context) {
+        // Internationalization bundle
+        Bundle bundle = this.bundleFactory.getBundle(context.getLocale());
+        
+        // List templates
+        Map<String, ListTemplate> templates = this.getListTemplates(context);
+
+
+        // Workspace member requests
+        ListTemplate workspaceMemberRequests = templates.get("workspace-member-requests");
+
+        if (workspaceMemberRequests != null) {
+            // Workspace tiles
+            ListTemplate workspaceTiles = new ListTemplate("workspace-tiles", bundle.getString("LIST_TEMPLATE_WORKSPACE_TILES"),
+                    workspaceMemberRequests.getSchemas());
+            workspaceTiles.setModule(workspaceMemberRequests.getModule());
+            templates.put(workspaceTiles.getKey(), workspaceTiles);
+        }
     }
 
 

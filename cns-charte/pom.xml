@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-	    <groupId>cns.portal</groupId>
+	    <groupId>fr.gouv.education.cns.portal</groupId>
 	    <artifactId>cns-portal-parent</artifactId>
         <version>4.6-SNAPSHOT</version>
     </parent>

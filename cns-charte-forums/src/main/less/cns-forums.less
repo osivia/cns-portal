@@ -1,0 +1,30 @@
+//
+// Charte des forums CNS
+// -----------------------------------------------------
+
+
+// Bootstrap
+@import "bootstrap/bootstrap.less";
+
+// Tabs
+@import "cns/tabs.less";
+
+
+header {
+    margin-bottom: @line-height-computed;
+    padding-top: floor(@line-height-computed / 2);
+    
+    background-color: desaturate(@brand-primary, 20%);
+        
+    #gradient .vertical(@start-color: lighten(desaturate(@brand-primary, 20%), 10%); @end-color: desaturate(@brand-primary, 20%));
+}
+
+
+.content-navbar {
+    @media screen and (min-width: @screen-sm-min) {
+        background-color: @navbar-default-bg;
+        border-color: darken(@navbar-default-bg, 10%);
+        
+        #gradient .vertical(@start-color: @navbar-default-bg; @end-color: darken(@navbar-default-bg, 5%));
+    }
+}

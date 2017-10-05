@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>fr.gouv.education.cns.portal</groupId>
+        <artifactId>cns-portal-parent</artifactId>
+        <version>4.6-SNAPSHOT</version>
+    </parent>
+
+    <groupId>fr.gouv.education.cns.portal.directory</groupId>
+    <artifactId>cns-directory-parent</artifactId>
+    <packaging>pom</packaging>
+    
+    <name>CNS - Directory parent</name>
+
+
+    <properties>
+        <springframework-ldap.version>2.1.0.RELEASE</springframework-ldap.version>
+    </properties>
+
+    
+    <modules>
+        <module>implementations</module>
+        <module>packaging</module>
+        <module>ear</module>
+    </modules>
+    
+    
+    <dependencyManagement>
+        <dependencies>
+        
+            <dependency>
+			    <groupId>org.osivia.services.directory.socle</groupId>
+			    <artifactId>osivia-services-directory-socle-interfaces</artifactId>
+			    <version>${directory.version}</version>
+			    <scope>provided</scope>
+		    </dependency>
+        
+            <dependency>
+                <groupId>org.osivia.services.directory.socle</groupId>
+                <artifactId>osivia-services-directory-socle-implementations</artifactId>
+                <version>${directory.version}</version>
+                <scope>compile</scope>
+            </dependency>
+        
+            <dependency>
+                <groupId>org.osivia.services.directory.socle</groupId>
+                <artifactId>osivia-services-directory-socle-services</artifactId>
+                <version>${directory.version}</version>
+                <type>war</type>
+                <scope>compile</scope>
+            </dependency>
+            
+        </dependencies>
+    </dependencyManagement>
+    
+    
+    <dependencies>
+    
+        <!-- SpringFramework LDAP -->
+		<dependency>
+			<groupId>org.springframework.ldap</groupId>
+			<artifactId>spring-ldap-core</artifactId>
+			<version>${springframework-ldap.version}</version>
+			<scope>provided</scope>
+		</dependency>
+    
+    </dependencies>
+
+</project> 
