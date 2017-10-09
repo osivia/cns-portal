@@ -43,7 +43,7 @@ import org.osivia.portal.core.constants.InternalConstants;
 public class ProjectCustomizerPortlet extends GenericPortlet implements ICustomizationModule {
 
     /** Customizer name. */
-    private static final String CUSTOMIZER_NAME = "osivia.demo.customizer.project.name";
+    private static final String CUSTOMIZER_NAME = "cns.customizer.project.name";
     /** Customization modules repository attribute name. */
     private static final String ATTRIBUTE_CUSTOMIZATION_MODULES_REPOSITORY = "CustomizationModulesRepository";
 

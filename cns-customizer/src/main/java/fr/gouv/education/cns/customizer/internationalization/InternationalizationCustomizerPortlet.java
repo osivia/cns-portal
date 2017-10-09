@@ -27,7 +27,7 @@ import org.osivia.portal.api.internationalization.IInternationalizationService;
 public class InternationalizationCustomizerPortlet extends GenericPortlet implements ICustomizationModule {
 
     /** Customizer name. */
-    private static final String CUSTOMIZER_NAME = "osivia.demo.customizer.internationalization.name";
+    private static final String CUSTOMIZER_NAME = "cns.customizer.internationalization.name";
     /** Customization modules repository attribute name. */
     private static final String ATTRIBUTE_CUSTOMIZATION_MODULES_REPOSITORY = "CustomizationModulesRepository";
     /** Custom resource bundle name. */

@@ -24,7 +24,7 @@ import org.osivia.portal.api.theming.IAttributesBundle;
 public class AttributesBundlesCustomizerPortlet extends GenericPortlet implements ICustomizationModule {
 
     /** Customizer name. */
-    private static final String CUSTOMIZER_NAME = "osivia.demo.customizer.attributesBundles.name";
+    private static final String CUSTOMIZER_NAME = "cns.customizer.attributesBundles.name";
     /** Customization modules repository attribute name. */
     private static final String ATTRIBUTE_CUSTOMIZATION_MODULES_REPOSITORY = "CustomizationModulesRepository";
 

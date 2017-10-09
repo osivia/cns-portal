@@ -20,7 +20,8 @@
         </portlet-info>
     </portlet>
 
-    <!-- Regions -->
+
+    <!-- Regions customizer -->
     <portlet>
         <portlet-name>cns-regions-customizer</portlet-name>
         <portlet-class>fr.gouv.education.cns.customizer.regions.RegionsCustomizerPortlet</portlet-class>
@@ -44,7 +45,7 @@
     </portlet>
     
     
-    <!-- Internationalization -->
+    <!-- Internationalization customizer -->
     <portlet>
         <portlet-name>cns-internationalization-customizer</portlet-name>
         <portlet-class>fr.gouv.education.cns.customizer.internationalization.InternationalizationCustomizerPortlet</portlet-class>
@@ -72,8 +73,24 @@
             <title>Attributes bundles customizer</title>
         </portlet-info>     
     </portlet>
+    
+    
+    <!-- Feeder customizer -->
+    <portlet>
+        <portlet-name>cns-feeder-customizer</portlet-name>
+        <portlet-class>fr.gouv.education.cns.customizer.feeder.FeederCustomizer</portlet-class>
 
-    <!-- Project -->
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+
+        <portlet-info>
+            <title>Feeder customizer</title>
+        </portlet-info>
+    </portlet>
+
+
+    <!-- Project customizer -->
     <portlet>
         <portlet-name>cns-project-customizer</portlet-name>
         <portlet-class>fr.gouv.education.cns.customizer.project.ProjectCustomizerPortlet</portlet-class>        

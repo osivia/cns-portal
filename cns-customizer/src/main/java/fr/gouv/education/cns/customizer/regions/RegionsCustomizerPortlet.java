@@ -36,7 +36,7 @@ import org.osivia.portal.api.theming.IRenderedRegions;
 public class RegionsCustomizerPortlet extends GenericPortlet implements ICustomizationModule {
 
     /** Customizer name. */
-    private static final String CUSTOMIZER_NAME = "osivia.site.customizer.regions.name";
+    private static final String CUSTOMIZER_NAME = "cns.customizer.regions.name";
     /** Customization modules repository attribute name. */
     private static final String ATTRIBUTE_CUSTOMIZATION_MODULES_REPOSITORY = "CustomizationModulesRepository";
 
