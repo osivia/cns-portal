@@ -1,4 +1,4 @@
-package fr.gouv.education.cns.customizer.feeder;
+package fr.gouv.education.cns.feeder;
 
 import java.io.IOException;
 import java.io.StringReader;

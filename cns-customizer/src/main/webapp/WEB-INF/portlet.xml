@@ -74,21 +74,6 @@
         </portlet-info>     
     </portlet>
     
-    
-    <!-- Feeder customizer -->
-    <portlet>
-        <portlet-name>cns-feeder-customizer</portlet-name>
-        <portlet-class>fr.gouv.education.cns.customizer.feeder.FeederCustomizer</portlet-class>
-
-        <supports>
-            <mime-type>text/html</mime-type>
-        </supports>
-
-        <portlet-info>
-            <title>Feeder customizer</title>
-        </portlet-info>
-    </portlet>
-
 
     <!-- Project customizer -->
     <portlet>
