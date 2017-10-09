@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import org.osivia.portal.api.cms.DocumentType;
 import org.osivia.portal.api.customization.CustomizationContext;
 import org.osivia.portal.api.internationalization.Bundle;
 import org.osivia.portal.api.internationalization.IBundleFactory;
@@ -70,12 +71,28 @@ public class CnsPlugin extends AbstractPluginPortlet {
      */
     @Override
     protected void customizeCMSProperties(CustomizationContext context) {
+        // Document types
+        this.customizeDocumentTypes(context);
         // List templates
         this.customizeListTemplates(context);
         // Menubar
         this.customizeMenubar(context);
         // Taskbar items
         this.customizeTaskbarItems(context);
+    }
+
+
+    /**
+     * Customize document types.
+     * 
+     * @param context customization context
+     */
+    private void customizeDocumentTypes(CustomizationContext context) {
+        // Document types
+        Map<String, DocumentType> documentTypes = this.getDocTypes(context);
+
+        // Remove pad
+        documentTypes.remove("ToutaticePad");
     }
 
 
