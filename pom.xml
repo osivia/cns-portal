@@ -33,6 +33,9 @@
  
         <!-- Java Melody -->
         <java-melody.version>1.2</java-melody.version>
+        
+        <!-- Spring framework LDAP -->
+        <springframework-ldap.version>2.1.0.RELEASE</springframework-ldap.version>
     </properties>
 
 
@@ -58,6 +61,14 @@
                 <groupId>org.osivia.services.directory.socle</groupId>
                 <artifactId>osivia-services-directory-socle-interfaces</artifactId>
                 <version>${directory.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            
+            <!-- Spring framework LDAP -->
+            <dependency>
+                <groupId>org.springframework.ldap</groupId>
+                <artifactId>spring-ldap-core</artifactId>
+                <version>${springframework-ldap.version}</version>
                 <scope>provided</scope>
             </dependency>
             

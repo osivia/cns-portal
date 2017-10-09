@@ -8,15 +8,38 @@
 
 // Tabs
 @import "cns/tabs.less";
+// Workspace tiles
+@import "cns/workspace-tiles.less";
 
 
 header {
-    margin-bottom: @line-height-computed;
-    padding-top: floor(@line-height-computed / 2);
+    &, &.jumbotron {
+        color: #fff;
+        background-color: @brand-primary;
+            
+        #gradient .vertical(@start-color: lighten(@brand-primary, 10%); @end-color: @brand-primary);
+    }
     
-    background-color: desaturate(@brand-primary, 20%);
+    &.jumbotron {
+        border-bottom-style: solid;
+        border-width: 1px;
+        border-color: darken(@brand-primary, 3%); 
         
-    #gradient .vertical(@start-color: lighten(desaturate(@brand-primary, 20%), 10%); @end-color: desaturate(@brand-primary, 20%));
+        img {
+            max-height: 120px;
+        }
+    }
+    
+    &:not(.jumbotron) {
+        padding-top: floor(@line-height-computed / 2);
+    }
+}
+
+
+main {
+    @media screen and (min-width: @screen-sm-min) {
+        margin-top: @line-height-computed;
+    }
 }
 
 

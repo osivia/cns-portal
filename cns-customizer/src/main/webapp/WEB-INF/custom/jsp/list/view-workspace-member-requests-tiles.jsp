@@ -11,9 +11,16 @@
         <c:forEach var="document" items="${documents}" varStatus="status">
             <c:set var="vignetteUrl"><ttc:pictureLink document="${document}" property="ttc:vignette" /></c:set>
             <c:set var="description" value="${document.properties['dc:description']}" />
+            <c:set var="workspaceType" value="${document.properties['workspaceType']}" />
+            <c:set var="memberStatus" value="${document.properties['memberStatus']}" />
+            
+            <portlet:actionURL name="createRequest" var="createRequestUrl">
+                <portlet:param name="id" value="${document.properties['webc:url']}" />
+            </portlet:actionURL>
+            
             
             <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="panel panel-primary">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <!-- Vignette -->
                         <div class="thumbnail">
@@ -34,19 +41,41 @@
                     <div class="panel-body">
                         <!-- Title -->
                         <h3 class="h4 text-center">
-                            <ttc:title document="${document}" />
+                            <ttc:title document="${document}" linkable="${(workspaceType.id eq 'PUBLIC')}" />
                         </h3>
+                        
+                        <!-- Type -->
+                        <c:if test="${not empty workspaceType}">
+                            <p class="text-center">
+                                <span class="label label-${workspaceType.color}">
+                                    <i class="${workspaceType.icon}"></i>
+                                    <span><op:translate key="LIST_TEMPLATE_${workspaceType.key}" /></span>
+                                </span>
+                            </p>
+                        </c:if>
                         
                         <!-- Description -->
                         <div class="description-wrapper">
                             <p class="text-pre-wrap">${description}</p>
                         </div>
                         
-                        <!-- Member status -->
-                        <p class="text-success">
-                            <i class="glyphicons glyphicons-ok"></i>
-                            <span><op:translate key="LIST_TEMPLATE_STATUS_MEMBER" /></span>
-                        </p>
+                        <!-- Action -->
+                        <c:choose>
+                            <c:when test="${empty memberStatus}">
+                                <div class="text-right">
+                                    <a href="${createRequestUrl}" class="btn btn-default btn-sm">
+                                        <span><op:translate key="LIST_TEMPLATE_WORKSPACE_MEMBER_REQUESTS_CREATION" /></span>
+                                    </a>
+                                </div>
+                            </c:when>
+                            
+                            <c:otherwise>
+                                <p class="text-${memberStatus.color}">
+                                    <i class="${memberStatus.icon}"></i>
+                                    <span><op:translate key="${memberStatus.key}" /></span>
+                                </p>
+                            </c:otherwise>
+                        </c:choose>
                     </div>
                 </div>
             </div>

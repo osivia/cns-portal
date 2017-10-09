@@ -96,12 +96,16 @@ public class CnsPlugin extends AbstractPluginPortlet {
         ListTemplate workspaceMemberRequests = templates.get("workspace-member-requests");
 
         if (workspaceMemberRequests != null) {
-            // Workspace tiles
-            ListTemplate workspaceTiles = new ListTemplate("workspace-tiles", bundle.getString("LIST_TEMPLATE_WORKSPACE_TILES"),
-                    workspaceMemberRequests.getSchemas());
-            workspaceTiles.setModule(workspaceMemberRequests.getModule());
-            templates.put(workspaceTiles.getKey(), workspaceTiles);
+            // Workspace member requests tiles
+            ListTemplate workspaceMemberRequestsTiles = new ListTemplate("workspace-member-requests-tiles",
+                    bundle.getString("LIST_TEMPLATE_WORKSPACE_MEMBER_REQUESTS_TILES"), workspaceMemberRequests.getSchemas());
+            workspaceMemberRequestsTiles.setModule(workspaceMemberRequests.getModule());
+            templates.put(workspaceMemberRequestsTiles.getKey(), workspaceMemberRequestsTiles);
         }
+
+        // Workspace tiles
+        ListTemplate workspaceTiles = new ListTemplate("workspace-tiles", bundle.getString("LIST_TEMPLATE_WORKSPACE_TILES"), "dublincore, common, toutatice");
+        templates.put(workspaceTiles.getKey(), workspaceTiles);
     }
 
 

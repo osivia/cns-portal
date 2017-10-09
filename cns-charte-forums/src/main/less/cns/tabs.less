@@ -3,9 +3,12 @@
 // -----------------------------------------------------
 
 
+@border-color: darken(@brand-primary, 3%);
+
+
 .tabs-default {
     .primary-tabs {
-        border-color: darken(@brand-primary, 10%);
+        border-color: @border-color;
         
         margin: 0 floor(@grid-gutter-width / -2);
         padding: 0 floor(@grid-gutter-width / 2);
@@ -14,7 +17,7 @@
             li {
                 &.active {
                     > a {
-                        border-color: darken(@brand-primary, 10%) darken(@brand-primary, 10%) transparent;
+                        border-color: @border-color @border-color transparent;
                     }
                 }
                 
@@ -32,7 +35,7 @@
             &.groups {
                 > li {
                     &.current {
-                        border-color: darken(@brand-primary, 10%) darken(@brand-primary, 10%) transparent;
+                        border-color: @border-color @border-color transparent;
                     }
                     
                     &:not(.current) {

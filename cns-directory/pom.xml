@@ -14,11 +14,6 @@
     
     <name>CNS - Directory parent</name>
 
-
-    <properties>
-        <springframework-ldap.version>2.1.0.RELEASE</springframework-ldap.version>
-    </properties>
-
     
     <modules>
         <module>implementations</module>
@@ -30,13 +25,13 @@
     <dependencyManagement>
         <dependencies>
         
+            <!-- Directory -->
             <dependency>
                 <groupId>org.osivia.services.directory.socle</groupId>
                 <artifactId>osivia-services-directory-socle-implementations</artifactId>
                 <version>${directory.version}</version>
                 <scope>compile</scope>
             </dependency>
-        
             <dependency>
                 <groupId>org.osivia.services.directory.socle</groupId>
                 <artifactId>osivia-services-directory-socle-services</artifactId>
@@ -51,12 +46,10 @@
     
     <dependencies>
     
-        <!-- SpringFramework LDAP -->
+        <!-- Spring framework LDAP -->
 		<dependency>
 			<groupId>org.springframework.ldap</groupId>
 			<artifactId>spring-ldap-core</artifactId>
-			<version>${springframework-ldap.version}</version>
-			<scope>provided</scope>
 		</dependency>
     
     </dependencies>
