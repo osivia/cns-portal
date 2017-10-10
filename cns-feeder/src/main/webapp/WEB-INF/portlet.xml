@@ -6,17 +6,29 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
     version="2.0">
 
-    <!-- Feeder customizer -->
+    <!-- Feeder -->
     <portlet>
-        <portlet-name>cns-feeder-customizer</portlet-name>
-        <portlet-class>fr.gouv.education.cns.customizer.feeder.FeederCustomizer</portlet-class>
+        <portlet-name>cns-feeder</portlet-name>
+        <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+
+        <init-param>
+            <name>contextClass</name>
+            <value>org.osivia.portal.api.portlet.AnnotationPortletApplicationContext</value>
+        </init-param>
+        <init-param>
+            <name>contextConfigLocation</name>
+            <value>fr.gouv.education.cns.feeder.configuration.FeederConfiguration</value>
+        </init-param>
+
+        <expiration-cache>180</expiration-cache>
 
         <supports>
             <mime-type>text/html</mime-type>
+            <portlet-mode>view</portlet-mode>
         </supports>
 
         <portlet-info>
-            <title>Feeder customizer</title>
+            <title>Feeder</title>
         </portlet-info>
     </portlet>
 
