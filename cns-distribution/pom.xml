@@ -40,16 +40,21 @@
             <type>war</type>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>cns-customizer</artifactId>
+            <groupId>${project.groupId}.directory</groupId>
+            <artifactId>cns-directory-interfaces</artifactId>
             <version>${project.version}</version>
-            <type>war</type>
         </dependency>
         <dependency>
             <groupId>${project.groupId}.directory</groupId>
             <artifactId>cns-directory-ear</artifactId>
             <version>${project.version}</version>
             <type>ear</type>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cns-feeder</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
         </dependency>
 
         <!-- Toutatice CMS -->
@@ -65,6 +70,7 @@
             <groupId>org.osivia.services.directory.socle</groupId>
             <artifactId>osivia-services-directory-socle-interfaces</artifactId>
             <version>${directory.version}</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- Collaboration -->        

@@ -8,7 +8,6 @@ import java.util.List;
 import javax.naming.Name;
 
 import org.apache.commons.lang.StringUtils;
-import org.osivia.portal.api.directory.v2.model.Person;
 import org.osivia.portal.api.urls.Link;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Primary;
@@ -21,17 +20,17 @@ import org.springframework.ldap.support.LdapNameBuilder;
 import org.springframework.stereotype.Component;
 
 /**
- * Person implementation.
+ * CNS person implementation.
  * 
  * @author Cédric Krommenhoek
- * @see Person
+ * @see CnsPerson
  * @see Serializable
  */
 @Component
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 @Primary
 @Entry(objectClasses = {"GEDPerson"})
-public final class PersonImpl implements Person, Serializable {
+public final class CnsPersonImpl implements CnsPerson, Serializable {
 
     /** Default serial version UID. */
     private static final long serialVersionUID = 1L;
@@ -94,11 +93,15 @@ public final class PersonImpl implements Person, Serializable {
     @Attribute(name = "GEDPersonLastConnection")
     private Date lastConnection;
 
+    /** Entity. */
+    @Attribute(name = "ou")
+    private String entity;
+
 
     /**
      * Constructor.
      */
-    public PersonImpl() {
+    public CnsPersonImpl() {
         super();
         this.profiles = new ArrayList<Name>();
         this.avatar = new Link(StringUtils.EMPTY, false);
@@ -353,6 +356,22 @@ public final class PersonImpl implements Person, Serializable {
     @Override
     public Name buildDn(String uid) {
         return LdapNameBuilder.newInstance(buildBaseDn()).add("uid=" + uid).build();
+    }
+
+
+    /**
+     * {@inheritDoc}
+     */
+    public String getEntity() {
+        return entity;
+    }
+
+
+    /**
+     * {@inheritDoc}
+     */
+    public void setEntity(String entity) {
+        this.entity = entity;
     }
 
 

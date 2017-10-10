@@ -8,26 +8,20 @@
         <version>4.6-SNAPSHOT</version>
     </parent>
 
-    <artifactId>cns-directory-implementations</artifactId>
+    <artifactId>cns-directory-interfaces</artifactId>
     <packaging>jar</packaging>
     
-    <name>CNS - Directory implementations</name>
+    <name>CNS - Directory interfaces</name>
     
     
     <dependencies>
     
         <dependency>
-		    <groupId>${project.groupId}</groupId>
-		    <artifactId>cns-directory-interfaces</artifactId>
-            <version>${project.version}</version>
-            <scope>provided</scope>
+		    <groupId>org.osivia.services.directory.socle</groupId>
+		    <artifactId>osivia-services-directory-socle-interfaces</artifactId>
+            <scope>compile</scope>
 	    </dependency>
     
-        <dependency>
-            <groupId>org.osivia.services.directory.socle</groupId>
-            <artifactId>osivia-services-directory-socle-implementations</artifactId>
-        </dependency>
-        
     </dependencies>
 
 </project> 

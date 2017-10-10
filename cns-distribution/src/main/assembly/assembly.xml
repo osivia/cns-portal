@@ -21,6 +21,7 @@
                 <include>${project.groupId}:cns-charte-forums:war:${project.version}</include>
                 <include>${project.groupId}:cns-customizer:war:${project.version}</include>
                 <include>${project.groupId}.directory:cns-directory-ear:ear:${project.version}</include>
+                <include>${project.groupId}:cns-feeder:war:${project.version}</include>
                 <!-- Toutatice CMS -->
                 <include>toutatice-portail.cms:toutatice-portail-cms-nuxeo-web:war:${toutatice.version}</include>
                 <!-- Collaboration -->
@@ -37,6 +38,7 @@
             <scope>runtime</scope>
             <includes>
                 <!-- Directory -->
+                <include>${project.groupId}.directory:cns-directory-interfaces:jar:${project.version}</include>
                 <include>org.osivia.services.directory.socle:osivia-services-directory-socle-interfaces:jar:${directory.version}</include>
                 <!-- Identity SSO -->
                 <include>org.osivia.portal.identity:osivia-portal-identity-sso-lib:jar:${identity-sso.version}</include>

@@ -16,6 +16,7 @@
 
     
     <modules>
+        <module>interfaces</module>
         <module>implementations</module>
         <module>packaging</module>
         <module>ear</module>

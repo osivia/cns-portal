@@ -18,11 +18,18 @@ import org.springframework.ldap.odm.annotations.Id;
 import org.springframework.ldap.support.LdapNameBuilder;
 import org.springframework.stereotype.Component;
 
+/**
+ * CNS collab profile implementation.
+ * 
+ * @author Cédric Krommenhoek
+ * @see CollabProfile
+ * @see Serializable
+ */
 @Component
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 @Primary
 @Entry(objectClasses = {"GEDCollabProfile"})
-public final class CollabProfileImpl implements CollabProfile, Serializable {
+public final class CnsCollabProfileImpl implements CollabProfile, Serializable {
 
     /** Default serial version UID. */
     private static final long serialVersionUID = 1L;
@@ -72,7 +79,7 @@ public final class CollabProfileImpl implements CollabProfile, Serializable {
     /**
      * Constructor.
      */
-    public CollabProfileImpl() {
+    public CnsCollabProfileImpl() {
         super();
         this.uniqueMember = new ArrayList<Name>();
         this.explicitMember = new ArrayList<Name>();

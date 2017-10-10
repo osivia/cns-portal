@@ -44,6 +44,7 @@
         <module>cns-charte-forums</module>
         <module>cns-customizer</module>
         <module>cns-directory</module>
+        <module>cns-feeder</module>
         <module>cns-distribution</module>
     </modules>
 

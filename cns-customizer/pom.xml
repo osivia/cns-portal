@@ -37,12 +37,6 @@
             <scope>provided</scope>
         </dependency>
         
-        <!-- Directory -->
-        <dependency>
-            <groupId>org.osivia.services.directory.socle</groupId>
-            <artifactId>osivia-services-directory-socle-interfaces</artifactId>
-        </dependency>
- 
     </dependencies>
 
 </project>
