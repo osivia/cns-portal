@@ -1,5 +1,7 @@
 package fr.gouv.education.cns.directory.v2.model;
 
+import javax.naming.Name;
+
 import org.osivia.directory.v2.service.PersonServiceImpl;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -31,6 +33,15 @@ public class CnsPersonServiceImpl extends PersonServiceImpl implements CnsPerson
     @Override
     public CnsPerson getPerson(String uid) {
         return (CnsPerson) super.getPerson(uid);
+    }
+
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public CnsPerson getPersonNoCache(Name dn) {
+        return (CnsPerson) super.getPersonNoCache(dn);
     }
 
 

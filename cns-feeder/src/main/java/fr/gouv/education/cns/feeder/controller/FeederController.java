@@ -161,7 +161,6 @@ public class FeederController extends GenericPortlet implements ICustomizationMo
                 // Creation
                 log.info("Création de la personne : " + sourcePerson.getCn());
                 person = this.toCnsPerson(sourcePerson);
-                person.setExternal(true);
                 this.personService.create(person);
                 
                 // Shared workspace
@@ -180,6 +179,9 @@ public class FeederController extends GenericPortlet implements ICustomizationMo
                 }
             }
         }
+
+
+        // TODO external indicator
 
 
         if (person != null) {

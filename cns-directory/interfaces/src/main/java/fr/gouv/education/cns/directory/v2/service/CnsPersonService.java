@@ -1,5 +1,7 @@
 package fr.gouv.education.cns.directory.v2.service;
 
+import javax.naming.Name;
+
 import org.osivia.directory.v2.service.PersonUpdateService;
 
 import fr.gouv.education.cns.directory.v2.model.CnsPerson;
@@ -17,6 +19,13 @@ public interface CnsPersonService extends PersonUpdateService {
      */
     @Override
     CnsPerson getPerson(String uid);
+
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    CnsPerson getPersonNoCache(Name dn);
 
 
     /**
