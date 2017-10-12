@@ -29,7 +29,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 @Primary
-@Entry(objectClasses = {"GEDPerson"})
+@Entry(objectClasses = {"portalPerson"})
 public final class CnsPersonImpl implements CnsPerson, Serializable {
 
     /** Default serial version UID. */
@@ -69,7 +69,7 @@ public final class CnsPersonImpl implements CnsPerson, Serializable {
     private String uid;
 
     /** Profiles. */
-    @Attribute(name = "GEDPersonProfile")
+    @Attribute(name = "portalPersonProfile")
     private List<Name> profiles;
 
     /** User password. */
@@ -82,15 +82,15 @@ public final class CnsPersonImpl implements CnsPerson, Serializable {
     private Link avatar;
 
     /** External account indicator. */
-    @Attribute(name = "GEDPersonExternal")
+    @Attribute(name = "portalPersonExternal")
     private Boolean external;
 
     /** Account validity date. */
-    @Attribute(name = "GEDPersonValidity")
+    @Attribute(name = "portalPersonValidity")
     private Date validity;
 
     /** Last connection date. */
-    @Attribute(name = "GEDPersonLastConnection")
+    @Attribute(name = "portalPersonLastConnection")
     private Date lastConnection;
 
     /** Entity. */

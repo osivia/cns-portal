@@ -28,7 +28,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 @Primary
-@Entry(objectClasses = {"GEDCollabProfile"})
+@Entry(objectClasses = {"portalCollabProfile","groupOfUniqueNames"})
 public final class CnsCollabProfileImpl implements CollabProfile, Serializable {
 
     /** Default serial version UID. */
@@ -52,27 +52,27 @@ public final class CnsCollabProfileImpl implements CollabProfile, Serializable {
     private List<Name> uniqueMember;
 
     /** Explicit member. */
-    @Attribute(name = "GEDExplicitMember")
+    @Attribute(name = "portalExplicitMember")
     private List<Name> explicitMember;
 
     /** Workspace identifier. */
-    @Attribute(name = "GEDCollabWorkspaceId")
+    @Attribute(name = "portalCollabWorkspaceId")
     private String workspaceId;
 
     /** Display name (useful for local group). */
-    @Attribute(name = "GEDDisplayName")
+    @Attribute(name = "portalDisplayName")
     private String displayName;
 
     /** Explicit manager. */
-    @Attribute(name = "GEDExplicitManager")
+    @Attribute(name = "portalExplicitManager")
     private List<Name> explicitManager;
 
     /** Profile type. */
-    @Attribute(name = "GEDProfileType")
+    @Attribute(name = "portalProfileType")
     private WorkspaceGroupType type;
 
     /** Profile role. */
-    @Attribute(name = "GEDCollabWorkspaceRole")
+    @Attribute(name = "portalCollabWorkspaceRole")
     private WorkspaceRole role;
 
 
