@@ -99,6 +99,12 @@
         <reference><![CDATA[init]]></reference>
         <acquitable><![CDATA[false]]></acquitable>
         <endStepMsg><![CDATA[La demande de création a été soumise.]]></endStepMsg>
+        <initAction>
+          <filtersList/>
+          <label/>
+          <actionId/>
+          <stepReference/>
+        </initAction>
         <closable><![CDATA[false]]></closable>
         <globalVariablesReferences>
           <globalVariablesReference>
@@ -128,7 +134,7 @@
           <action>
             <filtersList>
               <filter>
-                <filterInstanceId><![CDATA[SET_ACTOR1]]></filterInstanceId>
+                <filterInstanceId><![CDATA[SET_ACTOR3]]></filterInstanceId>
                 <filterId><![CDATA[SET_ACTOR]]></filterId>
                 <argumentsList>
                   <argument>
@@ -143,53 +149,10 @@
                   </argument>
                 </argumentsList>
                 <filterName><![CDATA[]]></filterName>
-                <filterPath><![CDATA[1]]></filterPath>
+                <filterPath><![CDATA[3]]></filterPath>
               </filter>
               <filter>
-                <filterInstanceId>DefineVarFilter2</filterInstanceId>
-                <filterId>DefineVarFilter</filterId>
-                <argumentsList>
-                  <argument>
-                    <argumentValue>PRIVATE</argumentValue>
-                    <argumentType>TEXT</argumentType>
-                    <argumentName>variableValue</argumentName>
-                  </argument>
-                  <argument>
-                    <argumentValue>workspaceType</argumentValue>
-                    <argumentType>TEXT</argumentType>
-                    <argumentName>variableName</argumentName>
-                  </argument>
-                </argumentsList>
-                <filterName>Définir le type d'espace</filterName>
-                <filterPath>2</filterPath>
-              </filter>
-              <filter>
-                <filterInstanceId>DefineVarFilter3</filterInstanceId>
-                <filterId>DefineVarFilter</filterId>
-                <argumentsList>
-                  <argument>
-                    <argumentValue>/forums/workspaces</argumentValue>
-                    <argumentType>TEXT</argumentType>
-                    <argumentName>variableValue</argumentName>
-                  </argument>
-                  <argument>
-                    <argumentValue>creationPath</argumentValue>
-                    <argumentType>TEXT</argumentType>
-                    <argumentName>variableName</argumentName>
-                  </argument>
-                </argumentsList>
-                <filterName>Définir le chemin de création</filterName>
-                <filterPath>3</filterPath>
-              </filter>
-              <filter>
-                <filterInstanceId><![CDATA[DeleteOnEnding2]]></filterInstanceId>
-                <filterId><![CDATA[DeleteOnEnding]]></filterId>
-                <argumentsList/>
-                <filterName><![CDATA[]]></filterName>
-                <filterPath><![CDATA[2]]></filterPath>
-              </filter>
-              <filter>
-                <filterInstanceId><![CDATA[CREATE_WORKSPACE0]]></filterInstanceId>
+                <filterInstanceId><![CDATA[CREATE_WORKSPACE2]]></filterInstanceId>
                 <filterId><![CDATA[CREATE_WORKSPACE]]></filterId>
                 <argumentsList>
                   <argument>
@@ -219,6 +182,49 @@
                   </argument>
                 </argumentsList>
                 <filterName><![CDATA[]]></filterName>
+                <filterPath><![CDATA[2]]></filterPath>
+              </filter>
+              <filter>
+                <filterInstanceId><![CDATA[DeleteOnEnding4]]></filterInstanceId>
+                <filterId><![CDATA[DeleteOnEnding]]></filterId>
+                <argumentsList/>
+                <filterName><![CDATA[]]></filterName>
+                <filterPath><![CDATA[4]]></filterPath>
+              </filter>
+              <filter>
+                <filterInstanceId><![CDATA[DefineVarFilter1]]></filterInstanceId>
+                <filterId><![CDATA[DefineVarFilter]]></filterId>
+                <argumentsList>
+                  <argument>
+                    <argumentValue><![CDATA[/forums/workspaces]]></argumentValue>
+                    <argumentType><![CDATA[TEXT]]></argumentType>
+                    <argumentName><![CDATA[variableValue]]></argumentName>
+                  </argument>
+                  <argument>
+                    <argumentValue><![CDATA[creationPath]]></argumentValue>
+                    <argumentType><![CDATA[TEXT]]></argumentType>
+                    <argumentName><![CDATA[variableName]]></argumentName>
+                  </argument>
+                </argumentsList>
+                <filterName><![CDATA[Définir le chemin de création]]></filterName>
+                <filterPath><![CDATA[1]]></filterPath>
+              </filter>
+              <filter>
+                <filterInstanceId><![CDATA[DefineVarFilter0]]></filterInstanceId>
+                <filterId><![CDATA[DefineVarFilter]]></filterId>
+                <argumentsList>
+                  <argument>
+                    <argumentValue><![CDATA[PRIVATE]]></argumentValue>
+                    <argumentType><![CDATA[TEXT]]></argumentType>
+                    <argumentName><![CDATA[variableValue]]></argumentName>
+                  </argument>
+                  <argument>
+                    <argumentValue><![CDATA[workspaceType]]></argumentValue>
+                    <argumentType><![CDATA[TEXT]]></argumentType>
+                    <argumentName><![CDATA[variableName]]></argumentName>
+                  </argument>
+                </argumentsList>
+                <filterName><![CDATA[Définir le type d'espace]]></filterName>
                 <filterPath><![CDATA[0]]></filterPath>
               </filter>
             </filtersList>
@@ -238,6 +244,12 @@
         <reference><![CDATA[question]]></reference>
         <acquitable><![CDATA[true]]></acquitable>
         <endStepMsg><![CDATA[]]></endStepMsg>
+        <initAction>
+          <filtersList/>
+          <label/>
+          <actionId/>
+          <stepReference/>
+        </initAction>
         <closable><![CDATA[false]]></closable>
         <globalVariablesReferences/>
         <name><![CDATA[Question]]></name>
@@ -321,6 +333,12 @@
         <reference><![CDATA[information]]></reference>
         <acquitable><![CDATA[false]]></acquitable>
         <endStepMsg><![CDATA[]]></endStepMsg>
+        <initAction>
+          <filtersList/>
+          <label/>
+          <actionId/>
+          <stepReference/>
+        </initAction>
         <closable><![CDATA[true]]></closable>
         <globalVariablesReferences/>
         <name><![CDATA[Information]]></name>
@@ -340,6 +358,7 @@
       </step>
     </pcd:steps>
     <pcd:authorizedGroups/>
+    <pcd:dashboards/>
     <pcd:procedureObjects/>
   </schema>
 </document>
