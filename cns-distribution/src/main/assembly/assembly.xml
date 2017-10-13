@@ -106,7 +106,7 @@
             <destName>login.css</destName>
         </file>
         <file>
-            <source>src/main/resources/jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity/ldap_identity-config.xml.${dest-env}</source>
+            <source>src/main/resources/jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity/ldap_identity-config.xml</source>
             <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}/jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity</outputDirectory>
             <destName>ldap_identity-config.xml</destName>
         </file>
