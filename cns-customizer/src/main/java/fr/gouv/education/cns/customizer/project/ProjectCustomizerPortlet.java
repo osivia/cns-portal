@@ -139,20 +139,20 @@ public class ProjectCustomizerPortlet extends GenericPortlet implements ICustomi
         // Bundle
         Bundle bundle = this.bundleFactory.getBundle(context.getLocale());
 
-        if (configuration.isBeforeInvocation() && !configuration.isAdministrator()) {
+        if (configuration.isBeforeInvocation() && (principal != null)) {
             boolean redirect = BooleanUtils.toBoolean(servletRequest.getParameter("redirect"));
+            Page page = configuration.getPage();
 
-            if (!redirect && (principal != null)) {
-                Page page = configuration.getPage();
+            // User home page redirection
+            if (!configuration.isAdministrator() && !redirect && (page != null)) {
                 Portal portal = page.getPortal();
                 if (page.equals(portal.getDefaultPage())) {
                     String redirectionURL = this.portalUrlFactory.adaptPortalUrlToNavigation(context.getPortalControllerContext(), "/portal/auth/MonEspace");
                     configuration.setRedirectionURL(redirectionURL);
                 }
             }
-        }
 
-        if (configuration.isBeforeInvocation() && (principal != null)) {
+            // First connection
             this.firstConnectionRedirection(portalControllerContext, configuration, principal, bundle);
         }
     }
