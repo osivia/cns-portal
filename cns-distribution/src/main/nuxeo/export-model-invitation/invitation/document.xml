@@ -96,10 +96,13 @@
                 <filterId><![CDATA[SendMailFilter]]></filterId>
                 <argumentsList>
                   <argument>
-                    <argumentValue><![CDATA[${user:name(procedureInitiator)} vous a invité à rejoindre l'espace ${document:title(documentPath)}.
-${command:link("Accepter", "accept", documentPath)}.
+                    <argumentValue><![CDATA[${user:name(procedureInitiator)} vous a invité à rejoindre l'espace ${document:title(workspacePath)}.
+${command:link("Accepter", "accept", workspacePath)}.
 
-Pour voir l’espace, connectez-vous sur votre portail ARENA Rubrique Formation et Ressources.  ]]></argumentValue>
+Vous pouvez vous connecter en utilisant les identifiants suivants :
+
+Login : ${uid}
+Mot de passe : ${generatedPassword}]]></argumentValue>
                     <argumentType><![CDATA[TEXTAREA]]></argumentType>
                     <argumentName><![CDATA[body]]></argumentName>
                   </argument>
@@ -158,10 +161,8 @@ Pour voir l’espace, connectez-vous sur votre portail ARENA Rubrique Formation 
                 <filterId><![CDATA[SendMailFilter]]></filterId>
                 <argumentsList>
                   <argument>
-                    <argumentValue><![CDATA[${user:name(procedureInitiator)} vous a invité à rejoindre l'espace ${document:title(documentPath)}.
-${command:link("Accepter", "accept", documentPath)}
-
-Pour voir l’espace, connectez-vous sur votre portail ARENA Rubrique Formation et Ressources.  ]]></argumentValue>
+                    <argumentValue><![CDATA[${user:name(procedureInitiator)} vous a invité à rejoindre l'espace ${document:title(workspacePath)}.
+${command:link("Accepter", "accept", workspacePath)}]]></argumentValue>
                     <argumentType><![CDATA[TEXTAREA]]></argumentType>
                     <argumentName><![CDATA[body]]></argumentName>
                   </argument>
@@ -240,7 +241,7 @@ Pour voir l’espace, connectez-vous sur votre portail ARENA Rubrique Formation 
                 <filterId><![CDATA[SET_NOTIFICATION_MESSAGE]]></filterId>
                 <argumentsList>
                   <argument>
-                    <argumentValue><![CDATA[Vous êtes désormais membre de l'espace ${document:link(documentPath)}.]]></argumentValue>
+                    <argumentValue><![CDATA[Vous êtes désormais membre de l'espace ${document:link(workspacePath)}.]]></argumentValue>
                     <argumentType><![CDATA[TEXT]]></argumentType>
                     <argumentName><![CDATA[message]]></argumentName>
                   </argument>
@@ -292,7 +293,7 @@ Pour voir l’espace, connectez-vous sur votre portail ARENA Rubrique Formation 
         <actionIdNo><![CDATA[decline]]></actionIdNo>
       </step>
       <step>
-        <stringMsg><![CDATA[${user:link(uid)} a refusé l'invitation à rejoindre l'espace ${document:link(documentPath)}.]]></stringMsg>
+        <stringMsg><![CDATA[${user:link(uid)} a refusé l'invitation à rejoindre l'espace ${document:link(workspacePath)}.]]></stringMsg>
         <index><![CDATA[2]]></index>
         <actionIdYes><![CDATA[]]></actionIdYes>
         <actionIdClosable><![CDATA[close]]></actionIdClosable>

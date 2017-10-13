@@ -137,7 +137,7 @@
         <actionIdNo><![CDATA[]]></actionIdNo>
       </step>
       <step>
-        <stringMsg><![CDATA[${user:link(procedureInitiator)} demande à rejoindre l'espace ${document:link(documentPath)}.]]></stringMsg>
+        <stringMsg><![CDATA[${user:link(procedureInitiator)} demande à rejoindre l'espace ${document:link(workspacePath)}.]]></stringMsg>
         <index><![CDATA[1]]></index>
         <actionIdYes><![CDATA[accept]]></actionIdYes>
         <actionIdClosable><![CDATA[]]></actionIdClosable>
@@ -209,7 +209,7 @@
         <actionIdNo><![CDATA[decline]]></actionIdNo>
       </step>
       <step>
-        <stringMsg><![CDATA[Vous êtes désormais membre de l'espace ${document:link(documentPath)}.]]></stringMsg>
+        <stringMsg><![CDATA[Vous êtes désormais membre de l'espace ${document:link(workspacePath)}.]]></stringMsg>
         <index><![CDATA[2]]></index>
         <actionIdYes><![CDATA[]]></actionIdYes>
         <actionIdClosable><![CDATA[close]]></actionIdClosable>
