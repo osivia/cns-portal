@@ -24,31 +24,31 @@
                     <div class="row">
                         <p:region regionName="drawer-toolbar" />
                     </div>
+                    
+                    <p:region regionName="navigation-header" />
                         
                     <div class="scrollbox">
-                        <p:region regionName="col-1" />
+                        <p:region regionName="col1" />
                     </div>
                 </div>
                 
                 <div class="col-offset-auto col-auto flexbox">
                     <div class="scrollbox">
-                        <p:region regionName="cols-top" />
+                        <p:region regionName="col2" />
                         
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="scrollbox">
-                                    <p:region regionName="col-2" />
+                                    <p:region regionName="col21" />
                                 </div>
                             </div>
                             
                             <div class="col-sm-6">
                                 <div class="scrollbox">
-                                    <p:region regionName="col-3" />
+                                    <p:region regionName="col22" />
                                 </div>
                             </div>
                         </div>
-                        
-                        <p:region regionName="cols-bottom" />
                     </div>
                 </div>
             </div>

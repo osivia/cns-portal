@@ -27,17 +27,21 @@
                     <div class="row flexbox">
                         <!-- Drawer -->
                         <div id="drawer" class="col-offset-auto col-auto flexbox">
-                            <div class="row flexbox">
+                            <div class="row">
                                 <p:region regionName="drawer-toolbar" />
-
-                                <div class="col-auto flexbox">                            
-                                    <div class="scrollbox">
-                                        <p:region regionName="col-1" />
-                                    </div>
+                            </div>
+    
+                            <div class="flexbox scrollbox">
+                                <div class="${navigationPanelClosed ? '' : 'opened-navigation-panel'}">
+                                    <p:region regionName="navigation-header" />
                                 </div>
-        
-                                <div ${navigationPanelClosed ? 'class="hidden"' : 'class="col-offset-auto col-auto flexbox"'}>
-                                    <div class="scrollbox">
+    
+                                <div class="row flexbox">
+                                    <div class="col-auto flexbox">                            
+                                        <p:region regionName="col1" />
+                                    </div>
+                                    
+                                    <div class="${navigationPanelClosed ? 'hidden' : 'col-offset-auto col-auto flexbox hidden-sm'}">
                                         <p:region regionName="navigation-panel" />
                                     </div>
                                 </div>

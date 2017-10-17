@@ -1,0 +1,60 @@
+//
+// Charte CNS - Layout
+// -----------------------------------------------------
+
+
+#drawer {
+    .scrollbox {
+        @media screen and (min-width: @screen-sm-min) {
+            margin-bottom: @line-height-computed;
+            
+            > * {
+                overflow: unset;
+            }
+        }
+        
+        .portlet-container {
+            &.flexbox {
+                @media screen and (min-width: @screen-sm-min) {
+                    flex: 1;
+                }
+            }
+        }
+    }
+}
+
+
+#navigation-header {
+    .portlet-container {
+        &, img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        img {
+            max-height: 200px;
+        }
+        
+        @media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+            max-width: 120px;
+        }
+        
+        @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+            max-width: 140px;
+        }
+        
+        @media screen and (min-width: @screen-lg-min) {
+            max-width: 160px;
+        }
+        
+        .opened-navigation-panel & {
+            @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+                max-width: 365px;
+            }
+            
+            @media screen and (min-width: @screen-lg-min) {
+                max-width: 410px;
+            }
+        }
+    }
+}

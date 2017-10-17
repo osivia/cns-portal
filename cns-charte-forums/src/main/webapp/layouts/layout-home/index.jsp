@@ -14,6 +14,11 @@
     
     <main>
         <div class="container">
+            <!-- Simple menubar -->
+            <div class="simple-menubar">
+                <p:region regionName="menubar" />
+            </div>
+        
             <!-- Drawer -->
             <div id="drawer">
                 <p:region regionName="drawer-toolbar" />

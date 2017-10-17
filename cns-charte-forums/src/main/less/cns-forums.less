@@ -6,6 +6,8 @@
 // Bootstrap
 @import "bootstrap/bootstrap.less";
 
+// Layout
+@import "cns/layout.less";
 // Tabs
 @import "cns/tabs.less";
 // Workspace tiles
@@ -13,23 +15,33 @@
 
 
 header {
-    &, &.jumbotron {
-        color: #fff;
-        background-color: @brand-primary;
-    }
+    color: #fff;
+    background-color: @brand-primary;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: darken(@brand-primary, 3%);
     
-    &.jumbotron {
-        border-bottom-style: solid;
-        border-width: 1px;
-        border-color: darken(@brand-primary, 3%); 
+    .jumbotron {
+        margin-bottom: 0;
+        
+        background-color: unset;
         
         img {
             max-height: 120px;
         }
+        
+        ~ .tabs-default {
+            margin-top: 0;
+            
+            ul.home {
+                display: none;
+            }
+        }
     }
     
-    &:not(.jumbotron) {
-        padding-top: floor(@line-height-computed / 2);
+    .tabs-default {
+        margin-top: floor(@line-height-computed / 2);
+        margin-bottom: -1px;
     }
 }
 
