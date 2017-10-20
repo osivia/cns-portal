@@ -16,7 +16,7 @@
     
     <modules>
         <module>card</module>
-<!--         <module>management</module> -->
+        <module>management</module>
     </modules>
 
 
