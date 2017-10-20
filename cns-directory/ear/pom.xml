@@ -19,15 +19,15 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>cns-directory-packaging</artifactId>
-            <version>${directory.version}</version>
+            <version>${project.version}</version>
             <type>war</type>
         </dependency>
         
         <!-- Person card -->
         <dependency>
-            <groupId>org.osivia.services.directory.person</groupId>
-            <artifactId>osivia-services-directory-person-card</artifactId>
-            <version>${directory.version}</version>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cns-directory-person-card</artifactId>
+            <version>${project.version}</version>
             <type>war</type>
         </dependency>
         
@@ -47,7 +47,6 @@
             <type>war</type>
         </dependency>
 
-        
         <!-- Person first connection -->
         <dependency>
             <groupId>org.osivia.services.directory.person</groupId>
@@ -75,8 +74,8 @@
                             <contextRoot>/cns-directory-services</contextRoot>
                         </webModule>
                         <webModule>
-                            <groupId>org.osivia.services.directory.person</groupId>
-                            <artifactId>osivia-services-directory-person-card</artifactId>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>cns-directory-person-card</artifactId>
                             <contextRoot>/osivia-services-directory-person-card</contextRoot>
                         </webModule>
                         <webModule>

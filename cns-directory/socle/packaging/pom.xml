@@ -4,7 +4,7 @@
 
     <parent>
         <groupId>fr.gouv.education.cns.portal.directory</groupId>
-        <artifactId>cns-directory-parent</artifactId>
+        <artifactId>cns-directory-socle-parent</artifactId>
         <version>4.6-SNAPSHOT</version>
     </parent>
 
