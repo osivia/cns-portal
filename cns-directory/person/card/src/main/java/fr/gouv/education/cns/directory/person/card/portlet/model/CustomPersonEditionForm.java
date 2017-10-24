@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import fr.gouv.education.cns.directory.person.util.portlet.model.PersonEntity;
+
 /**
  * Customized person card edition form java-bean.
  * 

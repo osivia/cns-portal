@@ -1,4 +1,4 @@
-package fr.gouv.education.cns.directory.person.card.portlet.repository.command;
+package fr.gouv.education.cns.directory.person.util.portlet.repository.command;
 
 import org.nuxeo.ecm.automation.client.OperationRequest;
 import org.nuxeo.ecm.automation.client.Session;

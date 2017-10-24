@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
 
 import fr.gouv.education.cns.directory.person.card.portlet.model.CustomPersonEditionForm;
 import fr.gouv.education.cns.directory.person.card.portlet.model.CustomPersonNuxeoProfile;
-import fr.gouv.education.cns.directory.person.card.portlet.model.PersonEntity;
 import fr.gouv.education.cns.directory.person.card.portlet.repository.CustomPersonCardRepository;
+import fr.gouv.education.cns.directory.person.util.portlet.model.PersonEntity;
 import fr.gouv.education.cns.directory.v2.model.CnsPerson;
 
 /**

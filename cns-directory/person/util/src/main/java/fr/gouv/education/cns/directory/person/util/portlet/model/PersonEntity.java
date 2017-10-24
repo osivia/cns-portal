@@ -1,4 +1,4 @@
-package fr.gouv.education.cns.directory.person.card.portlet.model;
+package fr.gouv.education.cns.directory.person.util.portlet.model;
 
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;

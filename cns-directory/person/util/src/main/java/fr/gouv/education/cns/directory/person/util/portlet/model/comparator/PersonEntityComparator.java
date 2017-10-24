@@ -1,10 +1,10 @@
-package fr.gouv.education.cns.directory.person.card.portlet.model.comparator;
+package fr.gouv.education.cns.directory.person.util.portlet.model.comparator;
 
 import java.util.Comparator;
 
 import org.springframework.stereotype.Component;
 
-import fr.gouv.education.cns.directory.person.card.portlet.model.PersonEntity;
+import fr.gouv.education.cns.directory.person.util.portlet.model.PersonEntity;
 
 /**
  * Person entity comparator.

@@ -1,25 +1,25 @@
-package fr.gouv.education.cns.directory.person.card.portlet.configuration;
+package fr.gouv.education.cns.directory.person.management.portlet.configuration;
 
-import org.osivia.services.person.card.portlet.configuration.PersonCardConfiguration;
+import org.osivia.services.person.management.portlet.configuration.PersonManagementConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 
 /**
- * Person card customized portlet configuration.
+ * Customized person management portlet configuration.
  * 
  * @author Cédric Krommenhoek
- * @see PersonCardConfiguration
+ * @see PersonManagementConfiguration
  */
 @Configuration
-@ComponentScan(basePackages = {"fr.gouv.education.cns.directory.person.card.portlet", "fr.gouv.education.cns.directory.person.util.portlet"})
-public class PersonCardCustomConfiguration extends PersonCardConfiguration {
+@ComponentScan(basePackages = {"fr.gouv.education.cns.directory.person.management.portlet", "fr.gouv.education.cns.directory.person.util.portlet"})
+public class CustomPersonManagementConfiguration extends PersonManagementConfiguration {
 
     /**
      * Constructor.
      */
-    public PersonCardCustomConfiguration() {
+    public CustomPersonManagementConfiguration() {
         super();
     }
 

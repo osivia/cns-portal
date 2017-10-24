@@ -1,10 +1,9 @@
-package fr.gouv.education.cns.directory.person.card.portlet.repository;
+package fr.gouv.education.cns.directory.person.management.portlet.repository;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -14,22 +13,21 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.CharEncoding;
 import org.apache.commons.lang.StringUtils;
 import org.nuxeo.ecm.automation.client.model.Blob;
-import org.nuxeo.ecm.automation.client.model.Document;
 import org.osivia.portal.api.cache.services.CacheInfo;
 import org.osivia.portal.api.context.PortalControllerContext;
-import org.osivia.services.person.card.portlet.model.PersonEditionForm;
-import org.osivia.services.person.card.portlet.model.PersonNuxeoProfile;
-import org.osivia.services.person.card.portlet.repository.PersonCardRepositoryImpl;
+import org.osivia.portal.api.directory.v2.model.Person;
+import org.osivia.services.person.management.portlet.model.PersonManagementForm;
+import org.osivia.services.person.management.portlet.repository.PersonManagementRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
-import fr.gouv.education.cns.directory.person.card.portlet.model.CustomPersonEditionForm;
-import fr.gouv.education.cns.directory.person.card.portlet.model.CustomPersonNuxeoProfile;
+import fr.gouv.education.cns.directory.person.management.portlet.model.CustomPersonManagementForm;
 import fr.gouv.education.cns.directory.person.util.portlet.model.PersonEntity;
 import fr.gouv.education.cns.directory.person.util.portlet.model.comparator.PersonEntityComparator;
 import fr.gouv.education.cns.directory.person.util.portlet.repository.command.GetEntitiesCommand;
+import fr.gouv.education.cns.directory.v2.model.CnsPerson;
 import fr.toutatice.portail.cms.nuxeo.api.INuxeoCommand;
 import fr.toutatice.portail.cms.nuxeo.api.NuxeoController;
 import fr.toutatice.portail.cms.nuxeo.api.services.NuxeoCommandContext;
@@ -37,23 +35,15 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 /**
- * Customized person card portlet repository implementation.
+ * Customized person management portlet repository implementation.
  * 
  * @author Cédric Krommenhoek
- * @see PersonCardRepositoryImpl
- * @see CustomPersonCardRepository
+ * @see PersonManagementRepositoryImpl
+ * @see CustomPersonManagementRepository
  */
 @Repository
 @Primary
-public class CustomPersonCardRepositoryImpl extends PersonCardRepositoryImpl implements CustomPersonCardRepository {
-
-    /** Administrative entity Nuxeo document property. */
-    private static final String ADMINISTRATIVE_ENTITY_PROPERTY = "cnsprofile:entite_adm";
-    /** Generic mail Nuxeo document property. */
-    private static final String GENERIC_MAIL_PROPERTY = "cnsprofile:mail_generique";
-    /** Referer Nuxeo document property. */
-    private static final String REFERER_PROPERTY = "cnsprofile:referent";
-
+public class CustomPersonManagementRepositoryImpl extends PersonManagementRepositoryImpl implements CustomPersonManagementRepository {
 
     /** Application context. */
     @Autowired
@@ -67,7 +57,7 @@ public class CustomPersonCardRepositoryImpl extends PersonCardRepositoryImpl imp
     /**
      * Constructor.
      */
-    public CustomPersonCardRepositoryImpl() {
+    public CustomPersonManagementRepositoryImpl() {
         super();
     }
 
@@ -76,42 +66,22 @@ public class CustomPersonCardRepositoryImpl extends PersonCardRepositoryImpl imp
      * {@inheritDoc}
      */
     @Override
-    protected CustomPersonNuxeoProfile convertNuxeoProfile(Document document) throws PortletException {
-        // Nuxeo profile
-        PersonNuxeoProfile nuxeoProfile = super.convertNuxeoProfile(document);
+    protected Person getSearchCriteria(PortalControllerContext portalControllerContext, PersonManagementForm form) {
+        // Search criteria
+        Person criteria = super.getSearchCriteria(portalControllerContext, form);
 
-        // Customized Nuxeo profile
-        CustomPersonNuxeoProfile customNuxeoProfile;
+        if ((form instanceof CustomPersonManagementForm) && (criteria instanceof CnsPerson)) {
+            CustomPersonManagementForm customForm = (CustomPersonManagementForm) form;
+            CnsPerson cnsCriteria = (CnsPerson) criteria;
 
-        if ((nuxeoProfile != null) && (nuxeoProfile instanceof CustomPersonNuxeoProfile)) {
-            customNuxeoProfile = (CustomPersonNuxeoProfile) nuxeoProfile;
-            customNuxeoProfile.setAdministrativeEntity(document.getString(ADMINISTRATIVE_ENTITY_PROPERTY));
-            customNuxeoProfile.setGenericMail(document.getString(GENERIC_MAIL_PROPERTY));
-            customNuxeoProfile.setReferer(document.getString(REFERER_PROPERTY));
-        } else {
-            customNuxeoProfile = null;
+            // Entity
+            String entity = customForm.getEntity();
+            if (StringUtils.isNotEmpty(entity)) {
+                cnsCriteria.setEntity(entity);
+            }
         }
 
-        return customNuxeoProfile;
-    }
-
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Map<String, String> getNuxeoProperties(PortalControllerContext portalControllerContext, PersonEditionForm form) throws PortletException {
-        Map<String, String> properties = super.getNuxeoProperties(portalControllerContext, form);
-
-        if (form instanceof CustomPersonEditionForm) {
-            CustomPersonEditionForm customForm = (CustomPersonEditionForm) form;
-
-            properties.put(ADMINISTRATIVE_ENTITY_PROPERTY, StringUtils.trimToEmpty(customForm.getAdministrativeEntity()));
-            properties.put(GENERIC_MAIL_PROPERTY, StringUtils.trimToEmpty(customForm.getGenericMail()));
-            properties.put(REFERER_PROPERTY, StringUtils.trimToEmpty(customForm.getReferer()));
-        }
-
-        return properties;
+        return criteria;
     }
 
 

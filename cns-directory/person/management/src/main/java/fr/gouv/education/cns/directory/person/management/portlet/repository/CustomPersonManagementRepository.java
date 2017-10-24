@@ -1,21 +1,21 @@
-package fr.gouv.education.cns.directory.person.card.portlet.repository;
+package fr.gouv.education.cns.directory.person.management.portlet.repository;
 
 import java.util.Set;
 
 import javax.portlet.PortletException;
 
 import org.osivia.portal.api.context.PortalControllerContext;
-import org.osivia.services.person.card.portlet.repository.PersonCardRepository;
+import org.osivia.services.person.management.portlet.repository.PersonManagementRepository;
 
 import fr.gouv.education.cns.directory.person.util.portlet.model.PersonEntity;
 
 /**
- * Customized person card portlet repository.
+ * Customized person management portlet repository interface.
  * 
  * @author Cédric Krommenhoek
- * @see PersonCardRepository
+ * @see PersonManagementRepository
  */
-public interface CustomPersonCardRepository extends PersonCardRepository {
+public interface CustomPersonManagementRepository extends PersonManagementRepository {
 
     /**
      * Get entities.
