@@ -1,6 +1,7 @@
 package fr.gouv.education.cns.feeder.dao;
 
 import javax.naming.Name;
+import javax.naming.ldap.Rdn;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -48,7 +49,7 @@ public class CnsSourcePersonDao {
      * @return CNS person
      */
     public CnsSourcePerson getPerson(String uid) {
-        Name dn = LdapNameBuilder.newInstance(this.getBaseDn()).add("uid=" + uid).build();
+        Name dn = LdapNameBuilder.newInstance(this.getBaseDn()).add("uid=" + Rdn.escapeValue(uid)).build();
         return this.cnsLdapTemplate.findByDn(dn, this.sample.getClass());
     }
 

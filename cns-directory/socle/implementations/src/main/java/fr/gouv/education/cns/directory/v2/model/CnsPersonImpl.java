@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.naming.Name;
+import javax.naming.ldap.Rdn;
 
 import org.apache.commons.lang.StringUtils;
 import org.osivia.portal.api.urls.Link;
@@ -350,12 +351,13 @@ public final class CnsPersonImpl implements CnsPerson, Serializable {
         return LdapNameBuilder.newInstance(System.getProperty("ldap.base")).add("ou=users").build();
     }
 
+
     /**
      * {@inheritDoc}
      */
     @Override
     public Name buildDn(String uid) {
-        return LdapNameBuilder.newInstance(buildBaseDn()).add("uid=" + uid).build();
+        return LdapNameBuilder.newInstance(buildBaseDn()).add("uid=" + Rdn.escapeValue(uid)).build();
     }
 
 
