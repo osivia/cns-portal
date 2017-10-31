@@ -17,7 +17,9 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.osivia.directory.v2.model.ext.WorkspaceRole;
+import org.osivia.directory.v2.service.PersonUpdateService;
 import org.osivia.directory.v2.service.WorkspaceService;
+import org.osivia.portal.api.directory.v2.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
@@ -29,7 +31,6 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import fr.gouv.education.cns.directory.v2.model.CnsPerson;
-import fr.gouv.education.cns.directory.v2.service.CnsPersonService;
 import fr.gouv.education.cns.feeder.dao.CnsSourcePersonDao;
 import fr.gouv.education.cns.feeder.model.CnsSourcePerson;
 
@@ -52,7 +53,7 @@ public class FeederServiceImpl implements FeederService {
 
     /** Person service. */
     @Autowired
-    private CnsPersonService personService;
+    private PersonUpdateService personService;
 
     /** Workspace service. */
     @Autowired
@@ -89,8 +90,8 @@ public class FeederServiceImpl implements FeederService {
         // User DN
         Name userDn = this.personService.getEmptyPerson().buildDn(principalId);
 
-        // CNS person
-        CnsPerson person = this.personService.getPersonNoCache(userDn);
+        // Person
+        Person person = this.personService.getPersonNoCache(userDn);
 
         if (person == null) {
             // CNS source person
@@ -100,21 +101,26 @@ public class FeederServiceImpl implements FeederService {
                 // Creation
                 log.info("Création de la personne : " + sourcePerson.getCn());
                 person = this.toCnsPerson(sourcePerson);
-                this.personService.create(person);
 
-                // Shared workspace
-                String sharedWorkspaceId = this.environment.getProperty("COMMUN");
-                log.info("Ajout à l'espace commun : " + sharedWorkspaceId);
-                this.workspaceService.addOrModifyMember(sharedWorkspaceId, person.getDn(), WorkspaceRole.WRITER);
+                if (person != null) {
+                    this.personService.create(person);
 
-                // Entity workspace
-                String entity = sourcePerson.getEntity();
-                if (StringUtils.isNotBlank(entity)) {
-                    String workspaceId = this.environment.getProperty(StringUtils.upperCase(entity));
-                    if (StringUtils.isNotEmpty(workspaceId)) {
-                        log.info("Ajout à l'espace : " + sharedWorkspaceId);
-                        this.workspaceService.addOrModifyMember(workspaceId, person.getDn(), WorkspaceRole.WRITER);
+                    // Shared workspace
+                    String sharedWorkspaceId = this.environment.getProperty("COMMUN");
+                    log.info("Ajout à l'espace commun : " + sharedWorkspaceId);
+                    this.workspaceService.addOrModifyMember(sharedWorkspaceId, person.getDn(), WorkspaceRole.WRITER);
+
+                    // Entity workspace
+                    String entity = sourcePerson.getEntity();
+                    if (StringUtils.isNotBlank(entity)) {
+                        String workspaceId = this.environment.getProperty(StringUtils.upperCase(entity));
+                        if (StringUtils.isNotEmpty(workspaceId)) {
+                            log.info("Ajout à l'espace : " + sharedWorkspaceId);
+                            this.workspaceService.addOrModifyMember(workspaceId, person.getDn(), WorkspaceRole.WRITER);
+                        }
                     }
+                } else {
+                    this.log.error("Unable to create user " + userDn);
                 }
             }
         }
@@ -232,22 +238,31 @@ public class FeederServiceImpl implements FeederService {
         // display name
         String displayName = sourcePerson.getGivenName() + " " + sourcePerson.getSn();
 
-        // CNS person
-        CnsPerson person = this.personService.getEmptyPerson();
-        person.setUid(sourcePerson.getUid());
-        person.setCn(displayName);
-        person.setDisplayName(displayName);
-        person.setGivenName(sourcePerson.getGivenName());
-        person.setMail(sourcePerson.getMail());
-        person.setSn(sourcePerson.getSn());
+        // Person
+        Person person = this.personService.getEmptyPerson();
 
-        // Entity
-        String entity = sourcePerson.getEntity();
-        if (StringUtils.isNotBlank(entity)) {
-            person.setEntity(StringUtils.upperCase(entity));
+        // CNS person
+        CnsPerson cnsPerson;
+        if ((person != null) && (person instanceof CnsPerson)) {
+            cnsPerson = (CnsPerson) person;
+
+            cnsPerson.setUid(sourcePerson.getUid());
+            cnsPerson.setCn(displayName);
+            cnsPerson.setDisplayName(displayName);
+            cnsPerson.setGivenName(sourcePerson.getGivenName());
+            cnsPerson.setMail(sourcePerson.getMail());
+            cnsPerson.setSn(sourcePerson.getSn());
+
+            // Entity
+            String entity = sourcePerson.getEntity();
+            if (StringUtils.isNotBlank(entity)) {
+                cnsPerson.setEntity(StringUtils.upperCase(entity));
+            }
+        } else {
+            cnsPerson = null;
         }
 
-        return person;
+        return cnsPerson;
     }
 
 }

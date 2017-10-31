@@ -3,6 +3,7 @@ package fr.gouv.education.cns.feeder.configuration;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.osivia.directory.v2.service.PersonUpdateService;
 import org.osivia.directory.v2.service.WorkspaceService;
 import org.osivia.portal.api.directory.v2.DirServiceFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -13,8 +14,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.ldap.core.ContextSource;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.core.support.LdapContextSource;
-
-import fr.gouv.education.cns.directory.v2.service.CnsPersonService;
 
 /**
  * Feeder configuration.
@@ -76,8 +75,8 @@ public class FeederConfiguration {
      * @return person service
      */
     @Bean
-    public CnsPersonService getPersonService() {
-        return DirServiceFactory.getService(CnsPersonService.class);
+    public PersonUpdateService getPersonService() {
+        return DirServiceFactory.getService(PersonUpdateService.class);
     }
 
 

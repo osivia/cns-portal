@@ -99,7 +99,6 @@
         <uri>/layouts/layout-workspace/index.jsp</uri>
         <uri state="maximized">/layouts/layout-workspace/maximized.jsp</uri>
         <regions>
-            <region name="navigation-header" />
             <region name="col1" />
             <region name="col2" />
             <region name="col21" />

@@ -8,6 +8,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javax.portlet.PortletException;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.CharEncoding;
@@ -67,8 +68,19 @@ public class CustomPersonManagementRepositoryImpl extends PersonManagementReposi
      */
     @Override
     protected Person getSearchCriteria(PortalControllerContext portalControllerContext, PersonManagementForm form) {
+        // HTTP servlet request
+        HttpServletRequest servletRequest = portalControllerContext.getHttpServletRequest();
+        // Host
+        String host = servletRequest.getHeader("host");
+
         // Search criteria
         Person criteria = super.getSearchCriteria(portalControllerContext, form);
+
+        // External indicator
+        if (!StringUtils.contains(host, "forums")) {
+            // Only CNS members
+            criteria.setExternal(true);
+        }
 
         if ((form instanceof CustomPersonManagementForm) && (criteria instanceof CnsPerson)) {
             CustomPersonManagementForm customForm = (CustomPersonManagementForm) form;

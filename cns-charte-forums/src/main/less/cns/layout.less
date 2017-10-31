@@ -24,8 +24,8 @@
 }
 
 
-#navigation-header {
-    .portlet-container {
+.navigation-header {
+    &.portlet-container {
         &, img {
             margin-left: auto;
             margin-right: auto;
@@ -33,27 +33,19 @@
         
         img {
             max-height: 200px;
-        }
-        
-        @media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-            max-width: 120px;
-        }
-        
-        @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-            max-width: 140px;
-        }
-        
-        @media screen and (min-width: @screen-lg-min) {
-            max-width: 160px;
-        }
-        
-        .opened-navigation-panel & {
+            
+            border-radius: @border-radius-base;
+            
+            @media screen and (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+                max-width: 120px;
+            }
+            
             @media screen and (min-width: @screen-md-min) and (max-width: @screen-md-max) {
-                max-width: 365px;
+                max-width: 140px;
             }
             
             @media screen and (min-width: @screen-lg-min) {
-                max-width: 410px;
+                max-width: 160px;
             }
         }
     }

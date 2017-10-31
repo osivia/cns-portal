@@ -34,7 +34,7 @@
     <dc:coverage/>
     <dc:expired/>
     <dc:lastContributor><![CDATA[admin]]></dc:lastContributor>
-    <dc:title><![CDATA[Création de personne]]></dc:title>
+    <dc:title><![CDATA[Création de compte utilisateur]]></dc:title>
   </schema>
   <schema xmlns:ttc="http://www.nuxeo.org/ecm/project/schemas/ACRENNES2/toutatice" name="toutatice">
     <ttc:childrenPageTemplate/>

@@ -25,9 +25,9 @@
                         <p:region regionName="drawer-toolbar" />
                     </div>
                     
-                    <p:region regionName="navigation-header" />
-                        
                     <div class="scrollbox">
+                        <p:region regionName="navigation-header" />
+                    
                         <p:region regionName="col1" />
                     </div>
                 </div>

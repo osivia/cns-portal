@@ -6,30 +6,22 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
 <c:set var="brand"><op:translate key="BRAND" /></c:set>
-<c:set var="logoAlt"><op:translate key="LOGO_ALT" /></c:set>
 
 
 <html>
 
 <head>
     <title><op:translate key="ERROR" /> - ${brand}</title>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    <!-- Socle -->
-    <link rel='stylesheet' href='/osivia-portal-custom-web-assets/css/osivia.min.css'>
-    
-    <!-- Glyphicons -->
-    <link rel='stylesheet' href='/osivia-portal-custom-web-assets/css/glyphicons.min.css'>
-    
-    <!-- CNS -->
     <meta http-equiv="default-style" content="CNS">
-    <link rel="icon" href="${contextPath}/img/favicon.png" />
-    <link rel="stylesheet" href="${contextPath}/css/cns.min.css" title="CNS" />
-    <link rel="stylesheet" href="${contextPath}/css/theme-default.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     
+    <link rel="stylesheet" href="/osivia-portal-custom-web-assets/css/osivia.min.css">
+    <link rel="stylesheet" href="/osivia-portal-custom-web-assets/css/glyphicons.min.css">
+    <link rel="icon" href="${contextPath}/img/favicon.png" />
+    <link rel="stylesheet" href="${contextPath}/css/cns-forums.min.css" title="CNS" />
 </head>
 
 
@@ -40,60 +32,24 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <!-- Brand -->
-                    <a href="/" class="navbar-brand hidden-xs">
-                        <span>${brand}</span>
-                    </a>
+                    <a href="/" class="navbar-brand hidden-xs">${brand}</a>
                 </div>
             </div>
         </div>
     </div>
 
     <header class="hidden-xs">
-        <div class="container-fluid">
-            <!-- Banner -->
-            <div class="banner clearfix">
-                <!-- Logo -->
-                <div class="logo">
-                    <div class="pull-left">
-                        <h1 class="h3">
-                            <a href="/">
-                                <img src="${contextPath}/img/logo_MENESR.png" alt="${logoAlt}">
-                                <span><op:translate key="PORTAL_TITLE" /></span>
-                            </a>
-                        </h1>
-                    </div>
-                </div>
-            </div>
+        <div class="container">
+            <!-- Title -->
+            <div class="jumbotron">
+                <p class="text-center">
+                    <img src="${contextPath}/img/logo-men.png" alt="Logo du Minit&egrave;re de l'&Eacute;ducation Nationale">
+                </p>
 
-            <!-- Onglets -->
-            <div class="tabs tabs-default">
-                <!-- Fixed nav -->
-                <div class="tabs" role="navigation">
-                    <div class="primary-tabs clearfix">
-                        <!-- Home -->
-                        <div class="pull-left">
-                            <ul class="home">
-                                <li role="presentation">
-                                    <a href="/" >
-                                        <i class="halflings halflings-home"></i>
-                                        <span class="sr-only">Accueil</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Tabs -->
-                        <div class="fixed-tabs-container">
-                            <ul class="">
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <h1 class="text-center">Forums du CNS</h1>
             </div>
         </div>
     </header>
-
 
     <main>
         <div class="container">

@@ -2,6 +2,7 @@ package fr.gouv.education.cns.directory.v2.dao;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.apache.commons.beanutils.PropertyUtils;
@@ -61,6 +62,20 @@ public class CnsPersonDaoImpl extends PersonDaoImpl {
             globalFilter.append(quickSearchFilter);
         }
 
+
+        // Profiles
+        Filter profilesFilter = this.getQueryFilter(criteria, "profiles");
+        if (profilesFilter != null) {
+            globalFilter.append(profilesFilter);
+        }
+
+
+        // External indicator
+        Filter externalFilter = this.getQueryFilter(criteria, "external");
+        if (externalFilter != null) {
+            globalFilter.append(externalFilter);
+        }
+
         // Entity
         Filter entityFilter = this.getQueryFilter(criteria, "entity");
         if (entityFilter != null) {
@@ -109,6 +124,27 @@ public class CnsPersonDaoImpl extends PersonDaoImpl {
         Filter filter;
         if ((attribute == null) || (value == null)) {
             filter = null;
+        } else if (value instanceof Collection) {
+            // Sub-query values
+            Collection<?> subQueryValues = (Collection<?>) value;
+
+            // Sub-query filters
+            Collection<Filter> subQueryFilters = new ArrayList<Filter>(subQueryValues.size());
+            for (Object subQueryValue : subQueryValues) {
+                // Sub-query filter
+                Filter subQueryFilter = new LikeFilter(attribute, subQueryValue.toString());
+                subQueryFilters.add(subQueryFilter);
+            }
+
+            if (subQueryFilters.isEmpty()) {
+                filter = null;
+            } else {
+                // "OR" filter
+                BinaryLogicalFilter orFilter = new OrFilter();
+                orFilter.appendAll(subQueryFilters);
+
+                filter = orFilter;
+            }
         } else {
             filter = new LikeFilter(attribute, value.toString());
         }
