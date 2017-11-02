@@ -89,10 +89,26 @@ public class CnsPlugin extends AbstractPluginPortlet {
      */
     private void customizeDocumentTypes(CustomizationContext context) {
         // Document types
-        Map<String, DocumentType> documentTypes = this.getDocTypes(context);
+        Map<String, DocumentType> types = this.getDocTypes(context);
+
+        // Blog
+        DocumentType blog = DocumentType.createRoot("BlogSite");
+        blog.addSubtypes("BlogPost");
+        blog.setIcon("glyphicons glyphicons-blog");
+        blog.setOrdered(false);
+        blog.setEditable(true);
+        blog.setTemplate("/default/templates/blogSite");
+        types.put(blog.getName(), blog);
+
+        // Blog post
+        DocumentType blogPost = DocumentType.createLeaf("BlogPost");
+        blogPost.setIcon("glyphicons glyphicons-blog");
+        blogPost.setForceContextualization(true);
+        blogPost.setEditable(true);
+        types.put(blogPost.getName(), blogPost);
 
         // Remove pad
-        documentTypes.remove("ToutaticePad");
+        types.remove("ToutaticePad");
     }
 
 

@@ -103,6 +103,8 @@
             <region name="col2" />
             <region name="col21" />
             <region name="col22" />
+            <region name="col23" />
+            <region name="col24" />
         </regions>
     </layout>
 

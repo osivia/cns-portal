@@ -18,7 +18,7 @@
         <span><op:translate key="PERSON_MANAGEMENT_FILTER_HELP" /></span>
     </p>
     
-    <form:label path="entity" cssClass="sr-only"><op:translate key="PERSON_MANAGEMENT_ENTITY"/></form:label>
+    <form:label path="entity" cssClass="control-label"><op:translate key="PERSON_MANAGEMENT_ENTITY"/></form:label>
     <form:select path="entity" cssClass="form-control">
         <form:option value=""></form:option>
         <c:forEach var="entity" items="${form.entities}">

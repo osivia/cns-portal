@@ -49,6 +49,20 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-3">
+                                <div class="scrollbox">
+                                    <p:region regionName="col23" />
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-8 col-lg-9">
+                                <div class="scrollbox">
+                                    <p:region regionName="col24" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
