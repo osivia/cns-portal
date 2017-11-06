@@ -124,16 +124,15 @@
             <security-constraint>
                 <policy-permission>
                     <action-name>view</action-name>
-                    <action-name>viewrecursive</action-name>
-                    <role-name>Administrators</role-name>
-                </policy-permission>
-                <policy-permission>
-                    <action-name>view</action-name>
                     <role-name>Authenticated</role-name>
                 </policy-permission>
                 <policy-permission>
                     <action-name>view</action-name>
                     <unchecked />
+                </policy-permission>
+                <policy-permission>
+                    <action-name>viewrecursive</action-name>
+                    <role-name>Administrators</role-name>
                 </policy-permission>
             </security-constraint>
             <properties>
@@ -175,7 +174,7 @@
                 </property>
                 <property>
                     <name>osivia.profils</name>
-                    <value>&lt;profils&gt;&lt;profil&gt;&lt;roleName&gt;Authenticated&lt;/roleName&gt;&lt;name&gt;Utilisateur-connecte&lt;/name&gt;&lt;nuxeoVirtualUser&gt;&lt;/nuxeoVirtualUser&gt;&lt;defaultPageName&gt;&lt;/defaultPageName&gt;&lt;/profil&gt;&lt;profil&gt;&lt;roleName&gt;Administrators&lt;/roleName&gt;&lt;name&gt;Administrateur&lt;/name&gt;&lt;nuxeoVirtualUser&gt;&lt;/nuxeoVirtualUser&gt;&lt;defaultPageName&gt;&lt;/defaultPageName&gt;&lt;/profil&gt;&lt;/profils&gt;</value>
+                    <value>&lt;profils&gt;&lt;profil&gt;&lt;roleName&gt;Administrators&lt;/roleName&gt;&lt;name&gt;Administrateur&lt;/name&gt;&lt;nuxeoVirtualUser&gt;&lt;/nuxeoVirtualUser&gt;&lt;defaultPageName&gt;&lt;/defaultPageName&gt;&lt;/profil&gt;&lt;profil&gt;&lt;roleName&gt;Transverse_members&lt;/roleName&gt;&lt;name&gt;Membre du CNS&lt;/name&gt;&lt;nuxeoVirtualUser&gt;&lt;/nuxeoVirtualUser&gt;&lt;defaultPageName&gt;&lt;/defaultPageName&gt;&lt;/profil&gt;&lt;profil&gt;&lt;roleName&gt;Authenticated&lt;/roleName&gt;&lt;name&gt;Utilisateur connecté&lt;/name&gt;&lt;nuxeoVirtualUser&gt;&lt;/nuxeoVirtualUser&gt;&lt;defaultPageName&gt;&lt;/defaultPageName&gt;&lt;/profil&gt;&lt;/profils&gt;</value>
                 </property>
                 <property>
                     <name>coordination.parameter.implicit_mode</name>
@@ -805,7 +804,7 @@ return request.toString();</value>
                 <security-constraint>
                     <policy-permission>
                         <action-name>view</action-name>
-                        <role-name>Authenticated</role-name>
+                        <role-name>Transverse_members</role-name>
                     </policy-permission>
                 </security-constraint>
                 <window>
@@ -1003,13 +1002,11 @@ return request.toString();</value>
                         </property>
                         <property>
                             <name>osivia.nuxeoRequest</name>
-                            <value>String requete = "";&#13;
-&#13;
-requete += " ecm:mixinType &lt;&gt; 'Folderish' ";&#13;
-&#13;
-requete += " ORDER BY dc:modified DESC";&#13;
-&#13;
-return requete;</value>
+                            <value>StringBuilder request = new StringBuilder();&#13;
+request.append("AND ecm:mixinType &lt;&gt; 'Folderish' ");&#13;
+request.append("AND ecm:primaryType &lt;&gt; 'Staple' ");&#13;
+request.append("ORDER BY dc:modified DESC");&#13;
+return request.toString();</value>
                         </property>
                         <property>
                             <name>osivia.mobileCollapse</name>
@@ -1118,11 +1115,10 @@ return request.toString();</value>
                         </property>
                         <property>
                             <name>osivia.nuxeoRequest</name>
-                            <value>String requete = "ecm:primaryType = 'Annonce' ";&#13;
-&#13;
-requete += " ORDER BY dc:modified DESC";&#13;
-&#13;
-return requete;</value>
+                            <value>StringBuilder request = new StringBuilder();&#13;
+request.append("ecm:primaryType = 'Annonce ");&#13;
+request.append("ORDER BY dc:modified DESC");&#13;
+return request.toString();</value>
                         </property>
                         <property>
                             <name>osivia.hideDecorators</name>
@@ -1557,7 +1553,7 @@ return request.toString();</value>
                         <properties>
                             <property>
                                 <name>osivia.title</name>
-                                <value>posts</value>
+                                <value>Billets de blog</value>
                             </property>
                             <property>
                                 <name>osivia.nuxeoRequest</name>
@@ -1597,7 +1593,7 @@ return request.toString();</value>
                             </property>
                             <property>
                                 <name>osivia.cms.style</name>
-                                <value>blog</value>
+                                <value>blog-site</value>
                             </property>
                         </properties>
                         <height>0</height>
@@ -5117,7 +5113,10 @@ return request.toString();</value>
             </supported-window-states>
             <security-constraint>
                 <policy-permission>
-                    <action-name>personalizerecursive</action-name>
+                    <action-name>view</action-name>
+                    <role-name>Authenticated</role-name>
+                </policy-permission>
+                <policy-permission>
                     <action-name>view</action-name>
                     <unchecked />
                 </policy-permission>
@@ -5157,7 +5156,7 @@ return request.toString();</value>
                 </property>
                 <property>
                     <name>osivia.profils</name>
-                    <value>&lt;profils&gt;&lt;profil&gt;&lt;roleName&gt;Authenticated&lt;/roleName&gt;&lt;name&gt;Utilisateur-connecte&lt;/name&gt;&lt;nuxeoVirtualUser&gt;&lt;/nuxeoVirtualUser&gt;&lt;defaultPageName&gt;&lt;/defaultPageName&gt;&lt;/profil&gt;&lt;profil&gt;&lt;roleName&gt;Administrators&lt;/roleName&gt;&lt;name&gt;Administrateur&lt;/name&gt;&lt;nuxeoVirtualUser&gt;&lt;/nuxeoVirtualUser&gt;&lt;defaultPageName&gt;&lt;/defaultPageName&gt;&lt;/profil&gt;&lt;/profils&gt;</value>
+                    <value>&lt;profils&gt;&lt;profil&gt;&lt;roleName&gt;Administrators&lt;/roleName&gt;&lt;name&gt;Administrateur&lt;/name&gt;&lt;nuxeoVirtualUser&gt;&lt;/nuxeoVirtualUser&gt;&lt;defaultPageName&gt;&lt;/defaultPageName&gt;&lt;/profil&gt;&lt;profil&gt;&lt;roleName&gt;Transverse_members&lt;/roleName&gt;&lt;name&gt;Membre du CNS&lt;/name&gt;&lt;nuxeoVirtualUser&gt;&lt;/nuxeoVirtualUser&gt;&lt;defaultPageName&gt;&lt;/defaultPageName&gt;&lt;/profil&gt;&lt;profil&gt;&lt;roleName&gt;Authenticated&lt;/roleName&gt;&lt;name&gt;Utilisateur connecté&lt;/name&gt;&lt;nuxeoVirtualUser&gt;&lt;/nuxeoVirtualUser&gt;&lt;defaultPageName&gt;&lt;/defaultPageName&gt;&lt;/profil&gt;&lt;/profils&gt;</value>
                 </property>
                 <property>
                     <name>theme.id</name>
@@ -5177,7 +5176,7 @@ return request.toString();</value>
                 </property>
                 <property>
                     <name>osivia.site.hostName</name>
-                    <value>forums.osivia-demo</value>
+                    <value>forums-cns.in.phm.education.gouv.fr</value>
                 </property>
             </properties>
             <page>
