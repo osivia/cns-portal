@@ -1065,13 +1065,12 @@ return requete;</value>
                         </property>
                         <property>
                             <name>osivia.nuxeoRequest</name>
-                            <value>String requete = "ecm:path STARTSWITH '/cns/workspaces/' ";&#13;
-&#13;
-requete += " AND ecm:mixinType &lt;&gt; 'Folderish' ";&#13;
-&#13;
-requete += " ORDER BY dc:modified DESC";&#13;
-&#13;
-return requete;</value>
+                            <value>StringBuilder request = new StringBuilder();&#13;
+request.append("ecm:path STARTSWITH '/cns/workspaces/' ");&#13;
+request.append("AND ecm:mixinType &lt;&gt; 'Folderish' ");&#13;
+request.append("AND ecm:primaryType &lt;&gt; 'Staple' ");&#13;
+request.append("ORDER BY dc:modified DESC");&#13;
+return request.toString();</value>
                         </property>
                         <property>
                             <name>osivia.mobileCollapse</name>
@@ -1179,13 +1178,11 @@ return requete;</value>
                         </property>
                         <property>
                             <name>osivia.nuxeoRequest</name>
-                            <value>String requete = "ecm:path STARTSWITH '/cns/workspaces/' ";&#13;
-&#13;
-requete += " AND (ecm:primaryType = 'Workspace' OR ecm:primaryType = 'PortalSite') ";&#13;
-&#13;
-requete += " ORDER BY dc:title DESC";&#13;
-&#13;
-return requete;</value>
+                            <value>StringBuilder request = new StringBuilder();&#13;
+request.append("ecm:path STARTSWITH '/cns/workspaces/' ");&#13;
+request.append("AND ecm:primaryType IN ('Workspace', 'PortalSite') ");&#13;
+request.append("ORDER BY dc:title ASC;");&#13;
+return request.toString();</value>
                         </property>
                         <property>
                             <name>osivia.mobileCollapse</name>
@@ -1564,12 +1561,11 @@ return requete;</value>
                             </property>
                             <property>
                                 <name>osivia.nuxeoRequest</name>
-                                <value>String requete = "ecm:path STARTSWITH '"+navigationPath+"'";&#13;
-&#13;
-requete += " AND ecm:primaryType = 'BlogPost' ";&#13;
-requete += " ORDER BY dc:modified DESC";&#13;
-&#13;
-return requete;</value>
+                                <value>StringBuilder request = new StringBuilder();&#13;
+request.append("ecm:path STARTSWITH '").append(navigationPath).append("' ");&#13;
+request.append("AND ecm:primaryType = 'BlogPost' ");&#13;
+request.append("ORDER BY dc:modified DESC");&#13;
+return request.toString();</value>
                             </property>
                             <property>
                                 <name>osivia.bootstrapPanelStyle</name>
@@ -2893,12 +2889,12 @@ return request.toString();</value>
                             </property>
                             <property>
                                 <name>osivia.nuxeoRequest</name>
-                                <value>String requete = "ecm:path STARTSWITH '"+basePath+"' and ecm:mixinType &lt;&gt; 'folderish' AND ecm:primaryType &lt;&gt;
-'Favorites' ";&#13;
-&#13;
-requete += " ORDER BY dc:modified DESC";&#13;
-&#13;
-return requete;</value>
+                                <value>StringBuilder request = new StringBuilder();&#13;
+request.append("ecm:path STARTSWITH '").append(basePath).append("' ");&#13;
+request.append("AND ecm:mixinType &lt;&gt; 'Folderish' ");&#13;
+request.append("AND ecm:primaryType NOT IN ('Favorites', 'Staple') ");&#13;
+request.append("ORDER BY dc:modified DESC");&#13;
+return request.toString();</value>
                             </property>
                             <property>
                                 <name>osivia.bootstrapPanelStyle</name>
@@ -3217,11 +3213,12 @@ return requete;</value>
                             </property>
                             <property>
                                 <name>osivia.nuxeoRequest</name>
-                                <value>String requete = "ecm:path STARTSWITH '"+basePath+"' and ecm:mixinType &lt;&gt; 'folderish' ";&#13;
-&#13;
-requete += " ORDER BY dc:modified DESC";&#13;
-&#13;
-return requete;</value>
+                                <value>StringBuilder request = new StringBuilder();&#13;
+request.append("ecm:path STARTSWITH '").append(basePath).append("' ");&#13;
+request.append("AND ecm:mixinType &lt;&gt; 'Folderish' ");&#13;
+request.append("AND ecm:primaryType &lt;&gt; 'Staple' ");&#13;
+request.append("ORDER BY dc:modified DESC");&#13;
+return request.toString();</value>
                             </property>
                             <property>
                                 <name>osivia.bootstrapPanelStyle</name>

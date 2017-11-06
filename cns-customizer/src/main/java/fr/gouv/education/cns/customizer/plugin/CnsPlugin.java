@@ -14,8 +14,10 @@ import org.osivia.portal.api.menubar.MenubarModule;
 import org.osivia.portal.api.taskbar.TaskbarFactory;
 import org.osivia.portal.api.taskbar.TaskbarItem;
 import org.osivia.portal.api.taskbar.TaskbarItems;
+import org.osivia.portal.api.theming.TemplateAdapter;
 
 import fr.gouv.education.cns.customizer.plugin.menubar.CnsMenubarModule;
+import fr.gouv.education.cns.customizer.plugin.template.CnsTemplateAdapter;
 import fr.toutatice.portail.cms.nuxeo.api.domain.AbstractPluginPortlet;
 import fr.toutatice.portail.cms.nuxeo.api.domain.ListTemplate;
 
@@ -79,6 +81,8 @@ public class CnsPlugin extends AbstractPluginPortlet {
         this.customizeMenubar(context);
         // Taskbar items
         this.customizeTaskbarItems(context);
+        // Template adapters
+        this.customizeTemplateAdapters(context);
     }
 
 
@@ -139,6 +143,10 @@ public class CnsPlugin extends AbstractPluginPortlet {
         // Workspace tiles
         ListTemplate workspaceTiles = new ListTemplate("workspace-tiles", bundle.getString("LIST_TEMPLATE_WORKSPACE_TILES"), "dublincore, common, toutatice");
         templates.put(workspaceTiles.getKey(), workspaceTiles);
+
+        // Blog site
+        ListTemplate blogSite = new ListTemplate("blog-site", bundle.getString("LIST_TEMPLATE_BLOG_SITE"), "dublincore, common, toutatice, webpage");
+        templates.put(blogSite.getKey(), blogSite);
     }
 
 
@@ -180,6 +188,21 @@ public class CnsPlugin extends AbstractPluginPortlet {
                 factory.preset(item, false, null);
             }
         }
+    }
+
+
+    /**
+     * Customize template adapters.
+     * 
+     * @param context customization context
+     */
+    private void customizeTemplateAdapters(CustomizationContext context) {
+        // Template adapters
+        List<TemplateAdapter> adapters = this.getTemplateAdapters(context);
+
+        // Customized template adapter
+        TemplateAdapter adapter = new CnsTemplateAdapter();
+        adapters.add(adapter);
     }
 
 }
