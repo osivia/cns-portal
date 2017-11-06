@@ -1003,7 +1003,7 @@ return request.toString();</value>
                         <property>
                             <name>osivia.nuxeoRequest</name>
                             <value>StringBuilder request = new StringBuilder();&#13;
-request.append("AND ecm:mixinType &lt;&gt; 'Folderish' ");&#13;
+request.append("ecm:mixinType &lt;&gt; 'Folderish' ");&#13;
 request.append("AND ecm:primaryType &lt;&gt; 'Staple' ");&#13;
 request.append("ORDER BY dc:modified DESC");&#13;
 return request.toString();</value>
@@ -1116,7 +1116,7 @@ return request.toString();</value>
                         <property>
                             <name>osivia.nuxeoRequest</name>
                             <value>StringBuilder request = new StringBuilder();&#13;
-request.append("ecm:primaryType = 'Annonce ");&#13;
+request.append("ecm:primaryType = 'Annonce' ");&#13;
 request.append("ORDER BY dc:modified DESC");&#13;
 return request.toString();</value>
                         </property>
@@ -1177,7 +1177,7 @@ return request.toString();</value>
                             <value>StringBuilder request = new StringBuilder();&#13;
 request.append("ecm:path STARTSWITH '/cns/workspaces/' ");&#13;
 request.append("AND ecm:primaryType IN ('Workspace', 'PortalSite') ");&#13;
-request.append("ORDER BY dc:title ASC;");&#13;
+request.append("ORDER BY dc:title ASC");&#13;
 return request.toString();</value>
                         </property>
                         <property>
@@ -1754,8 +1754,7 @@ return request.toString();</value>
                             <property>
                                 <name>osivia.nuxeoRequest</name>
                                 <value>StringBuilder request = new StringBuilder();&#13;
-&#13;
-request.append("ecm:path STARTSWITH '"+navigationPath+"'");&#13;
+request.append("ecm:path STARTSWITH '").append(navigationPath).append("' ");&#13;
 &#13;
 if (params.get("cycle_vie") != null) {&#13;
 request.append("AND ").append(NXQLFormater.formatVocabularySearch("cns:cycle_vie", params.get("cycle_vie"))).append(" ");&#13;
