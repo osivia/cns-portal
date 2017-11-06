@@ -67,7 +67,7 @@
         <module>
             <type>Role</type>
             <implementation>LDAP</implementation>
-            <class>org.osivia.portal.core.identity.LdapFilteredRoleModule</class>
+            <class>org.osivia.portal.core.identity.HierarchicalLDAPFilteredRoleModule</class>
             <config />
         </module>
         <module>
@@ -111,7 +111,7 @@
             </option>
             <option>
                 <name>roleCtxDN</name>
-                <value>ou=profiles,ou=groups,dc=osivia,dc=org</value>
+                <value>ou=groups,dc=osivia,dc=org</value>
             </option>
             <option>
                 <name>membershipAttributeID</name>
