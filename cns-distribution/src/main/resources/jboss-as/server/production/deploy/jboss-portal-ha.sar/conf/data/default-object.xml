@@ -5393,7 +5393,7 @@ return nuxeoRequest.toString();</value>
                         </property>
                         <property>
                             <name>osivia.docPathForLink</name>
-                            <value>/forums/procedures/modeles/person-creation</value>
+                            <value>procedure_person-creation</value>
                         </property>
                     </properties>
                     <height>0</height>
@@ -6416,7 +6416,7 @@ return request.toString();</value>
                         </property>
                         <property>
                             <name>osivia.docPathForLink</name>
-                            <value>/forums/procedures/procedures-models/space-creation</value>
+                            <value>procedure_space-creation</value>
                         </property>
                     </properties>
                     <height>0</height>
