@@ -74,11 +74,6 @@
         <fileSet>
             <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}</outputDirectory>
             <directory>src/main/resources</directory>
-            <excludes>
-                <exclude>/jboss-as/server/production/run.conf.*</exclude>
-                <exclude>jboss-as/server/production/conf/jboss-log4j.*</exclude>
-                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity/ldap_identity-config.*</exclude>
-            </excludes>
         </fileSet>
     </fileSets>
 
@@ -86,12 +81,12 @@
     <!-- Copy local environment specific files -->
     <files>
         <file>
-            <source>src/main/resources/jboss-as/server/production/run.conf.${dest-env}</source>
+            <source>target/toutatice-distribution/jboss-as/server/production/run.conf.${dest-env}</source>
             <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}/jboss-as/server/production</outputDirectory>
             <destName>run.conf</destName>
         </file>
         <file>
-            <source>src/main/resources/jboss-as/server/production/conf/jboss-log4j.xml.cns</source>
+            <source>target/toutatice-distribution/jboss-as/server/production/conf/jboss-log4j.xml.${dest-env}</source>
             <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}/jboss-as/server/production/conf</outputDirectory>
             <destName>jboss-log4j.xml</destName>
         </file>
@@ -104,11 +99,6 @@
             <source>src/main/resources/jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-core.war/css/login.css</source>
             <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}/jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-core.war/css</outputDirectory>
             <destName>login.css</destName>
-        </file>
-        <file>
-            <source>src/main/resources/jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity/ldap_identity-config.xml</source>
-            <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}/jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity</outputDirectory>
-            <destName>ldap_identity-config.xml</destName>
         </file>
     </files>
 
