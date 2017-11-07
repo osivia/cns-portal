@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.apache.commons.beanutils.PropertyUtils;
+import org.apache.commons.lang.BooleanUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.reflect.FieldUtils;
 import org.osivia.directory.v2.dao.PersonDaoImpl;
@@ -62,13 +63,11 @@ public class CnsPersonDaoImpl extends PersonDaoImpl {
             globalFilter.append(quickSearchFilter);
         }
 
-
         // Profiles
         Filter profilesFilter = this.getQueryFilter(criteria, "profiles");
         if (profilesFilter != null) {
             globalFilter.append(profilesFilter);
         }
-
 
         // External indicator
         Filter externalFilter = this.getQueryFilter(criteria, "external");
@@ -124,6 +123,9 @@ public class CnsPersonDaoImpl extends PersonDaoImpl {
         Filter filter;
         if ((attribute == null) || (value == null)) {
             filter = null;
+        } else if (value instanceof Boolean) {
+            Boolean booleanValue = (Boolean) value;
+            filter = new LikeFilter(attribute, BooleanUtils.toString(booleanValue, "TRUE", "FALSE", null));
         } else if (value instanceof Collection) {
             // Sub-query values
             Collection<?> subQueryValues = (Collection<?>) value;

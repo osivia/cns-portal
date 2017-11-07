@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>fr.gouv.education.cns.portal.directory</groupId>
+        <artifactId>cns-directory-parent</artifactId>
+        <version>4.6-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>cns-directory-various-parent</artifactId>
+    <packaging>pom</packaging>
+
+    <name>CNS - Directory various parent</name>
+
+
+    <modules>
+        <module>update-external</module>
+    </modules>
+
+
+    <dependencies>
+    
+        <!-- Directory -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>cns-directory-interfaces</artifactId>
+            <version>${project.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.osivia.services.directory.socle</groupId>
+            <artifactId>osivia-services-directory-socle-interfaces</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project> 

@@ -21,6 +21,7 @@
     <modules>
         <module>socle</module>
         <module>person</module>
+        <module>various</module>
         <module>ear</module>
     </modules>
 

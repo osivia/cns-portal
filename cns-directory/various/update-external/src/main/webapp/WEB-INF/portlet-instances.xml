@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE deployments PUBLIC "-//JBoss Portal//DTD Portlet Instances 2.6//EN" "http://www.jboss.org/portlet/dtd/portlet-instances_2_6.dtd">
+
+<deployments>
+    <deployment>
+        <if-exists>overwrite</if-exists>
+        <instance>
+            <display-name xml:lang="en">Directory - Update external</display-name>
+            <display-name xml:lang="fr">Annuaire - Mise à jour de l'indicateur externe</display-name>
+            <instance-id>directory-update-external-instance</instance-id>
+            <portlet-ref>directory-update-external</portlet-ref>
+            <security-constraint>
+                <policy-permission>
+                    <action-name>view</action-name>
+                    <unchecked />
+                </policy-permission>
+            </security-constraint>
+        </instance>
+    </deployment>
+</deployments>
