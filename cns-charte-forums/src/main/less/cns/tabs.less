@@ -36,6 +36,16 @@
                 > li {
                     &.current {
                         border-color: @border-color @border-color transparent;
+                        
+                        li:not(.active) {
+                            > a {
+                                color: #555;
+                                
+                                &:hover, &:focus {
+                                    color: #222;
+                                }
+                            }
+                        }
                     }
                     
                     &:not(.current) {
@@ -44,5 +54,9 @@
                 }
             }
         }
+    }
+    
+    .secondary-tabs {
+        margin: 0 floor(@grid-gutter-width / -2);
     }
 }
