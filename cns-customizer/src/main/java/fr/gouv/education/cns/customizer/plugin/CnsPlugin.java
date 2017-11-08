@@ -13,10 +13,12 @@ import org.osivia.portal.api.locator.Locator;
 import org.osivia.portal.api.menubar.MenubarModule;
 import org.osivia.portal.api.taskbar.TaskbarFactory;
 import org.osivia.portal.api.taskbar.TaskbarItem;
+import org.osivia.portal.api.taskbar.TaskbarItemExecutor;
 import org.osivia.portal.api.taskbar.TaskbarItems;
 import org.osivia.portal.api.theming.TemplateAdapter;
 
 import fr.gouv.education.cns.customizer.plugin.menubar.CnsMenubarModule;
+import fr.gouv.education.cns.customizer.plugin.taskbar.CnsForumExecutor;
 import fr.gouv.education.cns.customizer.plugin.template.CnsTemplateAdapter;
 import fr.toutatice.portail.cms.nuxeo.api.domain.AbstractPluginPortlet;
 import fr.toutatice.portail.cms.nuxeo.api.domain.ListTemplate;
@@ -183,6 +185,12 @@ public class CnsPlugin extends AbstractPluginPortlet {
             if (defaultIdentifiers.contains(item.getId())) {
                 if (!item.isDefault()) {
                     factory.preset(item, true, null);
+                }
+
+                if ("FORUM".equals(item.getId())) {
+                    // Taskbar item executor
+                    TaskbarItemExecutor executor = new CnsForumExecutor();
+                    factory.setExecutor(item, executor);
                 }
             } else if (item.isDefault()) {
                 factory.preset(item, false, null);

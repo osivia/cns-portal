@@ -22,6 +22,12 @@
 
 
     <dependencies>
+    
+        <!-- Directory -->
+        <dependency>
+            <groupId>org.osivia.services.directory.socle</groupId>
+            <artifactId>osivia-services-directory-socle-interfaces</artifactId>
+        </dependency>
 
         <!-- JBoss -->
         <dependency>
