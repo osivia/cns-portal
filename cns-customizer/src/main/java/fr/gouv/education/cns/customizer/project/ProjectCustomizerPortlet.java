@@ -13,7 +13,6 @@ import org.apache.commons.lang.BooleanUtils;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
 import org.jboss.portal.core.model.portal.Page;
-import org.jboss.portal.core.model.portal.Portal;
 import org.jboss.portal.core.model.portal.Window;
 import org.jboss.portal.theme.impl.render.dynamic.DynaRenderOptions;
 import org.osivia.portal.api.PortalException;
@@ -140,18 +139,6 @@ public class ProjectCustomizerPortlet extends GenericPortlet implements ICustomi
         Bundle bundle = this.bundleFactory.getBundle(context.getLocale());
 
         if (configuration.isBeforeInvocation() && (principal != null)) {
-            boolean redirect = BooleanUtils.toBoolean(servletRequest.getParameter("redirect"));
-            Page page = configuration.getPage();
-
-            // User home page redirection
-            if (!configuration.isAdministrator() && !redirect && (page != null)) {
-                Portal portal = page.getPortal();
-                if (page.equals(portal.getDefaultPage())) {
-                    String redirectionURL = this.portalUrlFactory.adaptPortalUrlToNavigation(context.getPortalControllerContext(), "/portal/auth/MonEspace");
-                    configuration.setRedirectionURL(redirectionURL);
-                }
-            }
-
             // First connection
             this.firstConnectionRedirection(portalControllerContext, configuration, principal, bundle);
         }
