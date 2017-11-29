@@ -12,17 +12,17 @@
 
     <properties>
         <!-- Toutatice -->
-        <toutatice.version>4.6.1</toutatice.version>
+        <toutatice.version>4.6.2</toutatice.version>
         
         <!-- Directory -->
-        <directory.version>4.6.1</directory.version>
+        <directory.version>4.6.2</directory.version>
         
         <!-- Collaboration -->
-        <collaboration.version>4.6.1</collaboration.version>
+        <collaboration.version>4.6.2</collaboration.version>
         
         <!-- Other services -->
-        <tasks.version>4.6</tasks.version>
-        <procedure.version>4.6.3</procedure.version>
+        <tasks.version>4.6.1</tasks.version>
+        <procedure.version>4.6.4</procedure.version>
 
         <!-- Identity SSO -->
         <identity-sso.version>3.0.9</identity-sso.version>
