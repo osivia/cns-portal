@@ -1130,7 +1130,57 @@ return request.toString();</value>
                         </property>
                     </properties>
                     <height>0</height>
-                </window>
+			    </window>
+			
+				<window>
+					<window-name>toutatice-portail-cms-nuxeo-viewFragmentPortletInstance_1512034266245</window-name>
+					<instance-ref>toutatice-portail-cms-nuxeo-viewFragmentPortletInstance</instance-ref>
+					<region>col1</region>
+					<properties>
+						<property>
+							<name>osivia.title</name>
+							<value>Autres services</value>
+						</property>
+						<property>
+							<name>osivia.linkName</name>
+							<value>Aller vers le portail Forums</value>
+						</property>
+						<property>
+							<name>osivia.fragmentTypeId</name>
+							<value>doc_link</value>
+						</property>
+						<property>
+							<name>osivia.bootstrapPanelStyle</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>portal.windowContentType</name>
+							<value>portlet</value>
+						</property>
+						<property>
+							<name>osivia.hideDecorators</name>
+							<value>1</value>
+						</property>
+						<property>
+							<name>theme.order</name>
+							<value>5</value>
+						</property>
+						<property>
+							<name>osivia.maximized.cms.url</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>osivia.mobileCollapse</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>osivia.docPathForLink</name>
+							<value>/default-domain/accueil/liens/aller-vers-le-portail</value>
+						</property>
+					</properties>
+					<height>0</height>
+				</window>                
+			                
             </page>
             <page>
                 <page-name>home</page-name>
@@ -1199,6 +1249,56 @@ return request.toString();</value>
                     </properties>
                     <height>0</height>
                 </window>
+			
+				<window>
+					<window-name>toutatice-portail-cms-nuxeo-viewFragmentPortletInstance_1512034212066</window-name>
+					<instance-ref>toutatice-portail-cms-nuxeo-viewFragmentPortletInstance</instance-ref>
+					<region>col1</region>
+					<properties>
+						<property>
+							<name>osivia.title</name>
+							<value>Autres services</value>
+						</property>
+						<property>
+							<name>osivia.linkName</name>
+							<value>Aller vers le portail Forums</value>
+						</property>
+						<property>
+							<name>osivia.fragmentTypeId</name>
+							<value>doc_link</value>
+						</property>
+						<property>
+							<name>osivia.bootstrapPanelStyle</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>portal.windowContentType</name>
+							<value>portlet</value>
+						</property>
+						<property>
+							<name>osivia.hideDecorators</name>
+							<value>1</value>
+						</property>
+						<property>
+							<name>theme.order</name>
+							<value>0</value>
+						</property>
+						<property>
+							<name>osivia.maximized.cms.url</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>osivia.mobileCollapse</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>osivia.docPathForLink</name>
+							<value>/default-domain/accueil/liens/aller-vers-le-portail</value>
+						</property>
+					</properties>
+					<height>0</height>
+				</window>	  
+		                    
             </page>
             <page>
                 <page-name>metadonnees</page-name>
@@ -5386,10 +5486,6 @@ return request.toString();</value>
                     <value>true</value>
                 </property>
                 <property>
-                    <name>portal.defaultObjectName</name>
-                    <value>default</value>
-                </property>
-                <property>
                     <name>osivia.liste_styles</name>
                     <value>navigation-header,no-margin-bottom</value>
                 </property>
@@ -5417,6 +5513,14 @@ return request.toString();</value>
                     <name>osivia.site.hostName</name>
                     <value>forums-cns.in.phm.education.gouv.fr</value>
                 </property>
+				<property>
+					<name>osivia.unprofiled_home_page</name>
+					<value>default</value>
+				</property>
+				<property>
+					<name>portal.defaultObjectName</name>
+					<value>home-anonymous</value>
+				</property>                
             </properties>
             <page>
                 <page-name>default</page-name>
@@ -5575,7 +5679,207 @@ return nuxeoRequest.toString();</value>
                     </properties>
                     <height>0</height>
                 </window>
-            </page>
+
+				<window>
+					<window-name>toutatice-portail-cms-nuxeo-viewFragmentPortletInstance_1512033724518</window-name>
+					<instance-ref>toutatice-portail-cms-nuxeo-viewFragmentPortletInstance</instance-ref>
+					<region>col1</region>
+					<properties>
+						<property>
+							<name>osivia.title</name>
+							<value>Autres services</value>
+						</property>
+						<property>
+							<name>osivia.linkName</name>
+							<value>Aller vers le portail GED</value>
+						</property>
+						<property>
+							<name>osivia.fragmentTypeId</name>
+							<value>doc_link</value>
+						</property>
+						<property>
+							<name>osivia.cssLinkClass</name>
+							<value>text-cente</value>
+						</property>
+						<property>
+							<name>osivia.bootstrapPanelStyle</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>portal.windowContentType</name>
+							<value>portlet</value>
+						</property>
+						<property>
+							<name>osivia.hideDecorators</name>
+							<value>1</value>
+						</property>
+						<property>
+							<name>theme.order</name>
+							<value>2</value>
+						</property>
+						<property>
+							<name>osivia.maximized.cms.url</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>osivia.mobileCollapse</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>osivia.docPathForLink</name>
+							<value>/default-domain/accueil/liens/aller-vers-le-portail-ge</value>
+						</property>
+					</properties>
+					<height>0</height>
+				</window>                
+			</page>
+			
+			<page>
+				<page-name>home-anonymous</page-name>
+				<display-name xml:lang="fr">Accueil</display-name>
+				<properties>
+					<property>
+						<name>layout.id</name>
+						<value>cns-forums-home</value>
+					</property>
+					<property>
+						<name>order</name>
+						<value>1</value>
+					</property>
+					<property>
+						<name>osivia.cms.scope</name>
+						<value>anonymous</value>
+					</property>
+					<property>
+						<name>theme.dyna.partial_refresh_enabled</name>
+						<value>true</value>
+					</property>
+				</properties>
+				<security-constraint>
+					<policy-permission>
+						<action-name>view</action-name>
+						<unchecked />
+					</policy-permission>
+				</security-constraint>
+				<window>
+					<window-name>toutatice-portail-cms-nuxeo-viewFragmentPortletInstance_1512033724518</window-name>
+					<instance-ref>toutatice-portail-cms-nuxeo-viewFragmentPortletInstance</instance-ref>
+					<region>col1</region>
+					<properties>
+						<property>
+							<name>osivia.title</name>
+							<value>Autres services</value>
+						</property>
+						<property>
+							<name>osivia.fragmentTypeId</name>
+							<value>doc_link</value>
+						</property>
+						<property>
+							<name>osivia.linkName</name>
+							<value>Aller vers le portail GED</value>
+						</property>
+						<property>
+							<name>osivia.cssLinkClass</name>
+							<value>text-cente</value>
+						</property>
+						<property>
+							<name>osivia.bootstrapPanelStyle</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>portal.windowContentType</name>
+							<value>portlet</value>
+						</property>
+						<property>
+							<name>theme.order</name>
+							<value>2</value>
+						</property>
+						<property>
+							<name>osivia.maximized.cms.url</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>osivia.hideDecorators</name>
+							<value>1</value>
+						</property>
+						<property>
+							<name>osivia.mobileCollapse</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>osivia.docPathForLink</name>
+							<value>/default-domain/accueil/liens/aller-vers-le-portail-ge</value>
+						</property>
+					</properties>
+					<height>0</height>
+				</window>
+				<window>
+					<window-name>toutatice-portail-cms-nuxeo-viewListPortletInstance_1507726002841</window-name>
+					<instance-ref>toutatice-portail-cms-nuxeo-viewListPortletInstance</instance-ref>
+					<region>col1</region>
+					<properties>
+						<property>
+							<name>osivia.title</name>
+							<value>Mes espaces collaboratifs</value>
+						</property>
+						<property>
+							<name>osivia.cms.displayLiveVersion</name>
+							<value>1</value>
+						</property>
+						<property>
+							<name>osivia.bootstrapPanelStyle</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>portal.windowContentType</name>
+							<value>portlet</value>
+						</property>
+						<property>
+							<name>osivia.cms.style</name>
+							<value>workspace-tiles</value>
+						</property>
+						<property>
+							<name>osivia.hideEmptyPortlet</name>
+							<value>1</value>
+						</property>
+						<property>
+							<name>osivia.beanShell</name>
+							<value>on</value>
+						</property>
+						<property>
+							<name>theme.order</name>
+							<value>0</value>
+						</property>
+						<property>
+							<name>osivia.maximized.cms.url</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>osivia.nuxeoRequest</name>
+							<value>StringBuilder nuxeoRequest = new StringBuilder();&#13;
+nuxeoRequest.append("ecm:primaryType = 'Workspace' ");&#13;
+nuxeoRequest.append("AND ttcs:visibility = 'PUBLIC' ");&#13;
+&#13;
+nuxeoRequest.append("ORDER BY dc:title ASC");&#13;
+return nuxeoRequest.toString();</value>
+						</property>
+						<property>
+							<name>osivia.hideDecorators</name>
+							<value>1</value>
+						</property>
+						<property>
+							<name>osivia.mobileCollapse</name>
+							<value>false</value>
+						</property>
+						<property>
+							<name>osivia.hideTitle</name>
+							<value>1</value>
+						</property>
+					</properties>
+					<height>0</height>
+				</window>
+			</page>            
+			            
             <page>
                 <page-name>person-management</page-name>
                 <display-name xml:lang="fr">Gestion des personnes</display-name>

@@ -42,11 +42,13 @@
                             <p class="text-pre-wrap">${description}</p>
                         </div>
                         
-                        <!-- Member status -->
-                        <p class="text-success">
-                            <i class="glyphicons glyphicons-ok"></i>
-                            <span><op:translate key="LIST_TEMPLATE_STATUS_MEMBER" /></span>
-                        </p>
+                        <c:if test="${not empty pageContext.request.remoteUser}">
+	                        <!-- Member status -->
+	                        <p class="text-success">
+	                            <i class="glyphicons glyphicons-ok"></i>
+	                            <span><op:translate key="LIST_TEMPLATE_STATUS_MEMBER" /></span>
+	                        </p>
+                        </c:if>
                     </div>
                 </div>
             </div>
