@@ -1,0 +1,54 @@
+.tabs-default {
+    .primary-tabs {
+        border-color: darken(@brand-primary, 10%);
+        
+        margin: 0 floor(@grid-gutter-width / -2);
+        padding: 0 floor(@grid-gutter-width / 2);
+        
+        ul {
+            li {
+                &.active {
+                    > a {
+                        border-color: darken(@brand-primary, 10%) darken(@brand-primary, 10%) transparent;
+                    }
+                }
+                
+                &:not(.active) {
+                    > a {
+                        color: #f8f8f8;
+                        
+                        &:hover, &:focus {
+                            color: #fff;
+                        }
+                    }
+                }   
+            }
+            
+            &.groups {
+                > li {
+                    &.current {
+                        border-color: darken(@brand-primary, 10%) darken(@brand-primary, 10%) transparent;
+                        
+                        li:not(.active) {
+                            > a {
+                                color: #555;
+                                
+                                &:hover, &:focus {
+                                    color: #222;
+                                }
+                            }
+                        }
+                    }
+                    
+                    &:not(.current) {
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+    
+    .secondary-tabs {
+        margin: 0 floor(@grid-gutter-width / -2);
+    }
+}

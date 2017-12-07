@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<portlet-app
+    xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+    version="2.0">
+
+    <!-- Plugin -->
+    <portlet>
+        <portlet-name>cns-plugin</portlet-name>
+        <portlet-class>fr.gouv.education.cns.customizer.plugin.CnsPlugin</portlet-class>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+
+        <portlet-info>
+            <title>Plugin</title>
+        </portlet-info>
+    </portlet>
+
+
+    <!-- Regions customizer -->
+    <portlet>
+        <portlet-name>cns-regions-customizer</portlet-name>
+        <portlet-class>fr.gouv.education.cns.customizer.regions.RegionsCustomizerPortlet</portlet-class>
+
+        <init-param>
+            <name>customizer.regions.cns.context</name>
+            <value>/osivia-demo-charte-cns</value>
+        </init-param>
+        <init-param>
+            <name>customizer.regions.cns.forums.context</name>
+            <value>/cns-charte-forums</value>
+        </init-param>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+          
+        <portlet-info>
+            <title>Regions customizer</title>
+        </portlet-info>
+    </portlet>
+    
+    
+    <!-- Internationalization customizer -->
+    <portlet>
+        <portlet-name>cns-internationalization-customizer</portlet-name>
+        <portlet-class>fr.gouv.education.cns.customizer.internationalization.InternationalizationCustomizerPortlet</portlet-class>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+          
+        <portlet-info>
+            <title>Internationalization customizer</title>
+        </portlet-info>     
+    </portlet>
+    
+
+    <!-- Attributes bundle customizer -->
+    <portlet>
+        <portlet-name>cns-attributes-bundles-customizer</portlet-name>
+        <portlet-class>fr.gouv.education.cns.customizer.attributes.AttributesBundlesCustomizerPortlet</portlet-class>
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+          
+        <portlet-info>
+            <title>Attributes bundles customizer</title>
+        </portlet-info>     
+    </portlet>
+    
+
+    <!-- Project customizer -->
+    <portlet>
+        <portlet-name>cns-project-customizer</portlet-name>
+        <portlet-class>fr.gouv.education.cns.customizer.project.ProjectCustomizerPortlet</portlet-class>        
+
+        <supports>
+            <mime-type>text/html</mime-type>
+        </supports>
+          
+        <portlet-info>
+            <title>Project customizer</title>
+        </portlet-info>     
+    </portlet>
+
+</portlet-app>

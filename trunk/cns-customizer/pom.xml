@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+	    <groupId>fr.gouv.education.cns.portal</groupId>
+	    <artifactId>cns-portal-parent</artifactId>
+        <version>4.6</version>
+    </parent>
+
+
+    <artifactId>cns-customizer</artifactId>
+    <packaging>war</packaging>
+    <name>CNS - Customizer</name>
+    <description>Portlet technique de personnalisation</description>
+
+
+    <properties>
+        <!-- JBoss -->
+        <jboss.portal.version>2.7.2</jboss.portal.version>
+    </properties>
+
+
+    <dependencies>
+    
+        <!-- Directory -->
+        <dependency>
+            <groupId>org.osivia.services.directory.socle</groupId>
+            <artifactId>osivia-services-directory-socle-interfaces</artifactId>
+        </dependency>
+
+        <!-- JBoss -->
+        <dependency>
+            <groupId>org.jboss.portal</groupId>
+            <artifactId>portal-core-lib</artifactId>
+            <version>${jboss.portal.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.portal</groupId>
+            <artifactId>portal-common-lib</artifactId>
+            <version>${jboss.portal.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        
+    </dependencies>
+
+</project>

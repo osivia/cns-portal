@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layouts>
+
+    <layout>
+        <name>cns-forums-home</name>
+        <uri>/layouts/layout-home/index.jsp</uri>
+        <uri state="maximized">/layouts/layout-home/maximized.jsp</uri>
+        <regions>
+            <region name="col1" />
+        </regions>
+    </layout>
+
+</layouts>

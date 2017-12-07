@@ -1,0 +1,24 @@
+//
+// Charte CNS forums - Layout
+// -----------------------------------------------------
+
+
+#drawer {
+    .scrollbox {
+        @media screen and (min-width: @screen-sm-min) {
+            margin-bottom: @line-height-computed;
+            
+            > * {
+                overflow: unset;
+            }
+        }
+        
+        .portlet-container {
+            &.flexbox {
+                @media screen and (min-width: @screen-sm-min) {
+                    flex: 1;
+                }
+            }
+        }
+    }
+}

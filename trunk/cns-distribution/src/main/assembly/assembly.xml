@@ -1,0 +1,105 @@
+<assembly
+    xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+
+    <id>bin</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}/custom/deploy</outputDirectory>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+            <includes>
+                <!-- CNS -->
+                <include>${project.groupId}:cns-charte:war:${project.version}</include>
+                <include>${project.groupId}:cns-charte-forums:war:${project.version}</include>
+                <include>${project.groupId}:cns-customizer:war:${project.version}</include>
+                <include>${project.groupId}.directory:cns-directory-ear:ear:${project.version}</include>
+                <include>${project.groupId}:cns-feeder:war:${project.version}</include>
+                <!-- Toutatice CMS -->
+                <include>toutatice-portail.cms:toutatice-portail-cms-nuxeo-web:war:${toutatice.version}</include>
+                <!-- Collaboration -->
+                <include>org.osivia.services:osivia-services-collaboration-ear:ear:${collaboration.version}</include>
+                <!-- Other services -->
+                <include>org.osivia.services:osivia-services-tasks:war:${tasks.version}</include>
+                <include>org.osivia.services:osivia-services-procedure:war:${procedure.version}</include>
+            </includes>
+        </dependencySet>
+        
+        <dependencySet>
+            <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}/jboss-as/server/production/lib</outputDirectory>
+            <unpack>false</unpack>
+            <scope>runtime</scope>
+            <includes>
+                <!-- Directory -->
+                <include>${project.groupId}.directory:cns-directory-interfaces:jar:${project.version}</include>
+                <include>org.osivia.services.directory.socle:osivia-services-directory-socle-interfaces:jar:${directory.version}</include>
+                <!-- Identity SSO -->
+                <include>org.osivia.portal.identity:osivia-portal-identity-sso-lib:jar:${identity-sso.version}</include>
+                <!-- Java Melody -->
+                <include>org.osivia.services:osivia-services-java-melody-integration:jar:${java-melody.version}</include>
+            </includes>
+        </dependencySet>
+    </dependencySets>
+
+
+    <fileSets>
+        <!-- Socle -->
+        <fileSet>
+            <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}</outputDirectory>
+            <directory>target/toutatice-distribution</directory>
+            <includes>
+                <include>jboss-as/**</include>
+                <include>custom/**</include>
+            </includes>
+            <excludes>
+                <exclude>jboss-as/server/production/run.conf.*</exclude>
+                <exclude>jboss-as/server/production/conf/jboss-log4j.*</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/data/default-object.xml</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity/ldap_identity-config.xml</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/conf/identity/profile-config.xml</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-server.war/login.jsp</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-server.war/WEB-INF/context.xml</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-server.war/WEB-INF/web.xml</exclude>
+                <exclude>jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-core.war/css/login.css</exclude>
+            </excludes>
+        </fileSet>
+
+        <fileSet>
+            <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}</outputDirectory>
+            <directory>src/main/resources</directory>
+        </fileSet>
+    </fileSets>
+
+
+    <!-- Copy local environment specific files -->
+    <files>
+        <file>
+            <source>target/toutatice-distribution/jboss-as/server/production/run.conf.${dest-env}</source>
+            <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}/jboss-as/server/production</outputDirectory>
+            <destName>run.conf</destName>
+        </file>
+        <file>
+            <source>target/toutatice-distribution/jboss-as/server/production/conf/jboss-log4j.xml.${dest-env}</source>
+            <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}/jboss-as/server/production/conf</outputDirectory>
+            <destName>jboss-log4j.xml</destName>
+        </file>
+        <file>
+            <source>src/main/resources/jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-server.war/login.jsp</source>
+            <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}/jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-server.war</outputDirectory>
+            <destName>login.jsp</destName>
+        </file>
+        <file>
+            <source>src/main/resources/jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-core.war/css/login.css</source>
+            <outputDirectory>/${project.artifactId}-${dest-env}-${project.version}/jboss-as/server/production/deploy/jboss-portal-ha.sar/portal-core.war/css</outputDirectory>
+            <destName>login.css</destName>
+        </file>
+    </files>
+
+</assembly>

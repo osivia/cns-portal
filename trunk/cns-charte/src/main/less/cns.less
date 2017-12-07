@@ -1,0 +1,82 @@
+//
+// Proto CNS - Custom properties
+// --------------------------------------------------
+
+
+// Core variables and mixins
+@import "bootstrap/bootstrap.less";
+
+// Layout
+@import "cns/layout.less";
+// Menu
+@import "cns/menu.less";
+// Picturebook
+@import "cns/picturebook.less";
+// Portlet styles
+@import "cns/portlet-styles.less";
+// Tabs
+@import "cns/tabs.less";
+
+
+
+// Header
+
+header {
+    @header-height: floor(@font-size-h3 * @headings-line-height) + @line-height-computed + (@line-height-computed / 2);
+
+    margin-bottom: @line-height-computed;
+    
+    background-color: desaturate(@brand-primary, 20%);
+        
+    #gradient .vertical(@start-color: lighten(desaturate(@brand-primary, 20%), 10%); @end-color: desaturate(@brand-primary, 20%));
+    
+    .banner {
+        position: relative;
+
+        > .logo {
+            h1 {
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                    
+                    .user-select(@select: none);
+                }
+                
+                img {
+                    max-height: (@header-height - 10);
+                    
+                    margin-top: -@line-height-computed + 5 ;
+                    margin-bottom: -(@line-height-computed / 2) + 5;
+                    
+                    vertical-align: top;
+                }
+                
+                span {
+                    margin-left: @padding-large-horizontal;
+                }
+            }
+        }
+
+        > .search {
+            form {
+                margin-top: @header-height - (@line-height-computed / 2) - @input-height-small;
+                margin-bottom: (@line-height-computed / 2);
+                margin-left: @padding-large-horizontal;
+            }
+        }
+    }
+}
+
+
+
+// Drawer
+
+@media screen and (max-width: @screen-xs-max) {
+    #drawer-toolbar {
+        .drawer-toolbar-header {
+            background-color: desaturate(@brand-primary, 20%);
+            
+            #gradient .vertical(@start-color: lighten(desaturate(@brand-primary, 20%), 10%); @end-color: desaturate(@brand-primary, 20%));
+        }   
+    }
+}
