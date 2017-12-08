@@ -1,0 +1,144 @@
+attributetype ( 1.3.6.1.4.1.1466.115.121.1.12
+        NAME 'portalPersonProfile'
+        DESC 'Link person - profile'
+        SUP distinguishedName
+	EQUALITY caseIgnoreMatch
+	ORDERING caseIgnoreOrderingMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+	USAGE userApplications
+ )
+
+attributetype ( 1.3.6.1.4.1.1466.115.121.1.20
+        NAME 'GEDPersonEntite'
+        DESC 'Entite de la personne'
+        EQUALITY caseIgnoreMatch
+        SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+ )
+
+attributetype ( 1.3.6.1.4.1.1466.115.121.1.15
+        NAME 'portalDisplayName'
+        DESC 'Group display name'
+	EQUALITY caseIgnoreMatch 
+	ORDERING caseIgnoreOrderingMatch 
+	SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+	USAGE userApplications
+ )
+
+attributetype ( 1.3.6.1.4.1.1466.115.121.1.19
+        NAME 'portalProfileType'
+        DESC 'Profile type'
+	EQUALITY caseIgnoreMatch 
+	ORDERING caseIgnoreOrderingMatch 
+	SUBSTR caseIgnoreSubstringsMatch
+        SYNTAX 1.3.6.1.4.1.1466.115.121.1.15
+	USAGE userApplications
+ )
+
+attributetype ( 1.3.6.1.4.1.1466.115.121.1.16
+        NAME 'portalExplicitMember'
+        DESC 'Group explicit member'
+        SUP distinguishedName
+	EQUALITY caseIgnoreMatch 
+	ORDERING caseIgnoreOrderingMatch 
+	SUBSTR caseIgnoreSubstringsMatch 
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+	USAGE userApplications 
+ )
+
+attributeTypes ( 1.3.6.1.4.1.1466.115.121.1.17
+	NAME 'portalProfilePopulating' 
+	DESC 'Profile populating type' 
+	EQUALITY caseIgnoreMatch 
+	ORDERING caseIgnoreOrderingMatch 
+	SUBSTR caseIgnoreSubstringsMatch 
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+	USAGE userApplications 
+ )
+
+attributetype ( 1.3.6.1.4.1.1466.115.121.1.18
+        NAME 'portalExplicitManager'
+        DESC 'Group explicit manager'
+        SUP distinguishedName
+	EQUALITY caseIgnoreMatch 
+	ORDERING caseIgnoreOrderingMatch 
+	SUBSTR caseIgnoreSubstringsMatch 
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+	USAGE userApplications
+ )
+
+attributeTypes ( 1.3.6.1.4.20326.1.14.999.1.94
+	NAME 'portalCollabWorkspaceId' 
+	DESC 'Workspace ID of the profile' 
+	EQUALITY caseIgnoreMatch 
+	ORDERING caseIgnoreOrderingMatch 
+	SUBSTR caseIgnoreSubstringsMatch 
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+	USAGE userApplications 
+ )
+
+attributeTypes ( 1.3.6.1.4.20326.1.14.999.1.95
+	NAME 'portalCollabWorkspaceRole' 
+	DESC 'Role in the workspace' 
+	EQUALITY caseIgnoreMatch 
+	ORDERING caseIgnoreOrderingMatch 
+	SUBSTR caseIgnoreSubstringsMatch 
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 
+	USAGE userApplications 
+ )
+
+
+attributeTypes ( 1.3.6.1.4.20326.1.14.999.1.96
+	NAME 'portalPersonExternal' 
+	DESC 'External account indicator' 
+	EQUALITY booleanMatch 
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.7 
+	USAGE userApplications 
+ )
+
+attributeTypes: ( 1.3.6.1.4.20326.1.14.999.1.97
+	NAME 'portalPersonValidity' 
+	DESC 'Account validity date' 
+	EQUALITY generalizedTimeMatch
+	ORDERING generalizedTimeOrderingMatch 
+      	SYNTAX 1.3.6.1.4.1.1466.115.121.1.24
+	USAGE userApplications 
+ )
+
+attributeTypes: ( 1.3.6.1.4.20326.1.14.999.1.98
+	NAME 'portalPersonLastConnection' 
+	DESC 'Last connection date' 
+	EQUALITY generalizedTimeMatch
+	ORDERING generalizedTimeOrderingMatch 
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.24 
+	USAGE userApplications 
+ )
+
+
+objectclass ( 1.3.6.1.4.20326.1.14.999.1.92
+	NAME 'portalProfile' 
+	DESC 'Profile' 
+	SUP groupOfUniqueNames 
+	STRUCTURAL 
+	MUST ( objectClass $ cn ) 
+	MAY ( portalProfileType $ portalDisplayName $ description $ uniqueMember $ portalExplicitMember $ owner $ businessCategory $ portalProfilePopulating $ portalExplicitManager $ seeAlso $ ou $ o )
+ )
+
+objectclass ( 1.3.6.1.4.20326.1.14.999.1.91
+        NAME 'portalPerson'
+        DESC 'Person'
+        SUP inetOrgPerson
+        STRUCTURAL 
+	MUST ( objectClass $ uid ) 
+	MAY ( portalPersonProfile $ portalPersonExternal $ portalPersonValidity $ portalPersonLastConnection)
+ )
+
+objectclass ( 1.3.6.1.4.20326.1.14.999.1.93
+        NAME 'portalCollabProfile'
+        DESC 'Profile Collab'
+        SUP portalProfile
+        STRUCTURAL
+        MAY ( portalCollabWorkspaceId $ portalCollabWorkspaceRole)
+ )
