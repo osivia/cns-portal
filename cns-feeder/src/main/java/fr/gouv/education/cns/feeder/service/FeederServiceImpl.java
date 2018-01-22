@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.naming.Name;
@@ -69,7 +70,7 @@ public class FeederServiceImpl implements FeederService {
      */
     public FeederServiceImpl() {
         super();
-        this.log = LogFactory.getLog(this.getClass());
+        this.log = LogFactory.getLog("feeder");
     }
 
 
@@ -94,10 +95,14 @@ public class FeederServiceImpl implements FeederService {
         Person person = this.personService.getPersonNoCache(userDn);
 
         if (person == null) {
+        	
+            log.info("Utilisateur "+principalId+" non trouvé dans l'annuaire interne");
+        	
             // CNS source person
-            CnsSourcePerson sourcePerson = this.cnsPersonDao.getPerson(principalId);
-
-            if (sourcePerson != null) {
+            List<CnsSourcePerson> sourcePersons = this.cnsPersonDao.findPersonByUid(principalId);
+            if (sourcePersons.size() > 0) {
+            	CnsSourcePerson sourcePerson = sourcePersons.get(0);
+            			
                 // Creation
                 log.info("Création de la personne : " + sourcePerson.getCn());
                 person = this.toCnsPerson(sourcePerson);
@@ -115,13 +120,24 @@ public class FeederServiceImpl implements FeederService {
                     if (StringUtils.isNotBlank(entity)) {
                         String workspaceId = this.environment.getProperty(StringUtils.upperCase(entity));
                         if (StringUtils.isNotEmpty(workspaceId)) {
-                            log.info("Ajout à l'espace : " + sharedWorkspaceId);
+                            log.info("Ajout à l'espace : " + workspaceId);
                             this.workspaceService.addOrModifyMember(workspaceId, person.getDn(), WorkspaceRole.WRITER);
                         }
+                        else {
+                        	log.error("Impossible de trouver l'espace avec le code entité " + workspaceId);
+                        }
+                    }
+                    else {
+                    	log.warn("Aucune entité de rattachement trouvée pour "+principalId);
+
                     }
                 } else {
-                    this.log.error("Unable to create user " + userDn);
+                    this.log.error("Impossible de créer le compte " + principalId);
                 }
+            }
+            else {
+                log.error("Utilisateur "+principalId+" non trouvé dans l'annuaire PHM");
+
             }
         }
 

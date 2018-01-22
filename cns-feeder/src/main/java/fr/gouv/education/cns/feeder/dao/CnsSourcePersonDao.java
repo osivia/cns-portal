@@ -1,11 +1,17 @@
 package fr.gouv.education.cns.feeder.dao;
 
+import java.util.List;
+
 import javax.naming.Name;
+import javax.naming.directory.SearchControls;
 import javax.naming.ldap.Rdn;
 
+import org.osivia.directory.v2.MappingHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
 import org.springframework.ldap.core.LdapTemplate;
+import org.springframework.ldap.filter.OrFilter;
 import org.springframework.ldap.support.LdapNameBuilder;
 import org.springframework.stereotype.Repository;
 
@@ -32,7 +38,10 @@ public class CnsSourcePersonDao {
     /** Base DN. */
     private final Name baseDn;
 
-
+    /** Application. */
+    @Autowired
+    protected ApplicationContext context;
+    
     /**
      * Constructor.
      */
@@ -41,18 +50,25 @@ public class CnsSourcePersonDao {
         this.baseDn = LdapNameBuilder.newInstance(System.getProperty("ldapSource.base")).add("ou=personnes").build();
     }
 
-
+    
     /**
      * Get CNS person.
      * 
      * @param uid CNS person UID.
      * @return CNS person
      */
-    public CnsSourcePerson getPerson(String uid) {
-        Name dn = LdapNameBuilder.newInstance(this.getBaseDn()).add("uid=" + Rdn.escapeValue(uid)).build();
-        return this.cnsLdapTemplate.findByDn(dn, this.sample.getClass());
-    }
+    public List<CnsSourcePerson> findPersonByUid(String uid) {
+    	
+    	CnsSourcePerson person = context.getBean(this.sample.getClass());
+    	person.setUid(uid);
+    	
+    	OrFilter filter = MappingHelper.generateOrFilter(person);
+    	
+    	SearchControls searchControls = new SearchControls();
+    	searchControls.setSearchScope(SearchControls.SUBTREE_SCOPE);
 
+		return (List<CnsSourcePerson>) this.cnsLdapTemplate.find(getBaseDn(), filter, searchControls , this.sample.getClass());
+    }
 
     /**
      * Getter for baseDn.

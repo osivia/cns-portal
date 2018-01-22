@@ -47,7 +47,7 @@ public class FeederConfiguration {
         // Context source
         LdapContextSource contextSource = new LdapContextSource();
         contextSource.setUrl(System.getProperty("ldapSource.url"));
-        contextSource.setBase(System.getProperty("ldapSource.base"));
+        //contextSource.setBase(System.getProperty("ldapSource.base"));
         contextSource.setUserDn(System.getProperty("ldapSource.manager.dn"));
         contextSource.setPassword(System.getProperty("ldapSource.manager.pswd"));
         contextSource.setPooled(true);
