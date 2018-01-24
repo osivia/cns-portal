@@ -30,7 +30,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 @Primary
-@Entry(objectClasses = {"portalPerson"})
+@Entry(objectClasses = {"portalPerson","inetOrgPerson","organizationalPerson","person","top"})
 public final class CnsPersonImpl implements CnsPerson, Serializable {
 
     /** Default serial version UID. */

@@ -47,7 +47,7 @@ public class CnsSourcePersonDao {
      */
     public CnsSourcePersonDao() {
         super();
-        this.baseDn = LdapNameBuilder.newInstance(System.getProperty("ldapSource.base")).add("ou=personnes").build();
+        this.baseDn = LdapNameBuilder.newInstance(System.getProperty("ldapSource.base")).build();
     }
 
     
