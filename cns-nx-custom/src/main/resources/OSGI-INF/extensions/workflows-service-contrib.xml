@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<component name="proto-cns.workflows.service.contrib">
+
+	<require>fr.toutatice.ecm.platform.wf.integration.contrib</require>
+
+	<extension target="fr.toutatice.ecm.platform.services.workflows.infos.service"
+		point="workflows">
+
+		<workflow name="cns-validation" category="validation" />
+
+	</extension>
+
+
+</component>

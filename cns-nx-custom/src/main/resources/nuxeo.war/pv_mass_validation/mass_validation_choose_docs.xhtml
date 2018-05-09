@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:nxthemes="http://nuxeo.org/nxthemes"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:nxh="http://nuxeo.org/nxweb/html"
+	xmlns:nxu="http://nuxeo.org/nxweb/util"
+	xmlns:nxl="http://nuxeo.org/nxforms/layout"
+	xmlns:nxd="http://nuxeo.org/nxweb/document"
+	xmlns:rich="http://richfaces.org/rich">
+
+	<ui:define name="body">
+
+
+		<script type="text/javascript">
+		<!--
+		var $JQry = jQuery.noConflict();
+		$JQry(function() {
+		    $JQry('#mv_select_all').change(function(){
+		        var checkboxes = $JQry(this).closest('form').find(':checkbox');
+		        if($JQry(this).prop('checked')) {
+		          checkboxes.prop('checked', true);
+		        } else {
+		          checkboxes.prop('checked', false);
+		        }
+		    });
+		});
+	
+		-->
+		</script>
+
+		<div class="container">
+
+			<h:form id="mass_validation_form">
+
+				<c:choose>
+					<c:when test="#{massValidation.withValidation}" >
+						<h1>#{messages['massvalidation.action.validate']}</h1>
+					</c:when>
+					<c:otherwise>
+						<h1>#{messages['massvalidation.action.modify']}</h1>
+					</c:otherwise>
+				</c:choose>
+				
+				<p class="ambiance-info infoFeedback">
+					 <h:outputText escape="false" value="#{messages['massvalidation.info']}" />
+				</p>
+				<br />
+			
+				<table class="dataOuput">
+					<thead>
+						<tr>
+							<th>
+							
+								<input id="mv_select_all" type="checkbox" checked="checked" />
+							
+							</th>
+							<th>#{messages['massvalidation.action.checkall']}</th>
+						</tr>
+					</thead>
+					<tbody>
+					
+						<c:forEach items="#{massValidation.docsToModify}" var="dto">
+						
+							<tr class="dataRowEven">
+								<td class="iconColumn"> 
+									<h:selectBooleanCheckbox id="check_#{dto.doc.id}" value="#{dto.applyModifications}" 
+										></h:selectBooleanCheckbox>
+
+								</td>
+								<td>
+									#{dto.doc.title}
+									<c:if test="#{dto.avaliable eq 'VALIDATED'}">
+										<span class="summary_superscript summary_publishedVersion">Validé</span>
+									</c:if>
+									<c:if test="#{dto.avaliable eq 'IN_WORKFLOW'}">
+										<span class="summary_superscript summary_pendingVersion">Revue en cours</span>
+									</c:if>
+									
+									<p class="detail">#{dto.parentTitle}
+									</p>
+								</td>
+								<td>
+									
+								</td>								
+							</tr>
+						
+						</c:forEach>		
+						
+					</tbody>
+				
+				</table>
+				
+				<div class="buttonsGadget">
+					<h:commandButton action="#{massValidation.goToChooseValidation()}" value="Précédent" immediate="true" />
+					<h:commandButton action="#{massValidation.goToStartValidation()}" value="Suivant" />											
+				</div>
+						
+			</h:form>
+			
+		</div>
+	</ui:define>
+</nxthemes:composition>

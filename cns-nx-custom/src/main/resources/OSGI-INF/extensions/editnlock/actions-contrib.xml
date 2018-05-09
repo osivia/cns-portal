@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<component name="proto-cns.editnlock.actions">
+
+	<require>org.nuxeo.ecm.platform.actions.ActionService</require>
+
+	<extension target="org.nuxeo.ecm.platform.actions.ActionService"
+		point="actions">
+
+		<!-- Créer et verrouiller -->
+		<action id="CREATE_AND_LOCK" label="editnlock.create.action" 
+			link="#{documentActions.saveAndLockDocument('done')}" order="10">
+			<category>TOUTATICE_CREATE_DOCUMENT_FORM</category>
+			<filter-id>is_not_creating_workspace</filter-id>
+			<filter-id>is_not_creating_thread_document</filter-id>
+			<filter-id>is_not_creating_portalsite</filter-id>
+			<filter-id>mutable_document</filter-id>
+			<filter-id>can_lock_changeable_document</filter-id>
+		</action>
+		
+		<!-- Modifier et verrouiller -->
+		<action id="EDIT_AND_LOCK" label="editnlock.edit.action"
+            link="#{documentActions.updateAndLockDocument('done')}" order="10">
+            <category>TOUTATICE_EDIT_DOCUMENT_FORM</category>
+			<filter-id>is_not_thread_document</filter-id>
+			<filter-id>mutable_document</filter-id>
+			<filter-id>can_lock</filter-id>
+        </action>
+
+	</extension>
+	
+	<extension target="org.nuxeo.ecm.platform.actions.ActionService"
+        point="filters">
+
+        <filter id="can_lock_changeable_document">
+			<rule grant="true">
+				<condition>#{documentActions.canLockChangeableDocument}</condition>
+			</rule>
+		</filter>
+        
+    </extension>
+
+</component>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<nxthemes:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:nxthemes="http://nuxeo.org/nxthemes"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jstl/core"
+    xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+    xmlns:nxh="http://nuxeo.org/nxweb/html"
+    xmlns:nxu="http://nuxeo.org/nxweb/util"
+    xmlns:nxl="http://nuxeo.org/nxforms/layout"
+    xmlns:nxd="http://nuxeo.org/nxweb/document"
+    xmlns:rich="http://richfaces.org/rich">
+
+
+    <ui:define name="body">
+
+        <c:choose>
+
+            <c:when test="#{documentActions.isInUserWorkspace(currentDocument)}">
+                <h:form id="startDirectValidationForm" enctype="multipart/form-data">
+                    <h:commandButton type="submit" class="directValBtn"
+                        action="#{routingActions.startDirectValidationWorkflow()}"
+                        id="start_route_btn" />
+                </h:form>
+
+                <script type="text/javascript">
+                    jQuery('.directValBtn').click();
+                </script>
+            </c:when>
+
+            <c:otherwise>
+
+                <div class="container">
+                    <h:form enctype="multipart/form-data" id="choose_wf"
+                        class="form form-horizontal" role="form">
+                        <div class="form-group">
+                            <div class="ttc-form-control col-sm-12 choose-wf">
+                                <nxl:widget name="start_route_widget" mode="edit"
+                                    value="#{routingActions}" />
+                            </div>
+                        </div>
+                    </h:form>
+                </div>
+
+            </c:otherwise>
+
+        </c:choose>
+
+    </ui:define>
+
+</nxthemes:composition>

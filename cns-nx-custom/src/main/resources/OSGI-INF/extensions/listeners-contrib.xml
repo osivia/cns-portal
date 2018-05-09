@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<component name="proto-cns.listeners">
+
+	<extension target="org.nuxeo.ecm.core.event.EventServiceComponent"
+		point="listener">
+		
+		<listener name="cnsFillMetadaTaskListener" async="false" postCommit="false"
+			class="com.osivia.cns.proto.listeners.CnsFillMetadaTaskListener"
+			priority="100">
+            <event>beforeDocumentModification</event>
+		</listener>
+
+	</extension>
+
+</component>
+

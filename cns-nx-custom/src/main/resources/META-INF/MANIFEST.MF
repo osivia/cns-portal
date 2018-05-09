@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Osivia specifics documents 
+Bundle-SymbolicName: org.osivia.nuxeo.custom;singleton:=true
+Bundle-Localization: plugin
+Bundle-Category: stateful
+Nuxeo-Component: OSGI-INF/extensions/layouts-contrib.xml, 
+ OSGI-INF/extensions/schemas-contrib.xml,
+ OSGI-INF/extensions/types-contrib.xml,
+ OSGI-INF/extensions/userworksapce-contrib.xml,
+ OSGI-INF/extensions/vocabularies-contrib.xml,
+ OSGI-INF/extensions/review-workflows/tasks-layouts-contrib.xml,
+ OSGI-INF/extensions/review-workflows/tasks-schemas-contrib.xml,
+ OSGI-INF/extensions/cns-validation-workflow/routing-service-contrib.xml,
+ OSGI-INF/extensions/cns-validation-workflow/routing-types-contrib.xml,
+ OSGI-INF/extensions/cns-validation-workflow/routing-layouts-contrib.xml,
+ OSGI-INF/extensions/workflows-service-contrib.xml,
+ OSGI-INF/extensions/listeners-contrib.xml,
+ OSGI-INF/extensions/publisher-task-contrib.xml,
+ OSGI-INF/extensions/lifecycle-contrib.xml,
+ OSGI-INF/extensions/mass-validation/events-contrib.xml,
+ OSGI-INF/extensions/mass-validation/layouts-contrib.xml,
+ OSGI-INF/extensions/mass-validation/themes-contrib.xml,
+ OSGI-INF/extensions/editnlock/actions-contrib.xml,
+ OSGI-INF/extensions/metadata/widgets-metadata-contrib.xml,
+ OSGI-INF/extensions/metadata/layouts-metadata-contrib.xml,
+ OSGI-INF/extensions/security/cns-policies-permissions-contrib.xml

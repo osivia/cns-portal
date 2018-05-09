@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<component name="proto-cns.workflows.review.layouts">
+
+	<documentation>
+		Customization of choose participants tasks for NUxeo
+		validation workflows (serail ans parallel).
+	</documentation>
+
+	<require>proto-cns.routing.layouts</require>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+
+		<!-- Choose participant task for parallel validation workflow of Nuxeo -->
+		<layout name="Task2556@taskLayout">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>participants_parallel</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>comment_parallel</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>end_date_parallel</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>mdWarning</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>cycle_vie_in_task</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>metier_in_task</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>nature_in_task</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>s_info_associe_in_task</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>source_in_task</widget>
+				</row>
+			</rows>
+		</layout>
+
+
+		<layout name="Task38e@taskLayout">
+			<templates>
+				<template mode="any">/layouts/layout_default_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>participants_serial</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>validationOrReview_serial</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>comment_serial</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>mdWarning</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>cycle_vie_in_task</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>metier_in_task</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>nature_in_task</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>s_info_associe_in_task</widget>
+				</row>
+				<row>
+					<properties mode="any">
+						<property name="nxl_colspan_0">1</property>
+					</properties>
+					<widget>source_in_task</widget>
+				</row>
+			</rows>
+		</layout>
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+
+		<!-- Unfortunatly, use of this layout widget moves to the right all metadata sub-widgets -->
+		<!-- <widget name="task_metadata" type="layout">
+			<labels>
+				<label mode="any"></label>
+			</labels>
+			<controls>
+				<control name="handleLabels">true</control>
+			</controls>
+			<properties widgetMode="any">
+				<property name="name">Task8d6@taskLayout</property>
+			</properties>
+		</widget> -->
+
+		<!-- Parallel review widgets -->
+		<widget name="participants_parallel" type="multipleUsersSuggestionWithPermission">
+			<labels>
+				<label mode="any">wf.parallelDocumentReview.ParticipantsOnTheReview
+				</label>
+			</labels>
+			<helpLabels>
+				<label mode="edit">
+					wf.parallelDocumentReview.ParticipantsOnTheReview.helpLabel
+				</label>
+			</helpLabels>
+			<translated>true</translated>
+			<fields>
+				<field>['participants']</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="documentId">#{currentDocument.id}</property>
+				<property name="orderable">true</property>
+				<property name="permission">Write</property>
+				<property name="searchType">USER_TYPE</property>
+				<property name="placeholder">label.security.search</property>
+				<property name="width">70%</property>
+				<property name="prefixed">true</property>
+				<property name="required">#{request.getParameter('button') ==
+					'start_review'}
+				</property>
+			</properties>
+		</widget>
+		<widget name="comment_parallel" type="textarea">
+			<labels>
+				<label mode="any">wf.parallelDocumentReview.comment</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>['comment']</field>
+			</fields>
+		</widget>
+		<widget name="end_date_parallel" type="datetime">
+			<labels>
+				<label mode="any">wf.parallelDocumentReview.endDate</label>
+			</labels>
+			<helpLabels>
+				<label mode="any">wf.parallelDocumentReview.endDate.help</label>
+			</helpLabels>
+			<translated>true</translated>
+			<fields>
+				<field>['end_date']</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="required">#{request.getParameter('button') ==
+					'start_review'}
+				</property>
+			</properties>
+		</widget>
+
+		<!-- Review serie widgets -->
+		<widget name="participants_serial" type="multipleUsersSuggestionWithPermission">
+			<labels>
+				<label mode="any">wf.serialDocumentReview.ParticipantsOnTheReview
+				</label>
+			</labels>
+			<helpLabels>
+				<label mode="edit">
+					wf.serialDocumentReview.ParticipantsOnTheReview.helpLabel
+				</label>
+			</helpLabels>
+			<translated>true</translated>
+			<fields>
+				<field>['participants']</field>
+			</fields>
+			<properties widgetMode="edit">
+				<property name="documentId">#{currentDocument.id}</property>
+				<property name="orderable">true</property>
+				<property name="permission">Write</property>
+				<property name="searchType">USER_TYPE</property>
+				<property name="placeholder">label.security.search</property>
+				<property name="width">70%</property>
+				<property name="helpLabel">wf.serialDocumentReview.ParticipantsOnTheReview.order
+				</property>
+				<property name="prefixed">true</property>
+				<property name="required">#{request.getParameter('button') ==
+					'start_review'}
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="validationOrReview_serial" type="selectOneDirectory">
+			<labels>
+				<label mode="any">wf.serialDocumentReview.validationOrSimpleReview
+				</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>['validationOrReview']</field>
+			</fields>
+			<widgetModes>
+				<mode value="edit">#{currentDocument. currentLifeCycleState
+					=='project'?'edit':'hidden'}
+				</mode>
+			</widgetModes>
+			<properties widgetMode="edit">
+				<property name="localize">true</property>
+				<property name="directoryName">WorkflowType</property>
+				<property name="required">#{request.getParameter('button') ==
+					'start_review'}
+				</property>
+			</properties>
+			<properties widgetMode="view">
+				<property name="localize">true</property>
+				<property name="directoryName">WorkflowType</property>
+			</properties>
+		</widget>
+
+		<widget name="comment_serial" type="textarea">
+			<labels>
+				<label mode="any">wf.serialDocumentReview.comment</label>
+			</labels>
+			<translated>true</translated>
+			<fields>
+				<field>['comment']</field>
+			</fields>
+		</widget>
+
+
+	</extension>
+
+</component>

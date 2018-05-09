@@ -1,0 +1,133 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>fr.gouv.education.cns.portal</groupId>
+    	<artifactId>cns-portal-parent</artifactId>
+		<version>4.6-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>proto-cns-nuxeo-custom</artifactId>
+	<packaging>jar</packaging>
+	<name>Objects Custom proto CNS</name>
+	
+	<properties>
+		<nuxeo.version>6.0-HF42</nuxeo.version>
+		<nuxeo.cap.distribution.version>6.0</nuxeo.cap.distribution.version>
+		<nuxeo.opentoutatice.version>4.6.2</nuxeo.opentoutatice.version>
+		<addon.wfi.version>4.6.0-RC01</addon.wfi.version>
+		<nuxeo.drive.version>6.0-HF42</nuxeo.drive.version>
+	</properties>	
+
+	<dependencies>
+		<dependency>
+			<groupId>opentoutatice-ecm.platform</groupId>
+			<artifactId>opentoutatice-ecm-platform-core</artifactId>
+			<version>${nuxeo.opentoutatice.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>opentoutatice-ecm.platform</groupId>
+			<artifactId>opentoutatice-ecm-platform-web</artifactId>
+			<version>${nuxeo.opentoutatice.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>opentoutatice-ecm.platform</groupId>
+			<artifactId>opentoutatice-ecm-platform-attached-files</artifactId>
+			<version>${nuxeo.opentoutatice.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>opentoutatice-ecm.workflows-integration</groupId>
+			<artifactId>opentoutatice-addon-workflows-integration-ecm</artifactId>
+			<version>${addon.wfi.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.nuxeo.ecm</groupId>
+			<artifactId>nuxeo-drive-core</artifactId>
+			<version>${nuxeo.drive.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifestFile>src/main/resources/META-INF/MANIFEST.MF
+						</manifestFile>
+					</archive>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.2.1</version>
+				<configuration>
+					<tagBase>http://www.osivia.org/repos/osivia-demo/cns/nuxeo/tags
+					</tagBase>
+					<releaseProfiles>unpack,pack</releaseProfiles>
+					<preparationGoals>clean install</preparationGoals>
+					<goals>deploy</goals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<archive>
+						<manifestFile>src/main/resources/META-INF/MANIFEST.MF
+						</manifestFile>
+						<manifestEntries>
+							<Bundle-Version>${eclipseVersion}-t${buildNumber}
+							</Bundle-Version>
+							<Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+						</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>deploy-toutatice-ecm-modules</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>copy-jar</id>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<copy file="${basedir}/target/${project.build.finalName}.jar" todir="${build.toutatice.ecm.modules.dir}/3.1.0" />
+									</tasks>
+								</configuration>
+								<phase>package</phase>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

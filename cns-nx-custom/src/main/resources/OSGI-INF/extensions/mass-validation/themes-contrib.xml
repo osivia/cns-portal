@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<component name="proto-cns.massvalidation.themes">
+
+    <require>org.nuxeo.theme.nuxeo.default</require>
+
+    <extension
+        target="org.nuxeo.theme.services.ThemeService"
+        point="applications">
+        
+        <application
+            root="${org.nuxeo.ecm.contextPath}"
+            template-engine="jsf-facelets">
+
+            <view id="/pv_mass_validation/mass_validation.xhtml">
+                <theme>galaxy/popup</theme>
+            </view>
+            <view id="/pv_mass_validation/mass_validation_choose_docs.xhtml">
+                <theme>galaxy/popup</theme>
+            </view>            
+            <view id="/pv_mass_validation/mass_validation_2.xhtml">
+                <theme>galaxy/popup</theme>
+            </view> 
+            <view id="/pv_mass_validation/mass_validation_3.xhtml">
+                <theme>galaxy/popup</theme>
+            </view> 
+            
+        </application>
+        
+    </extension>
+</component>
+ 

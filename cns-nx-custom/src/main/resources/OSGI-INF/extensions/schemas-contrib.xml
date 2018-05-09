@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<component name="proto-cns.schemas">
+
+	<require>org.nuxeo.ecm.core.schema.TypeService</require>
+
+	<extension target="org.nuxeo.ecm.core.schema.TypeService"
+		point="schema">
+
+		<schema name="sch_cns_advsearch" prefix="cns"
+			src="schemas/sch_cns_advsearch.xsd" />
+		<schema name="sch_cns_userprofile" prefix="cnsprofile"
+			src="schemas/sch_cns_userprofile.xsd" />
+
+	</extension>
+
+</component>

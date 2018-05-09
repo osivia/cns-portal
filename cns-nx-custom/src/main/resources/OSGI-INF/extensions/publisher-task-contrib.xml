@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<component name="proto-cns.remote.publishing.task">
+
+	<require>fr.toutatice.ecm.platform.remote.publishing.task</require>
+
+	<extension target="org.nuxeo.ecm.platform.publisher.impl.service.PublisherServiceImpl"
+		point="tree">
+
+		<publicationTree name="RootSectionsCoreTree"
+			class="com.osivia.proto.publish.tree.CNSRootSectionsPublicationTree" />
+
+	</extension>
+
+</component>

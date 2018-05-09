@@ -1,0 +1,9 @@
+id,label,obsolete,ordering
+A,Aucun,0,1
+P,Plusieurs,0,2
+T,Tous,0,3
+N,Non défini,0,4
+GOSPEL,GOSPEL,0,5
+SIRHEN,SiRHen,0,6
+SI3,Système information 3,0,7
+SI4,Système information 4,0,8

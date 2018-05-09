@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<component name="com.osivia.cns.proto.security.permissions">
+
+	<extension point="policies"	target="org.nuxeo.ecm.core.security.SecurityService">
+		
+		<policy class="com.osivia.cns.proto.security.CnsDomainSecurityPolicy" name="cnsDomainSec" order="0" />
+		
+	</extension>
+
+</component>

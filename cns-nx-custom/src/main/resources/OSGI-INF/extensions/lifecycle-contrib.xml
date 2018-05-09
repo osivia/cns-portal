@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="proto-cns.lifecycle">
+
+	<require>org.nuxeo.ecm.core.lifecycle.LifeCycleService</require>
+
+	<extension target="org.nuxeo.ecm.core.lifecycle.LifeCycleService"
+		point="types">
+
+		<types>
+			<type name="ServicePage">default_toutatice</type>
+			<type name="ServicePage">default_toutatice</type>
+		</types>
+
+	</extension>
+
+</component>

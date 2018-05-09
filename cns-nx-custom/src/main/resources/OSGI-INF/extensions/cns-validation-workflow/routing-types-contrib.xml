@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<component name="proto-cns.routing.types">
+
+	<require>org.nuxeo.ecm.core.schema.TypeService</require>
+
+	<extension target="org.nuxeo.ecm.core.schema.TypeService"
+		point="schema">
+
+		<schema name="var_cns-validation" prefix="var_cns-validation"
+			src="workflows/schemas/validation/var_cns-validation.xsd" />
+		<schema name="var_Task72b" prefix="var_Task72b"
+			src="workflows/schemas/validation/var_Task72b.xsd" />
+		<schema name="var_Task7aa" prefix="var_Task7aa"
+			src="workflows/schemas/validation/var_Task7aa.xsd" />
+		<schema name="var_Task8d6" prefix="var_Task8d6"
+			src="workflows/schemas/validation/var_Task8d6.xsd" />
+
+
+	</extension>
+
+	<extension target="org.nuxeo.ecm.core.schema.TypeService"
+		point="doctype">
+
+		<facet name="facet-var_cns-validation">
+			<schema name="var_cns-validation" />
+		</facet>
+		<facet name="facet-var_Task72b">
+			<schema name="var_Task72b" />
+		</facet>
+		<facet name="facet-var_Task7aa">
+			<schema name="var_Task7aa" />
+		</facet>
+		<facet name="facet-var_Task8d6">
+			<schema name="var_Task8d6" />
+		</facet>
+
+	</extension>
+
+</component>

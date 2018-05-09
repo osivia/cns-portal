@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<component name="proto-cns.metadata.widgets">
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="widgets">
+
+		<!-- Ranking widgets -->
+		<widget name="cycle_vie" type="suggestOneDirectory">
+			<labels>
+				<label mode="any">widget.cycle_vie</label>
+			</labels>
+			<helpLabels>
+				<label mode="any">
+					Le cycle de vie identifie la phase ou à l’étape
+					(ensemble d’activités) à laquelle est principalement destiné le
+					document.
+				</label>
+			</helpLabels>
+			<translated>true</translated>
+			<fields>
+				<field>cns:cycle_vie</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="directoryName">[CNS] Cycle de vie</property>
+				<property name="required">#{(empty massValidation.withValidation) or
+					(massValidation.withValidation == false) ? 'false':'true'}
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="metier" type="suggestManyDirectory">
+			<labels>
+				<label mode="any">widget.metier</label>
+			</labels>
+			<helpLabels>
+				<label mode="any">
+					Il s'agit des activités métiers pratiquées au sein
+					des différentes entités composant le CNS. Elles détaillent le « sur
+					quoi » portent les documents dont le domaine d’usage est
+					« exploitation » ou « MEP », voire « Asssitance ».
+				</label>
+			</helpLabels>
+			<translated>true</translated>
+			<fields>
+				<field>dc:subjects</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="directoryName">[CNS] Metier</property>
+				<property name="required">#{(empty massValidation.withValidation) or
+					(massValidation.withValidation == false) ? 'false':'true'}
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="nature" type="suggestOneDirectory">
+			<labels>
+				<label mode="any">widget.nature</label>
+			</labels>
+			<helpLabels>
+				<label mode="any">
+					La nature identifie le domaine d’utilisation
+					transverse qui est associé aux différents documents.
+				</label>
+			</helpLabels>
+			<translated>true</translated>
+			<fields>
+				<field>dc:nature</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="directoryName">[CNS] Nature</property>
+				<property name="required">#{(empty massValidation.withValidation) or
+					(massValidation.withValidation == false) ? 'false':'true'}
+				</property>
+				<property name="labelFieldName">label_fr</property>
+				<property name="canSelectParent">true</property>
+			</properties>
+		</widget>
+
+		<widget name="s_info_associe" type="suggestOneDirectory">
+			<labels>
+				<label mode="any">widget.s.info.associe</label>
+			</labels>
+			<helpLabels>
+				<label mode="any">
+					Il s’agit du SI auquel est associé le document
+					lorsque celui est identifié.
+				</label>
+			</helpLabels>
+			<translated>true</translated>
+			<fields>
+				<field>cns:s_info_associe</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="directoryName">[CNS] SI</property>
+				<property name="required">#{(empty massValidation.withValidation) or
+					(massValidation.withValidation == false) ? 'false':'true'}
+				</property>
+			</properties>
+		</widget>
+
+		<widget name="source" type="suggestOneDirectory">
+			<labels>
+				<label mode="any">widget.entite.cns</label>
+			</labels>
+			<helpLabels>
+				<label mode="any">
+					Il s’agit du nom abrégé associé à chacune des
+					entités éditrice du document.
+				</label>
+			</helpLabels>
+			<translated>true</translated>
+			<fields>
+				<field>dc:source</field>
+			</fields>
+			<properties widgetMode="any">
+				<property name="directoryName">[CNS] Entité</property>
+				<property name="required">#{(empty massValidation.withValidation) or
+					(massValidation.withValidation == false) ? 'false':'true'}
+				</property>
+			</properties>
+		</widget>
+
+	</extension>
+
+</component>

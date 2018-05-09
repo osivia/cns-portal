@@ -42,6 +42,7 @@
         <module>cns-directory</module>
         <module>cns-feeder</module>
         <module>cns-distribution</module>
+        <module>cns-nx-custom</module>
     </modules>
 
 

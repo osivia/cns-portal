@@ -1,0 +1,25 @@
+id,label,obsolete,ordering
+CNS_GLOBAL,CNS Global (cellules/CES/CRT),0,1
+CNS_AC,"Cellules du CNS (pilotage, coordination opérationnelle, gouvernance)",0,2
+CEL_PIL,Cellule de Pilotage,0,3
+CEL_CCO,Cellule de Coordination Opérationnelle,0,4
+CEL_GOUV,Cellule de Gouvernance,0,5
+CES_GOSP,CES Gospel,0,6
+CES_CHOR,CES Choregie,0,7
+CES_SIRH,CES SiRHen,0,8
+CES_DECI,CES Décisionnel,0,9
+CRT_ITIL,CRT ITIL,0,10
+CRT_SUP,CRT Supervision,0,11
+CRT_RSO,CRT Réseau et sécurité opérationnelle,0,12
+CRT_HEB,CRT Hébergement,0,13
+CRT_FIM,CRT Fédération identité et messagerie,0,14
+CRT_EDI,CRT échange de données,0,15
+MOA,Direction projet métier (MOA),0,16
+EQ_CPN,Chef de projets national,0,17
+EQ_TECH,CP / Équipe architecture technique ,0,18
+EQ_DEVPT,Équipe de développement,0,19
+EQ_QUALIF,Équipe de qualification / recette,0,20
+EQ_INTL,Équipe intégration logicielle,0,21
+EQ_INTT,Équipe intégration technique,0,22
+EQ_INTE,Équipe intégration exploitation,0,23
+PRESTA,Prestataire extérieur,0,24

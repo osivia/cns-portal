@@ -1,0 +1,13 @@
+id,label,obsolete,ordering
+PROJ,"Gestion de projet (pilotage, planification)",0,1
+AVP,Avant-projet,0,2
+CONG,Conception générale,0,3
+COND,Conception détaillée,0,4
+DEVP,Réalisation,0,5
+INTEG,Intégration,0,6
+QUAL,"Qualification, Recette",0,7
+DIFF,"Diffusion, Déploiement",0,8
+FORM,Formation,0,9
+MEP,Mise en production,0,10
+EXP,Exploitation,0,11
+ASS,Assistance,0,12

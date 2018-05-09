@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<component name="proto-cns.vocabularies">
+
+	<extension target="org.nuxeo.ecm.directory.sql.SQLDirectoryFactory"
+		point="directories">
+
+		<directory name="[CNS] Cycle de vie">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<table>cns_cycle_vie</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<dataFile>vocabularies/cycle_vie.csv</dataFile>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+		</directory>
+
+		<directory name="[CNS] Metier">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<table>cns_metier</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<dataFile>vocabularies/metier.csv</dataFile>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+		</directory>
+
+		<!-- Note: parents are defined in nature.csv for widget displaying by parents 
+			group -->
+		<directory name="[CNS] Nature">
+			<schema>l10nxvocabulary</schema>
+			<parentDirectory>nature</parentDirectory>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<table>cns_nature</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<!-- <createTablePolicy>always</createTablePolicy> -->
+			<dataFile>vocabularies/nature.csv</dataFile>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+		</directory>
+
+		<directory name="[CNS] Entité">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<table>cns_entite_cns</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<dataFile>vocabularies/entite_cns.csv</dataFile>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+		</directory>
+
+		<directory name="[CNS] SI">
+			<schema>vocabulary</schema>
+			<dataSource>java:/nxsqldirectory</dataSource>
+			<table>cns_s_info_associe</table>
+			<idField>id</idField>
+			<autoincrementIdField>false</autoincrementIdField>
+			<createTablePolicy>on_missing_columns</createTablePolicy>
+			<dataFile>vocabularies/s_info_associe.csv</dataFile>
+			<cacheTimeout>3600</cacheTimeout>
+			<cacheMaxSize>1000</cacheMaxSize>
+		</directory>
+	</extension>
+
+	<extension target="org.nuxeo.ecm.directory.ui.DirectoryUIManager"
+		point="directories">
+		<directory name="[CNS] Cycle de vie" layout="vocabulary" sortField="ordering" />
+		<directory name="[CNS] Metier" layout="vocabulary" sortField="ordering" />
+		<directory name="[CNS] Nature" layout="nature_vocabulary" 
+			sortField="ordering">
+			<deleteConstraint
+				class="org.nuxeo.ecm.directory.api.ui.HierarchicalDirectoryUIDeleteConstraint">
+				<property name="targetDirectory">nature</property>
+				<property name="targetDirectoryField">parent</property>
+			</deleteConstraint>
+		</directory>
+		<directory name="[CNS] SI" layout="vocabulary"
+			sortField="ordering" />
+		<directory name="[CNS] Entité" layout="vocabulary" sortField="ordering" />
+		
+		<!-- Disable default Vocabularies -->
+		<directory name="continent" enabled="false" />
+		<directory name="country" enabled="false" />
+		<directory name="inverse_predicates" enabled="false" />
+		<directory name="l10ncoverage" enabled="false" />
+		<directory name="l10nsubjects" enabled="false" />
+		<!-- <directory name="language" enabled="false" /> -->
+		<directory name="nature" enabled="false" />
+		<!-- <directory name="predicates" enabled="false" /> -->
+		<directory name="subtopic" enabled="false" />
+		<directory name="topic" enabled="false" />
+		<directory name="WorkflowType" enabled="false" />
+	</extension>
+
+	<extension target="org.nuxeo.ecm.platform.forms.layout.WebLayoutManager"
+		point="layouts">
+
+		<layout name="nature_vocabulary">
+			<templates>
+				<template mode="any">
+					/directory/directory_layout_template.xhtml
+				</template>
+			</templates>
+			<rows>
+				<row>
+					<widget>parent</widget>
+				</row>
+				<row>
+					<widget>l10nxvocabulary_id</widget>
+				</row>
+				<row>
+					<widget>l10nxvocabulary_label_fr</widget>
+				</row>
+				<row>
+					<widget>l10nxvocabulary_obsolete</widget>
+				</row>
+				<row>
+					<widget>l10nxvocabulary_order</widget>
+				</row>
+			</rows>
+			<widget name="parent" type="select_l10n_vocabulary_tree">
+				<labels>
+					<label mode="any">label.vocabulary.entry.parent</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>l10nxvocabulary:parent</field>
+				</fields>
+				<properties mode="any">
+					<property name="directoryName">nature</property>
+					<property name="selectIdOnly">true</property>
+				</properties>
+				<properties widgetMode="edit">
+					<property name="required">false</property>
+					<property name="displayObsoleteEntries">true</property>
+				</properties>
+			</widget>
+			<widget name="l10nxvocabulary_label_fr" type="text">
+				<labels>
+					<label mode="any">label.vocabulary.entry.label</label>
+				</labels>
+				<translated>true</translated>
+				<fields>
+					<field>l10nxvocabulary:label_fr</field>
+				</fields>
+				<properties widgetMode="edit">
+					<property name="size">50</property>
+				</properties>
+			</widget>
+		</layout>
+
+	</extension>
+
+</component>

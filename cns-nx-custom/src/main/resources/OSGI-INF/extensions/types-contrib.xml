@@ -1,0 +1,94 @@
+<component name="proto-cns.types">
+
+	<require>org.nuxeo.ecm.core.schema.TypeService</require>
+	<require>org.nuxeo.ecm.platform.types.TypeService</require>
+	<require>fr.toutatice.ecm.platform.customize.base.types</require>
+
+	<extension target="org.nuxeo.ecm.core.schema.CustomizeTypesService"
+		point="basettc">
+
+		<doctype name="*" append="true">
+			<schema name="sch_cns_advsearch" />
+		</doctype>
+		
+	</extension>
+	
+	<extension point="doctype" target="org.nuxeo.ecm.core.schema.TypeService">
+	
+    	<doctype name="UserProfile" append="true">
+    	       <schema name="sch_cns_userprofile"/>
+   		 </doctype>
+   		 
+		<doctype name="ServicePage" extends="Document">
+			<schema name="common" />
+			<schema name="dublincore" />
+			<facet name="TTCPortalConfigurable" />
+		</doctype>
+   		
+		<doctype name="StatsPage" extends="Document">
+			<schema name="common" />
+			<schema name="dublincore" />
+			<facet name="TTCPortalConfigurable" />
+		</doctype>
+   	</extension> 
+   	
+	<extension target="org.nuxeo.ecm.platform.types.TypeService"
+		point="types">
+		
+		<!-- Pour disposer de pages particulière (ex : recherche avancée) dans les workspaces, statistiques) -->
+		<type id="Workspace">
+			<subtypes>
+				<type>ServicePage</type>
+				<type>StatsPage</type>
+			</subtypes>
+		</type>
+		
+		<type id="ServicePage">
+			<label>Page de service</label>
+			<icon>/icons/book-review-icon.gif</icon>
+			<bigIcon>/icons/book-review-icon.gif</bigIcon>
+			<description>Page de service</description>
+			<default-view>view_documents</default-view>
+			<layouts mode="create">
+				<layout>heading</layout>
+			</layouts>
+			<layouts mode="edit">
+				<layout>heading</layout>
+			</layouts>
+			<layouts mode="view" />
+			<contentViews category="content">
+				<contentView showInExportView="false">orderable_document_content
+				</contentView>
+			</contentViews>
+			<contentViews category="trash_content">
+				<contentView showInExportView="false">document_trash_content
+				</contentView>
+			</contentViews>
+		</type>
+		
+		<type id="StatsPage">
+			<label>Page de statistiques</label>
+			<icon>/icons/book-review-icon.gif</icon>
+			<bigIcon>/icons/book-review-icon.gif</bigIcon>
+			<description>Page de statistiques</description>
+			<default-view>view_documents</default-view>
+			<layouts mode="create">
+				<layout>heading</layout>
+			</layouts>
+			<layouts mode="edit">
+				<layout>heading</layout>
+			</layouts>
+			<layouts mode="view" />
+			<contentViews category="content">
+				<contentView showInExportView="false">orderable_document_content
+				</contentView>
+			</contentViews>
+			<contentViews category="trash_content">
+				<contentView showInExportView="false">document_trash_content
+				</contentView>
+			</contentViews>
+		</type>
+	</extension>
+   	
+
+</component>

@@ -1,0 +1,80 @@
+id,parent,label_en,label_fr,obsolete,ordering
+ADM,,,ADMINISTRATIF,0,1
+NS,ADM,,Note de service,0,2
+ARR,ADM,,Arrêté,0,3
+CIRC,ADM,,Circulaire,0,4
+CONV,ADM,,Convocation,0,5
+EMAR,ADM,,Émargement (feuille de),0,6
+ORGA,,,ORGANISATION,0,7
+ORGANI,ORGA,,Organigramme ,0,8
+ANNU,ORGA,,Annuaire (de personnes),0,9
+LIST,ORGA,,"Liste (participants, correspondants, membres, ...)",0,10
+LETMI,ORGA,,Lettre de mission,0,11
+RH,,,RESSOURCES HUMAINES,0,12
+FICPOS,RH,,Fiche de poste,0,13
+ENTIND,RH,,"Entretien individuel (guide, CR)",0,14
+ENTFOR,RH,,"Entretien de formation (Guide, CR)",0,15
+PIL,,,PILOTAGE,0,16
+REU,PIL,,"Réunion (Support, ODJ, CR, ...)",0,17
+COPIL,PIL,,COPIL (comité de pilotage),0,18
+ESTIM,PIL,,"Estimation (de charges, coûts, délais)",0,19
+BILAN,PIL,,"Bilan (de projet, de tests, performances, exploitation)",0,20
+JALON,PIL,,Jalon (Revue de),0,21
+PV,PIL,,"Procès verbal (de réception, recette)",0,22
+PLAN,PIL,,Planning,0,23
+TDB,PIL,,Tableau de bord  ,0,24
+BUD,,,BUDGET,0,25
+PREV,BUD,,Prévisions,0,26
+ENGAG,BUD,,Engagement (Dépenses engagées),0,27
+DEPENS,BUD,,Dépenses (Dépenses réalisées),0,28
+DEVIS,BUD,,Devis,0,29
+FACT,BUD,,Factures,0,30
+COM,,,COMMUNICATION,0,31
+LETTRE,COM,,Lettre (du CNS),0,32
+BREVE,COM,,Brèves,0,33
+ARTICLE,COM,,Articles,0,34
+PRESENT,COM,,Présentation (Support de),0,35
+MULTIM,COM,,Multimédia,0,36
+SEMIN,COM,,Séminaire,0,37
+FOR,,,FORMATION,0,38
+CALEND,FOR,,Calendrier des formations,0,39
+INSCR,FOR,,"Inscriptions (Fiches inscription, Liste des inscrits)",0,40
+DESC,FOR,,"Descriptif de formation (Fiche descriptive, contenu) ",0,41
+SUPP,FOR,,"Support (Formateur, apprenant)",0,42
+ACC,,,ACCOMPAGNEMENT,0,43
+MANUEL,ACC,,Manuel Utilisation,0,44
+AIDE,ACC,,Aide en ligne,0,45
+REGLE,ACC,,Réglés de gestion (réglés métier),0,46
+QUAL,,,QUALITE,0,47
+PAQ,QUAL,,PAQ (Plan assurance qualité),0,48
+ITIL,QUAL,,Processus ITIL,0,49
+ANO,QUAL,,Anomalie (Fiche descriptive),0,50
+INCI,QUAL,,Incident (Fiche descriptive),0,51
+PB,QUAL,,Problème (Fiche descriptive),0,52
+SOL,QUAL,,"Solutions (Base de connaissances, procédure de résolution)",0,53
+MARCH,,,MARCHES,0,54
+CCTP,MARCH,,CCTP (Cahier des clauses techniques particulières),0,55
+CCAP,MARCH,,CCAP (Cahier des clauses administratives particulières),0,56
+RC,MARCH,,RC (Règlement de consultation),0,57
+PROJ,,,PROJET,0,58
+CCF,PROJ,,Cahier des charges fonctionnel,0,59
+CCT,PROJ,,Cahier des charges technique,0,60
+DSFG,PROJ,,DSFG (Dossier Spécifications Générales),0,61
+DSFD,PROJ,,DSFD (Dossier Spécifications Détaillées),0,62
+DAG,PROJ,,DAG (Dossier Architecture Générale),0,63
+DAT,PROJ,,DAT (Dossier Architecture Technique),0,64
+EXP,,,EXPLOITATION,0,65
+ENF,EXP,,Exigences non fonctionnelles,0,66
+DET,EXP,,DET (Dossier Exploitation Technique),0,67
+DINT,EXP,,Dossier / Plan Intégration,0,68
+DINST,EXP,,Dossier / Manuel Installation,0,69
+PROC,EXP,,"Procédure (Exploitation, Sauvegarde, Escalade, Résolution, ...)",0,70
+SERV,,,SERVICES,0,71
+DEMAND,SERV,,Demande de Service,0,72
+ANS,SERV,,ANS (Accord de niveau de service),0,73
+FICDES,SERV,,Fiche Descriptive de Service,0,74
+PERFS,SERV,,Performances des services,0,75
+REPORT,,,REPORTING,0,76
+STATS,REPORT,,Statistiques Activité,0,77
+HISTO,REPORT,,Historique Activité,0,78
+INDIC,REPORT,,Indicateurs Activité,0,79

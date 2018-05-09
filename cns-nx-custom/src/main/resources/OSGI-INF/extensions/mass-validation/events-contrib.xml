@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="proto-cns.massvalidation.events">
+
+	<extension target="org.nuxeo.ecm.core.event.EventServiceComponent"
+		point="listener">
+		<listener name="massValidationEventListener" async="true"
+			postCommit="true"
+			class="com.osivia.cns.proto.massvalidation.MassValidationListener">
+			<event>massValidationEvent</event>
+		</listener>
+	</extension>
+
+</component>

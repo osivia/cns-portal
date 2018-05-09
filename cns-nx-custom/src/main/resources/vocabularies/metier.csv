@@ -1,0 +1,17 @@
+id,label,obsolete,ordering
+RESO,Réseau,0,1
+SECU,Sécurité,0,2
+AUTH,Authentification,0,3
+FID,Fédération Identité,0,4
+MAIL,Messagerie,0,5
+SUP,Supervision,0,6
+HEB,Hébergement,0,7
+IEXP,Infrastructure Exploitation,0,8
+IRES,Infrastructure Réseau,0,9
+CMDB,Gestion Configurations (CMDB),0,10
+INCID,Incidents / Problèmes,0,11
+EDI,Échange de données,0,12
+SERV,Gestion des services,0,13
+MCO,MCO (Maintien en conditions opérationnelles),0,14
+EXP,Exploitation,0,15
+REPORT,Suivi Activité / reporting,0,16
